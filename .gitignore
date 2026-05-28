@@ -1,0 +1,6 @@
+.venv/
+.gh-config/
+.secrets/
+__pycache__/
+*.pyc
+health-results.json
