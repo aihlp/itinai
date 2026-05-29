@@ -1,0 +1,62 @@
+name: Sync WordPress Agents
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "agents/*.yaml"
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: "Optional single manifest path, for example agents/insideout.yaml"
+        required: false
+        default: ""
+
+jobs:
+  sync-wordpress:
+    runs-on: ubuntu-latest
+    env:
+      WP_KEY: ${{ secrets.WP_KEY }}
+      WP_APP: ${{ secrets.WP_APP }}
+      WP_SYNC_ENDPOINT: ${{ secrets.WP_SYNC_ENDPOINT }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Determine manifests to sync
+        id: manifests
+        run: |
+          if [ -n "${{ github.event.inputs.manifest || '' }}" ]; then
+            printf '%s\n' "${{ github.event.inputs.manifest }}" > changed-agents.txt
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'agents/*.yaml' > changed-agents.txt
+          else
+            find agents -maxdepth 1 -name '*.yaml' | sort > changed-agents.txt
+          fi
+
+          if [ -s changed-agents.txt ]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            cat changed-agents.txt
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "No changed agent manifests."
+          fi
+
+      - name: Validate changed manifests
+        if: steps.manifests.outputs.has_changes == 'true'
+        run: xargs python scripts/validate.py < changed-agents.txt
+
+      - name: Sync changed manifests to WordPress
+        if: steps.manifests.outputs.has_changes == 'true'
+        run: python scripts/sync-wordpress.py --paths-file changed-agents.txt

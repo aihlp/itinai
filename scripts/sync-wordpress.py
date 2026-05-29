@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import os
 import sys
@@ -40,6 +41,13 @@ def wordpress_payload(manifest: dict[str, Any], health: dict[str, Any] | None) -
     payload = dict(manifest)
     payload["description"] = payload.get("description") or payload.get("name") or payload["agent_id"]
 
+    dynamic_data = payload.get("dynamic_data") if isinstance(payload.get("dynamic_data"), dict) else {}
+    payload["commerce"] = {
+        "catalogue_feed_url": dynamic_data.get("catalogue_feed_url", ""),
+        "negotiation_protocol": dynamic_data.get("negotiation_protocol", ""),
+        "negotiation_endpoint": dynamic_data.get("negotiation_endpoint", ""),
+    }
+
     health_check = payload.get("health_check") if isinstance(payload.get("health_check"), dict) else {}
     health_payload = {
         "url": health_check.get("url") or payload.get("a2a_config", {}).get("agent_card_url", ""),
@@ -52,10 +60,16 @@ def wordpress_payload(manifest: dict[str, Any], health: dict[str, Any] | None) -
     return payload
 
 
+def basic_auth_header(username: str, password: str) -> str:
+    token = base64.b64encode(f"{username}:{password}".encode("utf-8")).decode("ascii")
+    return f"Basic {token}"
+
+
 def sync_manifest(
     session: requests.Session,
     endpoint: str,
-    token: str,
+    username: str,
+    app_password: str,
     manifest: dict[str, Any],
     health: dict[str, Any] | None,
     timeout: int,
@@ -67,10 +81,9 @@ def sync_manifest(
         timeout=timeout,
         headers={
             "Accept": "application/json",
-            "Authorization": f"Bearer {token}",
+            "Authorization": basic_auth_header(username, app_password),
             "Content-Type": "application/json",
             "User-Agent": "itinai-github-sync/1.0",
-            "X-WP-Key": token,
         },
     )
     if 200 <= response.status_code < 300:
@@ -80,22 +93,38 @@ def sync_manifest(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Sync ITINAI manifests to the WordPress Agents app.")
+    parser.add_argument("paths", nargs="*", help="Manifest paths to sync. Defaults to all agents/*.yaml")
     parser.add_argument("--endpoint", default=os.environ.get("WP_SYNC_ENDPOINT", DEFAULT_ENDPOINT))
-    parser.add_argument("--key-env", default="WP_KEY", help="Environment variable containing the WordPress key")
+    parser.add_argument("--user-env", default="WP_KEY", help="Environment variable containing the WordPress user")
+    parser.add_argument("--app-env", default="WP_APP", help="Environment variable containing the application password")
     parser.add_argument("--health-report", default="health-results.json")
+    parser.add_argument("--paths-file", help="Newline-delimited manifest paths to sync")
     parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT_SECONDS)
     parser.add_argument("--limit", type=int, default=0)
     args = parser.parse_args()
+    endpoint = args.endpoint or DEFAULT_ENDPOINT
 
-    token = os.environ.get(args.key_env, "").strip()
-    if not token:
-        print(f"Skipping WordPress sync: {args.key_env} is not set.")
+    username = os.environ.get(args.user_env, "").strip()
+    app_password = os.environ.get(args.app_env, "").strip()
+    if not username or not app_password:
+        print(f"Skipping WordPress sync: {args.user_env} or {args.app_env} is not set.")
         return 0
 
     health = load_health_report(Path(args.health_report) if args.health_report else None)
-    paths = sorted(AGENTS_DIR.glob("*.yaml"))
+    raw_paths = list(args.paths)
+    if args.paths_file:
+        paths_file = Path(args.paths_file)
+        if paths_file.exists():
+            raw_paths.extend(line.strip() for line in paths_file.read_text(encoding="utf-8").splitlines())
+
+    paths = [Path(path) for path in raw_paths if path.strip()] if raw_paths else sorted(AGENTS_DIR.glob("*.yaml"))
+    paths = sorted(path for path in paths if path.suffix in {".yaml", ".yml"} and path.exists())
     if args.limit:
         paths = paths[: args.limit]
+
+    if not paths:
+        print("No WordPress manifests to sync.")
+        return 0
 
     success = 0
     failed = 0
@@ -104,8 +133,9 @@ def main() -> int:
             manifest = load_manifest(path)
             ok, detail = sync_manifest(
                 session,
-                args.endpoint,
-                token,
+                endpoint,
+                username,
+                app_password,
                 manifest,
                 health.get(manifest["agent_id"]),
                 args.timeout,
@@ -117,7 +147,7 @@ def main() -> int:
                 failed += 1
                 print(f"SYNC FAIL {manifest['agent_id']} {detail}", file=sys.stderr)
 
-    print(f"WordPress sync complete: success={success}, failed={failed}, endpoint={args.endpoint}")
+    print(f"WordPress sync complete: success={success}, failed={failed}, endpoint={endpoint}")
     return 0 if failed == 0 else 1
 
 

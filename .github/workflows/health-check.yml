@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       WP_KEY: ${{ secrets.WP_KEY }}
+      WP_APP: ${{ secrets.WP_APP }}
+      WP_SYNC_ENDPOINT: ${{ secrets.WP_SYNC_ENDPOINT }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -49,7 +51,7 @@ jobs:
           path: health-results.json
 
       - name: Sync WordPress Agents app
-        if: env.WP_KEY != ''
+        if: env.WP_KEY != '' && env.WP_APP != ''
         run: python scripts/sync-wordpress.py --health-report health-results.json
 
       - name: Update scheduled health state

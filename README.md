@@ -87,6 +87,9 @@ imports live agents, validates manifests, runs health checks, uploads
 `sync-health-results`, and opens or updates a pull request when manifests change.
 When the `WP_KEY` GitHub secret is configured, the workflow also syncs healthy
 manifests to the WordPress Agents app at `itinai.com`.
+`Sync WordPress Agents` runs on pushes to `main` that change `agents/*.yaml` and
+uses `WP_KEY`, `WP_APP`, and `WP_SYNC_ENDPOINT` GitHub secrets to publish changed
+manifests to the WordPress REST endpoint.
 
 Scheduled health checks upload `health-results.json` as a GitHub Actions
 artifact. On scheduled runs, the workflow also tracks consecutive failures per
