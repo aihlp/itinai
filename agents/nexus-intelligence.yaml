@@ -1,0 +1,44 @@
+agent_id: nexus-intelligence
+name: NEXUS Intelligence
+a2a_config:
+  agent_card_url: https://nexus-agent-xa12.onrender.com/.well-known/agent.json
+  protocol_version: 1.2.0
+skills:
+- id: kalshi-odds
+  name: Get Kalshi Prediction Odds
+  tags:
+  - prediction-markets
+  - kalshi
+  - fed
+  - btc
+  - finance
+  - free
+- id: arb-spread
+  name: Kalshi vs Polymarket Arb Spread
+  tags:
+  - arbitrage
+  - prediction-markets
+  - polymarket
+  - kalshi
+  - x402
+  - paid
+- id: market-signal
+  name: Market Signal Micro
+  tags:
+  - signals
+  - btc
+  - x402
+  - paid
+health_check:
+  url: https://nexus-agent-xa12.onrender.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://nexus-agent-xa12.onrender.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 404b24f8-93c1-44a9-9836-6db154380bdb
+description: Live prediction market data oracle. Kalshi + Polymarket odds, cross-venue
+  arb spreads, Fed/BTC/CPI/GDP. Pay-per-query via x402 USDC on Base.
+version: 1.0.0

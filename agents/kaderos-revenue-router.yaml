@@ -1,0 +1,72 @@
+agent_id: kaderos-revenue-router
+name: Kaderos Revenue Router
+a2a_config:
+  agent_card_url: https://kaderos.io/.well-known/agent.json
+  protocol_version: 0.8.0
+skills:
+- id: agent-revenue-kit
+  name: Agent Revenue Kit
+  tags:
+  - revenue
+  - payments
+  - deployment
+  - agent-commerce
+- id: payment-link-creation
+  name: Payment Link Creation
+  tags:
+  - stripe
+  - checkout
+  - payments
+- id: landing-page-deploy
+  name: Landing Page Deploy
+  tags:
+  - vercel
+  - landing-page
+  - conversion
+- id: execution-receipts
+  name: Execution Receipts
+  tags:
+  - observability
+  - receipts
+  - audit
+- id: public-execution-queue
+  name: Public Execution Queue
+  tags:
+  - queue
+  - handoff
+  - local-executor
+- id: agent-commerce-discovery
+  name: Agent Commerce Discovery
+  tags:
+  - discovery
+  - mcp
+  - llms
+  - agent-commerce
+- id: paid-browser-audit
+  name: Paid Browser Audit
+  tags:
+  - browser-automation
+  - paid-task
+  - stripe
+  - receipts
+- id: a2a-agent-review
+  name: A2A Agent Review
+  tags:
+  - a2a
+  - agent-review
+  - trust
+  - marketplace
+  - receipts
+health_check:
+  url: https://kaderos.io/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://kaderos.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 6736a867-abd7-4a83-8bd2-1ce9ccbeaa69
+description: Paid A2A/MCP agent reviews, Stripe payment-gated execution, and receipts
+  for agent marketplaces.
+version: 0.8.1

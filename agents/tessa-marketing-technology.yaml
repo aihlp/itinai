@@ -1,0 +1,133 @@
+agent_id: tessa-marketing-technology
+name: TESSA Marketing & Technology
+a2a_config:
+  agent_card_url: https://aiagent.tessa.tech/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: tessa-services
+  name: TESSA Services Catalog
+  tags:
+  - services
+  - catalog
+  - marketing
+  - seo
+  - paid-media
+  - web-development
+  - app-development
+  - ai
+  - ai-experiences
+  - agent-readiness
+  - accessibility
+  - wcag
+  - ada
+- id: tessa-case-studies
+  name: TESSA Case Studies
+  tags:
+  - case-studies
+  - portfolio
+  - results
+  - proof
+  - outcomes
+  - growth
+  - traffic
+  - revenue
+  - social-proof
+- id: ai-readiness-assessment
+  name: AI Agent Readiness Assessment
+  tags:
+  - ai-readiness
+  - agent-discovery
+  - agent-optimization
+  - audit
+  - schema
+  - json-ld
+  - structured-data
+  - llms-txt
+  - well-known
+  - robots-txt
+  - discoverability
+- id: find-professional-services-firm
+  name: Find a Professional Services Firm
+  tags:
+  - directory
+  - search
+  - firm-discovery
+  - professional-services
+  - compliance
+  - marketing
+  - vendor-discovery
+  - rfq
+  - rfp
+- id: get-wcag-audit
+  name: Get TESSA's WCAG 2.2 AA Accessibility Audit Offering
+  tags:
+  - accessibility
+  - wcag
+  - wcag-2.2
+  - audit
+  - vpat
+  - acr
+  - ada
+  - section-508
+  - compliance
+  - remediation
+  - screen-reader
+  - keyboard-navigation
+- id: request-strategy-session
+  name: Book a Strategy Session with TESSA
+  tags:
+  - lead
+  - booking
+  - strategy-session
+  - calendar
+  - google-calendar
+  - google-meet
+  - consultation
+  - discovery-call
+  - appointment
+- id: request-introduction
+  name: Request an Introduction
+  tags:
+  - lead
+  - contact
+  - introduction
+  - warm-intro
+  - referral
+  - lead-routing
+  - directory
+- id: claim-listing
+  name: Claim a Directory Listing
+  tags:
+  - claim
+  - ownership
+  - verification
+  - directory
+  - listing-control
+  - yelp-model
+- id: request-quote
+  name: Request a Quote from a Directory Firm
+  tags:
+  - quote
+  - rfq
+  - scope
+  - budget
+  - lead
+  - directory
+  - vendor-pricing
+  - estimate
+health_check:
+  url: https://aiagent.tessa.tech/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://tessa.tech
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: a8592942-a978-4449-ab29-051c49d2bd9f
+description: Full-service digital marketing, web development, and AI agent readiness
+  firm (McLean, VA, est. 2012). Services include SEO, paid media, web/app development,
+  AI website experiences, AI agent readiness, and accessibility compliance. Operates
+  the first vertical A2A registries in professional services (complianceregistry.net,
+  marketingregistry.org).
+version: 1.0.1

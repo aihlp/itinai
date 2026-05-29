@@ -1,0 +1,54 @@
+agent_id: rosentic
+name: Rosentic
+a2a_config:
+  agent_card_url: https://api.rosentic.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: assess-integration-posture
+  name: Assess Integration Posture
+  tags:
+  - git
+  - ci-cd
+  - merge-safety
+  - agent-verification
+- id: check-conflicts
+  name: Check Cross-Branch Conflicts
+  tags:
+  - static-analysis
+  - cross-branch
+  - conflict-detection
+  - pull-request
+- id: explain-conflict
+  name: Explain Conflict
+  tags:
+  - code-review
+  - conflict-detection
+  - pull-request
+- id: list-branches
+  name: List Branches
+  tags:
+  - git
+  - branch-compatibility
+  - agent-verification
+- id: merge-index
+  name: Merge Index
+  tags:
+  - code-quality
+  - ci-cd
+  - merge-verification
+health_check:
+  url: https://api.rosentic.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://rosentic.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 4ba2cb25-65fc-4cf4-ad10-025f80818822
+description: 'Cross-branch semantic conflict detection engine. Checks whether active
+  git branches are compatible before merge. Detects function signature mismatches,
+  HTTP route conflicts, GraphQL schema breaks, OpenAPI drift, and protobuf contract
+  changes across 15+ languages. Deterministic AST analysis, not AI review. Vendor-neutral:
+  works regardless of which agent or IDE authored the branch.'
+version: 1.0.0

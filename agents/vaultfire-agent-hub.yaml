@@ -1,0 +1,169 @@
+agent_id: vaultfire-agent-hub
+name: Vaultfire Agent Hub
+a2a_config:
+  agent_card_url: https://theloopbreaker.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: agent-identity
+  name: Agent Identity (ERC-8004)
+  tags:
+  - identity
+  - erc-8004
+  - registration
+- id: vns-name-service
+  name: Vaultfire Name Service (VNS)
+  tags:
+  - vns
+  - names
+  - resolution
+  - agent-identity
+- id: trust-profile
+  name: Trust Profile & Street Cred
+  tags:
+  - trust
+  - reputation
+  - street-cred
+  - scoring
+- id: partnership-bonds
+  name: AI Partnership Bonds
+  tags:
+  - bonds
+  - partnership
+  - staking
+  - trust
+- id: accountability-bonds
+  name: AI Accountability Bonds
+  tags:
+  - bonds
+  - accountability
+  - corporate
+  - transparency
+- id: task-escrow
+  name: Task Marketplace & Escrow
+  tags:
+  - tasks
+  - marketplace
+  - escrow
+  - usdc
+- id: vkp-keys
+  name: Vaultfire Key Protocol (VKP)
+  tags:
+  - vkp
+  - keys
+  - session
+  - delegation
+  - factory
+- id: trust-attestation
+  name: ZK Trust Attestation
+  tags:
+  - zk
+  - trust
+  - attestation
+  - risc-zero
+  - privacy
+- id: belief-attestation
+  name: Belief Attestation
+  tags:
+  - belief
+  - attestation
+  - dilithium
+  - post-quantum
+  - governance
+- id: mission-enforcement
+  name: Mission Enforcement
+  tags:
+  - mission
+  - compliance
+  - enforcement
+  - ethics
+- id: privacy-protection
+  name: Privacy & Anti-Surveillance
+  tags:
+  - privacy
+  - anti-surveillance
+  - protection
+  - guarantees
+- id: flourishing-metrics
+  name: Flourishing Metrics Oracle
+  tags:
+  - flourishing
+  - metrics
+  - oracle
+  - human-outcomes
+- id: governance
+  name: Multisig Governance
+  tags:
+  - governance
+  - multisig
+  - proposals
+  - voting
+- id: validation-registry
+  name: Validation Registry
+  tags:
+  - validation
+  - compliance
+  - registry
+  - erc-8004
+- id: erc8004-adapter
+  name: ERC-8004 Adapter
+  tags:
+  - adapter
+  - erc-8004
+  - compatibility
+  - integration
+- id: cross-chain-bridge
+  name: Cross-Chain Trust Bridge
+  tags:
+  - bridge
+  - cross-chain
+  - teleporter
+  - sync
+- id: agent-discovery
+  name: Agent Discovery & Routing
+  tags:
+  - discovery
+  - routing
+  - matching
+  - directory
+- id: payments
+  name: x402 USDC Payments
+  tags:
+  - payments
+  - usdc
+  - x402
+  - eip-712
+  - preflight
+  - settlement
+- id: messaging
+  name: XMTP Encrypted Messaging
+  tags:
+  - messaging
+  - xmtp
+  - encrypted
+  - communication
+- id: x402-email
+  name: "x402-Email \u2014 Bond-Backed Paid Email"
+  tags:
+  - email
+  - x402
+  - bonds
+  - accountability
+  - spec
+  - inbox
+health_check:
+  url: https://theloopbreaker.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://theloopbreaker.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 9249ca9e-a65f-48cc-a932-363ce2628af6
+description: "The trust infrastructure for AI agents. 134 smart contracts across 4\
+  \ mainnet chains \u2014 on-chain identity (ERC-8004), verifiable reputation, partnership\
+  \ bonds, accountability bonds, soulbound reputation badges (ERC-5192), ERC-4626\
+  \ insurance vault adapter, task escrow, VKP key management, VNS name service, ZK\
+  \ trust attestations, cross-chain bridge, XMTP V3 encrypted messaging, on-chain\
+  \ XMTP forum/group registry, mission enforcement, and privacy guarantees."
+version: 3.4.0

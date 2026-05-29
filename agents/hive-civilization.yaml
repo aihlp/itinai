@@ -1,0 +1,54 @@
+agent_id: hive-civilization
+name: Hive Civilization
+a2a_config:
+  agent_card_url: https://thehiveryiq.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: hiveattest-passport-issue
+  name: Issue Agent Passport
+  tags:
+  - attestation
+  - identity
+  - pre-action
+- id: hiveattest-gate-enforce
+  name: Gate Enforcement
+  tags:
+  - attestation
+  - policy
+  - gate
+- id: hiveattest-cargo-classify
+  name: Cargo Classification
+  tags:
+  - taxonomy
+  - classification
+- id: hiveattest-smsh-verify
+  name: SMSH-Stamp Verification
+  tags:
+  - verification
+  - honesty
+  - smsh
+- id: hivewallet-transfer
+  name: USDC Transfer with HiveDNA Receipt
+  tags:
+  - payments
+  - usdc
+  - base
+- id: hivegate-onboard
+  name: Agent Onboard
+  tags:
+  - onboarding
+  - did
+health_check:
+  url: https://thehiveryiq.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://thehiveryiq.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 37ea285d-f403-4669-ac5b-187f1a97a431
+description: "Production agent civilization \u2014 82 services, 37 MCP bee-agents,\
+  \ HiveAttest perimeter, real USDC settlement on Base. Pre-action attestation, custody\
+  \ chains, signed C18 receipts. Discoverable via A2A."
+version: 1.0.0

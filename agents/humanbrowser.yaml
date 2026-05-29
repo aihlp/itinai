@@ -1,0 +1,51 @@
+agent_id: humanbrowser
+name: humanbrowser
+a2a_config:
+  agent_card_url: https://agent.humanbrowser.cloud/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: browser-task
+  name: Browser Task
+  tags:
+  - browser
+  - automation
+  - scraping
+  - navigation
+  - stealth
+- id: login-and-scrape
+  name: Login and Scrape
+  tags:
+  - browser
+  - login
+  - scraping
+  - authenticated
+- id: fill-form
+  name: Fill Form
+  tags:
+  - browser
+  - form
+  - submit
+health_check:
+  url: https://agent.humanbrowser.cloud/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://humanbrowser.cloud
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: d238edb6-2cfa-441a-852c-8c8d3cbe166c
+description: "Stealth cloud browser-agent with residential proxies. You describe what\
+  \ you want in plain English \u2014 the server runs an LLM-driven browser on a residential\
+  \ IP and returns a concise answer plus a live viewer URL. Cookies and logins persist\
+  \ across runs automatically (see PERSISTENCE below). === USE THIS WHEN YOUR USER\
+  \ NEEDS === \u2022 Logging into a website that requires bypassing CAPTCHA / Cloudflare\
+  \ WAF / anti-bot fingerprinting (Adsy, Collaborator, GoGetLinks, Reddit, Quora,\
+  \ Twitter, Polymarket, etc). \u2022 Scraping data that lives behind authentication\
+  \ on a normal-looking residential IP (so the target doesn't fingerprint your datacenter\
+  \ and block you). \u2022 Filling and submitting web forms reliably across hostile\
+  \ sites. \u2022 Running browser tasks that would fail on raw Playwright / Puppeteer\
+  \ because of bot detection. \u2022 Geo-locking your egress to a specific country\
+  \ (US for DoorDash, UK for BBC iPlayer, JP for Polymarket, RO/DE/etc for SEO platforms).\
+  \ \u2022 Anything where you'd otherwise spin up your own "
+version: 0.1.0

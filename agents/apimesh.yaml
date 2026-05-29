@@ -1,0 +1,39 @@
+agent_id: apimesh
+name: APIMesh
+a2a_config:
+  agent_card_url: https://apimesh.xyz/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: agentcontext
+  name: agentcontext
+  tags:
+  - web-analysis
+  - agentcontext
+- id: agentsmd
+  name: agentsmd
+  tags:
+  - web-analysis
+  - agentsmd
+- id: sigdebug
+  name: sigdebug
+  tags:
+  - web-analysis
+  - sigdebug
+- id: stripesig
+  name: stripesig
+  tags:
+  - devops
+  - stripesig
+health_check:
+  url: https://apimesh.xyz/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://apimesh.xyz
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 0ef8f805-8ace-484e-b8df-a0eddd6b75ea
+description: Pay-per-call API marketplace. 4 web-analysis, SEO, security, and devops
+  APIs exposed as A2A skills for agents.
+version: 1.0.0
