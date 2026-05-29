@@ -75,11 +75,32 @@ Run health checks:
 python scripts/health-check.py --output health-results.json
 ```
 
-Import live seed agents from the A2A Registry:
+Import live seed agents from configured external sources:
 
 ```bash
 python scripts/import-from-registry.py --limit 10
 ```
+
+The importer currently scans these sources and only writes manifests for agents
+whose HTTPS Agent Card is reachable and contains A2A-required fields:
+
+- A2A Registry
+- Agora Registry (`agora-protocol/agora`)
+- OpenClaw Managed Agents
+- LangChain Hub
+- CrewAI Marketplace
+- AutoGen Studio Gallery (`microsoft/autogen`)
+- AI Agent Index (`AI-Engineer-Foundation/agent-index`)
+- Venice AI Agent Marketplace
+
+Use `--source <source-slug>` to test a single source, for example:
+
+```bash
+python scripts/import-from-registry.py --source agora-registry --dry-run
+```
+
+`--limit` is applied per source so one large registry does not starve smaller
+sources during scheduled synchronization.
 
 External registry synchronization also runs in GitHub Actions via
 `Sync External Agents`. That workflow can be started manually or by schedule; it
