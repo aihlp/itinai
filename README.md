@@ -1,5 +1,8 @@
 # ITINAI Agent Directory
 
+[![Validate Agent Manifests](https://github.com/aihlp/itinai/actions/workflows/validate.yml/badge.svg)](https://github.com/aihlp/itinai/actions/workflows/validate.yml)
+[![Health Check Agents](https://github.com/aihlp/itinai/actions/workflows/health-check.yml/badge.svg)](https://github.com/aihlp/itinai/actions/workflows/health-check.yml)
+
 `itinai` is a registry-as-code directory for AI agents. The repository is the
 single source of truth for static agent manifests stored in `agents/*.yaml`.
 
@@ -71,6 +74,10 @@ Run health checks:
 ```bash
 python scripts/health-check.py --output health-results.json
 ```
+
+Scheduled health checks upload `health-results.json` as a GitHub Actions
+artifact. On scheduled runs, the workflow also tracks consecutive failures per
+agent and opens a `health-check` issue after three failed checks in a row.
 
 ## Protocols
 

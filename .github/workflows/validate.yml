@@ -29,7 +29,7 @@ jobs:
         run: python scripts/validate.py
 
       - name: Check Agent Card availability
-        run: python scripts/health-check.py --output health-results.json
+        run: python scripts/health-check.py --agent-card-only --output health-results.json
 
       - name: Upload health results
         if: always()

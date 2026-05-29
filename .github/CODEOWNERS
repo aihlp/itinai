@@ -1,0 +1,5 @@
+# Require repository owner review for registry and automation changes.
+/agents/ @aihlp
+/schemas/ @aihlp
+/.github/workflows/ @aihlp
+/scripts/ @aihlp

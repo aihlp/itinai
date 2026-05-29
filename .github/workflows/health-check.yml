@@ -8,6 +8,7 @@ on:
 permissions:
   contents: read
   issues: write
+  actions: read
 
 jobs:
   health-check:
@@ -24,6 +25,15 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Restore health state
+        if: github.event_name == 'schedule'
+        uses: actions/cache/restore@v4
+        with:
+          path: health-state.json
+          key: health-state-${{ github.run_id }}
+          restore-keys: |
+            health-state-
+
       - name: Run health check
         id: health
         continue-on-error: true
@@ -36,23 +46,73 @@ jobs:
           name: health-results
           path: health-results.json
 
-      - name: Create issue after failed scheduled check
+      - name: Update scheduled health state
+        if: github.event_name == 'schedule'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('health-results.json', 'utf8'));
+            const previous = fs.existsSync('health-state.json')
+              ? JSON.parse(fs.readFileSync('health-state.json', 'utf8'))
+              : { agents: {} };
+
+            const agents = {};
+            for (const item of report.results) {
+              const prior = previous.agents?.[item.agent_id]?.consecutive_failures || 0;
+              agents[item.agent_id] = {
+                consecutive_failures: item.ok ? 0 : prior + 1,
+                last_checked_at: item.checked_at,
+                last_ok: item.ok,
+                last_url: item.url,
+                last_error: item.error,
+                last_status_code: item.status_code
+              };
+            }
+
+            fs.writeFileSync(
+              'health-state.json',
+              JSON.stringify({ checked_at: report.checked_at, agents }, null, 2)
+            );
+
+      - name: Save health state
+        if: github.event_name == 'schedule'
+        uses: actions/cache/save@v4
+        with:
+          path: health-state.json
+          key: health-state-${{ github.run_id }}
+
+      - name: Upload health state
+        if: github.event_name == 'schedule'
+        uses: actions/upload-artifact@v4
+        with:
+          name: health-state
+          path: health-state.json
+
+      - name: Create issue after three failed scheduled checks
         if: github.event_name == 'schedule' && steps.health.outcome == 'failure'
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const report = JSON.parse(fs.readFileSync('health-results.json', 'utf8'));
-            const failed = report.results.filter((item) => !item.ok);
+            const state = JSON.parse(fs.readFileSync('health-state.json', 'utf8'));
+            const failed = report.results.filter((item) => {
+              const failures = state.agents?.[item.agent_id]?.consecutive_failures || 0;
+              return !item.ok && failures >= 3;
+            });
             if (!failed.length) return;
 
             const title = `Agent health check failed: ${failed.map((item) => item.agent_id).join(', ')}`;
             const body = [
-              'The scheduled health check found unavailable agents.',
+              'The scheduled health check found agents that failed three or more consecutive checks.',
               '',
-              ...failed.map((item) => `- ${item.agent_id}: ${item.url} (${item.error || item.status_code})`),
+              ...failed.map((item) => {
+                const failures = state.agents?.[item.agent_id]?.consecutive_failures || 0;
+                return `- ${item.agent_id}: ${item.url} (${item.error || item.status_code}); consecutive failures: ${failures}`;
+              }),
               '',
-              'If an agent fails three checks in a row, consider marking it offline or contacting the owner.'
+              'Consider marking the agent offline or contacting the owner.'
             ].join('\n');
 
             const existing = await github.rest.issues.listForRepo({

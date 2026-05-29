@@ -22,17 +22,20 @@ def load_manifest(path: Path) -> dict:
     return data
 
 
-def health_url(manifest: dict) -> str:
+def health_url(manifest: dict, agent_card_only: bool = False) -> str:
+    if agent_card_only:
+        return manifest["a2a_config"]["agent_card_url"]
+
     health_check = manifest.get("health_check") or {}
     if health_check.get("url"):
         return health_check["url"]
     return manifest["a2a_config"]["agent_card_url"]
 
 
-def check_agent(path: Path, timeout: int) -> dict:
+def check_agent(path: Path, timeout: int, agent_card_only: bool = False) -> dict:
     manifest = load_manifest(path)
     agent_id = manifest["agent_id"]
-    url = health_url(manifest)
+    url = health_url(manifest, agent_card_only)
     started_at = datetime.now(timezone.utc).isoformat()
 
     try:
@@ -63,10 +66,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Check registered itinai agents.")
     parser.add_argument("--output", default="health-results.json", help="JSON output path")
     parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT_SECONDS)
+    parser.add_argument(
+        "--agent-card-only",
+        action="store_true",
+        help="Check a2a_config.agent_card_url instead of custom health_check.url",
+    )
     args = parser.parse_args()
 
     paths = sorted(AGENTS_DIR.glob("*.yaml"))
-    results = [check_agent(path, args.timeout) for path in paths]
+    results = [check_agent(path, args.timeout, args.agent_card_only) for path in paths]
     report = {
         "checked_at": datetime.now(timezone.utc).isoformat(),
         "total": len(results),
