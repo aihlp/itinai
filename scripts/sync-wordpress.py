@@ -70,6 +70,7 @@ def post_manifest(
     endpoint: str,
     username: str,
     app_password: str,
+    sync_key: str,
     manifest: dict[str, Any],
     health: dict[str, Any] | None,
     timeout: int,
@@ -82,11 +83,13 @@ def post_manifest(
             timeout=timeout,
             headers={
                 "Accept": "application/json",
-                "Authorization": basic_auth_header(username, app_password),
-                "Content-Type": "application/json",
-                "User-Agent": "itinai-github-sync/1.0",
-            },
-        )
+            "Authorization": basic_auth_header(username, app_password),
+            "Content-Type": "application/json",
+            "User-Agent": "itinai-github-sync/1.0",
+            "X-ITINAI-Sync-Key": sync_key,
+            "X-WP-Key": sync_key,
+        },
+    )
     except requests.RequestException as exc:
         return False, f"request failed: {exc}"
 
@@ -100,12 +103,13 @@ def sync_manifest(
     endpoint: str,
     username: str,
     app_password: str,
+    sync_key: str,
     manifest: dict[str, Any],
     health: dict[str, Any] | None,
     timeout: int,
     retry_swapped_auth: bool,
 ) -> tuple[bool, str]:
-    ok, detail = post_manifest(session, endpoint, username, app_password, manifest, health, timeout)
+    ok, detail = post_manifest(session, endpoint, username, app_password, sync_key, manifest, health, timeout)
     if ok or not retry_swapped_auth or not detail.startswith("401:"):
         return ok, detail
 
@@ -114,6 +118,7 @@ def sync_manifest(
         endpoint,
         app_password,
         username,
+        sync_key,
         manifest,
         health,
         timeout,
@@ -143,6 +148,7 @@ def main() -> int:
 
     username = os.environ.get(args.user_env, "").strip()
     app_password = os.environ.get(args.app_env, "").strip()
+    sync_key = os.environ.get("WP_KEY", "").strip()
     if not username or not app_password:
         print(f"Skipping WordPress sync: {args.user_env} or {args.app_env} is not set.")
         return 0
@@ -173,6 +179,7 @@ def main() -> int:
                 endpoint,
                 username,
                 app_password,
+                sync_key,
                 manifest,
                 health.get(manifest["agent_id"]),
                 args.timeout,
