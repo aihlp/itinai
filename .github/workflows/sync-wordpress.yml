@@ -19,6 +19,7 @@ jobs:
     env:
       WP_KEY: ${{ secrets.WP_KEY }}
       WP_APP: ${{ secrets.WP_APP }}
+      WP_USER: ${{ secrets.WP_USER }}
       WP_SYNC_ENDPOINT: ${{ secrets.WP_SYNC_ENDPOINT }}
     steps:
       - name: Check out repository

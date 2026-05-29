@@ -132,8 +132,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Sync ITINAI manifests to the WordPress Agents app.")
     parser.add_argument("paths", nargs="*", help="Manifest paths to sync. Defaults to all agents/*.yaml")
     parser.add_argument("--endpoint", default=os.environ.get("WP_SYNC_ENDPOINT", DEFAULT_ENDPOINT))
-    parser.add_argument("--user-env", default="WP_KEY", help="Environment variable containing the WordPress user")
-    parser.add_argument("--app-env", default="WP_APP", help="Environment variable containing the application password")
+    parser.add_argument("--user-env", default="WP_USER", help="Environment variable containing the WordPress user")
+    parser.add_argument("--password-env", default="WP_KEY", help="Environment variable containing the application password or sync key")
     parser.add_argument("--health-report", default="health-results.json")
     parser.add_argument("--paths-file", help="Newline-delimited manifest paths to sync")
     parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT_SECONDS)
@@ -147,10 +147,10 @@ def main() -> int:
     endpoint = args.endpoint or DEFAULT_ENDPOINT
 
     username = os.environ.get(args.user_env, "").strip()
-    app_password = os.environ.get(args.app_env, "").strip()
+    app_password = os.environ.get(args.password_env, "").strip()
     sync_key = os.environ.get("WP_KEY", "").strip()
     if not username or not app_password:
-        print(f"Skipping WordPress sync: {args.user_env} or {args.app_env} is not set.")
+        print(f"Skipping WordPress sync: {args.user_env} or {args.password_env} is not set.")
         return 0
 
     health = load_health_report(Path(args.health_report) if args.health_report else None)

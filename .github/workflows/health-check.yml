@@ -16,6 +16,7 @@ jobs:
     env:
       WP_KEY: ${{ secrets.WP_KEY }}
       WP_APP: ${{ secrets.WP_APP }}
+      WP_USER: ${{ secrets.WP_USER }}
       WP_SYNC_ENDPOINT: ${{ secrets.WP_SYNC_ENDPOINT }}
     steps:
       - name: Check out repository
@@ -51,7 +52,7 @@ jobs:
           path: health-results.json
 
       - name: Sync WordPress Agents app
-        if: env.WP_KEY != '' && env.WP_APP != ''
+        if: env.WP_KEY != '' && env.WP_USER != ''
         run: python scripts/sync-wordpress.py --health-report health-results.json
 
       - name: Update scheduled health state
