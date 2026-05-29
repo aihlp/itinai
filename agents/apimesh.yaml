@@ -33,7 +33,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 0ef8f805-8ace-484e-b8df-a0eddd6b75ea
+  external_id: ''
 description: Pay-per-call API marketplace. 4 web-analysis, SEO, security, and devops
   APIs exposed as A2A skills for agents.
 version: 1.0.0

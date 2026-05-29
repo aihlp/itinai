@@ -124,7 +124,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: a8592942-a978-4449-ab29-051c49d2bd9f
+  external_id: ''
 description: Full-service digital marketing, web development, and AI agent readiness
   firm (McLean, VA, est. 2012). Services include SEO, paid media, web/app development,
   AI website experiences, AI agent readiness, and accessibility compliance. Operates

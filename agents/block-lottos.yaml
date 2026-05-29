@@ -36,7 +36,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 446b5eb5-d084-4d04-85c4-a0aa6b16bcad
+  external_id: ''
 description: Agent-readable discovery manifest for Block Lottos, an on-chain lottery
   platform with Polygon Fortune Ledger and Base Future Ledger games, public read APIs,
   OpenAPI documentation, affiliate guidance, and advertising endpoints.

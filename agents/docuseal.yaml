@@ -28,7 +28,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: dfa80351-cfe3-45a0-a1e7-532eb32c98ee
+  external_id: ''
 description: DocuSeal knowledge base. Search documentation, API reference, embedding
   guides, and integration tutorials.
 version: 1.0.0

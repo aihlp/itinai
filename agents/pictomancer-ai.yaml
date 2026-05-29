@@ -52,7 +52,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 839daa96-9228-4b3d-9840-a35b92fa855d
+  external_id: ''
 description: Agent-to-agent image processing service. Resize, convert, compress, and
   pipeline images via REST, MCP, or A2A.
 version: 0.1.0

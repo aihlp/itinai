@@ -25,7 +25,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 2e79acaa-95a3-40f3-aa3a-9a3fc362f2ee
+  external_id: ''
 description: "South Korea premium short-term rental discovery service. Natural language\
   \ search powered by SHV (Semantic Hybrid Vector) retrieval \u2014 combining keyword\
   \ matching, structured field scoring, and semantic embedding similarity. Specialized\

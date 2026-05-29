@@ -1,0 +1,34 @@
+agent_id: hiveclear
+name: HiveClear
+a2a_config:
+  agent_card_url: https://hiveclear.onrender.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: settlement
+  name: Settlement
+  tags:
+  - settlement
+  - clearing
+  - usdc
+  - consensus
+- id: validator-network
+  name: Validator Network
+  tags:
+  - validator
+  - staking
+  - consensus
+  - fees
+health_check:
+  url: https://hiveclear.onrender.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://www.hiveagentiq.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Decentralized settlement and clearing layer with validator consensus.
+  Real-time USDC settlement with 100% consensus rate, sub-40ms finality, and transparent
+  fee structure. W3C DID Core, HAHS compliant, HAGF governed.
+version: 1.0.0

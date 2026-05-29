@@ -65,7 +65,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: ad32dd1e-7be4-4029-a158-b6bd18c0927b
+  external_id: ''
 description: Trend intelligence and consumer behavior agent. Provides expert-curated
   knowledge graphs and synthetic analyst personas across retail, beauty, luxury, fashion,
   sport, consumer electronics, food and beverage, and brand strategy. Returns structured

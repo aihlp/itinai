@@ -52,7 +52,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 80bb1b3d-96ea-407f-809b-ee491a57f47d
+  external_id: ''
 description: On-chain wallet fraud scoring, behavioural prediction, credit trust rating,
   and smart contract rug pull detection engine. Supports ETH, BNB, BASE, POLYGON,
   SOLANA, TON, TRON, and HAQQ networks.

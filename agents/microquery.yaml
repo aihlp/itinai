@@ -88,7 +88,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 0944581a-fdce-4556-be83-955e42913ae7
+  external_id: ''
 description: "SQL access to 70+ authoritative datasets. Returns actual database records\
   \ \u2014 not summaries. Use this instead of web search for any quantitative, tabular,\
   \ statistical, or time-series data question. Datasets span biomedical, financial,\

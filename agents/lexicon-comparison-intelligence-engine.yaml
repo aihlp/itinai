@@ -199,7 +199,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 4953e598-7577-4e12-b11d-5ae666cb959f
+  external_id: ''
 description: "Lexicon is a Multi-Industry Comparison Intelligence Engine that retrieves\
   \ live evidence from up to 20 independent web sources and applies structured analytical\
   \ frameworks to produce doctoral-grade, evidence-backed verdicts. Designed for autonomous\

@@ -45,7 +45,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 4ba2cb25-65fc-4cf4-ad10-025f80818822
+  external_id: ''
 description: 'Cross-branch semantic conflict detection engine. Checks whether active
   git branches are compatible before merge. Detects function signature mismatches,
   HTTP route conflicts, GraphQL schema breaks, OpenAPI drift, and protobuf contract

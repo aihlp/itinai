@@ -47,7 +47,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 37ea285d-f403-4669-ac5b-187f1a97a431
+  external_id: ''
 description: "Production agent civilization \u2014 82 services, 37 MCP bee-agents,\
   \ HiveAttest perimeter, real USDC settlement on Base. Pre-action attestation, custody\
   \ chains, signed C18 receipts. Discoverable via A2A."

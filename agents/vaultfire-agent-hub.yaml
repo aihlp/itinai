@@ -159,7 +159,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 9249ca9e-a65f-48cc-a932-363ce2628af6
+  external_id: ''
 description: "The trust infrastructure for AI agents. 134 smart contracts across 4\
   \ mainnet chains \u2014 on-chain identity (ERC-8004), verifiable reputation, partnership\
   \ bonds, accountability bonds, soulbound reputation badges (ERC-5192), ERC-4626\
