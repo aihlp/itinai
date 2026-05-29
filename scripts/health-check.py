@@ -14,6 +14,21 @@ AGENTS_DIR = ROOT / "agents"
 DEFAULT_TIMEOUT_SECONDS = 10
 
 
+def manifest_paths(paths_file: str | None = None) -> list[Path]:
+    if not paths_file:
+        return sorted(AGENTS_DIR.glob("*.yaml"))
+
+    paths: list[Path] = []
+    for line in Path(paths_file).read_text(encoding="utf-8").splitlines():
+        value = line.strip()
+        if not value:
+            continue
+        path = ROOT / value
+        if path.suffix in {".yaml", ".yml"} and path.exists():
+            paths.append(path)
+    return sorted(paths)
+
+
 def load_manifest(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as file:
         data = yaml.safe_load(file)
@@ -71,9 +86,18 @@ def main() -> int:
         action="store_true",
         help="Check a2a_config.agent_card_url instead of custom health_check.url",
     )
+    parser.add_argument(
+        "--paths-file",
+        help="Optional newline-delimited manifest path list to check instead of all agents",
+    )
+    parser.add_argument(
+        "--allow-unhealthy",
+        action="store_true",
+        help="Write the health report but exit successfully even when agents are unhealthy",
+    )
     args = parser.parse_args()
 
-    paths = sorted(AGENTS_DIR.glob("*.yaml"))
+    paths = manifest_paths(args.paths_file)
     results = [check_agent(path, args.timeout, args.agent_card_only) for path in paths]
     report = {
         "checked_at": datetime.now(timezone.utc).isoformat(),
@@ -91,6 +115,8 @@ def main() -> int:
         detail = item["status_code"] if item["status_code"] is not None else item["error"]
         print(f"{status} {item['agent_id']} {item['url']} {detail}")
 
+    if args.allow_unhealthy:
+        return 0
     return 0 if report["unhealthy"] == 0 else 1
 
 
