@@ -127,7 +127,7 @@ def sync_manifest(
         details.append(f"attempt {attempt}: {detail}")
         if ok or not should_retry(detail) or attempt == attempts:
             break
-        time.sleep(retry_delay * attempt)
+        time.sleep(retry_delay * (2 ** (attempt - 1)))
 
     if ok or not retry_swapped_auth or not detail.startswith("401:"):
         return ok, detail if len(details) == 1 else "; ".join(details)
