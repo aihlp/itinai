@@ -21,7 +21,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 8ddfd612-c19e-47b9-aa73-44dc0577ba52
+  external_id: ''
 description: A routing agent that delegates user requests to the most appropriate
   specialist agent. Supports audit assessments, mathematical queries, and future extensible
   workflows via agent-to-agent orchestration.

@@ -67,7 +67,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 4eb0310e-5c8b-4e07-9fbd-6f7d86db553b
+  external_id: ''
 description: Track startup engineering acceleration from public GitHub data. Returns
   trending startups, sector signals, and per-company velocity profiles across 20 sectors.
   Updated weekly. Free, no auth required.

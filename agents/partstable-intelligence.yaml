@@ -71,7 +71,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 15ec3e04-8f10-458c-8548-0fceb7ce0cf3
+  external_id: ''
 description: A2A intelligence endpoint for IT hardware parts. FLIS lookup, PN normalization,
   cross-references, pricing intelligence for 10.9M+ parts.
 version: 1.0.0

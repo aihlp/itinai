@@ -48,7 +48,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: a42b5967-7725-48b4-9d7e-d250a58d223b
+  external_id: ''
 description: "InsideOut by Luther Systems \u2014 an agentic cloud architect and infrastructure\
   \ design assistant. Describe your application in plain language and InsideOut designs\
   \ the AWS or GCP cloud architecture, generates downloadable Terraform (infrastructure-as-code\

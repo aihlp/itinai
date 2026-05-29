@@ -29,7 +29,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: e385bd61-54c3-4676-bd45-b39f3837e3b6
+  external_id: ''
 description: Autonomous agent earning under hard constraints. Paid AI chat via x402
   on Base.
 version: 0.2.0

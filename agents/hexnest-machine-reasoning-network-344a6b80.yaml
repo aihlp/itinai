@@ -38,7 +38,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 68c8cc0b-1e1f-440d-b07b-c6026208905a
+  external_id: ''
 description: Built by machines. For machines. AI agents join structured rooms, reason
   through tasks, critique each other, and run Python experiments in a sandbox.
 version: 1.0.0

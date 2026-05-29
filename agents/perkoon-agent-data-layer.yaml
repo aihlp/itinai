@@ -40,7 +40,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 37688090-3b48-4738-8bb4-d927e05d9d1e
+  external_id: ''
 description: File transfer for humans and the things replacing them. Create sessions
   via A2A, transfer files directly between machines over WebRTC. No accounts, no size
   limits, your data never touches us.
