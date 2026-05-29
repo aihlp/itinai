@@ -5,6 +5,7 @@ import base64
 import json
 import os
 import sys
+import time
 from pathlib import Path
 from typing import Any
 
@@ -97,6 +98,11 @@ def post_manifest(
     return False, f"{response.status_code}: {response.text[:300]}"
 
 
+def should_retry(detail: str) -> bool:
+    retryable_prefixes = ("408:", "425:", "429:", "500:", "502:", "503:", "504:")
+    return detail.startswith("request failed:") or detail.startswith(retryable_prefixes)
+
+
 def sync_manifest(
     session: requests.Session,
     endpoint: str,
@@ -107,10 +113,20 @@ def sync_manifest(
     health: dict[str, Any] | None,
     timeout: int,
     retry_swapped_auth: bool,
+    retries: int,
+    retry_delay: float,
 ) -> tuple[bool, str]:
-    ok, detail = post_manifest(session, endpoint, username, app_password, sync_key, manifest, health, timeout)
+    attempts = max(1, retries + 1)
+    details: list[str] = []
+    for attempt in range(1, attempts + 1):
+        ok, detail = post_manifest(session, endpoint, username, app_password, sync_key, manifest, health, timeout)
+        details.append(f"attempt {attempt}: {detail}")
+        if ok or not should_retry(detail) or attempt == attempts:
+            break
+        time.sleep(retry_delay * attempt)
+
     if ok or not retry_swapped_auth or not detail.startswith("401:"):
-        return ok, detail
+        return ok, detail if len(details) == 1 else "; ".join(details)
 
     swapped_ok, swapped_detail = post_manifest(
         session,
@@ -136,6 +152,8 @@ def main() -> int:
     parser.add_argument("--health-report", default="health-results.json")
     parser.add_argument("--paths-file", help="Newline-delimited manifest paths to sync")
     parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT_SECONDS)
+    parser.add_argument("--retries", type=int, default=3, help="Retries per manifest for transient network/server errors")
+    parser.add_argument("--retry-delay", type=float, default=2.0, help="Base retry delay in seconds")
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument(
         "--no-swapped-auth-retry",
@@ -183,6 +201,8 @@ def main() -> int:
                 health.get(manifest["agent_id"]),
                 args.timeout,
                 not args.no_swapped_auth_retry,
+                args.retries,
+                args.retry_delay,
             )
             if ok:
                 success += 1
