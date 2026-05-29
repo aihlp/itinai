@@ -56,7 +56,7 @@ jobs:
 
       - name: Sync WordPress Agents app
         if: env.WP_KEY != '' && env.WP_USER != ''
-        run: python scripts/sync-wordpress.py --health-report health-results.json --timeout 30 --retries 3 --retry-delay 3
+        run: python scripts/sync-wordpress.py --health-report health-results.json --timeout 30 --retries 6 --retry-delay 5
 
       - name: Check for changes
         id: changes

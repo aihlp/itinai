@@ -60,4 +60,4 @@ jobs:
 
       - name: Sync changed manifests to WordPress
         if: steps.manifests.outputs.has_changes == 'true'
-        run: python scripts/sync-wordpress.py --paths-file changed-agents.txt --timeout 30 --retries 3 --retry-delay 3
+        run: python scripts/sync-wordpress.py --paths-file changed-agents.txt --timeout 30 --retries 6 --retry-delay 5
