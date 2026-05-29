@@ -100,7 +100,11 @@ def post_manifest(
 
 def should_retry(detail: str) -> bool:
     retryable_prefixes = ("408:", "425:", "429:", "500:", "502:", "503:", "504:")
-    return detail.startswith("request failed:") or detail.startswith(retryable_prefixes)
+    return (
+        detail.startswith("request failed:")
+        or detail.startswith(retryable_prefixes)
+        or (detail.startswith("404:") and '"rest_no_route"' in detail)
+    )
 
 
 def sync_manifest(
