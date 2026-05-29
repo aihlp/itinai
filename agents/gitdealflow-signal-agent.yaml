@@ -1,0 +1,74 @@
+agent_id: gitdealflow-signal-agent
+name: GitDealFlow Signal Agent
+a2a_config:
+  agent_card_url: https://signals.gitdealflow.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: get-trending-startups
+  name: Get Trending Startups
+  tags:
+  - startups
+  - trending
+  - vc
+  - deal-flow
+  - github
+  - weekly
+- id: search-startups-by-sector
+  name: Search Startups by Sector
+  tags:
+  - startups
+  - sector
+  - filter
+  - vc
+  - deal-flow
+- id: get-startup-signal
+  name: Get Startup Signal Profile
+  tags:
+  - startups
+  - profile
+  - github
+  - velocity
+- id: get-signals-summary
+  name: Get Signals Summary
+  tags:
+  - meta
+  - discovery
+  - summary
+- id: get-methodology
+  name: Get Methodology
+  tags:
+  - methodology
+  - documentation
+  - reproducibility
+- id: get-scout-receipts
+  name: Get Scout Receipts
+  tags:
+  - scout
+  - github
+  - receipts
+  - social-proof
+- id: get-deep-signal
+  name: Get Deep Signal (paid)
+  tags:
+  - startups
+  - deep-signal
+  - paid
+  - thesis
+  - percentile
+  - x402
+  - usdc
+  - base
+health_check:
+  url: https://signals.gitdealflow.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://gitdealflow.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 4eb0310e-5c8b-4e07-9fbd-6f7d86db553b
+description: Track startup engineering acceleration from public GitHub data. Returns
+  trending startups, sector signals, and per-company velocity profiles across 20 sectors.
+  Updated weekly. Free, no auth required.
+version: 1.0.0

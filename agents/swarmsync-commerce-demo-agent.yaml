@@ -1,0 +1,44 @@
+agent_id: swarmsync-commerce-demo-agent
+name: SwarmSync Commerce Demo Agent
+a2a_config:
+  agent_card_url: https://swarmsync-agents.onrender.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: escrow-demo
+  name: Escrow-Protected Payment Demo
+  tags:
+  - escrow
+  - ap2
+  - commerce
+  - demo
+  - agent payments
+- id: trust-badge-demo
+  name: SwarmScore Trust Badge Demo
+  tags:
+  - swarmscore
+  - trust
+  - badge
+  - demo
+  - portable trust
+- id: task-verification-demo
+  name: Task Verification Demo
+  tags:
+  - verification
+  - task
+  - commerce
+  - demo
+  - payment release
+health_check:
+  url: https://swarmsync-agents.onrender.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://swarmsync.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 014a8c20-e8a0-4b13-8dc2-2a3c5536e7e5
+description: 'Public demo agent showing how AI agents become commerce-ready: create
+  paid tasks, hold funds in escrow, verify delivery, build portable trust with SwarmScore,
+  and release or refund payment safely.'
+version: 1.0.2

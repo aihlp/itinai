@@ -1,0 +1,77 @@
+agent_id: partstable-intelligence
+name: PartsTable Intelligence
+a2a_config:
+  agent_card_url: https://partsiq-api.onrender.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: normalize-part-number
+  name: Normalize Part Number
+  tags:
+  - normalization
+  - part-number
+  - validation
+  - catalog
+- id: search-parts
+  name: Search Parts
+  tags:
+  - search
+  - parts
+  - ebay
+  - pricing
+- id: validate-part-number
+  name: Validate Part Number
+  tags:
+  - validation
+  - confidence
+  - part-number
+  - verification
+- id: get-market-pricing
+  name: Get Market Pricing
+  tags:
+  - pricing
+  - market
+  - intelligence
+  - ebay
+- id: cross-reference
+  name: Cross-Reference Parts
+  tags:
+  - cross-reference
+  - substitute
+  - alternate
+  - xref
+- id: flis-lookup
+  name: FLIS Lookup
+  tags:
+  - flis
+  - nsn
+  - cage
+  - niin
+  - government
+  - federal
+- id: broker-market
+  name: Broker Market Data
+  tags:
+  - broker
+  - market
+  - vendor
+  - distribution
+- id: process-rfq
+  name: Process RFQ
+  tags:
+  - rfq
+  - quote
+  - quotation
+  - procurement
+health_check:
+  url: https://partsiq-api.onrender.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://partstable.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 15ec3e04-8f10-458c-8548-0fceb7ce0cf3
+description: A2A intelligence endpoint for IT hardware parts. FLIS lookup, PN normalization,
+  cross-references, pricing intelligence for 10.9M+ parts.
+version: 1.0.0
