@@ -75,6 +75,12 @@ Run health checks:
 python scripts/health-check.py --output health-results.json
 ```
 
+Import live seed agents from the A2A Registry:
+
+```bash
+python scripts/import-from-registry.py --limit 10
+```
+
 Scheduled health checks upload `health-results.json` as a GitHub Actions
 artifact. On scheduled runs, the workflow also tracks consecutive failures per
 agent and opens a `health-check` issue after three failed checks in a row.

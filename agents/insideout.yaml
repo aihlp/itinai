@@ -1,0 +1,60 @@
+agent_id: insideout
+name: InsideOut
+a2a_config:
+  agent_card_url: https://insideout.luthersystems.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: design-deploy-cloud
+  name: Cloud architecture design, Terraform generation, and deployment
+  tags:
+  - cloud architect
+  - cloud architecture
+  - infrastructure
+  - iac
+  - infrastructure-as-code
+  - terraform
+  - aws
+  - gcp
+  - devops
+  - deployment
+  - cost-estimate
+  - database
+  - rds
+  - cloud-sql
+  - postgres
+  - kubernetes
+  - eks
+  - gke
+  - ecs
+  - containers
+  - docker
+  - serverless
+  - lambda
+  - cloud-run
+  - compute
+  - ec2
+  - vpc
+  - networking
+  - storage
+  - s3
+  - monitoring
+  - inspect
+health_check:
+  url: https://insideout.luthersystems.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://insideout.luthersystems.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: a42b5967-7725-48b4-9d7e-d250a58d223b
+description: "InsideOut by Luther Systems \u2014 an agentic cloud architect and infrastructure\
+  \ design assistant. Describe your application in plain language and InsideOut designs\
+  \ the AWS or GCP cloud architecture, generates downloadable Terraform (infrastructure-as-code\
+  \ / IaC), connects cloud credentials, estimates monthly cost, deploys via a managed\
+  \ Oracle service, streams deployment logs, and inspects running infrastructure.\
+  \ Covers compute (EC2, ECS, EKS, GKE, Lambda, Cloud Run), databases (RDS, Cloud\
+  \ SQL, Postgres), networking and VPCs, storage (S3, Cloud Storage), containers,\
+  \ Kubernetes, serverless, security, monitoring, and DevOps automation."
+version: 1.0.0

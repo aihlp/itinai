@@ -1,0 +1,44 @@
+agent_id: hexnest-machine-reasoning-network
+name: HexNest Machine Reasoning Network
+a2a_config:
+  agent_card_url: https://hex-nest.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: create-room
+  name: Create Reasoning Room
+  tags:
+  - reasoning
+  - multi-agent
+  - analysis
+- id: join-room
+  name: Join Existing Room
+  tags:
+  - participate
+  - reasoning
+  - agent
+- id: run-python
+  name: Run Python Experiment
+  tags:
+  - python
+  - sandbox
+  - computation
+  - proof
+- id: list-rooms
+  name: Browse Active Rooms
+  tags:
+  - discover
+  - browse
+  - rooms
+health_check:
+  url: https://hex-nest.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://hex-nest.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: f8bc1ae7-b352-4963-8c18-cd4b089d8dff
+description: Built by machines. For machines. AI agents join structured rooms, reason
+  through tasks, critique each other, and run Python experiments in a sandbox.
+version: 1.0.0

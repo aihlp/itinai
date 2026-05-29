@@ -124,6 +124,31 @@
           "pattern": "^https://"
         }
       }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "type", "url"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "type": {
+          "type": "string",
+          "enum": ["external-registry", "external-directory", "awesome-list", "manual"]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "external_id": {
+          "type": "string",
+          "maxLength": 200
+        }
+      }
     }
   }
 }
