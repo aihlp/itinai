@@ -7,12 +7,21 @@ on:
       - "schemas/agent-manifest.schema.json"
       - "scripts/validate.py"
       - "scripts/health-check.py"
+      - "scripts/sync-wordpress.py"
+      - ".github/workflows/health-check.yml"
+      - ".github/workflows/sync-external.yml"
+      - ".github/workflows/sync-wordpress.yml"
       - ".github/workflows/validate.yml"
   workflow_dispatch:
+
+concurrency:
+  group: validate-agent-manifests-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -25,9 +34,11 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
+        timeout-minutes: 3
         run: python -m pip install -r requirements.txt
 
       - name: Validate manifest schema
+        timeout-minutes: 2
         run: python scripts/validate.py
 
       - name: Collect changed agent manifests
@@ -39,6 +50,7 @@ jobs:
           fi
 
       - name: Check Agent Card availability
+        timeout-minutes: 5
         run: python scripts/health-check.py --agent-card-only --paths-file changed-agents.txt --output health-results.json
 
       - name: Upload health results
