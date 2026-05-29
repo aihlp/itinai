@@ -2,10 +2,12 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import re
 import sys
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 import requests
 import yaml
@@ -18,6 +20,83 @@ DEFAULT_REGISTRY_ENDPOINTS = [
     "https://a2a-registry.prassanna.dev/agents",
     "https://a2aregistry.org/api/agents?conformance=standard",
 ]
+DEFAULT_SOURCES = [
+    {
+        "name": "A2A Registry",
+        "type": "external-registry",
+        "urls": DEFAULT_REGISTRY_ENDPOINTS,
+    },
+    {
+        "name": "Agora Registry",
+        "type": "github-registry",
+        "github_repo": "agora-protocol/agora",
+        "urls": [
+            "https://raw.githubusercontent.com/agora-protocol/agora/main/agents.json",
+            "https://raw.githubusercontent.com/agora-protocol/agora/main/registry/agents.json",
+        ],
+    },
+    {
+        "name": "OpenClaw Managed Agents",
+        "type": "github-registry",
+        "github_repos": ["openclaw/managed-agents", "stainlu/openclaw-managed-agents"],
+        "urls": [
+            "https://raw.githubusercontent.com/openclaw/managed-agents/main/agents.json",
+            "https://raw.githubusercontent.com/openclaw/managed-agents/main/registry/agents.json",
+        ],
+    },
+    {
+        "name": "LangChain Hub",
+        "type": "hub",
+        "urls": [
+            "https://smith.langchain.com/hub",
+        ],
+    },
+    {
+        "name": "CrewAI Marketplace",
+        "type": "marketplace",
+        "urls": [
+            "https://crewai.com/marketplace",
+        ],
+    },
+    {
+        "name": "AutoGen Studio Gallery",
+        "type": "github-gallery",
+        "github_repo": "microsoft/autogen",
+        "urls": [
+            "https://raw.githubusercontent.com/microsoft/autogen/main/README.md",
+        ],
+    },
+    {
+        "name": "AI Agent Index",
+        "type": "github-registry",
+        "github_repo": "AI-Engineer-Foundation/agent-index",
+        "urls": [
+            "https://raw.githubusercontent.com/AI-Engineer-Foundation/agent-index/main/agents.json",
+            "https://raw.githubusercontent.com/AI-Engineer-Foundation/agent-index/main/index.json",
+        ],
+    },
+    {
+        "name": "Venice AI Agent Marketplace",
+        "type": "marketplace",
+        "urls": [
+            "https://venice.ai/agents",
+        ],
+    },
+]
+AGENT_CARD_URL_KEYS = {
+    "agent_card_url",
+    "agentCardUrl",
+    "agentCardURL",
+    "agent_card",
+    "agentCard",
+    "wellKnownURI",
+    "wellKnownUrl",
+    "well_known_url",
+}
+AGENT_CARD_URL_RE = re.compile(
+    r"https://[^\s\"'<>)]*/\.well-known/(?:agent-card|agent)\.json",
+    re.IGNORECASE,
+)
 
 
 def slugify(value: str, fallback: str = "imported-agent") -> str:
@@ -52,6 +131,20 @@ def request_json(url: str, timeout: int) -> Any:
     return response.json()
 
 
+def request_text(url: str, timeout: int) -> str:
+    response = requests.get(
+        url,
+        timeout=timeout,
+        headers={"Accept": "application/json,text/plain,text/html", "User-Agent": "itinai-importer/1.0"},
+    )
+    response.raise_for_status()
+    return response.text
+
+
+def json_from_text(text: str) -> Any:
+    return json.loads(text)
+
+
 def load_registry(endpoint: str, timeout: int) -> list[dict[str, Any]]:
     data = request_json(endpoint, timeout)
     if isinstance(data, list):
@@ -64,21 +157,156 @@ def load_registry(endpoint: str, timeout: int) -> list[dict[str, Any]]:
     raise ValueError(f"unsupported registry response shape from {endpoint}")
 
 
-def load_first_registry(endpoints: list[str], timeout: int) -> tuple[str, list[dict[str, Any]]]:
-    errors: list[str] = []
-    for endpoint in endpoints:
+def normalize_candidate(value: str, source_url: str = "") -> dict[str, Any] | None:
+    text = value.strip().rstrip(".,;")
+    if text.startswith("https://"):
+        return {"agent_card_url": text, "source_url": source_url}
+    return None
+
+
+def extract_candidates(data: Any, source_url: str = "") -> list[dict[str, Any]]:
+    candidates: list[dict[str, Any]] = []
+
+    def add_url(value: Any) -> None:
+        if isinstance(value, str):
+            item = normalize_candidate(value, source_url)
+            if item:
+                candidates.append(item)
+
+    def walk(value: Any) -> None:
+        if isinstance(value, dict):
+            direct = False
+            for key, item in value.items():
+                if key in AGENT_CARD_URL_KEYS:
+                    add_url(item)
+                    direct = True
+            if direct:
+                candidates.append({**value, "source_url": source_url})
+            for item in value.values():
+                walk(item)
+        elif isinstance(value, list):
+            for item in value:
+                walk(item)
+        elif isinstance(value, str):
+            for match in AGENT_CARD_URL_RE.findall(value):
+                add_url(match)
+
+    walk(data)
+    return candidates
+
+
+def extract_candidates_from_text(text: str, source_url: str = "") -> list[dict[str, Any]]:
+    candidates = []
+    for match in AGENT_CARD_URL_RE.findall(text):
+        item = normalize_candidate(match, source_url)
+        if item:
+            candidates.append(item)
+    return candidates
+
+
+def github_raw_url(repo: str, branch: str, path: str) -> str:
+    return f"https://raw.githubusercontent.com/{repo}/{branch}/{path}"
+
+
+def load_github_repo_candidates(repo: str, timeout: int) -> list[dict[str, Any]]:
+    candidates: list[dict[str, Any]] = []
+    for branch in ("main", "master"):
+        tree_url = f"https://api.github.com/repos/{repo}/git/trees/{branch}?recursive=1"
         try:
-            agents = load_registry(endpoint, timeout)
-            return endpoint, agents
+            tree = request_json(tree_url, timeout)
+        except Exception as exc:
+            print(f"SKIP {repo}@{branch}: cannot load GitHub tree: {exc}", file=sys.stderr)
+            continue
+
+        entries = tree.get("tree") if isinstance(tree, dict) else None
+        if not isinstance(entries, list):
+            continue
+
+        for entry in entries:
+            path = entry.get("path") if isinstance(entry, dict) else None
+            if not isinstance(path, str):
+                continue
+            lower = path.lower()
+            if not (
+                lower.endswith((".json", ".yaml", ".yml", ".md"))
+                and (
+                    "agent" in lower
+                    or lower in {"readme.md", "index.json", "registry.json"}
+                    or lower.startswith(("agents/", "samples/agents/", "samples/", "gallery/"))
+                )
+            ):
+                continue
+
+            raw_url = github_raw_url(repo, branch, path)
+            try:
+                text = request_text(raw_url, timeout)
+            except Exception:
+                continue
+
+            if lower.endswith(".json"):
+                try:
+                    candidates.extend(extract_candidates(json_from_text(text), raw_url))
+                    continue
+                except Exception:
+                    pass
+            if lower.endswith((".yaml", ".yml")):
+                try:
+                    candidates.extend(extract_candidates(yaml.safe_load(text), raw_url))
+                    continue
+                except Exception:
+                    pass
+            candidates.extend(extract_candidates_from_text(text, raw_url))
+        if candidates:
+            break
+    return candidates
+
+
+def load_source_candidates(source: dict[str, Any], timeout: int) -> list[dict[str, Any]]:
+    candidates: list[dict[str, Any]] = []
+    errors: list[str] = []
+
+    for endpoint in source.get("urls", []):
+        try:
+            text = request_text(endpoint, timeout)
+            content_type = Path(urlparse(endpoint).path).suffix.lower()
+            if content_type == ".json" or endpoint.endswith("/agents"):
+                try:
+                    data = json_from_text(text)
+                    if isinstance(data, list):
+                        candidates.extend(item for item in data if isinstance(item, dict))
+                    elif isinstance(data, dict):
+                        for key in ("agents", "items", "data"):
+                            items = data.get(key)
+                            if isinstance(items, list):
+                                candidates.extend(item for item in items if isinstance(item, dict))
+                        candidates.extend(extract_candidates(data, endpoint))
+                    continue
+                except Exception:
+                    pass
+            if content_type in {".yaml", ".yml"}:
+                candidates.extend(extract_candidates(yaml.safe_load(text), endpoint))
+            else:
+                candidates.extend(extract_candidates_from_text(text, endpoint))
         except Exception as exc:
             errors.append(f"{endpoint}: {exc}")
-    raise RuntimeError("no registry endpoint could be loaded:\n" + "\n".join(errors))
+
+    repos = []
+    if source.get("github_repo"):
+        repos.append(source["github_repo"])
+    repos.extend(source.get("github_repos", []))
+    for repo in repos:
+        candidates.extend(load_github_repo_candidates(repo, timeout))
+
+    if not candidates and errors:
+        print(f"SKIP {source['name']}: no candidates loaded; " + " | ".join(errors), file=sys.stderr)
+    return candidates
 
 
 def agent_card_url(item: dict[str, Any]) -> str | None:
-    value = item.get("agent_card_url") or item.get("agentCardUrl") or item.get("wellKnownURI")
-    if isinstance(value, str) and value.startswith("https://"):
-        return value
+    for key in AGENT_CARD_URL_KEYS:
+        value = item.get(key)
+        if isinstance(value, str) and value.startswith("https://"):
+            return value
     return None
 
 
@@ -149,7 +377,8 @@ def build_manifest(
     item: dict[str, Any],
     card: dict[str, Any],
     card_url: str,
-    source_endpoint: str,
+    source: dict[str, Any],
+    source_url: str,
     existing_paths: set[Path],
 ) -> dict[str, Any]:
     name = truncate(card.get("name") or item.get("name") or "Imported Agent", 120) or "Imported Agent"
@@ -165,12 +394,15 @@ def build_manifest(
         "health_check": {"url": card_url},
         "contact": {"email": contact_email(card, item)},
         "source": {
-            "name": "A2A Registry",
-            "type": "external-registry",
-            "url": source_endpoint,
+            "name": source["name"],
+            "type": source["type"],
+            "url": source_url,
             "external_id": str(item.get("id") or ""),
         },
     }
+
+    if source["name"] == "OpenClaw Managed Agents":
+        manifest["openclaw"] = {"managed": True}
 
     description = truncate(card.get("description") or item.get("description"), 1000)
     if description:
@@ -200,47 +432,66 @@ def write_manifest(path: Path, manifest: dict[str, Any], dry_run: bool) -> None:
 
 
 def import_agents(args: argparse.Namespace) -> int:
-    endpoints = args.endpoint or DEFAULT_REGISTRY_ENDPOINTS
-    source_endpoint, agents = load_first_registry(endpoints, args.timeout)
+    sources = [
+        {"name": "Custom Registry", "type": "external-registry", "urls": args.endpoint}
+    ] if args.endpoint else DEFAULT_SOURCES
     existing_by_url = existing_manifests_by_url()
     existing_paths = set(AGENTS_DIR.glob("*.yaml"))
     imported = 0
     skipped = 0
+    seen_card_urls: set[str] = set()
 
-    for item in agents:
-        if args.limit and imported >= args.limit:
-            break
-
-        card_url = agent_card_url(item)
-        if not card_url:
-            skipped += 1
+    for source in sources:
+        if args.source and slugify(source["name"]) not in args.source:
             continue
 
-        try:
-            card = request_json(card_url, args.timeout)
-        except Exception as exc:
-            skipped += 1
-            print(f"SKIP {card_url}: cannot fetch Agent Card: {exc}", file=sys.stderr)
-            continue
+        agents = load_source_candidates(source, args.timeout)
+        source_imported = 0
+        source_skipped = 0
+        print(f"SOURCE {source['name']}: {len(agents)} candidate(s)")
 
-        if not isinstance(card, dict) or not has_required_card_fields(card):
-            skipped += 1
-            print(f"SKIP {card_url}: Agent Card missing required fields", file=sys.stderr)
-            continue
+        for item in agents:
+            if args.limit and source_imported >= args.limit:
+                break
 
-        existing_path = existing_by_url.get(card_url)
-        manifest = build_manifest(item, card, card_url, source_endpoint, existing_paths)
-        path = existing_path or AGENTS_DIR / f"{manifest['agent_id']}.yaml"
-        manifest["agent_id"] = path.stem
-        write_manifest(path, manifest, args.dry_run)
-        existing_paths.add(path)
-        existing_by_url[card_url] = path
-        imported += 1
-        action = "UPDATE" if existing_path else "CREATE"
-        print(f"{action} {path.relative_to(ROOT)} <- {card_url}")
+            card_url = agent_card_url(item)
+            if not card_url or card_url in seen_card_urls:
+                source_skipped += 1
+                skipped += 1
+                continue
+            seen_card_urls.add(card_url)
 
-    print(f"Imported {imported} agent(s), skipped {skipped}, source={source_endpoint}")
-    return 0 if imported else 1
+            try:
+                card = request_json(card_url, args.timeout)
+            except Exception as exc:
+                source_skipped += 1
+                skipped += 1
+                print(f"SKIP {card_url}: cannot fetch Agent Card: {exc}", file=sys.stderr)
+                continue
+
+            if not isinstance(card, dict) or not has_required_card_fields(card):
+                source_skipped += 1
+                skipped += 1
+                print(f"SKIP {card_url}: Agent Card missing required fields", file=sys.stderr)
+                continue
+
+            existing_path = existing_by_url.get(card_url)
+            source_url = str(item.get("source_url") or source.get("urls", [""])[0])
+            manifest = build_manifest(item, card, card_url, source, source_url, existing_paths)
+            path = existing_path or AGENTS_DIR / f"{manifest['agent_id']}.yaml"
+            manifest["agent_id"] = path.stem
+            write_manifest(path, manifest, args.dry_run)
+            existing_paths.add(path)
+            existing_by_url[card_url] = path
+            imported += 1
+            source_imported += 1
+            action = "UPDATE" if existing_path else "CREATE"
+            print(f"{action} {path.relative_to(ROOT)} <- {card_url}")
+
+        print(f"SOURCE {source['name']}: imported {source_imported}, skipped {source_skipped}")
+
+    print(f"Imported {imported} agent(s), skipped {skipped}")
+    return 0
 
 
 def main() -> int:
@@ -250,7 +501,13 @@ def main() -> int:
         action="append",
         help="Registry endpoint to try. Can be passed multiple times.",
     )
-    parser.add_argument("--limit", type=int, default=10, help="Maximum agents to import")
+    parser.add_argument("--limit", type=int, default=10, help="Maximum agents to import per source")
+    parser.add_argument(
+        "--source",
+        action="append",
+        choices=[slugify(source["name"]) for source in DEFAULT_SOURCES],
+        help="Source slug to import. Can be passed multiple times. Defaults to all sources.",
+    )
     parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT_SECONDS)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()

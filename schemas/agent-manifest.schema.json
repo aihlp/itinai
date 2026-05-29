@@ -137,7 +137,16 @@
         },
         "type": {
           "type": "string",
-          "enum": ["external-registry", "external-directory", "awesome-list", "manual"]
+          "enum": [
+            "external-registry",
+            "external-directory",
+            "awesome-list",
+            "github-registry",
+            "github-gallery",
+            "hub",
+            "marketplace",
+            "manual"
+          ]
         },
         "url": {
           "type": "string",
