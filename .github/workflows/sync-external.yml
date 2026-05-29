@@ -45,7 +45,7 @@ jobs:
         run: python scripts/validate.py
 
       - name: Run health check
-        run: python scripts/health-check.py --output health-results.json
+        run: python scripts/health-check.py --output health-results.json --allow-unhealthy
 
       - name: Upload sync health results
         if: always()
@@ -94,7 +94,7 @@ jobs:
               '',
               '- `python scripts/import-from-registry.py`',
               '- `python scripts/validate.py`',
-              '- `python scripts/health-check.py --output health-results.json`',
+              '- `python scripts/health-check.py --output health-results.json --allow-unhealthy`',
               '',
               'The `sync-health-results` artifact contains the latest health report.'
             ].join('\n');

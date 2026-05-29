@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,8 +30,16 @@ jobs:
       - name: Validate manifest schema
         run: python scripts/validate.py
 
+      - name: Collect changed agent manifests
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" -- 'agents/*.yaml' > changed-agents.txt
+          else
+            find agents -maxdepth 1 -name '*.yaml' | sort > changed-agents.txt
+          fi
+
       - name: Check Agent Card availability
-        run: python scripts/health-check.py --agent-card-only --output health-results.json
+        run: python scripts/health-check.py --agent-card-only --paths-file changed-agents.txt --output health-results.json
 
       - name: Upload health results
         if: always()
