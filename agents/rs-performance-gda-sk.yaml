@@ -1,0 +1,142 @@
+agent_id: rs-performance-gda-sk
+name: "RS Performance \u2014 Gda\u0144sk"
+a2a_config:
+  agent_card_url: https://rsperformance.online/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: dtc-lookup
+  name: DTC Fault Code Lookup
+  tags:
+  - DTC
+  - fault-codes
+  - OBD-II
+  - diagnostics
+  - automotive
+  - troubleshooting
+  - P-codes
+  - C-codes
+  - B-codes
+  - U-codes
+- id: services-catalog-2026
+  name: "RS Performance \u2014 katalog 19 us\u0142ug warsztatu (Gda\u0144sk)"
+  tags:
+  - services
+  - katalog
+  - "us\u0142ugi"
+  - workshop
+  - gdansk
+  - diagnostyka
+  - mechanika
+  - hamulce
+  - zawieszenie
+  - klimatyzacja
+  - dpf
+  - adblue
+  - turbo
+  - rozrzad
+  - skrzynia
+  - sprzeglo
+  - opony
+  - wulkanizacja
+  - wydech
+  - elektryka
+  - przeglad
+  - flota
+- id: local-areas-gdansk-2026
+  name: "RS Performance \u2014 10 dzielnic Gda\u0144ska (lokalne landingi warsztatu)"
+  tags:
+  - local-seo
+  - geo
+  - gdansk
+  - dzielnica
+  - district
+  - area
+  - wrzeszcz
+  - oliwa
+  - przymorze
+  - zaspa
+  - morena
+  - chelm
+  - osowa
+  - siedlce
+  - brzezno
+  - jasien
+  - trojmiasto
+  - pomorskie
+  - localBusiness
+  - areaServed
+  - near-me
+  - warsztat-w-okolicy
+- id: vehicle-diagnostics
+  name: Vehicle Diagnostics Service
+  tags:
+  - diagnostics
+  - automotive
+  - OBD
+  - ECU
+  - programming
+  - coding
+  - KTS560
+  - VCDS
+- id: ev-hybrid-knowledge
+  name: EV, hybrid and high-voltage knowledge (dedicated lane)
+  tags:
+  - EV
+  - BEV
+  - PHEV
+  - HEV
+  - e-mobility
+  - high-voltage
+  - battery
+  - BMS
+  - charging
+  - inverter
+  - automotive
+  - workshop
+  - electrified
+- id: repair-services
+  name: Mechanical and Electrical Repairs
+  tags:
+  - repair
+  - automotive
+  - mechanical
+  - electrical
+  - engine
+  - transmission
+  - brakes
+  - AC
+- id: booking
+  name: Service Appointment Booking
+  tags:
+  - booking
+  - appointment
+  - schedule
+  - location
+  - contact
+- id: gateway-semantic-routing
+  name: VPS semantic search and answer routing (fast lane)
+  tags:
+  - semantic-search
+  - gateway
+  - answer-routing
+  - freshness
+  - RAG
+  - support-plane
+  - qdrant
+health_check:
+  url: https://rsperformance.online/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://rsperformance.online
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: cbd6e214-8041-4ac5-ac74-1e680d99dacc
+description: 'April 2026+ public A2A surface for automotive agents: OBD DTC resolution,
+  EV or hybrid high-voltage lane, workshop services, and booking. Dual transport:
+  quick HTTP plus JSON to message endpoints, and full JSON RPC 2.0 on POST / for tasks,
+  streaming, history, and list operations. Artifacts return application or json parts
+  for tool use. Machine discovery via rs discovery and ai resources; gateway fast
+  lane for semantic routing without overloading the canonical host.'
+version: 2.4.0

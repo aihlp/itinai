@@ -1,0 +1,59 @@
+agent_id: chainaware-ai-api
+name: ChainAware.ai API
+a2a_config:
+  agent_card_url: https://beta.backend.chainaware.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: fraud-check
+  name: Fraud Check
+  tags:
+  - fraud
+  - wallet
+  - risk
+  - screening
+  - blockchain
+- id: fraud-audit
+  name: Wallet Audit
+  tags:
+  - behavior
+  - ai
+  - wallet
+  - prediction
+  - profiling
+- id: wallet-segment
+  name: Wallet Segmentation
+  tags:
+  - segmentation
+  - ai
+  - wallet
+  - quality
+  - classification
+- id: rug-pull
+  name: Rug Pull Check
+  tags:
+  - rug-pull
+  - predit-rug-pull
+  - rug-pull-check
+- id: credit-score
+  name: Credit Score
+  tags:
+  - defi-score
+  - trust-score
+  - credit-score
+  - rug-pull
+  - contract
+  - defi
+health_check:
+  url: https://beta.backend.chainaware.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://beta.chainaware.ai/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 80bb1b3d-96ea-407f-809b-ee491a57f47d
+description: On-chain wallet fraud scoring, behavioural prediction, credit trust rating,
+  and smart contract rug pull detection engine. Supports ETH, BNB, BASE, POLYGON,
+  SOLANA, TON, TRON, and HAQQ networks.
+version: 1.0.0

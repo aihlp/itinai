@@ -1,0 +1,95 @@
+agent_id: deepblue-trading-api
+name: DeepBlue Trading API
+a2a_config:
+  agent_card_url: https://api.deepbluebase.xyz/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: market-mood
+  name: Market Mood
+  tags:
+  - sentiment
+  - regime
+  - trading
+  - crypto
+  - market-data
+- id: whale-moves
+  name: Whale Moves
+  tags:
+  - whale
+  - onchain
+  - trading
+  - crypto
+  - defi
+- id: signals
+  name: 5-Min Trading Signals
+  tags:
+  - signals
+  - btc
+  - trading
+  - crypto
+  - momentum
+- id: price
+  name: Token Price
+  tags:
+  - price
+  - btc
+  - eth
+  - sol
+  - xrp
+  - crypto
+- id: sentiment-composite
+  name: Multi-source Sentiment Composite
+  tags:
+  - sentiment
+  - composite
+  - multi-source
+  - crypto
+- id: market-snapshot
+  name: All-Coins Market Snapshot
+  tags:
+  - snapshot
+  - bundle
+  - btc
+  - trading
+- id: performance
+  name: Verified Track Record
+  tags:
+  - performance
+  - track-record
+  - polymarket
+  - verified
+- id: market-intel
+  name: BTC Macro + Funding
+  tags:
+  - macro
+  - btc
+  - funding
+  - liquidation
+- id: polymarket
+  name: Polymarket Analytics
+  tags:
+  - polymarket
+  - prediction-markets
+  - analytics
+- id: trending
+  name: Trending DeFi Pools
+  tags:
+  - defi
+  - base
+  - trending
+  - pools
+health_check:
+  url: https://api.deepbluebase.xyz/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://deepbluebase.xyz
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: af7c7664-2128-4e25-9a9d-ef339c86883f
+description: "Pay-per-call crypto market intelligence: 5-min trading signals, fear/greed,\
+  \ whale tracking, prediction market analytics. USDC via x402 (Base/Solana) or MPP/Tempo.\
+  \ Live autonomous trading bot \u2014 real money, verified track record. First 5\
+  \ calls/day per IP are free across every paid endpoint."
+version: 1.1.0

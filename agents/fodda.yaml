@@ -1,0 +1,73 @@
+agent_id: fodda
+name: Fodda
+a2a_config:
+  agent_card_url: https://www.fodda.ai/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: search-graph
+  name: Search trend knowledge graphs
+  tags:
+  - trends
+  - consumer behavior
+  - retail
+  - beauty
+  - luxury
+  - fashion
+  - sport
+  - consumer electronics
+  - food and beverage
+  - knowledge graph
+- id: consult-analyst
+  name: Consult synthetic analyst persona
+  tags:
+  - analyst
+  - consultation
+  - expert
+  - trend forecasting
+  - brand strategy
+- id: brand-tracker
+  name: Build brand intelligence profile
+  tags:
+  - brand
+  - competitive intelligence
+  - positioning
+  - monitoring
+- id: get-domain-intelligence
+  name: Query domain knowledge graphs
+  tags:
+  - domain
+  - vertical
+  - retail
+  - beauty
+  - fashion
+  - sport
+  - food and beverage
+- id: get-earnings-intelligence
+  name: Query earnings call intelligence
+  tags:
+  - earnings
+  - financial intelligence
+  - public markets
+  - sentiment
+- id: deep-research-topic
+  name: Autonomous deep research
+  tags:
+  - research
+  - deep research
+  - synthesis
+  - trend analysis
+health_check:
+  url: https://www.fodda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://www.fodda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ad32dd1e-7be4-4029-a158-b6bd18c0927b
+description: Trend intelligence and consumer behavior agent. Provides expert-curated
+  knowledge graphs and synthetic analyst personas across retail, beauty, luxury, fashion,
+  sport, consumer electronics, food and beverage, and brand strategy. Returns structured
+  signals with evidence chains, not generic web summaries.
+version: 1.0.0

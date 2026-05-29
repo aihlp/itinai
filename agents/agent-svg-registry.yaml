@@ -1,0 +1,57 @@
+agent_id: agent-svg-registry
+name: Agent SVG Registry
+a2a_config:
+  agent_card_url: https://agent-svg-registry.vercel.app/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: search-svg-assets
+  name: Search SVG assets
+  tags:
+  - search
+  - svg
+  - metadata
+- id: preview-svg-asset
+  name: Preview SVG asset
+  tags:
+  - preview
+  - svg
+- id: quote-license
+  name: Quote commercial license
+  tags:
+  - quote
+  - license
+  - pricing
+  - human-approval
+- id: invoke-agent-offer
+  name: Invoke agent offer
+  tags:
+  - invoke
+  - rest
+  - marketplace
+  - checkout
+- id: request-commercial-license
+  name: Request commercial license
+  tags:
+  - checkout
+  - license
+  - human-approval
+- id: export-paid-ready-pack
+  name: Export paid-ready SVG pack
+  tags:
+  - export
+  - licensed
+  - svg
+  - react
+health_check:
+  url: https://agent-svg-registry.vercel.app/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agent-svg-registry.vercel.app
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 2e6887b1-55b8-4f9e-b2d7-e7b0e6f7afc1
+description: Agent-native SVG source registry and licensed export API for coding agents
+  building product interfaces.
+version: 1.0.0

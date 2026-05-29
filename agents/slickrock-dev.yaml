@@ -1,0 +1,46 @@
+agent_id: slickrock-dev
+name: Slickrock.dev
+a2a_config:
+  agent_card_url: https://www.slickrock.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: saas-tco-calculation
+  name: SaaS TCO Calculation
+  tags:
+  - finance
+  - saas
+  - roi
+  - tco
+  - migration
+- id: agentic-integration-assessment
+  name: Agentic Integration Assessment
+  tags:
+  - agentic
+  - mcp
+  - a2a
+  - integration
+  - assessment
+  - enterprise
+- id: industry-migration-blueprint
+  name: Industry Migration Blueprint
+  tags:
+  - architecture
+  - migration
+  - enterprise
+  - digital-twin
+  - consulting
+health_check:
+  url: https://www.slickrock.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://www.slickrock.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 974fbcd8-ec49-46d8-a93e-f13638c51a94
+description: "Agentic Systems Integrator. SlickRock.dev wraps enterprise operational\
+  \ assets \u2014 inventory, logistics, compliance, field service \u2014 into MCP/A2A-compliant\
+  \ capability nodes for the machine-to-machine economy. Mid-market enterprises ($10M\u2013\
+  $100M) deploy in 30 days."
+version: 2.2.0

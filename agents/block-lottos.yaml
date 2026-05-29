@@ -1,0 +1,43 @@
+agent_id: block-lottos
+name: Block Lottos
+a2a_config:
+  agent_card_url: https://blocklottos.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: check-current-jackpots
+  name: Check current jackpots
+  tags:
+  - lottery
+  - jackpot
+  - web3
+- id: check-draw-history
+  name: Read latest draw history
+  tags:
+  - draws
+  - stats
+  - web3
+- id: inspect-advertising
+  name: Inspect advertising options
+  tags:
+  - advertising
+  - sponsorship
+- id: build-user-signed-ticket-transaction
+  name: Build user-signed ticket transaction
+  tags:
+  - wallet
+  - transaction
+  - user-signature
+health_check:
+  url: https://blocklottos.com/.well-known/agent.json
+contact:
+  email: support@blocklottos.com
+  url: https://blocklottos.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 446b5eb5-d084-4d04-85c4-a0aa6b16bcad
+description: Agent-readable discovery manifest for Block Lottos, an on-chain lottery
+  platform with Polygon Fortune Ledger and Base Future Ledger games, public read APIs,
+  OpenAPI documentation, affiliate guidance, and advertising endpoints.
+version: 2026.05.29

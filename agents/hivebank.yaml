@@ -1,0 +1,64 @@
+agent_id: hivebank
+name: HiveBank
+a2a_config:
+  agent_card_url: https://hivebank.onrender.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: vault
+  name: USDC Vault
+  tags:
+  - vault
+  - usdc
+  - yield
+  - defi
+  - banking
+- id: streaming-payment
+  name: Streaming Payments
+  tags:
+  - streaming
+  - payments
+  - real-time
+  - billing
+- id: budget-management
+  name: Budget Management
+  tags:
+  - budget
+  - spending
+  - management
+  - credit
+- id: perf-credit
+  name: Performance Credit Lines
+  tags:
+  - credit
+  - performance
+  - lending
+  - defi
+- id: hivebond
+  name: HiveBond Staking
+  tags:
+  - staking
+  - bonds
+  - yield
+  - trust
+- id: ritz-cashback
+  name: Ritz Cashback
+  tags:
+  - cashback
+  - rewards
+  - credits
+  - loyalty
+health_check:
+  url: https://hivebank.onrender.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://www.hiveagentiq.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: b8105073-5512-4e86-a153-cf21aa85fa4c
+description: Treasury-as-a-service attestation + routing layer. Hive does NOT custody
+  funds. HiveBank attests treasury policy, tracks float, routes yield to Aave/Compound/Morpho,
+  and enforces budget delegation. Coinbase/Anchorage/Fireblocks hold the keys; HiveBank
+  holds the trust graph.
+version: 1.0.0

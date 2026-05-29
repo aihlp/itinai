@@ -1,0 +1,212 @@
+agent_id: lexicon-comparison-intelligence-engine
+name: "Lexicon \u2014 Comparison Intelligence Engine"
+a2a_config:
+  agent_card_url: https://dbssearch.today/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: vs-head-to-head
+  name: Head-to-Head VS Analysis
+  tags:
+  - comparison
+  - compare
+  - versus
+  - vs
+  - head-to-head
+  - side-by-side
+  - competitive-intelligence
+  - competitive-analysis
+  - competitor-comparison
+  - M&A
+  - due-diligence
+  - benchmarking
+  - vendor-selection
+  - vendor-comparison
+  - vendor-evaluation
+  - technology-comparison
+  - strategic-analysis
+  - structured-verdict
+  - evidence-based
+  - live-evidence
+  - live-research
+  - real-time
+  - citations
+  - sources
+  - independent-sources
+  - finance
+  - healthcare
+  - technology
+  - energy
+  - legal
+  - policy
+  - investment
+  - consulting
+  - research
+  - analysis
+  - intelligence
+  - product-comparison
+  - tool-comparison
+  - platform-comparison
+  - b2b
+  - enterprise
+  - decision-support
+  - fact-verification
+- id: methodology-analysis
+  name: "Methodology Analysis \u2014 PESTLE / Triangulation / Performance Review"
+  tags:
+  - PESTLE
+  - PESTLE-analysis
+  - triangulation
+  - stakeholder-analysis
+  - root-cause-analysis
+  - benchmarking
+  - strategic-forecasting
+  - net-trajectory-verdict
+  - executive-report
+  - enterprise-intelligence
+  - market-analysis
+  - risk-assessment
+  - geopolitical
+  - macroeconomic
+  - regulatory-analysis
+  - ESG
+  - sustainability
+  - policy-impact
+- id: topic-specific-research
+  name: Topic-Specific Deep Research
+  tags:
+  - deep-research
+  - research
+  - analysis
+  - intelligence
+  - strategic-research
+  - competitor-intelligence
+  - competitive-research
+  - market-research
+  - market-analysis
+  - market-intelligence
+  - buyer-intelligence
+  - investment-memo
+  - investment-research
+  - strategy
+  - strategic-analysis
+  - planning
+  - decision-support
+  - research-automation
+  - AI-research
+  - autonomous-research
+  - evidence-synthesis
+  - actionable-insights
+  - structured-analysis
+  - live-evidence
+  - citations
+  - fact-verification
+  - grounded
+  - company-research
+  - industry-research
+  - sector-analysis
+- id: metadata-generation
+  name: "AI Metadata Generation \u2014 GCP Dataplex Registration"
+  tags:
+  - metadata-generation
+  - GCP
+  - Dataplex
+  - Discovery-Engine
+  - Google-Cloud
+  - product-metadata
+  - SEO
+  - structured-data
+  - schema.org
+  - JSON-LD
+  - platform-metadata
+  - API-metadata
+  - dataset-cataloging
+  - data-governance
+  - enterprise-metadata
+  - AI-metadata
+  - Claude-AI
+  - Vertex-AI
+- id: data-api
+  name: "Data API \u2014 Structured Report Access"
+  tags:
+  - REST-API
+  - data-pipeline
+  - RAG
+  - knowledge-base
+  - structured-data
+  - JSON
+  - programmatic-access
+  - report-library
+  - agent-memory
+  - enterprise-data
+  - analytics
+- id: strategic-synthesis-core
+  name: General Strategic Synthesis (Oracle)
+  tags:
+  - research
+  - analysis
+  - intelligence
+  - strategic-intelligence
+  - zero-trust-synthesis
+  - oracle
+  - a2a
+  - comparison
+  - evidence-based
+  - regulatory-audit
+  - earnings-audit
+  - lobbying
+  - nonprofit
+  - population
+  - demographics
+  - financial-projections
+  - gen-z
+  - gen-alpha
+  - autonomous-research
+  - citation-rich
+  - a-f-report
+  - fact-verification
+  - live-research
+  - grounded
+  - citations
+  - policy-analysis
+  - regulatory-analysis
+  - SEC-filings
+  - open-ended-research
+  - question-answering
+  - chat
+  - ask
+- id: mcp-server
+  name: "MCP Server \u2014 Model Context Protocol"
+  tags:
+  - MCP
+  - Model-Context-Protocol
+  - AI-agent
+  - LLM-tools
+  - Skyfire
+  - agent-integration
+  - tool-calling
+  - function-calling
+  - Claude
+  - GPT-4
+  - LangChain
+  - AutoGPT
+  - CrewAI
+health_check:
+  url: https://dbssearch.today/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://dbssearch.today
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 4953e598-7577-4e12-b11d-5ae666cb959f
+description: "Lexicon is a Multi-Industry Comparison Intelligence Engine that retrieves\
+  \ live evidence from up to 20 independent web sources and applies structured analytical\
+  \ frameworks to produce doctoral-grade, evidence-backed verdicts. Designed for autonomous\
+  \ enterprise research swarms. Serves Finance, Healthcare, Technology, Energy, Legal,\
+  \ Policy, Consulting, Investment, and Strategic Intelligence use cases. All output\
+  \ is structured, citation-rich, and verdict-confident. Also operates an open agent\
+  \ marketplace at https://dbssearch.today/marketplace \u2014 agents can discover,\
+  \ test (free), and hire intelligence services via JSON API with no account required.\
+  \ Marketplace discovery: GET https://dbssearch.today/marketplace/v1/discover"
+version: 2.0.0

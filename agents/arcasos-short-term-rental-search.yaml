@@ -1,0 +1,36 @@
+agent_id: arcasos-short-term-rental-search
+name: ARCASOS Short-Term Rental Search
+a2a_config:
+  agent_card_url: https://arcasos.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: search-rentals
+  name: Search Korean short-term rentals
+  tags:
+  - travel
+  - rental
+  - korea
+  - short-term-rental
+  - accommodation
+  - natural-language-search
+  - structured-search
+  - schema-org
+  - json-ld
+health_check:
+  url: https://arcasos.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://arcasos.com/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 2e79acaa-95a3-40f3-aa3a-9a3fc362f2ee
+description: "South Korea premium short-term rental discovery service. Natural language\
+  \ search powered by SHV (Semantic Hybrid Vector) retrieval \u2014 combining keyword\
+  \ matching, structured field scoring, and semantic embedding similarity. Specialized\
+  \ for Korean short-term rentals on a weekly basis (1-week minimum, not nightly):\
+  \ pet-friendly homes, private entire spaces, view types (river/ocean/city/mountain),\
+  \ and neighborhood-aware ranking. Accepts both natural language and Schema.org-style\
+  \ structured queries; returns pure Schema.org Accommodation responses."
+version: 2.0.3

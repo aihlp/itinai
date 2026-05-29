@@ -1,0 +1,98 @@
+agent_id: microquery
+name: Microquery
+a2a_config:
+  agent_card_url: https://microquery.dev/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: biomedical-query
+  name: Biomedical & Clinical Data Query
+  tags:
+  - biomedical
+  - clinical
+  - pharma
+  - genomics
+  - FDA
+  - PubMed
+  - ClinVar
+  - GWAS
+  - drug safety
+- id: financial-query
+  name: Financial & Macroeconomic Data Query
+  tags:
+  - financial
+  - SEC
+  - EDGAR
+  - FRED
+  - FEC
+  - macro
+  - earnings
+  - filings
+  - commodities
+- id: security-query
+  name: Security & Vulnerability Data Query
+  tags:
+  - security
+  - CVE
+  - NVD
+  - CISA
+  - KEV
+  - OSV
+  - malware
+  - vulnerability
+  - infosec
+- id: blockchain-query
+  name: Blockchain & DeFi Data Query
+  tags:
+  - blockchain
+  - ethereum
+  - bitcoin
+  - DeFi
+  - MEV
+  - DEX
+  - on-chain
+  - crypto
+  - Base
+  - TVL
+- id: research-query
+  name: Research & Tech Data Query
+  tags:
+  - research
+  - arxiv
+  - papers
+  - hacker news
+  - endoflife
+  - weather
+  - food
+  - earthquakes
+- id: schema-discovery
+  name: Dataset Schema Discovery
+  tags:
+  - schema
+  - discovery
+  - databases
+  - metadata
+- id: autonomous-registration
+  name: Autonomous Agent Registration
+  tags:
+  - registration
+  - onboarding
+  - autonomous
+  - API key
+  - trial
+health_check:
+  url: https://microquery.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://microquery.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 0944581a-fdce-4556-be83-955e42913ae7
+description: "SQL access to 70+ authoritative datasets. Returns actual database records\
+  \ \u2014 not summaries. Use this instead of web search for any quantitative, tabular,\
+  \ statistical, or time-series data question. Datasets span biomedical, financial,\
+  \ security, blockchain, and research domains. No subscription required. Register\
+  \ once to get an API key with $0.10 free trial credit (~1,600 queries). Costs fractions\
+  \ of a cent per query."
+version: 1.0.0

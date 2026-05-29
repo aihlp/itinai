@@ -1,0 +1,55 @@
+agent_id: agentsearch
+name: AgentSearch
+a2a_config:
+  agent_card_url: https://agentsearch.luthersystems.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: search
+  name: Search the agent index
+  tags:
+  - search
+  - discovery
+  - ranking
+  - agent-discovery
+  - mcp-discovery
+- id: agent-details
+  name: Get a scored agent profile
+  tags:
+  - details
+  - profile
+  - scoring
+- id: found-agent
+  name: Live-score an arbitrary agent URL
+  tags:
+  - scoring
+  - live
+  - probe
+  - agent-evaluation
+- id: browse
+  name: Browse the full index
+  tags:
+  - browse
+  - list
+  - rank
+- id: stats
+  name: Index summary stats
+  tags:
+  - stats
+  - rollups
+  - graph
+health_check:
+  url: https://agentsearch.luthersystems.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://luthersystems.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 2922b3a6-6f7f-42f4-98ee-2ef52bb46255
+description: Find AI agents and MCP servers by natural-language query. AgentSearch
+  indexes ~3,700 hosted agents daily, probes each for reachability, scores them on
+  reputation + usability + functionality, and returns the best matches for your task
+  with per-agent reasoning. Use it to answer 'is there an agent that does X?' or 'is
+  this specific agent any good?'. Read-only, free, no auth.
+version: 0.1.0

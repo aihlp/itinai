@@ -1,0 +1,97 @@
+agent_id: bidmachine-ad-exchange
+name: BidMachine Ad Exchange
+a2a_config:
+  agent_card_url: https://a2a.bidmachine.io/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: search-inventory
+  name: Search Inventory
+  tags:
+  - inventory
+  - search
+  - discovery
+  - advertising
+- id: create-deal
+  name: Create Deal
+  tags:
+  - deal
+  - create
+  - media_buy
+  - advertising
+- id: list-deals
+  name: List Deals
+  tags:
+  - deal
+  - list
+  - advertising
+- id: activate-deal
+  name: Activate Deal
+  tags:
+  - deal
+  - lifecycle
+  - advertising
+- id: negotiate
+  name: Negotiate Pricing
+  tags:
+  - pricing
+  - negotiation
+  - intelligence
+  - advertising
+- id: get-delivery
+  name: Get Delivery Metrics
+  tags:
+  - delivery
+  - reporting
+  - metrics
+  - advertising
+- id: get-signals
+  name: Get Audience Signals
+  tags:
+  - signals
+  - audience
+  - advertising
+- id: get-market-rates
+  name: Get Market Rate Intelligence
+  tags:
+  - pricing
+  - intelligence
+  - rates
+  - advertising
+- id: get-trust-score
+  name: Get Trust Score
+  tags:
+  - trust
+  - quality
+  - fraud
+  - advertising
+- id: get-deal-health
+  name: Get Deal Health
+  tags:
+  - deal
+  - diagnostics
+  - health
+  - advertising
+- id: simulate-auction
+  name: Simulate Auction
+  tags:
+  - auction
+  - simulation
+  - intelligence
+  - advertising
+health_check:
+  url: https://a2a.bidmachine.io/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://bidmachine.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 26dc4116-501f-4ed7-a31d-e20b3fa253e9
+description: Agentic seller agent for the BidMachine ad exchange exposed via A2A intents.
+  Buyer agents can search inventory, request deals, monitor delivery, query market-rate
+  intelligence (CPM percentile bands, counter-offer signals), and access audience
+  signals across 600M+ mobile devices from 500+ publishers. Backed by BidMachine's
+  open RTB auction (other deal types in roadmap). 11 A2A intents supported with streaming
+  + push notifications.
+version: 1.0.0

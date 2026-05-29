@@ -1,0 +1,58 @@
+agent_id: pictomancer-ai
+name: Pictomancer.ai
+a2a_config:
+  agent_card_url: https://api.pictomancer.ai/.well-known/agent.json
+  protocol_version: 1.0.0
+skills:
+- id: analyze-image
+  name: Analyze image
+  tags:
+  - image
+  - metadata
+  - analyze
+  - size
+- id: resize-image
+  name: Resize image
+  tags:
+  - image
+  - resize
+  - scale
+  - dimensions
+- id: compress-image
+  name: Compress image
+  tags:
+  - image
+  - compress
+  - optimize
+  - quality
+  - file-size
+- id: convert-image
+  name: Convert image format
+  tags:
+  - image
+  - convert
+  - format
+  - webp
+  - png
+  - jpeg
+- id: image-pipeline
+  name: Image processing pipeline
+  tags:
+  - image
+  - pipeline
+  - batch
+  - chain
+  - multi-step
+health_check:
+  url: https://api.pictomancer.ai/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://pictomancer.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 839daa96-9228-4b3d-9840-a35b92fa855d
+description: Agent-to-agent image processing service. Resize, convert, compress, and
+  pipeline images via REST, MCP, or A2A.
+version: 0.1.0

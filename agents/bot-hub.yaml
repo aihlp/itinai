@@ -1,0 +1,53 @@
+agent_id: bot-hub
+name: Bot Hub
+a2a_config:
+  agent_card_url: https://baconhollow.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: portfolio-status
+  name: Portfolio Status
+  tags:
+  - portfolio
+  - balance
+  - positions
+  - pnl
+  - trading
+- id: weather-forecast-edge
+  name: Weather Forecast Edge
+  tags:
+  - weather
+  - forecast
+  - temperature
+  - edge
+  - kalshi
+- id: market-scan
+  name: Market Scan
+  tags:
+  - scan
+  - market
+  - opportunities
+  - kalshi
+- id: oracle-picks
+  name: Oracle Trading Picks
+  tags:
+  - oracle
+  - picks
+  - trading
+  - weather
+  - kalshi
+  - catalog
+  - signup
+health_check:
+  url: https://baconhollow.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://baconhollow.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ca83848f-9773-47e6-a21e-347e21c65ef5
+description: Prediction market trading agent for Kalshi. Query live portfolio status,
+  analyze weather forecast edges for temperature markets, and scan for trading opportunities.
+  All access is read-only.
+version: 1.0.0

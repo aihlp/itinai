@@ -1,0 +1,138 @@
+agent_id: torify-japanese-locale-apis-for-ai-agents
+name: "Torify \u2014 Japanese Locale APIs for AI Agents"
+a2a_config:
+  agent_card_url: https://torify.dev/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: wareki-convert
+  name: Japanese Era Conversion
+  tags:
+  - japanese
+  - calendar
+  - date
+  - wareki
+  - era
+- id: invoice-validate
+  name: Invoice Number Format Validation
+  tags:
+  - japanese
+  - invoice
+  - tax
+  - validation
+  - "\u30A4\u30F3\u30DC\u30A4\u30B9"
+- id: invoice-verify
+  name: Invoice Number Existence Verification
+  tags:
+  - japanese
+  - invoice
+  - tax
+  - nta
+  - qualified-invoicer
+  - "\u30A4\u30F3\u30DC\u30A4\u30B9"
+  - "\u9069\u683C\u8ACB\u6C42\u66F8"
+- id: houjin-lookup
+  name: Japanese Corporate Number Lookup
+  tags:
+  - japanese
+  - company
+  - corporate
+  - houjin
+  - nta
+  - "\u6CD5\u4EBA\u756A\u53F7"
+- id: postal-lookup
+  name: Japanese Postal Code Lookup
+  tags:
+  - japanese
+  - address
+  - postal
+  - zip
+  - "\u90F5\u4FBF\u756A\u53F7"
+  - "\u4F4F\u6240"
+- id: name-romanize
+  name: Japanese Name Romanization
+  tags:
+  - japanese
+  - name
+  - romanization
+  - hepburn
+  - passport
+  - "\u30ED\u30FC\u30DE\u5B57"
+- id: kanji-to-kana
+  name: Kanji to Kana Conversion
+  tags:
+  - japanese
+  - kanji
+  - kana
+  - hiragana
+  - katakana
+  - furigana
+  - nlp
+  - "\u6F22\u5B57"
+  - "\u3075\u308A\u304C\u306A"
+- id: trial-signup
+  name: Free Trial Signup
+  tags:
+  - trial
+  - free
+  - signup
+  - api-key
+- id: tax-calculate
+  name: Japanese Consumption Tax Calculator
+  tags:
+  - tax
+  - consumption-tax
+  - japan
+- id: holiday-check
+  name: Japanese Public Holiday Check
+  tags:
+  - holiday
+  - calendar
+  - business-day
+- id: bank-lookup
+  name: Japanese Bank/Branch Lookup (Zengin)
+  tags:
+  - bank
+  - zengin
+  - payroll
+- id: address-normalize
+  name: Japanese Address Normalization
+  tags:
+  - address
+  - normalize
+  - shipping
+- id: coordinate-convert
+  name: "Japan Geodetic Coordinate Conversion (WGS84 \u2194 JGD2011)"
+  tags:
+  - geo
+  - coordinate
+  - jgd2011
+- id: age-calculate
+  name: Japanese Age & School Year Calculation
+  tags:
+  - age
+  - school-year
+  - wareki
+- id: kana-convert
+  name: "Hiragana \u2194 Katakana \u2194 Half-width Conversion"
+  tags:
+  - kana
+  - normalize
+  - japanese-text
+health_check:
+  url: https://torify.dev/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://torify.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: 8ae07cab-ccf7-4e6b-8a6f-45ff64c9fa98
+description: "Torify gives AI agents the Japanese locale primitives that standard\
+  \ libraries lack \u2014 imperial era date conversion (wareki), qualified invoice\
+  \ number validation with NTA registry lookup, corporate number lookup (\u6CD5\u4EBA\
+  \u756A\u53F7), postal code resolution, name romanization (Hepburn), and kanji-to-kana\
+  \ conversion via Cloudflare Workers AI (Llama 3.3 70B). 39 endpoints total. No authentication\
+  \ required for MCP. Free trial: 100 REST API calls/month with email signup. Pay-per-call\
+  \ $0.02/call via x402 USDC on Base, or $49/mo Pro subscription."
+version: 0.1.0

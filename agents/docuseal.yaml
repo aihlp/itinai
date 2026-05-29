@@ -1,0 +1,34 @@
+agent_id: docuseal
+name: DocuSeal
+a2a_config:
+  agent_card_url: https://www.docuseal.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: search
+  name: Search
+  tags:
+  - search
+  - knowledge-base
+  - api-reference
+  - e-signature
+  - integration
+- id: load-resource
+  name: Load Resource
+  tags:
+  - documentation
+  - content-loader
+  - reference
+  - guide
+health_check:
+  url: https://www.docuseal.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://www.docuseal.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: dfa80351-cfe3-45a0-a1e7-532eb32c98ee
+description: DocuSeal knowledge base. Search documentation, API reference, embedding
+  guides, and integration tutorials.
+version: 1.0.0
