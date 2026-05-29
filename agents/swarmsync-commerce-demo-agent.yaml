@@ -37,7 +37,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 014a8c20-e8a0-4b13-8dc2-2a3c5536e7e5
+  external_id: ''
 description: 'Public demo agent showing how AI agents become commerce-ready: create
   paid tasks, hold funds in escrow, verify delivery, build portable trust with SwarmScore,
   and release or refund payment safely.'

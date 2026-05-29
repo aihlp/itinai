@@ -90,7 +90,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 480bb6dc-fd39-4f0a-826c-ef1b6c68ca95
+  external_id: ''
 description: "PaKi Curator is an A2A- and MCP-enabled digital curator for C\xE9sar\
   \ Yag\xFCe's Visual Medicine catalog and spatial art practice. She supports public\
   \ catalog browsing, multilingual dialogue, art consultation, spatial recommendations,\
