@@ -17,6 +17,8 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      WP_KEY: ${{ secrets.WP_KEY }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -48,6 +50,10 @@ jobs:
         with:
           name: sync-health-results
           path: health-results.json
+
+      - name: Sync WordPress Agents app
+        if: env.WP_KEY != ''
+        run: python scripts/sync-wordpress.py --health-report health-results.json
 
       - name: Check for changes
         id: changes

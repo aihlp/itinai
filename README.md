@@ -85,6 +85,8 @@ External registry synchronization also runs in GitHub Actions via
 `Sync External Agents`. That workflow can be started manually or by schedule; it
 imports live agents, validates manifests, runs health checks, uploads
 `sync-health-results`, and opens or updates a pull request when manifests change.
+When the `WP_KEY` GitHub secret is configured, the workflow also syncs healthy
+manifests to the WordPress Agents app at `itinai.com`.
 
 Scheduled health checks upload `health-results.json` as a GitHub Actions
 artifact. On scheduled runs, the workflow also tracks consecutive failures per
