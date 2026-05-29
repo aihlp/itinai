@@ -65,7 +65,7 @@ def basic_auth_header(username: str, password: str) -> str:
     return f"Basic {token}"
 
 
-def sync_manifest(
+def post_manifest(
     session: requests.Session,
     endpoint: str,
     username: str,
@@ -75,20 +75,52 @@ def sync_manifest(
     timeout: int,
 ) -> tuple[bool, str]:
     payload = wordpress_payload(manifest, health)
-    response = session.post(
-        endpoint,
-        json=payload,
-        timeout=timeout,
-        headers={
-            "Accept": "application/json",
-            "Authorization": basic_auth_header(username, app_password),
-            "Content-Type": "application/json",
-            "User-Agent": "itinai-github-sync/1.0",
-        },
-    )
+    try:
+        response = session.post(
+            endpoint,
+            json=payload,
+            timeout=timeout,
+            headers={
+                "Accept": "application/json",
+                "Authorization": basic_auth_header(username, app_password),
+                "Content-Type": "application/json",
+                "User-Agent": "itinai-github-sync/1.0",
+            },
+        )
+    except requests.RequestException as exc:
+        return False, f"request failed: {exc}"
+
     if 200 <= response.status_code < 300:
         return True, f"{response.status_code}"
     return False, f"{response.status_code}: {response.text[:300]}"
+
+
+def sync_manifest(
+    session: requests.Session,
+    endpoint: str,
+    username: str,
+    app_password: str,
+    manifest: dict[str, Any],
+    health: dict[str, Any] | None,
+    timeout: int,
+    retry_swapped_auth: bool,
+) -> tuple[bool, str]:
+    ok, detail = post_manifest(session, endpoint, username, app_password, manifest, health, timeout)
+    if ok or not retry_swapped_auth or not detail.startswith("401:"):
+        return ok, detail
+
+    swapped_ok, swapped_detail = post_manifest(
+        session,
+        endpoint,
+        app_password,
+        username,
+        manifest,
+        health,
+        timeout,
+    )
+    if swapped_ok:
+        return True, f"{swapped_detail} (swapped WP_KEY/WP_APP auth)"
+    return False, f"{detail}; swapped auth also failed: {swapped_detail}"
 
 
 def main() -> int:
@@ -101,6 +133,11 @@ def main() -> int:
     parser.add_argument("--paths-file", help="Newline-delimited manifest paths to sync")
     parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT_SECONDS)
     parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument(
+        "--no-swapped-auth-retry",
+        action="store_true",
+        help="Do not retry Application Password auth with WP_KEY and WP_APP swapped",
+    )
     args = parser.parse_args()
     endpoint = args.endpoint or DEFAULT_ENDPOINT
 
@@ -139,6 +176,7 @@ def main() -> int:
                 manifest,
                 health.get(manifest["agent_id"]),
                 args.timeout,
+                not args.no_swapped_auth_retry,
             )
             if ok:
                 success += 1
