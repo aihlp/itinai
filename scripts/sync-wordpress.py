@@ -51,7 +51,6 @@ def wordpress_payload(manifest: dict[str, Any], health: dict[str, Any] | None) -
     health_check = payload.get("health_check") if isinstance(payload.get("health_check"), dict) else {}
     health_payload = {
         "url": health_check.get("url") or payload.get("a2a_config", {}).get("agent_card_url", ""),
-        "status": "unknown",
     }
     if health:
         health_payload["status"] = "online" if health.get("ok") else "offline"
