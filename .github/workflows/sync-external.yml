@@ -1,0 +1,126 @@
+name: Sync External Agents
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Maximum number of agents to import"
+        required: false
+        default: "50"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Import external agents
+        run: |
+          LIMIT="${{ github.event.inputs.limit || '50' }}"
+          python scripts/import-from-registry.py --limit "$LIMIT"
+
+      - name: Validate manifests
+        run: python scripts/validate.py
+
+      - name: Run health check
+        run: python scripts/health-check.py --output health-results.json
+
+      - name: Upload sync health results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sync-health-results
+          path: health-results.json
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet -- agents schemas scripts README.md; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit changes to sync branch
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C codex/sync-external-agents
+          git add agents schemas scripts README.md
+          git commit -m "Sync external A2A agents"
+          git push --force-with-lease origin codex/sync-external-agents
+
+      - name: Open or update sync pull request
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const head = 'codex/sync-external-agents';
+            const base = 'main';
+            const title = '[sync] Update external A2A agents';
+            const body = [
+              'Automated synchronization from trusted external A2A registry sources.',
+              '',
+              'The workflow ran:',
+              '',
+              '- `python scripts/import-from-registry.py`',
+              '- `python scripts/validate.py`',
+              '- `python scripts/health-check.py --output health-results.json`',
+              '',
+              'The `sync-health-results` artifact contains the latest health report.'
+            ].join('\n');
+
+            const existing = await github.rest.pulls.list({
+              owner,
+              repo,
+              state: 'open',
+              head: `${owner}:${head}`,
+              base
+            });
+
+            if (existing.data.length) {
+              await github.rest.pulls.update({
+                owner,
+                repo,
+                pull_number: existing.data[0].number,
+                title,
+                body
+              });
+              core.info(`Updated PR #${existing.data[0].number}`);
+              return;
+            }
+
+            const created = await github.rest.pulls.create({
+              owner,
+              repo,
+              title,
+              head,
+              base,
+              body,
+              maintainer_can_modify: true
+            });
+            core.info(`Created PR #${created.data.number}`);
+
+      - name: Report no changes
+        if: steps.changes.outputs.changed == 'false'
+        run: echo "External agent sync completed with no manifest changes."

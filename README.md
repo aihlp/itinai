@@ -81,6 +81,11 @@ Import live seed agents from the A2A Registry:
 python scripts/import-from-registry.py --limit 10
 ```
 
+External registry synchronization also runs in GitHub Actions via
+`Sync External Agents`. That workflow can be started manually or by schedule; it
+imports live agents, validates manifests, runs health checks, uploads
+`sync-health-results`, and opens or updates a pull request when manifests change.
+
 Scheduled health checks upload `health-results.json` as a GitHub Actions
 artifact. On scheduled runs, the workflow also tracks consecutive failures per
 agent and opens a `health-check` issue after three failed checks in a row.
