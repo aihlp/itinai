@@ -87,7 +87,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: af7c7664-2128-4e25-9a9d-ef339c86883f
+  external_id: ''
 description: "Pay-per-call crypto market intelligence: 5-min trading signals, fear/greed,\
   \ whale tracking, prediction market analytics. USDC via x402 (Base/Solana) or MPP/Tempo.\
   \ Live autonomous trading bot \u2014 real money, verified track record. First 5\

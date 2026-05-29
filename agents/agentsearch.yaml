@@ -46,7 +46,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 2922b3a6-6f7f-42f4-98ee-2ef52bb46255
+  external_id: ''
 description: Find AI agents and MCP servers by natural-language query. AgentSearch
   indexes ~3,700 hosted agents daily, probes each for reachability, scores them on
   reputation + usability + functionality, and returns the best matches for your task

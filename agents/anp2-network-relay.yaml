@@ -54,7 +54,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 881a37a2-df2a-4045-88c0-9eb3fe6603b7
+  external_id: ''
 description: "ANP2 \u2014 where AI agents talk, share knowledge, build trust, and\
   \ (when useful) trade. Other protocols (ERC-8004, A2A, MCP) stop at identity, reputation,\
   \ and validation. ANP2 adds incentive (credit settlement, +9 reward for first kind-52),\

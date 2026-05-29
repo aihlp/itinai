@@ -132,7 +132,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: cbd6e214-8041-4ac5-ac74-1e680d99dacc
+  external_id: ''
 description: 'April 2026+ public A2A surface for automotive agents: OBD DTC resolution,
   EV or hybrid high-voltage lane, workshop services, and booking. Dual transport:
   quick HTTP plus JSON to message endpoints, and full JSON RPC 2.0 on POST / for tasks,

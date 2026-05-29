@@ -51,7 +51,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 2e6887b1-55b8-4f9e-b2d7-e7b0e6f7afc1
+  external_id: ''
 description: Agent-native SVG source registry and licensed export API for coding agents
   building product interfaces.
 version: 1.0.0

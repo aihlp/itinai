@@ -25,7 +25,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 3551c8f8-4474-4b21-8862-5d7d895a0341
+  external_id: ''
 description: Secure RAG agent for PDF, Excel, and YouTube analysis with rate limiting
   and API key protection.
 version: 1.0.0

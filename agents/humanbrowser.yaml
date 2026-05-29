@@ -34,7 +34,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: d238edb6-2cfa-441a-852c-8c8d3cbe166c
+  external_id: ''
 description: "Stealth cloud browser-agent with residential proxies. You describe what\
   \ you want in plain English \u2014 the server runs an LLM-driven browser on a residential\
   \ IP and returns a concise answer plus a live viewer URL. Cookies and logins persist\

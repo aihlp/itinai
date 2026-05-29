@@ -87,7 +87,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 26dc4116-501f-4ed7-a31d-e20b3fa253e9
+  external_id: ''
 description: Agentic seller agent for the BidMachine ad exchange exposed via A2A intents.
   Buyer agents can search inventory, request deals, monitor delivery, query market-rate
   intelligence (CPM percentile bands, counter-offer signals), and access audience

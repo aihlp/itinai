@@ -1,0 +1,41 @@
+agent_id: hivelaw
+name: HiveLaw
+a2a_config:
+  agent_card_url: https://hivelaw.onrender.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: compliance-cert
+  name: Compliance Certification
+  tags:
+  - compliance
+  - eu-ai-act
+  - regulation
+  - certification
+- id: hallucination-audit
+  name: Hallucination Audit
+  tags:
+  - hallucination
+  - audit
+  - liability
+  - verification
+- id: dispute-resolution
+  name: Dispute Resolution
+  tags:
+  - dispute
+  - arbitration
+  - legal
+  - resolution
+health_check:
+  url: https://hivelaw.onrender.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://www.hiveagentiq.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Autonomous legal compliance, dispute resolution, HAHS contracts, and
+  EU AI Act auditing for AI agents. HAGF governed. Compliance tiers: Basic, Standard,
+  Enterprise, Institutional.'
+version: 1.0.0

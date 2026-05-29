@@ -45,7 +45,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 44041f0f-6d82-410c-bc9f-4e0755b123f4
+  external_id: ''
 description: Search Korean and global tech news in real-time. Powered by Korean News
   MCP. Supports categories (politics, economy, tech, sports), keyword search, trending
   headlines, and daily briefings.

@@ -66,7 +66,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 6736a867-abd7-4a83-8bd2-1ce9ccbeaa69
+  external_id: ''
 description: Paid A2A/MCP agent reviews, Stripe payment-gated execution, and receipts
   for agent marketplaces.
 version: 0.8.1

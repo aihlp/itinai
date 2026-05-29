@@ -56,7 +56,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: b8105073-5512-4e86-a153-cf21aa85fa4c
+  external_id: ''
 description: Treasury-as-a-service attestation + routing layer. Hive does NOT custody
   funds. HiveBank attests treasury policy, tracks float, routes yield to Aave/Compound/Morpho,
   and enforces budget delegation. Coinbase/Anchorage/Fireblocks hold the keys; HiveBank
