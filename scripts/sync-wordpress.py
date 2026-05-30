@@ -158,6 +158,12 @@ def main() -> int:
     parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT_SECONDS)
     parser.add_argument("--retries", type=int, default=3, help="Retries per manifest for transient network/server errors")
     parser.add_argument("--retry-delay", type=float, default=2.0, help="Base retry delay in seconds")
+    parser.add_argument(
+        "--max-consecutive-failures",
+        type=int,
+        default=0,
+        help="Stop early after this many consecutive failed manifests. 0 disables the circuit breaker.",
+    )
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument(
         "--no-swapped-auth-retry",
@@ -192,6 +198,8 @@ def main() -> int:
 
     success = 0
     failed = 0
+    consecutive_failures = 0
+    aborted = False
     with requests.Session() as session:
         for path in paths:
             manifest = load_manifest(path)
@@ -210,12 +218,24 @@ def main() -> int:
             )
             if ok:
                 success += 1
+                consecutive_failures = 0
                 print(f"SYNC OK {manifest['agent_id']} {detail}")
             else:
                 failed += 1
+                consecutive_failures += 1
                 print(f"SYNC FAIL {manifest['agent_id']} {detail}", file=sys.stderr)
+                if args.max_consecutive_failures and consecutive_failures >= args.max_consecutive_failures:
+                    aborted = True
+                    remaining = len(paths) - success - failed
+                    print(
+                        "WordPress sync aborted: "
+                        f"{consecutive_failures} consecutive failures, {remaining} manifest(s) not attempted.",
+                        file=sys.stderr,
+                    )
+                    break
 
-    print(f"WordPress sync complete: success={success}, failed={failed}, endpoint={endpoint}")
+    status = "aborted" if aborted else "complete"
+    print(f"WordPress sync {status}: success={success}, failed={failed}, endpoint={endpoint}")
     return 0 if failed == 0 else 1
 
 
