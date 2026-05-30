@@ -60,8 +60,9 @@ jobs:
 
       - name: Sync WordPress Agents app
         if: env.WP_KEY != '' && env.WP_USER != ''
-        timeout-minutes: 8
-        run: python scripts/sync-wordpress.py --health-report health-results.json --timeout 30 --retries 5 --retry-delay 2
+        continue-on-error: true
+        timeout-minutes: 4
+        run: python scripts/sync-wordpress.py --health-report health-results.json --timeout 10 --retries 2 --retry-delay 2 --max-consecutive-failures 2
 
       - name: Update scheduled health state
         if: github.event_name == 'schedule'
