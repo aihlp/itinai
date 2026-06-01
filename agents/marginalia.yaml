@@ -1,0 +1,38 @@
+agent_id: marginalia
+name: marginalia
+a2a_config:
+  agent_card_url: https://marginalia.polycode.co.uk/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: chat
+  name: Open chat
+  tags:
+  - chat
+  - memory
+  - marginalia
+- id: recall-memory
+  name: Recall memory
+  tags:
+  - memory
+  - search
+  - recall
+- id: research-projects
+  name: Research projects
+  tags:
+  - projects
+  - research
+  - collaboration
+health_check:
+  url: https://marginalia.polycode.co.uk/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://polycode.co.uk
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: A persistent, memory-graph-backed chat agent. Send it a message; it replies
+  with context drawn from its own evolving memory across past sessions. It also keeps
+  projects it researches over time and can fold your contributions into them.
+version: 0.2.0

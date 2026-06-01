@@ -1,0 +1,50 @@
+agent_id: packrift-a2a-packaging-procurement-router
+name: Packrift A2A Packaging Procurement Router
+a2a_config:
+  agent_card_url: https://packrift-agent-discovery-hub.vercel.app/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: packrift-procurement-routing
+  name: Packrift Procurement Routing
+  tags:
+  - packaging
+  - procurement
+  - sku-search
+  - boxes
+  - mailers
+  - labels
+  - shopify
+  - mcp
+- id: public-sku-record-lookup
+  name: Public SKU Record Lookup
+  tags:
+  - packaging
+  - sku
+  - product-data
+  - crawler-safe
+  - ai-commerce
+- id: guarded-cart-handoff
+  name: Guarded Cart Handoff
+  tags:
+  - packaging
+  - cart
+  - handoff
+  - shopify
+  - procurement
+  - order-safety
+health_check:
+  url: https://packrift-agent-discovery-hub.vercel.app/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://packrift.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Public Packrift agent card for a stateless A2A JSON-RPC routing layer.
+  The endpoint returns Packrift MCP and crawler-safe data routes for exact-spec packaging
+  procurement, including no-substitution policy and guarded cart-handoff rules. Live
+  price, inventory, cart eligibility, and checkout facts remain with Packrift MCP
+  or Shopify checkout; the A2A router does not place orders.
+version: 0.3.0
