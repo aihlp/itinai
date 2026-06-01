@@ -1,4 +1,4 @@
-# ITINAI Agent Directory
+# ITINAI A2A Agent Directory
 
 [![Validate Agent Manifests](https://github.com/aihlp/itinai/actions/workflows/validate.yml/badge.svg)](https://github.com/aihlp/itinai/actions/workflows/validate.yml)
 [![Health Check Agents](https://github.com/aihlp/itinai/actions/workflows/health-check.yml/badge.svg)](https://github.com/aihlp/itinai/actions/workflows/health-check.yml)
