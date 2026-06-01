@@ -1,0 +1,48 @@
+agent_id: poolparty-agent-concierge
+name: PoolParty Agent Concierge
+a2a_config:
+  agent_card_url: https://www.poolparty.io/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: route-project-to-airtime
+  name: Route Project To Airtime
+  tags:
+  - distribution
+  - airtime
+  - routing
+  - mcp
+- id: explain-poolparty-submission-path
+  name: Explain PoolParty Submission Path
+  tags:
+  - submission
+  - free-entry
+  - wallet-boundary
+  - guardrails
+- id: evaluate-media-block-fit
+  name: Evaluate Media Block Fit
+  tags:
+  - media
+  - demo
+  - fit-check
+  - moderation
+- id: explain-poolparty-economics
+  name: Explain PoolParty Economics
+  tags:
+  - economics
+  - rewards
+  - monetization
+  - wallet-boundary
+health_check:
+  url: https://www.poolparty.io/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://www.poolparty.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: MCP-native PoolParty discovery bridge that helps agents and humans route
+  projects, demos, media blocks, and launch assets toward inspectable PoolParty airtime
+  paths.
+version: 0.1.0

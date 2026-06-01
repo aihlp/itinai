@@ -1,0 +1,44 @@
+agent_id: postalform
+name: PostalForm
+a2a_config:
+  agent_card_url: https://postalform.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: postalform-mcp-connector-guidance
+  name: Connect an agent to PostalForm MCP
+  tags:
+  - mcp
+  - agent setup
+  - postal mail
+  - print and mail
+  - developer tools
+- id: postalform-mail-draft-planning
+  name: Plan a reviewable physical-mail draft
+  tags:
+  - pdf mailing
+  - letters
+  - workflow forms
+  - hosted checkout
+  - mail drafts
+- id: postalform-machine-payment-planning
+  name: Plan an authorized machine-paid mail order
+  tags:
+  - x402
+  - mpp
+  - machine payments
+  - agentic commerce
+  - mail fulfillment
+health_check:
+  url: https://postalform.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://postalform.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: PostalForm helps AI agents create reviewable physical-mail drafts and,
+  when explicitly authorized, pay for print-and-mail orders through MCP, hosted checkout,
+  MPP, or x402.
+version: 0.1.0

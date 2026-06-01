@@ -132,7 +132,7 @@ description: "Torify gives AI agents the Japanese locale primitives that standar
   \ libraries lack \u2014 imperial era date conversion (wareki), qualified invoice\
   \ number validation with NTA registry lookup, corporate number lookup (\u6CD5\u4EBA\
   \u756A\u53F7), postal code resolution, name romanization (Hepburn), and kanji-to-kana\
-  \ conversion via Cloudflare Workers AI (Llama 3.3 70B). 40 endpoints total. No authentication\
+  \ conversion via Cloudflare Workers AI (Llama 3.3 70B). 42 endpoints total. No authentication\
   \ required for MCP. Free trial: 100 REST API calls/month with email signup. Pay-per-call\
   \ $0.02/call via x402 USDC on Base, or $49/mo Pro subscription."
 version: 0.1.0
