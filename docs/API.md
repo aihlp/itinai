@@ -384,18 +384,36 @@ scripts/sync-wordpress.py
 python scripts/sync-wordpress.py
 
 # Sync specific manifests
-python scripts/sync-wordpress.py --manifests agents/agent1.yaml agents/agent2.yaml
+python scripts/sync-wordpress.py agents/agent1.yaml agents/agent2.yaml
 
-# Dry run
-python scripts/sync-wordpress.py --dry-run
+# Sync from paths file
+python scripts/sync-wordpress.py --paths-file manifests.txt
+
+# Custom endpoint
+python scripts/sync-wordpress.py --endpoint https://my-site.com/wp-json/itinai/v1/sync
+
+# With health report
+python scripts/sync-wordpress.py --health-report health-results.json
+
+# Custom timeout and retries
+python scripts/sync-wordpress.py --timeout 30 --retries 5 --retry-delay 2
 ```
 
 ### Arguments
 
 | Argument | Type | Required | Default | Description |
 |----------|------|----------|---------|-------------|
-| `--manifests` | list | No | All manifests | Specific manifest files to sync |
-| `--dry-run` | flag | No | `False` | Preview without making API calls |
+| `paths` | list | No | All `agents/*.yaml` | Manifest paths to sync |
+| `--endpoint` | string | No | `WP_SYNC_ENDPOINT` env or default | WordPress REST API endpoint |
+| `--user-env` | string | No | `WP_USER` | Env var containing WordPress username |
+| `--password-env` | string | No | `WP_KEY` | Env var containing app password |
+| `--health-report` | string | No | `health-results.json` | Health check JSON report path |
+| `--paths-file` | string | No | `None` | Newline-delimited file with manifest paths |
+| `--timeout` | integer | No | `20` | Request timeout in seconds |
+| `--retries` | integer | No | `3` | Retries per manifest for transient errors |
+| `--retry-delay` | float | No | `2.0` | Base retry delay in seconds |
+| `--limit` | integer | No | `0` (no limit) | Max manifests to sync |
+| `--no-swapped-auth-retry` | flag | No | `False` | Disable auth retry with swapped credentials |
 
 ### WordPress Integration
 

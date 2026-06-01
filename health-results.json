@@ -1,0 +1,350 @@
+{
+  "checked_at": "2026-06-01T13:33:51.211916+00:00",
+  "total": 38,
+  "healthy": 34,
+  "unhealthy": 4,
+  "results": [
+    {
+      "agent_id": "agent-svg-registry",
+      "manifest": "agents/agent-svg-registry.yaml",
+      "url": "https://agent-svg-registry.vercel.app/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:13.429112+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "agentsearch",
+      "manifest": "agents/agentsearch.yaml",
+      "url": "https://agentsearch.luthersystems.com/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:13.736376+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "anp2-network-relay",
+      "manifest": "agents/anp2-network-relay.yaml",
+      "url": "https://anp2.com/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:13.780144+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "apimesh",
+      "manifest": "agents/apimesh.yaml",
+      "url": "https://apimesh.xyz/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:14.725887+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "arcasos-short-term-rental-search",
+      "manifest": "agents/arcasos-short-term-rental-search.yaml",
+      "url": "https://arcasos.com/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:15.554055+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "bidmachine-ad-exchange",
+      "manifest": "agents/bidmachine-ad-exchange.yaml",
+      "url": "https://a2a.bidmachine.io/.well-known/agent.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:16.468618+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "block-lottos",
+      "manifest": "agents/block-lottos.yaml",
+      "url": "https://blocklottos.com/.well-known/agent.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:16.831937+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "bot-hub",
+      "manifest": "agents/bot-hub.yaml",
+      "url": "https://baconhollow.com/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:17.887497+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "chainaware-ai-api",
+      "manifest": "agents/chainaware-ai-api.yaml",
+      "url": "https://beta.backend.chainaware.ai/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:18.811066+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "deepblue-trading-api",
+      "manifest": "agents/deepblue-trading-api.yaml",
+      "url": "https://api.deepbluebase.xyz/.well-known/agent.json",
+      "ok": false,
+      "status_code": null,
+      "checked_at": "2026-06-01T13:33:19.399583+00:00",
+      "error": "HTTPSConnectionPool(host='api.deepbluebase.xyz', port=443): Max retries exceeded with url: /.well-known/agent.json (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f9ce56a72f0>, 'Connection to api.deepbluebase.xyz timed out. (connect timeout=10)'))"
+    },
+    {
+      "agent_id": "dime-experiment",
+      "manifest": "agents/dime-experiment.yaml",
+      "url": "https://pierre-ace-bunny-once.trycloudflare.com/.well-known/agent-card.json",
+      "ok": false,
+      "status_code": null,
+      "checked_at": "2026-06-01T13:33:29.418020+00:00",
+      "error": "HTTPSConnectionPool(host='pierre-ace-bunny-once.trycloudflare.com', port=443): Max retries exceeded with url: /.well-known/agent-card.json (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f9ce56a7290>: Failed to resolve 'pierre-ace-bunny-once.trycloudflare.com' ([Errno -2] Name or service not known)\"))"
+    },
+    {
+      "agent_id": "docuseal",
+      "manifest": "agents/docuseal.yaml",
+      "url": "https://www.docuseal.com/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:29.430260+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "fodda",
+      "manifest": "agents/fodda.yaml",
+      "url": "https://www.fodda.ai/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:30.158352+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "gitdealflow-signal-agent",
+      "manifest": "agents/gitdealflow-signal-agent.yaml",
+      "url": "https://signals.gitdealflow.com/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:30.409475+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "hexnest-machine-reasoning-network-344a6b80",
+      "manifest": "agents/hexnest-machine-reasoning-network-344a6b80.yaml",
+      "url": "https://hexnest-mvp-roomboard.onrender.com/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:30.477240+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "hexnest-machine-reasoning-network",
+      "manifest": "agents/hexnest-machine-reasoning-network.yaml",
+      "url": "https://hex-nest.com/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:30.675298+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "hive-civilization",
+      "manifest": "agents/hive-civilization.yaml",
+      "url": "https://thehiveryiq.com/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:31.146296+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "hivebank",
+      "manifest": "agents/hivebank.yaml",
+      "url": "https://hivebank.onrender.com/.well-known/agent.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:39.991624+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "humanbrowser",
+      "manifest": "agents/humanbrowser.yaml",
+      "url": "https://agent.humanbrowser.cloud/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:40.558410+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "insideout",
+      "manifest": "agents/insideout.yaml",
+      "url": "https://insideout.luthersystems.com/.well-known/agent.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:41.113277+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "kaderos-revenue-router",
+      "manifest": "agents/kaderos-revenue-router.yaml",
+      "url": "https://kaderos.io/.well-known/agent.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:41.791009+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "korean-news-agent",
+      "manifest": "agents/korean-news-agent.yaml",
+      "url": "https://news-agent.songt50.us/.well-known/agent.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:42.123290+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "lexicon-comparison-intelligence-engine",
+      "manifest": "agents/lexicon-comparison-intelligence-engine.yaml",
+      "url": "https://dbssearch.today/.well-known/agent.json",
+      "ok": false,
+      "status_code": 404,
+      "checked_at": "2026-06-01T13:33:42.497081+00:00",
+      "error": "Expected HTTP 200, got 404"
+    },
+    {
+      "agent_id": "microquery",
+      "manifest": "agents/microquery.yaml",
+      "url": "https://microquery.dev/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:42.532111+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "nexus-intelligence",
+      "manifest": "agents/nexus-intelligence.yaml",
+      "url": "https://nexus-agent-xa12.onrender.com/.well-known/agent.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:43.231317+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "paki-curator",
+      "manifest": "agents/paki-curator.yaml",
+      "url": "https://cesaryague.es/.well-known/agent.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:43.486855+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "partstable-intelligence",
+      "manifest": "agents/partstable-intelligence.yaml",
+      "url": "https://partsiq-api.onrender.com/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:44.877652+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "perkoon-agent-data-layer",
+      "manifest": "agents/perkoon-agent-data-layer.yaml",
+      "url": "https://perkoon.com/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:45.116022+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "pictomancer-ai",
+      "manifest": "agents/pictomancer-ai.yaml",
+      "url": "https://api.pictomancer.ai/.well-known/agent.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:46.564506+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "ragsphere",
+      "manifest": "agents/ragsphere.yaml",
+      "url": "https://ragsphere.vercel.app/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:47.423488+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "rosentic",
+      "manifest": "agents/rosentic.yaml",
+      "url": "https://api.rosentic.com/.well-known/agent.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:47.498338+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "rs-performance-gda-sk",
+      "manifest": "agents/rs-performance-gda-sk.yaml",
+      "url": "https://rsperformance.online/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:47.753942+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "slickrock-dev",
+      "manifest": "agents/slickrock-dev.yaml",
+      "url": "https://www.slickrock.dev/.well-known/agent-card.json",
+      "ok": false,
+      "status_code": 403,
+      "checked_at": "2026-06-01T13:33:48.800395+00:00",
+      "error": "Expected HTTP 200, got 403"
+    },
+    {
+      "agent_id": "swarmsync-commerce-demo-agent",
+      "manifest": "agents/swarmsync-commerce-demo-agent.yaml",
+      "url": "https://swarmsync-agents.onrender.com/.well-known/agent.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:48.855307+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "tessa-marketing-technology",
+      "manifest": "agents/tessa-marketing-technology.yaml",
+      "url": "https://aiagent.tessa.tech/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:49.118680+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "torify-japanese-locale-apis-for-ai-agents",
+      "manifest": "agents/torify-japanese-locale-apis-for-ai-agents.yaml",
+      "url": "https://torify.dev/.well-known/agent.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:49.612455+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "vaultfire-agent-hub",
+      "manifest": "agents/vaultfire-agent-hub.yaml",
+      "url": "https://theloopbreaker.com/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:50.116323+00:00",
+      "error": null
+    },
+    {
+      "agent_id": "viseon-ai-router",
+      "manifest": "agents/viseon-ai-router.yaml",
+      "url": "https://viseoncrawltest.uk/.well-known/agent-card.json",
+      "ok": true,
+      "status_code": 200,
+      "checked_at": "2026-06-01T13:33:50.624072+00:00",
+      "error": null
+    }
+  ]
+}

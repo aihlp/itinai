@@ -344,6 +344,42 @@ python scripts/import-from-registry.py --endpoint https://my-api.com/agents
 --dry-run              Preview without writing files
 ```
 
+### sync-wordpress.py
+
+Synchronizes agent manifests to WordPress site via REST API.
+
+```bash
+# Sync all manifests
+python scripts/sync-wordpress.py
+
+# Sync specific manifests
+python scripts/sync-wordpress.py agents/agent1.yaml agents/agent2.yaml
+
+# With health report
+python scripts/sync-wordpress.py --health-report health-results.json
+
+# Custom endpoint and credentials
+python scripts/sync-wordpress.py --endpoint https://mysite.com/wp-json/itinai/v1/sync
+
+# Options
+--endpoint URL         WordPress REST API endpoint (default: WP_SYNC_ENDPOINT env)
+--user-env NAME        Env var for WordPress username (default: WP_USER)
+--password-env NAME    Env var for app password (default: WP_KEY)
+--health-report FILE   Health check JSON report path
+--paths-file FILE      Newline-delimited manifest paths file
+--timeout SECONDS      Request timeout (default: 20)
+--retries N            Retries per manifest (default: 3)
+--retry-delay SECONDS  Base retry delay (default: 2.0)
+--limit N              Max manifests to sync
+--no-swapped-auth-retry Disable credential swap retry
+```
+
+**Environment Variables:**
+- `WP_USER`: WordPress username
+- `WP_KEY`: Application password or sync key
+- `WP_APP`: Application password label
+- `WP_SYNC_ENDPOINT`: WordPress REST API endpoint
+
 ## Contributing
 
 We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on:
