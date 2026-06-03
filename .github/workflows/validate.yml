@@ -2,16 +2,6 @@ name: Validate Agent Manifests
 
 on:
   pull_request:
-    paths:
-      - "agents/*.yaml"
-      - "schemas/agent-manifest.schema.json"
-      - "scripts/validate.py"
-      - "scripts/health-check.py"
-      - "scripts/sync-wordpress.py"
-      - ".github/workflows/health-check.yml"
-      - ".github/workflows/sync-external.yml"
-      - ".github/workflows/sync-wordpress.yml"
-      - ".github/workflows/validate.yml"
   workflow_dispatch:
 
 concurrency:
@@ -43,6 +33,12 @@ jobs:
           else
             echo "is_wp_submission=false" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Force validation for ITINAI/WordPress submission PRs (bypass paths filter)
+        if: steps.check-wp-submission.outputs.is_wp_submission == 'true' && github.event_name == 'pull_request'
+        run: |
+          echo "ITINAI/WordPress submission PR detected (${{ github.head_ref }}). Running full validation regardless of changed files."
+          echo "This ensures auto-merge workflow will trigger after successful validation."
 
       - name: Skip validation for automated PRs
         if: steps.check-auto.outputs.is_automated == 'true'
