@@ -158,18 +158,12 @@ jobs:
               core.warning(`Failed to approve PR #${pullNumber}: ${error.message}`);
             }
 
-            // Enable auto-merge for the PR
-            try {
-              await github.rest.pulls.enableAutomerge({
-                owner,
-                repo,
-                pull_number: pullNumber,
-                merge_method: 'squash'
-              });
-              core.info(`Enabled auto-merge for PR #${pullNumber}`);
-            } catch (error) {
-              core.warning(`Failed to enable auto-merge for PR #${pullNumber}: ${error.message}`);
-            }
+            // Note: Do NOT attempt to enable auto-merge here.
+            // Auto-merge via API requires repository-level settings and may fail with
+            // "Auto merge is not allowed for this repository" error.
+            // Instead, validation and merge are handled by the validate-and-merge.yml workflow
+            // which triggers on pull_request_target for branches starting with 'submit/'.
+            core.info(`PR #${pullNumber} created. Validation and merge will be handled by GitHub Actions workflow.`);
 
       - name: Report no changes
         if: steps.changes.outputs.changed == 'false'
