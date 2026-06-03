@@ -2,16 +2,6 @@ name: Validate Agent Manifests
 
 on:
   pull_request:
-    paths:
-      - "agents/*.yaml"
-      - "schemas/agent-manifest.schema.json"
-      - "scripts/validate.py"
-      - "scripts/health-check.py"
-      - "scripts/sync-wordpress.py"
-      - ".github/workflows/health-check.yml"
-      - ".github/workflows/sync-external.yml"
-      - ".github/workflows/sync-wordpress.yml"
-      - ".github/workflows/validate.yml"
   workflow_dispatch:
 
 concurrency:
@@ -32,14 +22,23 @@ jobs:
             echo "is_automated=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Check if WordPress submission PR
+      - name: Check if WordPress submission PR or ITINAI agent submission
         id: check-wp-submission
         run: |
-          if [[ "${{ github.head_ref }}" == submit/* ]]; then
+          # Check for various automated submission patterns:
+          # - submit/* : WordPress submissions
+          # - itinai-* : ITINAI agent submissions
+          if [[ "${{ github.head_ref }}" == submit/* ]] || [[ "${{ github.head_ref }}" == itinai-* ]]; then
             echo "is_wp_submission=true" >> "$GITHUB_OUTPUT"
           else
             echo "is_wp_submission=false" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Force validation for ITINAI/WordPress submission PRs (bypass paths filter)
+        if: steps.check-wp-submission.outputs.is_wp_submission == 'true' && github.event_name == 'pull_request'
+        run: |
+          echo "ITINAI/WordPress submission PR detected (${{ github.head_ref }}). Running full validation regardless of changed files."
+          echo "This ensures auto-merge workflow will trigger after successful validation."
 
       - name: Skip validation for automated PRs
         if: steps.check-auto.outputs.is_automated == 'true'
@@ -57,7 +56,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check out repository (WordPress submission)
+      - name: Check out repository (WordPress or ITINAI submission)
         if: steps.check-wp-submission.outputs.is_wp_submission == 'true'
         uses: actions/checkout@v4
         with:
