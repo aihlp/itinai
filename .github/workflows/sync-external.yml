@@ -161,8 +161,9 @@ jobs:
             // Note: Do NOT attempt to enable auto-merge here.
             // Auto-merge via API requires repository-level settings and may fail with
             // "Auto merge is not allowed for this repository" error.
-            // Instead, validation and merge are handled by the validate-and-merge.yml workflow
-            // which triggers on pull_request_target for branches starting with 'submit/'.
+            // Instead, validation and merge are handled by the auto-merge.yml workflow
+            // which triggers on successful completion of the Validate Agent Manifests workflow
+            // for automated branches (codex/sync-external-agents, submit/*, itinai-*, auto-cleanup-offline-agents).
             core.info(`PR #${pullNumber} created. Validation and merge will be handled by GitHub Actions workflow.`);
 
       - name: Report no changes

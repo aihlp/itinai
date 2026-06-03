@@ -1,4 +1,4 @@
-name: Auto-merge WordPress Submissions
+name: Auto-merge Automated PRs
 
 on:
   workflow_run:
@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - name: Check if triggered by WordPress submission PR
-        id: check-wp-submission
+      - name: Check if triggered by automated PR
+        id: check-auto-pr
         run: |
           # Get the SHA from the workflow run
           SHA="${{ github.event.workflow_run.head_sha }}"
@@ -27,7 +27,7 @@ jobs:
           
           if [ -z "$PR_DATA" ] || [ "$PR_DATA" = "null" ]; then
             echo "No PR associated with SHA $SHA"
-            echo "is_wp_submission=false" >> "$GITHUB_OUTPUT"
+            echo "is_automated=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           
@@ -36,27 +36,29 @@ jobs:
           
           echo "Found PR #$PR_NUMBER from branch: $HEAD_REF"
           
-          # Check for various automated submission patterns:
+          # Check for automated PR patterns:
           # - submit/* : WordPress submissions
           # - itinai-* : ITINAI agent submissions
-          if [[ "$HEAD_REF" == submit/* ]] || [[ "$HEAD_REF" == itinai-* ]]; then
-            echo "is_wp_submission=true" >> "$GITHUB_OUTPUT"
+          # - codex/sync-external-agents : External agent sync
+          # - auto-cleanup-offline-agents : Offline agent cleanup
+          if [[ "$HEAD_REF" == submit/* ]] || [[ "$HEAD_REF" == itinai-* ]] || [[ "$HEAD_REF" == "codex/sync-external-agents" ]] || [[ "$HEAD_REF" == "auto-cleanup-offline-agents" ]]; then
+            echo "is_automated=true" >> "$GITHUB_OUTPUT"
             echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
             echo "head_ref=$HEAD_REF" >> "$GITHUB_OUTPUT"
           else
-            echo "is_wp_submission=false" >> "$GITHUB_OUTPUT"
+            echo "is_automated=false" >> "$GITHUB_OUTPUT"
           fi
         env:
           GH_TOKEN: ${{ github.token }}
 
-      - name: Merge validated WordPress submission
-        if: steps.check-wp-submission.outputs.is_wp_submission == 'true'
+      - name: Merge validated automated PR
+        if: steps.check-auto-pr.outputs.is_automated == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{ steps.check-wp-submission.outputs.pr_number }}
+          PR_NUMBER: ${{ steps.check-auto-pr.outputs.pr_number }}
           REPO: ${{ github.repository }}
         run: |
-          echo "Merging PR #$PR_NUMBER from branch with pattern submit/* or itinai-*"
+          echo "Merging PR #$PR_NUMBER from automated branch: ${{ steps.check-auto-pr.outputs.head_ref }}"
           gh pr merge "$PR_NUMBER" \
             --repo "$REPO" \
             --squash \
