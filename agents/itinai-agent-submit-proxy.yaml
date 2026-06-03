@@ -1,0 +1,23 @@
+agent_id: "itinai-agent-submit-proxy"
+name: "ITINAI Agent Submit Proxy"
+description: "Adds AI agents to the ITINAI catalog by accepting an Agent Card URL or manifest JSON, validating the submission, and creating a GitHub pull request for catalog review."
+a2a_config:
+  agent_card_url: "https://itinai.com/itinai-submit-agent-card.json"
+  protocol_version: 1.0
+skills:
+  -
+    id: "submit-agent-to-catalog"
+    name: "Submit agent to catalog"
+    tags:
+      - "agent-catalog"
+      - "agent-submission"
+      - "github-pull-request"
+      - "a2a"
+contact:
+  email: ""
+  url: ""
+source:
+  name: "ITINAI Agent Submit Proxy"
+  type: "wordpress-submit-proxy"
+  url: "https://itinai.com/"
+version: "1.0.0"
