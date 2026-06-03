@@ -1,8 +1,1 @@
-# GitHub workflow files
-.github/workflows/sync-external.yml
-
-Wait, I need to reconsider this. The file `.github/workflows/sync-external.yml` is a modified file, but it's a source/config file, not a build artifact, dependency, or temp file. According to rule 7, I should not ignore source code or config files unless they are clearly generated or sensitive. A GitHub Actions workflow file is a legitimate source file that should be tracked.
-
-Since the only modified file is a source/config file and there are no build artifacts, dependencies, or temp files in the changes, the output should be empty.
-
-(empty)
+Nothing should be ignored based on the provided file changes. The only modified file is a GitHub Actions workflow file (`.github/workflows/sync-external.yml`), which is a configuration file and not a build artifact, dependency, or temporary file.
