@@ -189,8 +189,8 @@ def main() -> int:
     username = os.environ.get(args.user_env, "").strip()
     app_password = os.environ.get(args.password_env, "").strip()
     sync_key = os.environ.get("WP_KEY", "").strip()
-    if not username or not app_password:
-        print(f"Skipping WordPress sync: {args.user_env} or {args.password_env} is not set.")
+    if not username or not (app_password or sync_key):
+        print(f"Skipping WordPress sync: {args.user_env} or ({args.password_env}/WP_KEY) is not set.")
         return 0
 
     health = load_health_report(Path(args.health_report) if args.health_report else None)
