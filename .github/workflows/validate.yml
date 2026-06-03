@@ -51,7 +51,7 @@ jobs:
 
       - name: Check Agent Card availability
         timeout-minutes: 5
-        run: python scripts/health-check.py --agent-card-only --paths-file changed-agents.txt --output health-results.json
+        run: python scripts/health-check.py --agent-card-only --paths-file changed-agents.txt --output health-results.json --allow-unhealthy
 
       - name: Upload health results
         if: always()

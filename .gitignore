@@ -1,6 +1,89 @@
-.venv/
-.gh-config/
-.secrets/
-__pycache__/
-*.pyc
-health-results.json
+```yaml
+name: Validate PR Title
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  main:
+    name: Validate PR Title
+    runs-on: ubuntu-latest
+    steps:
+      - uses: amannn/action-semantic-pull-request@v5
+        id: lint_pr_title
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          validateSingleCommit: true
+          # Configure which types lead to which labels
+          # See: https://github.com/zeke/semantic-pull-request#configuration
+          typeLabels: |
+            [
+              {"type": "feat", "label": "feature"},
+              {"type": "fix", "label": "bug"},
+              {"type": "docs", "label": "documentation"},
+              {"type": "style", "label": "formatting"},
+              {"type": "refactor", "label": "refactoring"},
+              {"type": "perf", "label": "performance"},
+              {"type": "test", "label": "testing"},
+              {"type": "chore", "label": "chore"}
+            ]
+          # Configure additional labels that will be applied for types
+          # See: https://github.com/zeke/semantic-pull-request#configuration
+          additionalTypeLabels: |
+            [
+              {"type": "feat", "labels": ["feature"]},
+              {"type": "fix", "labels": ["bug"]},
+              {"type": "docs", "labels": ["documentation"]},
+              {"type": "style", "labels": ["formatting"]},
+              {"type": "refactor", "labels": ["refactoring"]},
+              {"type": "perf", "labels": ["performance"]},
+              {"type": "test", "labels": ["testing"]},
+              {"type": "chore", "labels": ["chore"]}
+            ]
+
+      - uses: marocchino/sticky-pull-request-comment@v2
+        # When the previous step fails, the workflow would stop. By adding this
+        # condition, we make sure this step runs in any case.
+        if: always()
+        with:
+          header: pr-title-lint-error
+          message: |
+            The format of the pull request title doesn't match the conventional commit specification. Please adjust it accordingly.
+
+            **Current title:** `${{ github.event.pull_request.title }}`
+
+            **Error:**
+            ```
+            ${{ steps.lint_pr_title.outputs.error_message }}
+            ```
+
+            <details>
+            <summary>More details</summary>
+
+            We use [Conventional Commits](https://www.conventionalcommits.org/) to allow for automated changelog generation. The title has the following format:
+
+            `<type>(<scope>): <description>`
+
+            **Allowed types:**
+            - `feat`: A new feature
+            - `fix`: A bug fix
+            - `docs`: Documentation only changes
+            - `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+            - `refactor`: A code change that neither fixes a bug nor adds a feature
+            - `perf`: A code change that improves performance
+            - `test`: Adding missing tests or correcting existing tests
+            - `chore`: Other changes that don't modify src or test files
+
+            **Examples:**
+            - `feat: add authentication module`
+            - `fix(user-profile): resolve null pointer exception`
+            - `docs: update API documentation`
+            - `chore: update dependencies`
+
+            </details>
+```
