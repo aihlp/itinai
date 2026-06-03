@@ -1,0 +1,28 @@
+agent_id: 'itinai-agent-submit-proxy'
+name: 'ITINAI Agent Submit Proxy'
+a2a_config:
+  agent_card_url: 'https://itinai.com/itinai-submit-agent-card.json'
+  protocol_version: '1.0.0'
+skills:
+  -
+    id: 'submit-agent-to-catalog'
+    name: 'Submit agent to catalog'
+    tags:
+      - 'agent-submission'
+      - 'catalog'
+      - 'agent-card'
+      - 'proxy'
+      - 'itinai'
+  -
+    id: 'normalize-agent-manifest'
+    name: 'Normalize agent manifest'
+    tags:
+      - 'manifest'
+      - 'normalization'
+      - 'a2a'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'Publishes agents to the ITINAI catalog by accepting an Agent Card URL or normalized manifest JSON and creating a GitHub pull request without exposing GitHub credentials to the submitter.'
+version: '1.0.0'
