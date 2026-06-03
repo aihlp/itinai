@@ -1,0 +1,48 @@
+name: Auto-Merge Submitted Agents
+
+on:
+  workflow_run:
+    workflows: ["Validate Agent Manifests"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    name: merge-submitted-agent
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Check if triggered by submit/* branch PR
+        id: check-submission
+        run: |
+          # Get the PR associated with this workflow run
+          PR_HEAD_REF="${{ github.event.workflow_run.head_branch }}"
+          if [[ "$PR_HEAD_REF" == submit/* ]]; then
+            echo "is_submission=true" >> "$GITHUB_OUTPUT"
+            echo "PR head branch: $PR_HEAD_REF"
+          else
+            echo "is_submission=false" >> "$GITHUB_OUTPUT"
+            echo "Not a submission PR (head branch: $PR_HEAD_REF)"
+          fi
+
+      - name: Merge validated submission
+        if: steps.check-submission.outputs.is_submission == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ -n "$PR_NUMBER" ]; then
+            echo "Merging PR #$PR_NUMBER"
+            gh pr merge "$PR_NUMBER" \
+              --repo "$REPO" \
+              --squash \
+              --delete-branch
+          else
+            echo "No PR number found in workflow_run event"
+            exit 1
+          fi

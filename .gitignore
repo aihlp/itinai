@@ -1,1 +1,1 @@
-Nothing should be ignored based on the provided file changes, as they consist only of GitHub workflow configuration files (.yml) which are source/config files.
+Nothing needs to be added to the .gitignore file based on the provided changes. The files listed (.github/workflows/auto-merge.yml and .github/workflows/validate-and-merge.yml) are YAML configuration files for GitHub Actions workflows, which are source/config files that should be tracked by Git. No compiled artifacts, dependencies, temporary files, or other items requiring exclusion are present in the change list.
