@@ -1,0 +1,66 @@
+name: Validate and merge submitted agents
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'agents/*.yaml'
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+  statuses: read
+
+concurrency:
+  group: submitted-agent-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: validate-submitted-agent
+    if: startsWith(github.event.pull_request.head.ref, 'submit/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pull request content
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Validate catalog manifests
+        run: python scripts/validate.py
+
+      - name: Collect changed agent manifests
+        run: |
+          git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" -- 'agents/*.yaml' > changed-agents.txt
+
+      - name: Check Agent Card availability
+        timeout-minutes: 5
+        run: python scripts/health-check.py --agent-card-only --paths-file changed-agents.txt --output health-results.json --allow-unhealthy
+
+  merge:
+    name: merge-submitted-agent
+    needs: validate
+    if: always() && needs.validate.result == 'success' && startsWith(github.event.pull_request.head.ref, 'submit/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge validated submission
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh pr merge "$PR_NUMBER" \
+            --repo "$REPO" \
+            --squash \
+            --delete-branch \
+            --auto

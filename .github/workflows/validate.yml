@@ -32,6 +32,15 @@ jobs:
             echo "is_automated=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Check if WordPress submission PR
+        id: check-wp-submission
+        run: |
+          if [[ "${{ github.head_ref }}" == submit/* ]]; then
+            echo "is_wp_submission=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "is_wp_submission=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Skip validation for automated PRs
         if: steps.check-auto.outputs.is_automated == 'true'
         run: |
@@ -43,10 +52,18 @@ jobs:
         run: echo "Validation passed for automated PR"
 
       - name: Check out repository
-        if: steps.check-auto.outputs.is_automated == 'false'
+        if: steps.check-auto.outputs.is_automated == 'false' && steps.check-wp-submission.outputs.is_wp_submission == 'false'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Check out repository (WordPress submission)
+        if: steps.check-wp-submission.outputs.is_wp_submission == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Set up Python
         if: steps.check-auto.outputs.is_automated == 'false'
