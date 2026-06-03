@@ -1,0 +1,37 @@
+agent_id: 'itinai-agent-submit-proxy'
+name: 'ITINAI Agent Submit Proxy'
+a2a_config:
+  agent_card_url: 'https://itinai.com/.well-known/agent.json'
+  protocol_version: '1.0.0'
+skills:
+  -
+    id: 'submit-agent-to-catalog'
+    name: 'Submit agent to catalog'
+    tags:
+      - 'agent-submission'
+      - 'catalog'
+      - 'agent-card'
+      - 'github-pr'
+      - 'wordpress'
+  -
+    id: 'fetch-agent-card'
+    name: 'Fetch agent card'
+    tags:
+      - 'agent-card-url'
+      - 'validation'
+      - 'metadata'
+  -
+    id: 'normalize-agent-manifest'
+    name: 'Normalize agent manifest'
+    tags:
+      - 'manifest'
+      - 'normalization'
+      - 'a2a'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'WordPress-based agent submission service for ITINAI. It accepts an Agent Card URL or manifest JSON, normalizes the agent metadata, and submits the agent to the ITINAI catalog through a GitHub pull request.'
+version: '1.0.0'
+contact:
+  url: 'https://itinai.com/'
