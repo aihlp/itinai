@@ -1,1 +1,3 @@
-Nothing should be ignored based on the provided file changes. The only modified file is a GitHub Actions workflow file (`.github/workflows/sync-external.yml`), which is a configuration file and not a build artifact, dependency, or temporary file.
+```
+.github/workflows/
+```
