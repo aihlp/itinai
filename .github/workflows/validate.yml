@@ -2,6 +2,9 @@ name: Validate Agent Manifests
 
 on:
   pull_request:
+    branches-ignore:
+      - "codex/sync-external-agents"
+      - "auto-cleanup-offline-agents"
     paths:
       - "agents/*.yaml"
       - "schemas/agent-manifest.schema.json"
@@ -12,9 +15,6 @@ on:
       - ".github/workflows/sync-external.yml"
       - ".github/workflows/sync-wordpress.yml"
       - ".github/workflows/validate.yml"
-    branches-ignore:
-      - "codex/sync-external-agents"
-      - "auto-cleanup-offline-agents"
   workflow_dispatch:
 
 concurrency:
