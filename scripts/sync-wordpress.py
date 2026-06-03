@@ -107,6 +107,19 @@ def should_retry(detail: str) -> bool:
     )
 
 
+def is_network_error(detail: str) -> bool:
+    """Check if the error is a network-level failure (not manifest-specific)."""
+    network_indicators = (
+        "Network is unreachable",
+        "Connection refused",
+        "Connection timed out",
+        "Name resolution failure",
+        "Max retries exceeded",
+        "Failed to establish a new connection",
+    )
+    return any(indicator in detail for indicator in network_indicators)
+
+
 def sync_manifest(
     session: requests.Session,
     endpoint: str,
@@ -200,8 +213,14 @@ def main() -> int:
     failed = 0
     consecutive_failures = 0
     aborted = False
+    network_failure = False
     with requests.Session() as session:
         for path in paths:
+            # Skip remaining manifests if we hit a network-level failure
+            if network_failure:
+                print(f"SKIP {path.name}: skipping due to previous network failure", file=sys.stderr)
+                continue
+
             manifest = load_manifest(path)
             ok, detail = sync_manifest(
                 session,
@@ -224,6 +243,14 @@ def main() -> int:
                 failed += 1
                 consecutive_failures += 1
                 print(f"SYNC FAIL {manifest['agent_id']} {detail}", file=sys.stderr)
+
+                # Check if this is a network-level failure that should abort immediately
+                if is_network_error(detail):
+                    network_failure = True
+                    print("WordPress sync aborted: network-level failure detected.", file=sys.stderr)
+                    aborted = True
+                    break
+
                 if args.max_consecutive_failures and consecutive_failures >= args.max_consecutive_failures:
                     aborted = True
                     remaining = len(paths) - success - failed
