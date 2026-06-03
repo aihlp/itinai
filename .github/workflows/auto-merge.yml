@@ -26,7 +26,10 @@ jobs:
           fi
           
           HEAD_REF=$(gh pr view "$PR_NUMBER" --json headRefName --jq '.headRefName')
-          if [[ "$HEAD_REF" == submit/* ]]; then
+          # Check for various automated submission patterns:
+          # - submit/* : WordPress submissions
+          # - itinai-* : ITINAI agent submissions
+          if [[ "$HEAD_REF" == submit/* ]] || [[ "$HEAD_REF" == itinai-* ]]; then
             echo "is_wp_submission=true" >> "$GITHUB_OUTPUT"
             echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
           else
@@ -42,6 +45,7 @@ jobs:
           PR_NUMBER: ${{ steps.check-wp-submission.outputs.pr_number }}
           REPO: ${{ github.repository }}
         run: |
+          echo "Merging PR #$PR_NUMBER from branch with pattern submit/* or itinai-*"
           gh pr merge "$PR_NUMBER" \
             --repo "$REPO" \
             --squash \
