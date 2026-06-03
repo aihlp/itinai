@@ -2,9 +2,6 @@ name: Validate Agent Manifests
 
 on:
   pull_request:
-    branches-ignore:
-      - "codex/sync-external-agents"
-      - "auto-cleanup-offline-agents"
     paths:
       - "agents/*.yaml"
       - "schemas/agent-manifest.schema.json"
@@ -26,26 +23,45 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - name: Check if automated PR
+        id: check-auto
+        run: |
+          if [[ "${{ github.head_ref }}" == "codex/sync-external-agents" ]] || [[ "${{ github.head_ref }}" == "auto-cleanup-offline-agents" ]]; then
+            echo "is_automated=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "is_automated=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Skip validation for automated PRs
+        if: steps.check-auto.outputs.is_automated == 'true'
+        run: |
+          echo "Automated PR detected (${{ github.head_ref }}). Validation was performed during sync/cleanup generation."
+          exit 0
+
       - name: Check out repository
+        if: steps.check-auto.outputs.is_automated == 'false'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Set up Python
+        if: steps.check-auto.outputs.is_automated == 'false'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Install dependencies
+        if: steps.check-auto.outputs.is_automated == 'false'
         timeout-minutes: 3
         run: python -m pip install -r requirements.txt
 
       - name: Validate manifest schema
+        if: steps.check-auto.outputs.is_automated == 'false'
         timeout-minutes: 2
         run: python scripts/validate.py
 
       - name: Upload validation results
-        if: always()
+        if: always() && steps.check-auto.outputs.is_automated == 'false'
         uses: actions/upload-artifact@v4
         with:
           name: validation-results

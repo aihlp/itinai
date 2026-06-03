@@ -1,12 +1,4 @@
 ```
-# Dependencies
-node_modules/
-
-# Editors
-.vscode/
-
-# Environment
-.env
-.env.local
-.env.*
+# GitHub workflow artifacts
+.github/workflows/auto-approve.yml
 ```
