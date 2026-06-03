@@ -16,7 +16,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 AGENTS_DIR = ROOT / "agents"
 DEFAULT_ENDPOINT = "https://itinai.com/wp-json/itinai/v1/sync"
-DEFAULT_TIMEOUT_SECONDS = 20
+DEFAULT_TIMEOUT_SECONDS = 60
 
 
 def load_manifest(path: Path) -> dict[str, Any]:
@@ -76,22 +76,30 @@ def post_manifest(
     timeout: int,
 ) -> tuple[bool, str]:
     payload = wordpress_payload(manifest, health)
+    agent_id = manifest.get("agent_id", "unknown")
     try:
+        print(f"[DEBUG] POST {endpoint} for {agent_id}, attempt starting...", file=sys.stderr)
+        print(f"[DEBUG] Auth: user={username[:3] if len(username) >= 3 else username}***, sync_key set={bool(sync_key)}", file=sys.stderr)
         response = session.post(
             endpoint,
             json=payload,
             timeout=timeout,
             headers={
                 "Accept": "application/json",
-            "Authorization": basic_auth_header(username, app_password),
-            "Content-Type": "application/json",
-            "User-Agent": "itinai-github-sync/1.0",
-            "X-ITINAI-Sync-Key": sync_key,
-            "X-WP-Key": sync_key,
-        },
-    )
+                "Authorization": basic_auth_header(username, app_password),
+                "Content-Type": "application/json",
+                "User-Agent": "itinai-github-sync/1.0",
+                "X-ITINAI-Sync-Key": sync_key,
+                "X-WP-Key": sync_key,
+            },
+        )
+        print(f"[DEBUG] Response status={response.status_code}", file=sys.stderr)
+        response_preview = response.text[:1000] if response.text else "(empty)"
+        print(f"[DEBUG] Response body preview: {response_preview}", file=sys.stderr)
     except requests.RequestException as exc:
-        return False, f"request failed: {exc}"
+        error_msg = f"request failed: {type(exc).__name__}: {exc}"
+        print(f"[DEBUG] Exception: {error_msg}", file=sys.stderr)
+        return False, error_msg
 
     if 200 <= response.status_code < 300:
         return True, f"{response.status_code}"
@@ -136,6 +144,7 @@ def sync_manifest(
     attempts = max(1, retries + 1)
     details: list[str] = []
     for attempt in range(1, attempts + 1):
+        print(f"[DEBUG] Attempt {attempt}/{attempts} for {manifest.get('agent_id', 'unknown')}", file=sys.stderr)
         ok, detail = post_manifest(session, endpoint, username, app_password, sync_key, manifest, health, timeout)
         details.append(f"attempt {attempt}: {detail}")
         if ok or not should_retry(detail) or attempt == attempts:
@@ -189,8 +198,13 @@ def main() -> int:
     username = os.environ.get(args.user_env, "").strip()
     app_password = os.environ.get(args.password_env, "").strip()
     sync_key = os.environ.get("WP_KEY", "").strip()
+    print(f"[DEBUG] Starting WordPress sync", file=sys.stderr)
+    print(f"[DEBUG] Endpoint: {endpoint}", file=sys.stderr)
+    print(f"[DEBUG] User env ({args.user_env}): set={bool(username)}", file=sys.stderr)
+    print(f"[DEBUG] Password env ({args.password_env}): set={bool(app_password)}", file=sys.stderr)
+    print(f"[DEBUG] WP_KEY: set={bool(sync_key)}", file=sys.stderr)
     if not username or not (app_password or sync_key):
-        print(f"Skipping WordPress sync: {args.user_env} or ({args.password_env}/WP_KEY) is not set.")
+        print(f"Skipping WordPress sync: {args.user_env} or ({args.password_env}/WP_KEY) is not set.", file=sys.stderr)
         return 0
 
     health = load_health_report(Path(args.health_report) if args.health_report else None)
@@ -243,6 +257,7 @@ def main() -> int:
                 failed += 1
                 consecutive_failures += 1
                 print(f"SYNC FAIL {manifest['agent_id']} {detail}", file=sys.stderr)
+                print(f"[DEBUG] Final status for {manifest['agent_id']}: ok={ok}, detail='{detail[:500]}'", file=sys.stderr)
 
                 # Check if this is a network-level failure that should abort immediately
                 if is_network_error(detail):
