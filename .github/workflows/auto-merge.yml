@@ -18,20 +18,31 @@ jobs:
       - name: Check if triggered by WordPress submission PR
         id: check-wp-submission
         run: |
-          PR_NUMBER="${{ github.event.workflow_run.pull_requests[0].number }}"
-          if [ -z "$PR_NUMBER" ]; then
-            echo "No PR associated with this workflow run"
+          # Get the SHA from the workflow run
+          SHA="${{ github.event.workflow_run.head_sha }}"
+          REPO="${{ github.repository }}"
+          
+          # Search for PR associated with this SHA
+          PR_DATA=$(gh api "/repos/$REPO/commits/$SHA/pulls" --jq '.[0]')
+          
+          if [ -z "$PR_DATA" ] || [ "$PR_DATA" = "null" ]; then
+            echo "No PR associated with SHA $SHA"
             echo "is_wp_submission=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           
-          HEAD_REF=$(gh pr view "$PR_NUMBER" --json headRefName --jq '.headRefName')
+          PR_NUMBER=$(echo "$PR_DATA" | jq -r '.number')
+          HEAD_REF=$(echo "$PR_DATA" | jq -r '.head.ref')
+          
+          echo "Found PR #$PR_NUMBER from branch: $HEAD_REF"
+          
           # Check for various automated submission patterns:
           # - submit/* : WordPress submissions
           # - itinai-* : ITINAI agent submissions
           if [[ "$HEAD_REF" == submit/* ]] || [[ "$HEAD_REF" == itinai-* ]]; then
             echo "is_wp_submission=true" >> "$GITHUB_OUTPUT"
             echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+            echo "head_ref=$HEAD_REF" >> "$GITHUB_OUTPUT"
           else
             echo "is_wp_submission=false" >> "$GITHUB_OUTPUT"
           fi
