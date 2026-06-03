@@ -110,6 +110,8 @@ jobs:
               'The `sync-health-results` artifact contains the latest health report.'
             ].join('\n');
 
+            let pullNumber;
+
             const existing = await github.rest.pulls.list({
               owner,
               repo,
@@ -126,20 +128,34 @@ jobs:
                 title,
                 body
               });
-              core.info(`Updated PR #${existing.data[0].number}`);
-              return;
+              pullNumber = existing.data[0].number;
+              core.info(`Updated PR #${pullNumber}`);
+            } else {
+              const created = await github.rest.pulls.create({
+                owner,
+                repo,
+                title,
+                head,
+                base,
+                body,
+                maintainer_can_modify: true
+              });
+              pullNumber = created.data.number;
+              core.info(`Created PR #${pullNumber}`);
             }
 
-            const created = await github.rest.pulls.create({
-              owner,
-              repo,
-              title,
-              head,
-              base,
-              body,
-              maintainer_can_modify: true
-            });
-            core.info(`Created PR #${created.data.number}`);
+            // Enable auto-merge for the PR
+            try {
+              await github.rest.pulls.enableAutomerge({
+                owner,
+                repo,
+                pull_number: pullNumber,
+                merge_method: 'squash'
+              });
+              core.info(`Enabled auto-merge for PR #${pullNumber}`);
+            } catch (error) {
+              core.warning(`Failed to enable auto-merge for PR #${pullNumber}: ${error.message}`);
+            }
 
       - name: Report no changes
         if: steps.changes.outputs.changed == 'false'
