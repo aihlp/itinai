@@ -32,57 +32,25 @@ jobs:
             echo "is_automated=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Check if WordPress submission PR
-        id: check-wp-submission
-        run: |
-          if [[ "${{ github.head_ref }}" == submit/* ]]; then
-            echo "is_wp_submission=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "is_wp_submission=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Skip validation for automated PRs
-        if: steps.check-auto.outputs.is_automated == 'true'
-        run: |
-          echo "Automated PR detected (${{ github.head_ref }}). Validation was performed during sync/cleanup generation."
-          echo "Marking validation as passed."
-
-      - name: Dummy step for automated PR success
-        if: steps.check-auto.outputs.is_automated == 'true'
-        run: echo "Validation passed for automated PR"
-
       - name: Check out repository
-        if: steps.check-auto.outputs.is_automated == 'false' && steps.check-wp-submission.outputs.is_wp_submission == 'false'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Check out repository (WordPress submission)
-        if: steps.check-wp-submission.outputs.is_wp_submission == 'true'
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 0
-          persist-credentials: false
 
       - name: Set up Python
-        if: steps.check-auto.outputs.is_automated == 'false'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Install dependencies
-        if: steps.check-auto.outputs.is_automated == 'false'
         timeout-minutes: 3
         run: python -m pip install -r requirements.txt
 
       - name: Validate manifest schema
-        if: steps.check-auto.outputs.is_automated == 'false'
         timeout-minutes: 2
         run: python scripts/validate.py
 
       - name: Collect changed agent manifests
-        if: steps.check-auto.outputs.is_automated == 'false'
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" -- 'agents/*.yaml' > changed-agents.txt
@@ -91,19 +59,18 @@ jobs:
           fi
 
       - name: Check Agent Card availability
-        if: steps.check-auto.outputs.is_automated == 'false'
         timeout-minutes: 5
         run: python scripts/health-check.py --agent-card-only --paths-file changed-agents.txt --output health-results.json --allow-unhealthy
 
       - name: Upload health results
-        if: always() && steps.check-auto.outputs.is_automated == 'false'
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: validation-health-results
           path: health-results.json
 
       - name: Upload validation results
-        if: always() && steps.check-auto.outputs.is_automated == 'false'
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: validation-results

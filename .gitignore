@@ -1,1 +1,16 @@
-Nothing should be ignored based on the provided file changes, as they consist only of GitHub workflow configuration files (.yml) which are source/config files.
+```
+# Dependencies
+node_modules/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+```
