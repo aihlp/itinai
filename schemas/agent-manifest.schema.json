@@ -4,7 +4,7 @@
   "title": "Itinai Agent Manifest",
   "type": "object",
   "additionalProperties": false,
-  "required": ["agent_id", "name", "a2a_config", "skills", "contact"],
+  "required": ["agent_id", "name", "a2a_config", "skills"],
   "properties": {
     "agent_id": {
       "type": "string",
@@ -112,7 +112,6 @@
     "contact": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["email"],
       "properties": {
         "email": {
           "type": "string",
