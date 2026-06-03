@@ -1,0 +1,58 @@
+agent_id: korean-public-data-agent
+name: Korean Public Data Agent
+a2a_config:
+  agent_card_url: https://publicdata-agent.songt50.us/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: weather
+  name: Korea Weather Forecast
+  tags:
+  - weather
+  - forecast
+  - korea
+  - temperature
+- id: air-quality
+  name: Korea Air Quality
+  tags:
+  - air
+  - quality
+  - pm25
+  - pollution
+  - korea
+- id: real-estate
+  name: Korea Apartment Prices
+  tags:
+  - real-estate
+  - apartment
+  - price
+  - korea
+  - property
+- id: economic-stats
+  name: Korea Economic Statistics
+  tags:
+  - economy
+  - statistics
+  - interest-rate
+  - exchange-rate
+  - kospi
+- id: business-check
+  name: Business Registration Check
+  tags:
+  - business
+  - registration
+  - verification
+  - korea
+health_check:
+  url: https://publicdata-agent.songt50.us/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://publicdata-agent.songt50.us
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Access Korean government open data: weather forecasts, air quality (PM2.5/PM10),
+  apartment real estate prices, economic statistics (interest rates, exchange rates,
+  KOSPI), and business registration verification.'
+version: 1.0.0
