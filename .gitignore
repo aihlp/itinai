@@ -1,15 +1,4 @@
-# Compiled and build artifacts
-*.pyc
-__pycache__/
-*.o
-*.obj
-*.out
-
-# Dependencies
-.venv/
-venv/
-node_modules/
-
+```
 # Logs and temp files
 *.log
 *.tmp
@@ -18,74 +7,33 @@ node_modules/
 # Environment
 .env
 .env.local
-*.env.*
+.env.*
 
 # Editors
 .vscode/
 .idea/
 
-# Coverage
-.coverage
-coverage/
-htmlcov/
-
-# Python specific
-*.pyc
+# Python
 __pycache__/
+*.pyc
 *.pyo
 *.pyd
 .Python
 *.so
 *.egg-info/
 .eggs/
+.venv/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Build directories
+# Build and distribution artifacts
 dist/
 build/
-*.egg-info/
-.installed.cfg
-*.manifest
-*.spec
-
-# Testing
-.pytest_cache/
-.mypy_cache/
-.hypothesis/
-
-# OS generated files
-.DS_Store
-Thumbs.db
-ehthumbs.db
-Icon?
-.QuickLookDS_Store
-*.lnk
-
-# Backup files
-*~
-*.bak
-*.swp
-*.swo
-
-# Compressed files
-*.zip
-*.gz
-*.tar
-*.tgz
-*.bz2
-*.xz
-*.7z
-*.rar
-*.zst
-*.lz4
-*.lzh
-*.cab
-*.arj
-*.rpm
-*.deb
-*.Z
-*.lz
-*.lzo
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.zst
+*.egg
+*.whl
+coverage/
+htmlcov/
+.coverage
+.tox/
+```
