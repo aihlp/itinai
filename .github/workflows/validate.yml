@@ -32,10 +32,13 @@ jobs:
             echo "is_automated=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Check if WordPress submission PR
+      - name: Check if WordPress submission PR or ITINAI agent submission
         id: check-wp-submission
         run: |
-          if [[ "${{ github.head_ref }}" == submit/* ]]; then
+          # Check for various automated submission patterns:
+          # - submit/* : WordPress submissions
+          # - itinai-* : ITINAI agent submissions
+          if [[ "${{ github.head_ref }}" == submit/* ]] || [[ "${{ github.head_ref }}" == itinai-* ]]; then
             echo "is_wp_submission=true" >> "$GITHUB_OUTPUT"
           else
             echo "is_wp_submission=false" >> "$GITHUB_OUTPUT"
@@ -57,7 +60,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check out repository (WordPress submission)
+      - name: Check out repository (WordPress or ITINAI submission)
         if: steps.check-wp-submission.outputs.is_wp_submission == 'true'
         uses: actions/checkout@v4
         with:
