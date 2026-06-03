@@ -2,13 +2,14 @@ name: Health Check Agents
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   issues: write
   actions: read
+  pull-requests: write
 
 concurrency:
   group: health-check-agents
@@ -150,3 +151,49 @@ jobs:
               body,
               labels: ['health-check']
             });
+
+      - name: Find agents to remove (100+ consecutive failures)
+        if: github.event_name == 'schedule'
+        id: find-removals
+        run: |
+          python scripts/cleanup-offline-agents.py \
+            --health-state health-state.json \
+            --failure-threshold 100 \
+            --output-file agents-to-remove.txt
+
+      - name: Remove offline agent files
+        if: github.event_name == 'schedule' && steps.find-removals.outcome == 'success'
+        run: |
+          if [ -s agents-to-remove.txt ]; then
+            echo "Removing the following agents:"
+            cat agents-to-remove.txt
+            xargs rm -f < agents-to-remove.txt
+            git status
+          else
+            echo "No agents to remove."
+          fi
+
+      - name: Create PR to remove offline agents
+        if: github.event_name == 'schedule' && steps.find-removals.outcome == 'success'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: remove agents offline for 100+ days"
+          title: "chore: remove agents offline for 100+ consecutive checks"
+          body: |
+            This PR removes agents that have been offline for 100+ consecutive daily health checks (~3+ months).
+
+            **Agents removed:**
+            $(if [ -s agents-to-remove.txt ]; then cat agents-to-remove.txt | xargs -I {} basename {} .yaml | sed 's/^/- /'; else echo "- None"; fi)
+
+            **Reason:** Automatic cleanup based on health check history.
+
+            ---
+            *This is an automated PR created by the health-check workflow.*
+          branch: auto-cleanup-offline-agents
+          delete-branch: true
+          add-paths: |
+            agents/*.yaml
+          labels: |
+            automated-pr
+            health-check
