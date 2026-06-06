@@ -13,6 +13,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 concurrency:
   group: sync-external-agents
@@ -42,32 +43,18 @@ jobs:
         timeout-minutes: 3
         run: python -m pip install -r requirements.txt
 
-      - name: Import external agents
+      - name: Import external agents with validation and health check
         timeout-minutes: 5
         run: |
           LIMIT="${{ github.event.inputs.limit || '50' }}"
-          python scripts/import-from-registry.py --limit "$LIMIT"
+          python scripts/import-with-validation.py --limit "$LIMIT"
 
-      - name: Validate manifests
-        timeout-minutes: 2
-        run: python scripts/validate.py
-
-      - name: Run health check
-        timeout-minutes: 5
-        run: python scripts/health-check.py --output health-results.json --allow-unhealthy
-
-      - name: Upload sync health results
+      - name: Upload sync summary
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: sync-health-results
-          path: health-results.json
-
-      - name: Sync WordPress Agents app
-        if: env.WP_KEY != '' && env.WP_USER != ''
-        continue-on-error: true
-        timeout-minutes: 8
-        run: python scripts/sync-wordpress.py --health-report health-results.json --timeout 60 --retries 2 --retry-delay 2 --max-consecutive-failures 2
+          name: sync-summary
+          path: sync-summary.json
 
       - name: Check for changes
         id: changes
@@ -103,11 +90,12 @@ jobs:
               '',
               'The workflow ran:',
               '',
-              '- `python scripts/import-from-registry.py`',
-              '- `python scripts/validate.py`',
-              '- `python scripts/health-check.py --output health-results.json --allow-unhealthy`',
+              '- `python scripts/import-with-validation.py` (per-agent validation + health check)',
               '',
-              'The `sync-health-results` artifact contains the latest health report.'
+              'Each agent was individually validated and health-checked before being added.',
+              'Failed agents were reported as issues with the `import-failed` label.',
+              '',
+              'The `sync-summary` artifact contains the import statistics.'
             ].join('\n');
 
             let pullNumber;

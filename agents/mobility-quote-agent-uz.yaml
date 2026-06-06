@@ -1,0 +1,29 @@
+agent_id: mobility-quote-agent-uz
+name: Mobility Quote Agent UZ
+a2a_config:
+  agent_card_url: https://cb534db777848547-212-47-77-33.serveousercontent.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: get-quote
+  name: Get mobility quote
+  tags:
+  - mobility
+  - trip-planning
+  - quote
+  - deeplink
+  - a2a
+health_check:
+  url: https://cb534db777848547-212-47-77-33.serveousercontent.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://cb534db777848547-212-47-77-33.serveousercontent.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: A2A mobility route launcher and quote-discovery agent. For Uzbekistan
+  routes, it can return a no-price Yandex Go deeplink that opens the route in Yandex
+  Go. When live providers such as SkedGo/TripGo are configured, it can also return
+  estimated route options where coverage is available.
+version: 0.3.0
