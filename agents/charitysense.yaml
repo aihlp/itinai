@@ -1,0 +1,45 @@
+agent_id: charitysense
+name: CharitySense
+a2a_config:
+  agent_card_url: https://data.charitysense.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: search-charities
+  name: Search U.S. nonprofits
+  tags:
+  - nonprofit
+  - charity
+  - donor_research
+  - irs_990
+- id: summarize-charity
+  name: Summarize a charity by EIN
+  tags:
+  - ein_lookup
+  - summary
+  - nonprofit_profile
+- id: analyze-charity-document
+  name: Analyze normalized Form 990 data
+  tags:
+  - form_990
+  - financial_analysis
+  - governance
+- id: send-agent-feedback
+  name: Send result or data feedback
+  tags:
+  - feedback
+  - agent_identity
+  - api_improvement
+health_check:
+  url: https://data.charitysense.com/.well-known/agent.json
+contact:
+  email: mazhar@charitysense.com
+  url: https://charitysense.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Agent-ready IRS Form 990 nonprofit dataset and no-auth API for US charity
+  search, donor research, nonprofit comparison, financial metrics, governance review,
+  and citation-ready analysis.
+version: 1.1.0
