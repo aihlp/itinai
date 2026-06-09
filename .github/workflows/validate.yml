@@ -12,6 +12,9 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    outputs:
+      is_automated: ${{ steps.check-auto.outputs.is_automated }}
+      validation_passed: ${{ steps.validation-result.outputs.passed }}
     steps:
       - name: Check if automated PR
         id: check-auto
@@ -34,15 +37,74 @@ jobs:
             echo "is_wp_submission=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Skip validation for fully automated PRs (sync/cleanup)
+      - name: Check out repository (automated sync/cleanup PRs)
+        if: steps.check-auto.outputs.is_automated == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python (automated sync/cleanup PRs)
+        if: steps.check-auto.outputs.is_automated == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies (automated sync/cleanup PRs)
+        if: steps.check-auto.outputs.is_automated == 'true'
+        timeout-minutes: 3
+        run: python -m pip install -r requirements.txt
+
+      - name: Run validation for automated sync/cleanup PRs
+        if: steps.check-auto.outputs.is_automated == 'true'
+        id: validate-auto
+        timeout-minutes: 5
+        run: |
+          echo "Running validation for automated PR (${{ github.head_ref }})"
+          python scripts/validate.py --schema schemas/agent-manifest.schema.json agents/*.yaml
+          echo "Validation completed successfully"
+
+      - name: Collect changed agent manifests (automated sync/cleanup PRs)
         if: steps.check-auto.outputs.is_automated == 'true'
         run: |
-          echo "Fully automated PR detected (${{ github.head_ref }}). Validation was performed during sync/cleanup generation."
-          echo "Marking validation as passed."
+          echo "Collecting changed agents for PR ${{ github.head_ref }}"
+          git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" -- 'agents/*.yaml' > changed-agents.txt
+          echo "Changed files:"
+          cat changed-agents.txt
 
-      - name: Dummy step for fully automated PR success
+      - name: Check Agent Card availability (automated sync/cleanup PRs)
         if: steps.check-auto.outputs.is_automated == 'true'
-        run: echo "Validation passed for automated PR"
+        timeout-minutes: 5
+        run: |
+          echo "Checking health for changed agents in automated PR"
+          python scripts/health-check.py --agent-card-only --paths-file changed-agents.txt --output health-results.json --allow-unhealthy
+
+      - name: Set validation result for automated PRs
+        if: always() && steps.check-auto.outputs.is_automated == 'true'
+        id: validation-result
+        run: |
+          if [[ "${{ steps.validate-auto.outcome }}" == "success" ]]; then
+            echo "passed=true" >> "$GITHUB_OUTPUT"
+            echo "Validation passed for automated PR"
+          else
+            echo "passed=false" >> "$GITHUB_OUTPUT"
+            echo "Validation failed for automated PR"
+            exit 1
+          fi
+
+      - name: Dummy step for automated PR success marker
+        if: steps.check-auto.outputs.is_automated == 'true' && steps.validation-result.outputs.passed == 'true'
+        run: echo "Validation passed for automated PR - ready for auto-merge"
+
+      - name: Skip validation for fully automated PRs (sync/cleanup) - DEPRECATED
+        if: false
+        run: |
+          echo "This step is deprecated - validation now runs for automated PRs"
+
+      - name: Dummy step for fully automated PR success - DEPRECATED
+        if: false
+        run: echo "This step is deprecated"
 
       - name: Check out repository (WordPress or ITINAI submission)
         if: steps.check-wp-submission.outputs.is_wp_submission == 'true'

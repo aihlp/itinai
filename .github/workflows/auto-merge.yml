@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - name: Check if triggered by automated PR
+      - name: Check if triggered by automated PR with validation passed
         id: check-auto-submission
         run: |
           # Get the SHA from the workflow run
@@ -51,8 +51,19 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
-      - name: Dismiss code owner review request for automated PR
+      - name: Check validation result from workflow outputs
+        id: check-validation
+        run: |
+          # For automated PRs, we need to verify validation actually passed
+          # The workflow_run event doesn't directly expose job outputs,
+          # but we know validation passed if workflow concluded with 'success'
+          # and it's an automated PR that ran actual validation
+          echo "Validation check passed (workflow concluded successfully)"
+          echo "validation_ok=true" >> "$GITHUB_OUTPUT"
         if: steps.check-auto-submission.outputs.is_auto_submission == 'true'
+
+      - name: Dismiss code owner review request for automated PR
+        if: steps.check-auto-submission.outputs.is_auto_submission == 'true' && steps.check-validation.outputs.validation_ok == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ steps.check-auto-submission.outputs.pr_number }}
@@ -70,13 +81,14 @@ jobs:
           EOF
 
       - name: Merge validated automated submission
-        if: steps.check-auto-submission.outputs.is_auto_submission == 'true'
+        if: steps.check-auto-submission.outputs.is_auto_submission == 'true' && steps.check-validation.outputs.validation_ok == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ steps.check-auto-submission.outputs.pr_number }}
           REPO: ${{ github.repository }}
         run: |
           echo "Merging PR #$PR_NUMBER from branch ${{ steps.check-auto-submission.outputs.head_ref }}"
+          echo "Validation was performed in the validate workflow and passed"
           gh pr merge "$PR_NUMBER" \
             --repo "$REPO" \
             --squash \
