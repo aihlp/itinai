@@ -51,6 +51,24 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
+      - name: Dismiss code owner review request for automated PR
+        if: steps.check-auto-submission.outputs.is_auto_submission == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.check-auto-submission.outputs.pr_number }}
+          REPO: ${{ github.repository }}
+        run: |
+          echo "Dismissing review requests for PR #$PR_NUMBER"
+          # Dismiss any review requests on this PR
+          gh pr edit "$PR_NUMBER" --repo "$REPO" --remove-reviewer aihlp || true
+          # Also try to dismiss any pending reviews
+          gh api \
+            --method DELETE \
+            "/repos/$REPO/pulls/$PR_NUMBER/requested_reviewers" \
+            --input - <<EOF || true
+          {"reviewers": ["aihlp"]}
+          EOF
+
       - name: Merge validated automated submission
         if: steps.check-auto-submission.outputs.is_auto_submission == 'true'
         env:
