@@ -247,14 +247,25 @@ jobs:
             agents/*.yaml
             schemas/agent-manifest.schema.json
 
-  # Dummy job that only runs for automated PRs when validation passes
+  # Dummy job that only runs for automated PRs
+  # It checks if validation passed and completes accordingly
   # This job should be added as a required check in branch protection
   validate-automated-complete:
     runs-on: ubuntu-latest
     needs: [validate]
-    if: needs.validate.outputs.is_automated == 'true' && needs.validate.outputs.validation_passed == 'true'
+    if: needs.validate.outputs.is_automated == 'true'
     steps:
-      - name: Mark automated PR validation as complete
+      - name: Check validation result and mark complete
+        id: check-result
         run: |
-          echo "Validation completed successfully for automated PR"
-          echo "Ready for auto-merge"
+          VALIDATION_PASSED="${{ needs.validate.outputs.validation_passed }}"
+          echo "Validation passed: $VALIDATION_PASSED"
+          
+          if [[ "$VALIDATION_PASSED" == "true" ]]; then
+            echo "Validation completed successfully for automated PR"
+            echo "Ready for auto-merge"
+            exit 0
+          else
+            echo "Validation failed for automated PR"
+            exit 1
+          fi

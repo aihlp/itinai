@@ -45,6 +45,28 @@ jobs:
             echo "is_auto_submission=true" >> "$GITHUB_OUTPUT"
             echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
             echo "head_ref=$HEAD_REF" >> "$GITHUB_OUTPUT"
+            
+            # Check if validate-automated-complete job succeeded
+            # This ensures validation actually passed before merging
+            RUN_ID="${{ github.event.workflow_run.id }}"
+            JOB_DATA=$(gh api "/repos/$REPO/actions/runs/$RUN_ID/jobs" --jq ".jobs[] | select(.name==\"validate-automated-complete\")")
+            
+            if [ -z "$JOB_DATA" ] || [ "$JOB_DATA" = "null" ]; then
+              echo "validate-automated-complete job not found - validation may have failed"
+              echo "is_auto_submission=false" >> "$GITHUB_OUTPUT"
+              echo "Validation job did not complete successfully"
+              exit 0
+            fi
+            
+            JOB_CONCLUSION=$(echo "$JOB_DATA" | jq -r '.conclusion')
+            if [[ "$JOB_CONCLUSION" != "success" ]]; then
+              echo "validate-automated-complete job did not succeed (conclusion: $JOB_CONCLUSION)"
+              echo "is_auto_submission=false" >> "$GITHUB_OUTPUT"
+              echo "Validation did not pass, skipping auto-merge"
+              exit 0
+            fi
+            
+            echo "Validation passed, proceeding with auto-merge"
           else
             echo "is_auto_submission=false" >> "$GITHUB_OUTPUT"
           fi
