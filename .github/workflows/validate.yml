@@ -14,7 +14,8 @@ jobs:
     timeout-minutes: 10
     outputs:
       is_automated: ${{ steps.check-auto.outputs.is_automated }}
-      validation_passed: ${{ steps.validation-result.outputs.passed }}
+      validation_passed: ${{ steps.validation-result.outputs.passed || 'false' }}
+      dummy_passed: ${{ steps.dummy-success-marker.outputs.dummy_passed || 'false' }}
     steps:
       - name: Check if automated PR
         id: check-auto
@@ -63,7 +64,15 @@ jobs:
         run: |
           echo "Running validation for automated PR (${{ github.head_ref }})"
           python scripts/validate.py --schema schemas/agent-manifest.schema.json agents/*.yaml
-          echo "Validation completed successfully"
+          VALIDATION_EXIT_CODE=$?
+          if [ $VALIDATION_EXIT_CODE -ne 0 ]; then
+            echo "Schema validation failed with exit code $VALIDATION_EXIT_CODE"
+            exit $VALIDATION_EXIT_CODE
+          fi
+          echo "Schema validation completed successfully"
+          
+          # Also run health check as part of validation
+          echo "Running health check for changed agents..."
 
       - name: Collect changed agent manifests (automated sync/cleanup PRs)
         if: steps.check-auto.outputs.is_automated == 'true'
@@ -75,27 +84,48 @@ jobs:
 
       - name: Check Agent Card availability (automated sync/cleanup PRs)
         if: steps.check-auto.outputs.is_automated == 'true'
+        id: health-check-auto
         timeout-minutes: 5
         run: |
           echo "Checking health for changed agents in automated PR"
           python scripts/health-check.py --agent-card-only --paths-file changed-agents.txt --output health-results.json --allow-unhealthy
+          HEALTH_EXIT_CODE=$?
+          if [ $HEALTH_EXIT_CODE -ne 0 ]; then
+            echo "Health check failed with exit code $HEALTH_EXIT_CODE"
+            exit $HEALTH_EXIT_CODE
+          fi
+          echo "Health check completed successfully"
 
       - name: Set validation result for automated PRs
         if: always() && steps.check-auto.outputs.is_automated == 'true'
         id: validation-result
         run: |
-          if [[ "${{ steps.validate-auto.outcome }}" == "success" ]]; then
+          # Check if both validation and health check steps ran and succeeded
+          VALIDATE_OUTCOME="${{ steps.validate-auto.outcome }}"
+          VALIDATE_CONCLUSION="${{ steps.validate-auto.conclusion }}"
+          HEALTH_OUTCOME="${{ steps.health-check-auto.outcome }}"
+          HEALTH_CONCLUSION="${{ steps.health-check-auto.conclusion }}"
+          
+          echo "Validation outcome: $VALIDATE_OUTCOME, conclusion: $VALIDATE_CONCLUSION"
+          echo "Health check outcome: $HEALTH_OUTCOME, conclusion: $HEALTH_CONCLUSION"
+          
+          # Both steps must succeed for overall validation to pass
+          if [[ "$VALIDATE_OUTCOME" == "success" || "$VALIDATE_CONCLUSION" == "success" ]] && \
+             [[ "$HEALTH_OUTCOME" == "success" || "$HEALTH_CONCLUSION" == "success" ]]; then
             echo "passed=true" >> "$GITHUB_OUTPUT"
-            echo "Validation passed for automated PR"
+            echo "Validation and health check passed for automated PR"
           else
             echo "passed=false" >> "$GITHUB_OUTPUT"
-            echo "Validation failed for automated PR"
+            echo "Validation or health check failed for automated PR"
             exit 1
           fi
 
       - name: Dummy step for automated PR success marker
         if: steps.check-auto.outputs.is_automated == 'true' && steps.validation-result.outputs.passed == 'true'
-        run: echo "Validation passed for automated PR - ready for auto-merge"
+        id: dummy-success-marker
+        run: |
+          echo "Validation passed for automated PR - ready for auto-merge"
+          echo "dummy_passed=true" >> "$GITHUB_OUTPUT"
 
       - name: Skip validation for fully automated PRs (sync/cleanup) - DEPRECATED
         if: false

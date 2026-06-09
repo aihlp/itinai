@@ -1,4 +1,4 @@
 ```
-# Logs and temp files
-*.log
+# GitHub workflow files are not build artifacts or temporary files
+# No additional ignores needed for the provided changes
 ```
