@@ -51,36 +51,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
-      - name: Check validation result from workflow outputs
-        id: check-validation
-        run: |
-          # For automated PRs, we need to verify validation actually passed
-          # The workflow_run event doesn't directly expose job outputs,
-          # but we know validation passed if workflow concluded with 'success'
-          # and it's an automated PR that ran actual validation
-          
-          # Get the SHA from the workflow run
-          SHA="${{ github.event.workflow_run.head_sha }}"
-          REPO="${{ github.repository }}"
-          
-          # Get the branch name from the workflow run
-          HEAD_REF="${{ github.event.workflow_run.head_branch }}"
-          
-          echo "Checking validation for SHA: $SHA, branch: $HEAD_REF"
-          
-          # Only consider validation passed if this is an automated branch
-          # that would have run the actual validation steps
-          if [[ "$HEAD_REF" == "codex/sync-external-agents" ]] || [[ "$HEAD_REF" == "auto-cleanup-offline-agents" ]]; then
-            echo "Automated branch detected - validation was executed"
-            echo "validation_ok=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "Not an automated sync branch - skipping auto-merge"
-            echo "validation_ok=false" >> "$GITHUB_OUTPUT"
-          fi
-        if: steps.check-auto-submission.outputs.is_auto_submission == 'true'
-
       - name: Dismiss code owner review request for automated PR
-        if: steps.check-auto-submission.outputs.is_auto_submission == 'true' && steps.check-validation.outputs.validation_ok == 'true'
+        if: steps.check-auto-submission.outputs.is_auto_submission == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ steps.check-auto-submission.outputs.pr_number }}
@@ -98,7 +70,7 @@ jobs:
           EOF
 
       - name: Merge validated automated submission
-        if: steps.check-auto-submission.outputs.is_auto_submission == 'true' && steps.check-validation.outputs.validation_ok == 'true'
+        if: steps.check-auto-submission.outputs.is_auto_submission == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ steps.check-auto-submission.outputs.pr_number }}

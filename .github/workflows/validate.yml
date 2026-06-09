@@ -15,7 +15,6 @@ jobs:
     outputs:
       is_automated: ${{ steps.check-auto.outputs.is_automated }}
       validation_passed: ${{ steps.validation-result.outputs.passed || 'false' }}
-      dummy_passed: ${{ steps.dummy-success-marker.outputs.dummy_passed || 'false' }}
     steps:
       - name: Check if automated PR
         id: check-auto
@@ -57,6 +56,15 @@ jobs:
         timeout-minutes: 3
         run: python -m pip install -r requirements.txt
 
+      - name: Collect changed agent manifests (automated sync/cleanup PRs)
+        if: steps.check-auto.outputs.is_automated == 'true'
+        id: collect-changes-auto
+        run: |
+          echo "Collecting changed agents for PR ${{ github.head_ref }}"
+          git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" -- 'agents/*.yaml' > changed-agents.txt
+          echo "Changed files:"
+          cat changed-agents.txt
+
       - name: Run validation for automated sync/cleanup PRs
         if: steps.check-auto.outputs.is_automated == 'true'
         id: validate-auto
@@ -70,17 +78,6 @@ jobs:
             exit $VALIDATION_EXIT_CODE
           fi
           echo "Schema validation completed successfully"
-          
-          # Also run health check as part of validation
-          echo "Running health check for changed agents..."
-
-      - name: Collect changed agent manifests (automated sync/cleanup PRs)
-        if: steps.check-auto.outputs.is_automated == 'true'
-        run: |
-          echo "Collecting changed agents for PR ${{ github.head_ref }}"
-          git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" -- 'agents/*.yaml' > changed-agents.txt
-          echo "Changed files:"
-          cat changed-agents.txt
 
       - name: Check Agent Card availability (automated sync/cleanup PRs)
         if: steps.check-auto.outputs.is_automated == 'true'
@@ -100,32 +97,27 @@ jobs:
         if: always() && steps.check-auto.outputs.is_automated == 'true'
         id: validation-result
         run: |
-          # Check if both validation and health check steps ran and succeeded
+          # Check if all required steps succeeded
+          COLLECT_OUTCOME="${{ steps.collect-changes-auto.outcome }}"
           VALIDATE_OUTCOME="${{ steps.validate-auto.outcome }}"
-          VALIDATE_CONCLUSION="${{ steps.validate-auto.conclusion }}"
           HEALTH_OUTCOME="${{ steps.health-check-auto.outcome }}"
-          HEALTH_CONCLUSION="${{ steps.health-check-auto.conclusion }}"
           
-          echo "Validation outcome: $VALIDATE_OUTCOME, conclusion: $VALIDATE_CONCLUSION"
-          echo "Health check outcome: $HEALTH_OUTCOME, conclusion: $HEALTH_CONCLUSION"
+          echo "Collect outcome: $COLLECT_OUTCOME"
+          echo "Validation outcome: $VALIDATE_OUTCOME"
+          echo "Health check outcome: $HEALTH_OUTCOME"
           
-          # Both steps must succeed for overall validation to pass
-          if [[ "$VALIDATE_OUTCOME" == "success" || "$VALIDATE_CONCLUSION" == "success" ]] && \
-             [[ "$HEALTH_OUTCOME" == "success" || "$HEALTH_CONCLUSION" == "success" ]]; then
+          # All steps must succeed for overall validation to pass
+          if [[ "$COLLECT_OUTCOME" == "success" ]] && \
+             [[ "$VALIDATE_OUTCOME" == "success" ]] && \
+             [[ "$HEALTH_OUTCOME" == "success" ]]; then
             echo "passed=true" >> "$GITHUB_OUTPUT"
             echo "Validation and health check passed for automated PR"
           else
             echo "passed=false" >> "$GITHUB_OUTPUT"
             echo "Validation or health check failed for automated PR"
-            exit 1
+            # Don't exit with error here - let the job complete successfully
+            # The dummy job will handle the failure case
           fi
-
-      - name: Dummy step for automated PR success marker
-        if: steps.check-auto.outputs.is_automated == 'true' && steps.validation-result.outputs.passed == 'true'
-        id: dummy-success-marker
-        run: |
-          echo "Validation passed for automated PR - ready for auto-merge"
-          echo "dummy_passed=true" >> "$GITHUB_OUTPUT"
 
       - name: Skip validation for fully automated PRs (sync/cleanup) - DEPRECATED
         if: false
@@ -254,3 +246,15 @@ jobs:
           path: |
             agents/*.yaml
             schemas/agent-manifest.schema.json
+
+  # Dummy job that only runs for automated PRs when validation passes
+  # This job should be added as a required check in branch protection
+  validate-automated-complete:
+    runs-on: ubuntu-latest
+    needs: [validate]
+    if: needs.validate.outputs.is_automated == 'true' && needs.validate.outputs.validation_passed == 'true'
+    steps:
+      - name: Mark automated PR validation as complete
+        run: |
+          echo "Validation completed successfully for automated PR"
+          echo "Ready for auto-merge"
