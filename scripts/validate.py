@@ -55,9 +55,17 @@ def manifest_paths(paths: list[str]) -> list[Path]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate itinai agent manifests.")
     parser.add_argument("paths", nargs="*", help="Optional manifest paths to validate")
+    parser.add_argument("--schema", type=str, default=None, help="Path to JSON schema file (optional)")
     args = parser.parse_args()
 
-    schema = load_schema()
+    if args.schema:
+        schema_path = Path(args.schema)
+        import json
+        with schema_path.open("r", encoding="utf-8") as f:
+            schema = json.load(f)
+    else:
+        schema = load_schema()
+    
     validator = Draft202012Validator(schema, format_checker=FormatChecker())
     paths = manifest_paths(args.paths)
 
