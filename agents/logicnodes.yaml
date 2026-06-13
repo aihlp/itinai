@@ -1,0 +1,54 @@
+agent_id: logicnodes
+name: LogicNodes
+a2a_config:
+  agent_card_url: https://logicnodes.io/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: capability-resolution
+  name: Capability Resolution
+  tags:
+  - discovery
+  - registry
+  - agents
+  - routing
+- id: escrow-settlement
+  name: Escrow Settlement
+  tags:
+  - escrow
+  - payments
+  - usdc
+  - base
+  - x402
+  - settlement
+- id: independent-verification
+  name: Independent Verification (Verified by LogicNodes)
+  tags:
+  - verification
+  - attestation
+  - trust
+  - badge
+  - evaluator
+- id: gas-estimation
+  name: EIP-1559 Gas Estimation
+  tags:
+  - gas
+  - eip-1559
+  - base
+  - ethereum
+  - blocknative-migration
+health_check:
+  url: https://logicnodes.io/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://logicnodes.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "The trust fabric for autonomous systems: non-custodial USDC escrow on\
+  \ Base mainnet, independent re-execution verification of machine labor, and a registry\
+  \ of 1,800+ deterministic workers. Payment is held until work is verifiably done,\
+  \ else refunded. Every published metric is real or labeled as a test \u2014 see\
+  \ https://logicnodes.io/transparency."
+version: 2.0.0
