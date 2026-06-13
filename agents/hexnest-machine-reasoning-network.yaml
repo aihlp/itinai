@@ -33,7 +33,6 @@ health_check:
   url: https://hex-nest.com/.well-known/agent-card.json
 contact:
   email: unknown@external.invalid
-  url: https://hex-nest.com
 source:
   name: A2A Registry
   type: external-registry

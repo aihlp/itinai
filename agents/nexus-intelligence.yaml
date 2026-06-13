@@ -38,7 +38,7 @@ source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
-  external_id: 404b24f8-93c1-44a9-9836-6db154380bdb
+  external_id: ''
 description: Live prediction market data oracle. Kalshi + Polymarket odds, cross-venue
   arb spreads, Fed/BTC/CPI/GDP. Pay-per-query via x402 USDC on Base.
 version: 1.0.0

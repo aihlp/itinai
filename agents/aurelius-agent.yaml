@@ -1,0 +1,42 @@
+agent_id: aurelius-agent
+name: Aurelius Agent
+a2a_config:
+  agent_card_url: https://aureliusagent.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: strategic-planning
+  name: Strategic Planning
+  tags:
+  - planning
+  - software-development
+  - project-context
+  - orchestration
+- id: implementation-coordination
+  name: Implementation Coordination
+  tags:
+  - coordination
+  - coding-agent
+  - hermes
+  - developer-workflow
+- id: build-smoke-release-flow
+  name: Build, Smoke Test, and Release Flow Support
+  tags:
+  - build
+  - smoke-test
+  - release
+  - quality-control
+health_check:
+  url: https://aureliusagent.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://aureliusagent.dev/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Strategic planning and orchestration agent for BuilderStudio. Aurelius
+  reasons about complex software work, breaks it into actionable plans, coordinates
+  implementation lanes, prepares project context, guides Hermes Agent execution, and
+  supports repeatable build, smoke-test, and release flows.
+version: 0.4.0

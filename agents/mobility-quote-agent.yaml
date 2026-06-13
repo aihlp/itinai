@@ -1,0 +1,28 @@
+agent_id: mobility-quote-agent
+name: Mobility Quote Agent
+a2a_config:
+  agent_card_url: https://212-47-77-33.sslip.io/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: get-quote
+  name: Get mobility quote
+  tags:
+  - mobility
+  - trip-planning
+  - quote
+  - deeplink
+  - a2a
+health_check:
+  url: https://212-47-77-33.sslip.io/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://212-47-77-33.sslip.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Worldwide A2A mobility quote and route-launcher agent. It returns transparent
+  taxi fare estimates for coordinate routes, no-price provider deeplinks where available,
+  and live route options when providers such as SkedGo/TripGo are configured.
+version: 0.3.0

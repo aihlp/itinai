@@ -1,0 +1,144 @@
+agent_id: aiscan
+name: AIScan
+a2a_config:
+  agent_card_url: https://getaiscan.app/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: check-health
+  name: Check Health
+  tags:
+  - audit
+  - http
+  - x402
+  - ai-visibility
+- id: check-llms-txt
+  name: Check Llms Txt
+  tags:
+  - audit
+  - http
+  - x402
+  - ai-visibility
+- id: check-schema
+  name: Check Schema
+  tags:
+  - audit
+  - http
+  - x402
+  - ai-visibility
+- id: check-agent-files
+  name: Check Agent Files
+  tags:
+  - audit
+  - http
+  - x402
+  - ai-visibility
+- id: check-mcp
+  name: Check Mcp
+  tags:
+  - audit
+  - mcp
+  - x402
+  - ai-visibility
+- id: score-aeo
+  name: Score Aeo
+  tags:
+  - score
+  - ai
+  - x402
+  - ai-visibility
+- id: score-geo
+  name: Score Geo
+  tags:
+  - score
+  - ai
+  - x402
+  - ai-visibility
+- id: score-agent
+  name: Score Agent
+  tags:
+  - score
+  - ai
+  - x402
+  - ai-visibility
+- id: score-mcp
+  name: Score Mcp
+  tags:
+  - score
+  - mcp
+  - x402
+  - ai-visibility
+- id: generate-llms-txt
+  name: Generate Llms Txt
+  tags:
+  - generate
+  - x402
+  - ai-visibility
+- id: generate-mcp-json
+  name: Generate Mcp Json
+  tags:
+  - generate
+  - mcp
+  - x402
+  - ai-visibility
+- id: full-audit
+  name: Full Audit
+  tags:
+  - audit
+  - score
+  - x402
+  - ai-visibility
+- id: fix-pack
+  name: Fix Pack
+  tags:
+  - fix
+  - x402
+  - ai-visibility
+- id: compare
+  name: Compare
+  tags:
+  - compare
+  - x402
+  - ai-visibility
+- id: visibility-fix-pack
+  name: Visibility Fix Pack
+  tags:
+  - fix
+  - visibility
+  - x402
+  - ai-visibility
+- id: full-report
+  name: Full Report
+  tags:
+  - audit
+  - fix
+  - generate
+  - x402
+  - ai-visibility
+- id: visibility-check
+  name: Visibility Check
+  tags:
+  - visibility
+  - x402
+  - ai-visibility
+- id: visibility-vs-competitor
+  name: Visibility Vs Competitor
+  tags:
+  - visibility
+  - compare
+  - x402
+  - ai-visibility
+health_check:
+  url: https://getaiscan.app/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getaiscan.app
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'AI visibility auditing for websites. 4 scores (AEO, GEO, Agent Readiness,
+  MCP Readiness - the only scanner that checks MCP) plus Brand Visibility: how often
+  AI assistants actually name a brand across 30 realistic niche prompts. 18 pay-per-use
+  capabilities via x402 on Base, 0.06-3.50 USDC. No API keys, no signup.'
+version: 5.9.1
