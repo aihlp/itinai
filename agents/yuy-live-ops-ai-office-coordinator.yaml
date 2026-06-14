@@ -1,0 +1,99 @@
+agent_id: yuy-live-ops-ai-office-coordinator
+name: "Yuy \u2014 Live Ops AI Office Coordinator"
+a2a_config:
+  agent_card_url: https://objectives-below-constitutional-ashley.trycloudflare.com/.well-known/agent.json
+  protocol_version: 1.0.0
+skills:
+- id: thai-social-commerce-orchestration
+  name: Thai Social-Commerce Orchestration
+  tags:
+  - thai
+  - social-commerce
+  - facebook
+  - instagram
+  - shopee
+  - orchestration
+  - scheduling
+  - content-calendar
+- id: thai-content-compliance
+  name: "Thai Marketing Compliance (\u0E2D\u0E22./Health-Product)"
+  tags:
+  - thai
+  - compliance
+  - legal
+  - fda-thailand
+  - "\u0E2D\u0E22"
+  - health-products
+  - supplements
+  - advertising-law
+- id: thai-engagement-analytics
+  name: Thai Social Engagement Analytics
+  tags:
+  - analytics
+  - meta-graph-api
+  - engagement
+  - facebook
+  - instagram
+  - reporting
+  - thai-market
+- id: thai-trend-content-ideation
+  name: Thai Trend & News-Based Content Ideation
+  tags:
+  - thai
+  - trends
+  - news-jacking
+  - content-ideation
+  - social-media
+  - viral
+- id: thai-brand-voice-copywriting
+  name: Thai Multi-Persona Brand Copywriting
+  tags:
+  - thai
+  - copywriting
+  - captions
+  - brand-voice
+  - persuasion
+  - ecommerce
+- id: health-product-rnd-evidence
+  name: Evidence-Based Health-Product R&D
+  tags:
+  - research
+  - evidence-based
+  - supplements
+  - health
+  - product-development
+  - pubmed
+health_check:
+  url: https://objectives-below-constitutional-ashley.trycloudflare.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://objectives-below-constitutional-ashley.trycloudflare.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "\u0E2B\u0E31\u0E27\u0E2B\u0E19\u0E49\u0E32/\u0E1C\u0E39\u0E49\u0E1B\u0E23\
+  \u0E30\u0E2A\u0E32\u0E19\u0E07\u0E32\u0E19\u0E01\u0E25\u0E32\u0E07\u0E02\u0E2D\u0E07\
+  \ Live Ops AI Office \u2014 \u0E2A\u0E33\u0E19\u0E31\u0E01\u0E07\u0E32\u0E19 AI\
+  \ \u0E14\u0E49\u0E32\u0E19 social-commerce \u0E02\u0E2D\u0E07\u0E44\u0E17\u0E22\
+  . \u0E22\u0E38\u0E49\u0E22\u0E04\u0E38\u0E21\u0E17\u0E35\u0E21 agent \u0E40\u0E09\
+  \u0E1E\u0E32\u0E30\u0E17\u0E32\u0E07 (\u0E27\u0E34\u0E08\u0E31\u0E22\u0E1C\u0E25\
+  \u0E34\u0E15\u0E20\u0E31\u0E13\u0E11\u0E4C, \u0E04\u0E2D\u0E19\u0E40\u0E17\u0E19\
+  \u0E15\u0E4C\u0E40\u0E01\u0E32\u0E30\u0E01\u0E23\u0E30\u0E41\u0E2A, \u0E27\u0E34\
+  \u0E40\u0E04\u0E23\u0E32\u0E30\u0E2B\u0E4C\u0E2A\u0E16\u0E34\u0E15\u0E34, \u0E04\
+  \u0E2D\u0E21\u0E44\u0E1E\u0E25\u0E4C\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23, \u0E1E\
+  \u0E31\u0E12\u0E19\u0E32\u0E1A\u0E38\u0E04\u0E25\u0E32\u0E01\u0E23) \u0E40\u0E1E\
+  \u0E37\u0E48\u0E2D\u0E02\u0E32\u0E22\u0E41\u0E25\u0E30\u0E17\u0E33\u0E04\u0E2D\u0E19\
+  \u0E40\u0E17\u0E19\u0E15\u0E4C\u0E1A\u0E19 Facebook/Instagram/Shopee/Lazada/TikTok\
+  \ \u0E02\u0E2D\u0E07\u0E2B\u0E25\u0E32\u0E22\u0E41\u0E1A\u0E23\u0E19\u0E14\u0E4C\
+  \u0E44\u0E17\u0E22. \u0E40\u0E0A\u0E35\u0E48\u0E22\u0E27\u0E0A\u0E32\u0E0D\u0E1E\
+  \u0E34\u0E40\u0E28\u0E29: orchestration \u0E07\u0E32\u0E19\u0E02\u0E32\u0E22\u0E42\
+  \u0E0B\u0E40\u0E0A\u0E35\u0E22\u0E25\u0E44\u0E17\u0E22\u0E41\u0E1A\u0E1A end-to-end,\
+  \ \u0E01\u0E32\u0E23\u0E17\u0E33\u0E04\u0E2D\u0E19\u0E40\u0E17\u0E19\u0E15\u0E4C\
+  \u0E43\u0E2B\u0E49\u0E16\u0E39\u0E01\u0E01\u0E0E\u0E2B\u0E21\u0E32\u0E22\u0E44\u0E17\
+  \u0E22 (\u0E2D\u0E22./\u0E2A\u0E34\u0E19\u0E04\u0E49\u0E32\u0E2A\u0E38\u0E02\u0E20\
+  \u0E32\u0E1E), \u0E41\u0E25\u0E30\u0E01\u0E32\u0E23\u0E27\u0E34\u0E40\u0E04\u0E23\
+  \u0E32\u0E30\u0E2B\u0E4C engagement \u0E08\u0E23\u0E34\u0E07\u0E08\u0E32\u0E01 Meta\
+  \ Graph API."
+version: 1.0.0

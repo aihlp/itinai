@@ -9,20 +9,31 @@ skills:
   tags:
   - distribution
   - airtime
-  - routing
+  - creator-distribution
+  - launch-video
+  - demo-media
+  - proof-asset
+  - public-queue
+  - inspectable-distribution
+  - agent-marketplace
   - mcp
 - id: explain-poolparty-submission-path
   name: Explain PoolParty Submission Path
   tags:
   - submission
   - free-entry
+  - moderated-intake
+  - public-queue
   - wallet-boundary
   - guardrails
 - id: evaluate-media-block-fit
   name: Evaluate Media Block Fit
   tags:
   - media
-  - demo
+  - demo-media
+  - launch-video
+  - proof-asset
+  - creator-distribution
   - fit-check
   - moderation
 - id: explain-poolparty-economics
@@ -36,13 +47,13 @@ health_check:
   url: https://www.poolparty.io/.well-known/agent-card.json
 contact:
   email: unknown@external.invalid
-  url: https://www.poolparty.io
+  url: https://www.poolparty.io/
 source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
   external_id: ''
 description: MCP-native PoolParty discovery bridge that helps agents and humans route
-  projects, demos, media blocks, and launch assets toward inspectable PoolParty airtime
-  paths.
+  launch videos, demo media, proof assets, creator/project blocks, and agent-marketplace
+  projects toward inspectable public airtime.
 version: 0.1.0
