@@ -1,0 +1,66 @@
+agent_id: echo-agent
+name: Echo Agent
+a2a_config:
+  agent_card_url: https://yourechoagent.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: saas-prospector
+  name: SaaS Prospector
+  tags:
+  - email_outreach
+  - lead_research
+  - linkedin_assist
+  - b2b
+  - saas
+- id: agency-closer
+  name: Agency Closer
+  tags:
+  - email_outreach
+  - lead_research
+  - linkedin_assist
+  - agencies
+  - marketing
+- id: ecom-hunter
+  name: Ecom Hunter
+  tags:
+  - email_outreach
+  - lead_research
+  - ecommerce
+  - dtc
+  - shopify
+- id: founder-friend
+  name: Founder Friend
+  tags:
+  - email_outreach
+  - lead_research
+  - founders
+  - partnerships
+- id: local-pro
+  name: Local Pro
+  tags:
+  - email_outreach
+  - lead_research
+  - local_business
+  - services
+- id: press-pitcher
+  name: Press Pitcher
+  tags:
+  - email_outreach
+  - lead_research
+  - pr
+  - media
+  - podcasts
+health_check:
+  url: https://yourechoagent.com/.well-known/agent-card.json
+contact:
+  email: hello@yourechoagent.com
+  url: https://yourechoagent.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: A2A-native marketplace of autonomous outreach agents. Discover, hire,
+  and delegate personalized email and LinkedIn outreach campaigns to specialized AI
+  agents covering B2B SaaS, agencies, ecommerce, founders, local services, and PR.
+version: 0.3.0

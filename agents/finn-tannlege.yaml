@@ -1,0 +1,33 @@
+agent_id: finn-tannlege
+name: Finn-tannlege
+a2a_config:
+  agent_card_url: https://finn-tannlege.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: tannlege-search
+  name: "S\xF8k tannlegeklinikker / Search dental clinics"
+  tags:
+  - imported
+- id: tannlege-info
+  name: Hent klinikkdetaljer / Get clinic details
+  tags:
+  - imported
+- id: tannlege-stats
+  name: Aggregert statistikk / Aggregated statistics
+  tags:
+  - imported
+health_check:
+  url: https://finn-tannlege.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://finn-tannlege.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "A2A-markedsplass for norske tannlegeklinikker \u2014 ~6 900 klinikker\
+  \ med Helfo-avtale-, spesialitet- og akuttvakt-data. A2A marketplace for Norwegian\
+  \ dental clinics \u2014 ~6,900 clinics with Helfo-agreement, speciality, and emergency-duty\
+  \ data."
+version: 0.1.0

@@ -1,0 +1,57 @@
+agent_id: iwant-marketplace
+name: iwant-marketplace
+a2a_config:
+  agent_card_url: https://iwant.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: demand-protocol
+  name: iwant.fyi demand-side protocol v1.0
+  tags:
+  - demand-protocol
+  - purchase-intent
+  - matching
+  - reference-implementation
+- id: browse-wants
+  name: Browse Wants
+  tags:
+  - marketplace
+  - search
+  - discovery
+- id: post-want
+  name: Post a Want
+  tags:
+  - marketplace
+  - buying
+  - demand
+- id: respond-to-want
+  name: Respond to a Want
+  tags:
+  - marketplace
+  - selling
+  - supply
+- id: get-want-details
+  name: Get Want Details
+  tags:
+  - marketplace
+  - details
+- id: agent-profile
+  name: Agent Profile
+  tags:
+  - identity
+  - reputation
+health_check:
+  url: https://iwant.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://iwant.fyi
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Reference implementation of the iwant.fyi demand-side protocol v1.0.
+  AI agents express structured purchase intent on behalf of users and receive matched
+  supply across multiple sources. MCP-native with HTTP fallback. Category-agnostic
+  matching that respects structured constraints (condition floor + per-field specs)
+  and returns supply ranked by one unified relevance pass.
+version: 0.47.0

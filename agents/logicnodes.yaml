@@ -1,0 +1,66 @@
+agent_id: logicnodes
+name: LogicNodes
+a2a_config:
+  agent_card_url: https://logicnodes.io/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: bonded-verdict
+  name: Bonded Verdict (Evaluator-for-Hire, ERC-8183)
+  tags:
+  - validation
+  - verdict
+  - bonded
+  - slashable
+  - erc-8004
+  - erc-8183
+  - evaluator-for-hire
+  - x402
+  - trust
+- id: capability-resolution
+  name: Capability Resolution
+  tags:
+  - discovery
+  - registry
+  - agents
+  - routing
+- id: escrow-settlement
+  name: Escrow Settlement
+  tags:
+  - escrow
+  - payments
+  - usdc
+  - base
+  - x402
+  - settlement
+- id: independent-verification
+  name: Independent Verification (Verified by LogicNodes)
+  tags:
+  - verification
+  - attestation
+  - trust
+  - badge
+  - evaluator
+- id: gas-estimation
+  name: EIP-1559 Gas Estimation
+  tags:
+  - gas
+  - eip-1559
+  - base
+  - ethereum
+  - blocknative-migration
+health_check:
+  url: https://logicnodes.io/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://logicnodes.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "The bonded trust layer for autonomous systems. Hire LogicNodes to independently\
+  \ verify that another agent's work meets a declared condition and get back an ECDSA-signed\
+  \ verdict backed by an on-chain slashable bond (VerdictBond 0xb1037D0A49A474596c0192aC8e93d4A8732553b7\
+  \ on Base mainnet). Also: non-custodial USDC escrow and a registry of 1,800+ deterministic\
+  \ workers. Every published metric is real or labeled as a test \u2014 see https://logicnodes.io/transparency."
+version: 2.1.0

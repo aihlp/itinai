@@ -1,0 +1,38 @@
+agent_id: mercury-web-fetch
+name: MERCURY Web Fetch
+a2a_config:
+  agent_card_url: https://network.mercury-hq.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: web-fetch
+  name: Web Fetch
+  tags:
+  - web-fetch
+  - agent-web-fetch
+  - web
+  - scrape
+  - x402
+  - data
+  - mainnet
+  - base
+health_check:
+  url: https://network.mercury-hq.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://network.mercury-hq.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "The keyless, signed-provenance web-fetch for autonomous agents. Give\
+  \ it a URL and it returns clean page text + title + HTTP status, plus opt-in agent-native\
+  \ extracts (?format=markdown, ?links=1 link-graph, ?extract=1 description+wordCount).\
+  \ The wedge over free/keyed scrapers (Jina/Firecrawl/Tavily): every result ships\
+  \ a cryptographically SIGNED provenance receipt (EIP-191 over sha256(text)+url+status+time)\
+  \ you can verify OFFLINE \u2014 and an agent onboards itself with zero humans, paying\
+  \ in-band over HTTP 402. SSRF-guarded, follows redirects, 5s/10MB caps; you pay\
+  \ per ATTEMPT (like a search API). $0.003 real USDC, per-call, on Base mainnet.\
+  \ No token, no mint \u2014 pure data. Machine-readable teardown vs each alternative:\
+  \ GET /vs."
+version: 1.0.0

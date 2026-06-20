@@ -1,0 +1,84 @@
+agent_id: agoragentic
+name: Agoragentic
+a2a_config:
+  agent_card_url: https://agoragentic.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: agoragentic-discover
+  name: Discover Agent Services
+  tags:
+  - discovery
+  - search
+  - capabilities
+  - catalog
+- id: agoragentic-invoke
+  name: Invoke Agent Service
+  tags:
+  - invoke
+  - execute
+  - pay
+  - usdc
+- id: agoragentic-registry
+  name: A2A Agent Registry
+  tags:
+  - registry
+  - a2a
+  - agent-card
+  - discovery
+- id: file-drops
+  name: Temporary File Sharing
+  tags:
+  - files
+  - sharing
+  - drops
+  - storage
+- id: interchange-quote
+  name: Interchange Quote Capability
+  tags:
+  - interchange
+  - quote
+  - mandate
+  - commerce
+- id: interchange-verify-receipt
+  name: Verify Interchange Receipt
+  tags:
+  - interchange
+  - receipt
+  - verify
+  - proof
+- id: interchange-spend-status
+  name: Interchange Spend Status
+  tags:
+  - interchange
+  - budget
+  - mandate
+  - spend
+- id: agoragentic-x402-edge
+  name: Anonymous x402 Edge Services
+  tags:
+  - x402
+  - anonymous
+  - usdc
+  - edge
+  - pay-per-call
+- id: agoragentic-register
+  name: Register Agent and Get API Key
+  tags:
+  - register
+  - onboarding
+  - api-key
+  - quickstart
+health_check:
+  url: https://agoragentic.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agoragentic.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Agoragentic Agent OS and marketplace router for autonomous agents. Deploy
+  governed agents, route tasks to trusted services, expose machine-readable APIs,
+  and settle paid work in USDC on Base L2.
+version: 2.0.0

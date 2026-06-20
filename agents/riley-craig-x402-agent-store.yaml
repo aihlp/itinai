@@ -1,0 +1,167 @@
+agent_id: riley-craig-x402-agent-store
+name: Riley Craig x402 Agent Store
+a2a_config:
+  agent_card_url: https://x402-agent-store.rileycraig14.workers.dev/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: free-samples
+  name: Free Samples (try before you pay)
+  tags:
+  - free
+  - samples
+  - trial
+  - x402
+- id: token-security
+  name: Token Security / Rug-Check (pre-trade)
+  tags:
+  - rug-check
+  - honeypot
+  - token-security
+  - trading
+  - sniping
+  - defi
+  - x402
+- id: dex-data
+  name: Live DEX Token Data
+  tags:
+  - dex
+  - price
+  - liquidity
+  - trading
+  - dexscreener
+  - crypto
+  - x402
+- id: token-launches
+  name: New & Trending Token Launches
+  tags:
+  - new-tokens
+  - launches
+  - sniping
+  - discovery
+  - trading
+  - crypto
+  - x402
+- id: onchain-reads
+  name: On-chain RPC Reads (balance / gas / tx)
+  tags:
+  - rpc
+  - on-chain
+  - balance
+  - gas
+  - transaction
+  - settlement
+  - x402
+- id: prediction-odds
+  name: Prediction-Market Odds (Polymarket)
+  tags:
+  - prediction-market
+  - polymarket
+  - forecasting
+  - trading
+  - odds
+  - x402
+- id: brand-check
+  name: Live Brand AI-Visibility Check
+  tags:
+  - visibility
+  - brand-monitoring
+  - geo
+  - x402
+- id: crypto-ai-visibility
+  name: Crypto Project AI-Visibility
+  tags:
+  - crypto
+  - ai-visibility
+  - narrative
+  - trading-signal
+  - x402
+- id: sales-qualify
+  name: Sales Lead Qualifier (AI-Visibility Gap)
+  tags:
+  - sales
+  - lead-qualification
+  - prospecting
+  - outreach
+  - x402
+- id: clearing-house
+  name: Agent Clearing House (task market + passports)
+  tags:
+  - marketplace
+  - tasks
+  - bidding
+  - reputation
+  - passport
+  - a2a
+  - x402
+- id: visibility-index
+  name: AI Visibility Index dataset
+  tags:
+  - data-feed
+  - ai-visibility
+  - brand-scores
+  - x402
+- id: signal-feed
+  name: AI Visibility Signal Feed
+  tags:
+  - data-feed
+  - geo
+  - x402
+- id: risk-spread
+  name: DeFi vs Risk-Free Rate Spread
+  tags:
+  - risk-analysis
+  - credit
+  - defi
+  - macro
+  - x402
+- id: defi-yields
+  name: Top DeFi yields
+  tags:
+  - crypto
+  - defi
+  - yields
+  - x402
+- id: crypto-prices
+  name: Token price snapshot
+  tags:
+  - crypto
+  - prices
+  - x402
+- id: gov-treasury
+  name: US Treasury rates & debt
+  tags:
+  - government-data
+  - macro
+  - finance
+  - x402
+- id: truck-profit
+  name: Load profitability calculator
+  tags:
+  - trucking
+  - logistics
+  - x402
+- id: truck-cpm
+  name: Cost-per-mile breakdown
+  tags:
+  - trucking
+  - calculator
+  - x402
+health_check:
+  url: https://x402-agent-store.rileycraig14.workers.dev/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://agentexchange.work
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Machine-payable data services for AI agents \u2014 built for trading\
+  \ & sniping bots first: pre-trade token rug-check (honeypot, buy/sell tax, mint\
+  \ & owner risk), live DEX price/liquidity/flow, new & boosted token-launch feed,\
+  \ on-chain RPC reads (native balance, gas, tx status), and prediction-market odds\
+  \ \u2014 plus AI-visibility/GEO brand audits, DeFi yields and token prices. ~22\
+  \ endpoints, pay per call in USDC (x402, Base mainnet) \u2014 no API keys, no signup.\
+  \ Verified on x402scan with real on-chain buyer history and indexed in the Coinbase\
+  \ x402 Bazaar."
+version: 1.1.0

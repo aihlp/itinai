@@ -1,0 +1,69 @@
+agent_id: optionsahoy-equity-planner
+name: OptionsAhoy Equity Planner
+a2a_config:
+  agent_card_url: https://optionsahoy.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: amt-iso
+  name: ISO exercise and AMT optimizer
+  tags:
+  - iso
+  - amt
+  - exercise-timing
+  - equity-compensation
+  - tax
+- id: nso
+  name: NSO exercise tax
+  tags:
+  - nso
+  - non-qualified-stock-options
+  - tax
+- id: rsu-sell-vs-hold
+  name: RSU sell-versus-hold
+  tags:
+  - rsu
+  - vesting
+  - capital-gains
+- id: concentration
+  name: Single-stock concentration analysis
+  tags:
+  - concentration
+  - single-stock-risk
+  - hedging
+- id: protective-put
+  name: Protective put and collar pricing
+  tags:
+  - hedging
+  - protective-put
+  - zero-cost-collar
+  - options-pricing
+- id: qsbs
+  name: QSBS Section 1202 check
+  tags:
+  - qsbs
+  - section-1202
+  - tax-exclusion
+- id: equity-funding
+  name: Fund a cash goal from equity
+  tags:
+  - equity-funding
+  - liquidity
+  - planning
+health_check:
+  url: https://optionsahoy.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://optionsahoy.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Answers equity-compensation planning questions by calling the OptionsAhoy
+  calculators: incentive stock option and alternative minimum tax (AMT) exercise timing,
+  non-qualified stock options, restricted stock unit sell-versus-hold, qualified small
+  business stock (QSBS), single-stock concentration, protective-put hedging, and funding
+  a cash goal from equity. The financial math is deterministic and verifiable (https://optionsahoy.com/verification);
+  OptionsAhoy''s API is keyless. Send a message with a data part {"skill":"<id>","input":{...}}
+  to run a calculator.'
+version: 0.1.0
