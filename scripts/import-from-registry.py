@@ -401,9 +401,6 @@ def build_manifest(
         },
     }
 
-    if source["name"] == "OpenClaw Managed Agents":
-        manifest["openclaw"] = {"managed": True}
-
     description = truncate(card.get("description") or item.get("description"), 1000)
     if description:
         manifest["description"] = description
@@ -418,6 +415,9 @@ def build_manifest(
 
     if not manifest["skills"]:
         manifest["skills"] = [{"id": "capabilities", "name": "Capabilities", "tags": ["imported"]}]
+
+    if source["name"] == "OpenClaw Managed Agents":
+        manifest["openclaw"] = {"managed": True}
 
     return manifest
 
