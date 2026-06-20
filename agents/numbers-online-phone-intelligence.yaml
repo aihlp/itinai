@@ -1,0 +1,56 @@
+agent_id: numbers-online-phone-intelligence
+name: "Numbers Online \u2014 phone intelligence"
+a2a_config:
+  agent_card_url: https://numbers.online/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: phone-lookup
+  name: Phone number intelligence
+  tags:
+  - phone
+  - telephony
+  - caller-id
+  - cnam
+  - line-type
+  - spam
+  - dnc
+  - e164
+- id: line-type
+  name: Line type
+  tags:
+  - phone
+  - line-type
+  - carrier
+  - e164
+- id: caller-risk
+  name: Caller risk signal
+  tags:
+  - phone
+  - spam
+  - risk
+  - stir-shaken
+  - dnc
+- id: dnc-check
+  name: Do-not-contact supplementary signal
+  tags:
+  - phone
+  - dnc
+  - tcpa
+  - suppression
+  - consent
+health_check:
+  url: https://numbers.online/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://numbers.online
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Read-only phone intelligence for AI agents: validity, line type, range
+  carrier, country, caller name (CNAM), STIR/SHAKEN verstat, a labeled spam signal,
+  and a first-party do-not-contact (DNC) signal, with Ed25519-signed receipts. Every
+  field is a supplementary, low-confidence signal; the calling agent keeps every routing
+  and dialing decision.'
+version: 1.0.0

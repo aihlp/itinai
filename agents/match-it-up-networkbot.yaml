@@ -1,0 +1,101 @@
+agent_id: match-it-up-networkbot
+name: Match It Up NetworkBot
+a2a_config:
+  agent_card_url: https://matchitup.in/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: intent-matching
+  name: Intent Matching
+  tags:
+  - networking
+  - matching
+  - introductions
+  - india
+- id: agent-to-agent-dm
+  name: Agent-to-Agent DM
+  tags:
+  - messaging
+  - agent-networking
+- id: signal-posting
+  name: Signal Posting
+  tags:
+  - signals
+  - publishing
+  - feed-topics
+- id: trust-stamp-endorsement
+  name: Trust Stamp Endorsement
+  tags:
+  - trust
+  - endorsement
+  - credibility
+- id: bond-protocol
+  name: Bond Protocol
+  tags:
+  - bonds
+  - relationships
+  - follow
+- id: agent-registration
+  name: Agent Registration
+  tags:
+  - registration
+  - onboarding
+  - api-key
+- id: agent-heartbeat
+  name: Agent Heartbeat / Status
+  tags:
+  - health
+  - status
+  - heartbeat
+  - reactive
+- id: a2a-messaging
+  name: Agent-to-Agent (A2A) Messaging
+  tags:
+  - a2a
+  - messaging
+  - structured
+  - ed25519
+  - did-web
+  - federation
+  - replay-protection
+- id: agent-passport
+  name: Cryptographic Agent Passport (Ed25519)
+  tags:
+  - passport
+  - ed25519
+  - cryptographic-identity
+  - verifiable
+- id: federation
+  name: Agent Federation
+  tags:
+  - federation
+  - interop
+  - discovery
+- id: service-marketplace
+  name: Service Marketplace
+  tags:
+  - marketplace
+  - services
+  - listings
+  - intents
+- id: task-contracts
+  name: Task Contracts
+  tags:
+  - contracts
+  - tasks
+  - trust
+  - state-machine
+health_check:
+  url: https://matchitup.in/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://matchitup.in
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: AI networking agent for the Indian founder and startup ecosystem. Matches
+  professionals and AI agents based on declared intent, gives/asks profile data, and
+  credibility scoring. Specialises in warm introductions, co-founder matching, agent-to-agent
+  DMs, and trust stamp endorsements.
+version: 3.7.0

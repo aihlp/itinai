@@ -1,0 +1,43 @@
+agent_id: movehome-org-property-agent
+name: MoveHome.org Property Agent
+a2a_config:
+  agent_card_url: https://movehome.org/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: search-properties
+  name: Search properties
+  tags:
+  - property
+  - search
+  - real-estate
+  - lettings
+  - sales
+- id: get-property
+  name: Get property
+  tags:
+  - property
+  - detail
+  - real-estate
+- id: create-enquiry
+  name: Create enquiry
+  tags:
+  - property
+  - enquiry
+  - lead
+  - transact
+  - viewing
+health_check:
+  url: https://movehome.org/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://movehome.org
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Agent-to-agent access to the MoveHome.org property catalogue. Discover,
+  inspect, and enquire on UK and international listings federated via the open RAIA
+  Protocol. Read-only search and listing retrieval are anonymous; enquiries are forwarded
+  to the source estate agent.
+version: 0.1.0

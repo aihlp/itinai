@@ -1,0 +1,39 @@
+agent_id: agent-ready
+name: agent-ready
+a2a_config:
+  agent_card_url: https://agent-ready.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: scan-site
+  name: Scan a site
+  tags:
+  - scan
+  - readability
+  - llms-txt
+  - mcp
+  - a2a
+- id: get-scan
+  name: Get a scan by id
+  tags:
+  - scan
+  - read
+- id: ask
+  name: Ask Agent Ready
+  tags:
+  - ask
+  - nlweb
+  - search
+  - methodology
+health_check:
+  url: https://agent-ready.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agent-ready.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: AI agent readability scanner. Scores any site against the Vercel Agent
+  Readability Spec and llmstxt.org, and reports per-check remediation guidance.
+version: 1.0.0

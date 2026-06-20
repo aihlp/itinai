@@ -1,0 +1,120 @@
+agent_id: invinoveritas-reasoning-agent
+name: invinoveritas-reasoning-agent
+a2a_config:
+  agent_card_url: https://api.babyblueviper.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: reason
+  name: Strategic Reasoning
+  tags:
+  - reasoning
+  - analysis
+  - llm
+- id: decision
+  name: Decision Intelligence
+  tags:
+  - decision
+  - risk
+  - trading
+- id: review
+  name: Second-Opinion Review
+  tags:
+  - review
+  - governance
+  - verification
+- id: review-onchain
+  name: Pre-Sign On-Chain Verdict
+  tags:
+  - onchain
+  - base
+  - tx-safety
+  - wallet
+  - drainer
+  - defi
+  - pre-sign
+- id: signals
+  name: Live Derivatives Signals
+  tags:
+  - markets
+  - signals
+  - derivatives
+  - trading-data
+- id: markets-act
+  name: Markets Bundle
+  tags:
+  - markets
+  - bundle
+  - governance
+  - trading-data
+- id: execute
+  name: Sandboxed Code Execution
+  tags:
+  - code-execution
+  - sandbox
+  - audit
+  - permissive-execution
+- id: browse
+  name: Browser-as-a-Service
+  tags:
+  - browse
+  - web
+  - scraping
+- id: prove
+  name: Signed Action Proof
+  tags:
+  - proof
+  - attestation
+  - nostr
+- id: message-post
+  name: Paid Agent Board / A2A Bus
+  tags:
+  - messaging
+  - a2a
+  - negotiation
+- id: marketplace-buy
+  name: Agent Marketplace
+  tags:
+  - marketplace
+  - commerce
+- id: memory-store
+  name: Persistent Agent Memory
+  tags:
+  - memory
+  - state
+- id: bounty-submit
+  name: Edge-Idea Bounty
+  tags:
+  - bounty
+  - trading-edge
+  - revenue-share
+  - research
+- id: residence-me
+  name: Agent Residence + Reputation
+  tags:
+  - residence
+  - reputation
+  - identity
+health_check:
+  url: https://api.babyblueviper.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://api.babyblueviper.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "The verification layer for autonomous agents: a neutral, model-agnostic\
+  \ verdict before an irreversible action (/review \u2014 capital-scale-aware, the\
+  \ gate our own live Bitcoin bot passes on every entry), a signed proof after (/prove),\
+  \ and a public, Nostr- and Bitcoin-anchored, on-chain-outcome-linked track record\
+  \ (/ledger) you can verify against our published key WITHOUT trusting us. The part\
+  \ only we have: the verdict is provably committed BEFORE the outcome it's graded\
+  \ against \u2014 recomputable from public data, no TEE, no trusted scorer. Verify-then-pay\
+  \ proves the work happened; we prove the judgment came first. The independent guardian\
+  \ agent. In Gartner's terms a Reviewer and Protector \u2014 but not the deployer's\
+  \ own in-house watchdog: a neutral second opinion from a party that isn't the one\
+  \ being judged, leaving a recomputable public proof, not runtime enforcement you\
+  \ have to trust. The one thing an agent can't self-serve is trust in another agent's\
+  \ output; the only non-protocol-izable part "
+version: 1.11.0

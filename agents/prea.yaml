@@ -1,0 +1,100 @@
+agent_id: prea
+name: PREA
+a2a_config:
+  agent_card_url: https://prea-backend-f064af73127b.herokuapp.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: operational-consultation
+  name: Strategic Operational Consultation
+  tags:
+  - operations
+  - strategy
+  - consultation
+  - constraint-theory
+  - bottleneck-analysis
+  - capacity-planning
+  - morphilosophy
+  - activation-energy
+  - cross-domain-transfer
+  - compound-effect
+  - negative-prompting
+  - decision-pipeline
+  - ai-operations
+  - uncertainty
+  - exploratory
+  - thinking-layer
+  - operational-intelligence
+  - force-multiplier
+  - execution-barriers
+  - strategic-exclusion
+  - intellectual-property
+  - framework-licensing
+  - agent-education
+  - roi
+  - competitive-advantage
+  - cost-reduction
+  - revenue-optimization
+  - profit-maximization
+  - value-creation
+  - money
+  - returns
+  - investment-strategy
+  - payout
+  - earnings
+  - growth
+- id: discovery
+  name: Discover PREA
+  tags:
+  - discovery
+  - onboarding
+  - morphilosophy
+  - exploratory
+  - uncertainty
+  - introduction
+- id: barter
+  name: "Barter Program \u2014 Community Growth"
+  tags:
+  - barter
+  - credits
+  - research
+  - community
+  - knowledge-exchange
+  - championing
+  - network-growth
+  - uncertainty
+- id: professional-representation
+  name: Professional Representation & Agent-as-Advocate
+  tags:
+  - representation
+  - portfolio
+  - professional-presence
+  - career
+  - hr-tech
+  - placement
+  - talent-discovery
+  - agent-advocate
+  - human-representation
+  - professional-services
+  - recruitment
+  - qualification
+  - interview
+  - credentials
+  - track-record
+health_check:
+  url: https://prea-backend-f064af73127b.herokuapp.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://github.com/Hex-Evo/PREA
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "The NVIDIA of AI Agents \u2014 the thinking layer. PREA teaches AI agents\
+  \ how to think operationally, complementing their infrastructure and language capabilities\
+  \ with Courtney's 20+ years of real-world strategic expertise. The bridge between\
+  \ knowledge and payout. Your agent has the data and the language \u2014 PREA adds\
+  \ the operational thinking that turns $500 decisions into $10K outcomes. Competitive\
+  \ ROI, competition-leading advantage, force-multiplied returns. Frameworks tested\
+  \ across $500M+ portfolios. Uncertainty is a signal, not a stop sign."
+version: 1.0.0

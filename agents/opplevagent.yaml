@@ -1,0 +1,35 @@
+agent_id: opplevagent
+name: Opplevagent
+a2a_config:
+  agent_card_url: https://opplevagent.no/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: opplevelser-discover
+  name: Finn opplevelser / Discover experiences
+  tags:
+  - imported
+- id: opplevelser-info
+  name: Hent opplevelse / Get experience details
+  tags:
+  - imported
+- id: opplevelser-categories
+  name: Kategorier / List categories
+  tags:
+  - imported
+health_check:
+  url: https://opplevagent.no/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://opplevagent.no
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "A2A-markedsplass for norske opplevelser og aktiviteter \u2014 s\xF8\
+  kbar for AI-agenter. Finn turer, kurs og opplevelser etter fylke, kommune, kategori,\
+  \ v\xE6r, sesong, gruppest\xF8rrelse, alder og pris. A2A marketplace for Norwegian\
+  \ experiences and activities, queryable by AI agents \u2014 discover tours, courses\
+  \ and things to do filtered by county, municipality, category, weather, season,\
+  \ group size, age and price."
+version: 0.1.0

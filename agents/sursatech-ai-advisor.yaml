@@ -1,0 +1,86 @@
+agent_id: sursatech-ai-advisor
+name: SursaTech AI Advisor
+a2a_config:
+  agent_card_url: https://www.sursatech.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: get-company-profile
+  name: Get company profile
+  tags:
+  - company
+  - profile
+  - ai-company
+  - contact
+- id: get-services
+  name: Get services
+  tags:
+  - services
+  - ai-agent-development
+  - rag
+  - ai-product-engineering
+  - qa-automation
+- id: get-portfolio-projects
+  name: Get portfolio
+  tags:
+  - portfolio
+  - case-studies
+  - projects
+- id: get-development-process
+  name: Get development process
+  tags:
+  - process
+  - delivery
+  - consulting
+- id: capture-lead-requirement
+  name: Capture lead requirement
+  tags:
+  - requirements
+  - lead-capture
+  - handoff
+- id: estimate-project-timeline-and-price
+  name: Estimate project
+  tags:
+  - estimate
+  - timeline
+  - pricing
+- id: start-consultation-booking
+  name: Start consultation booking
+  tags:
+  - booking
+  - consultation
+  - calendar
+- id: create-payment-checkout
+  name: Create payment checkout
+  tags:
+  - payment
+  - checkout
+  - booking
+- id: confirm-paid-booking
+  name: Confirm paid booking
+  tags:
+  - payment
+  - verification
+  - calendar
+- id: cancel-or-reschedule-booking
+  name: Cancel or reschedule booking
+  tags:
+  - booking
+  - reschedule
+  - cancel
+health_check:
+  url: https://www.sursatech.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://www.sursatech.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: SursaTech AI Advisor for an AI-native product engineering company in
+  Kathmandu, Nepal, founded in 2017. Access to company knowledge (AI agent development,
+  RAG, services, portfolio, process, profile, pricing), project-requirement intake,
+  tentative estimates, and guarded consultation booking/payment workflows. Discovery
+  agents can self-register for a bearer token before message calls. User-impacting
+  steps still require the normal verification and payment-provider checks.
+version: 1.0.0

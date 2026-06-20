@@ -1,0 +1,62 @@
+agent_id: tablecharts
+name: TableCharts
+a2a_config:
+  agent_card_url: https://tablecharts.co/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: generate-dashboard
+  name: Generate Dashboard
+  tags:
+  - chart
+  - charts
+  - dashboard
+  - dashboards
+  - visualization
+  - data-viz
+  - embed
+  - iframe
+  - reporting
+  - analytics
+  - csv
+  - json
+  - notion
+  - google-sheets
+  - salesforce
+  - a2a
+  - visualization-rendering
+  - data-orchestration
+  - tabular-formatting
+  - bar
+  - line
+  - area
+  - pie
+  - doughnut
+  - radar
+  - scatter
+  - stacked-bar
+  - stacked-area
+  - horizontal-bar
+  - funnel
+  - treemap
+  - heatmap
+  - gauge
+  - kpi
+  - data-cleaning
+  - chart-recommendation
+  - title-generation
+  - outlier-detection
+health_check:
+  url: https://tablecharts.co/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://tablecharts.co
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Lightning-fast chart & dashboard agent for A2A workflows. Send JSON,\
+  \ CSV, Notion, Google Sheets or Salesforce data \u2192 receive a public live dashboard\
+  \ URL + embed iframe in one call. Auto-cleans data, picks best chart, detects outliers.\
+  \ Perfect for reporting, analytics, and monitoring agents."
+version: 1.2.0

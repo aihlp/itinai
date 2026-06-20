@@ -1,0 +1,60 @@
+agent_id: infergonka
+name: inferGONKA
+a2a_config:
+  agent_card_url: https://a2a.gogonka.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: trial-key
+  name: "Free Trial Inference Key \u2014 100K Tokens, No Registration"
+  tags:
+  - trial
+  - free
+  - inference
+  - api-key
+  - openai-compatible
+  - instant
+  - no-registration
+- id: cost-analysis
+  name: Inference Cost Calculator
+  tags:
+  - pricing
+  - savings
+  - cost
+  - openai-alternative
+  - budget
+  - llm
+- id: limit-exceeded-cta
+  name: "Trial Ended \u2014 Guide User to Register"
+  tags:
+  - trial-ended
+  - limit
+  - cta
+  - registration
+  - upsell
+- id: register-user
+  name: "Register \u2014 Get 12M nGNK Free, No Credit Card"
+  tags:
+  - registration
+  - api-key
+  - bonus
+  - no-credit-card
+  - switch-provider
+  - permanent
+health_check:
+  url: https://a2a.gogonka.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://a2a.gogonka.com/messages
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Spend less. Build more. \u2014 inferGONKA connects AI agents to Gonka\
+  \ Network, a decentralized inference network where compute is cheap because it's\
+  \ distributed, not corporate. $0.000370/1M tokens \u2014 6,729\xD7 cheaper than\
+  \ GPT-4o. 3 premium open-source models: Qwen3-235B (rivals GPT-4o), Kimi K2.6 (~1T\
+  \ MoE, agentic reasoning), MiniMax M2.7 (1M token context). Free 100K-token trial\
+  \ instantly \u2014 no registration, no credit card. OpenAI-compatible: two env vars,\
+  \ zero code changes."
+version: 1.4.0
