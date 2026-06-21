@@ -165,13 +165,23 @@ def normalize_candidate(value: str, source_url: str = "") -> dict[str, Any] | No
 
 
 def extract_candidates(data: Any, source_url: str = "") -> list[dict[str, Any]]:
+    """Extract agent candidates from registry data with deduplication.
+    
+    Prevents duplicate entries from being added when walking nested structures.
+    """
     candidates: list[dict[str, Any]] = []
+    seen_urls: set[str] = set()
 
-    def add_url(value: Any) -> None:
+    def add_url(value: Any, extra_data: dict[str, Any] | None = None) -> None:
         if isinstance(value, str):
             item = normalize_candidate(value, source_url)
             if item:
-                candidates.append(item)
+                # Deduplicate by URL
+                if item["agent_card_url"] not in seen_urls:
+                    seen_urls.add(item["agent_card_url"])
+                    if extra_data:
+                        item.update(extra_data)
+                    candidates.append(item)
 
     def walk(value: Any) -> None:
         if isinstance(value, dict):
@@ -181,7 +191,15 @@ def extract_candidates(data: Any, source_url: str = "") -> list[dict[str, Any]]:
                     add_url(item)
                     direct = True
             if direct:
-                candidates.append({**value, "source_url": source_url})
+                # Only add the full object if we found a direct match
+                url = None
+                for key in AGENT_CARD_URL_KEYS:
+                    if key in value and isinstance(value[key], str):
+                        url = value[key]
+                        break
+                if url and url not in seen_urls:
+                    seen_urls.add(url)
+                    candidates.append({**value, "source_url": source_url})
             for item in value.values():
                 walk(item)
         elif isinstance(value, list):
@@ -262,8 +280,20 @@ def load_github_repo_candidates(repo: str, timeout: int) -> list[dict[str, Any]]
 
 
 def load_source_candidates(source: dict[str, Any], timeout: int) -> list[dict[str, Any]]:
+    """Load candidate agents from a source with better error handling and deduplication.
+    
+    Returns a deduplicated list of candidate agents across all URLs for this source.
+    """
     candidates: list[dict[str, Any]] = []
+    seen_urls: set[str] = set()
     errors: list[str] = []
+
+    def add_candidate(item: dict[str, Any]) -> None:
+        """Add candidate only if we haven't seen its URL before."""
+        url = item.get("agent_card_url", "")
+        if url and url not in seen_urls:
+            seen_urls.add(url)
+            candidates.append(item)
 
     for endpoint in source.get("urls", []):
         try:
@@ -273,20 +303,31 @@ def load_source_candidates(source: dict[str, Any], timeout: int) -> list[dict[st
                 try:
                     data = json_from_text(text)
                     if isinstance(data, list):
-                        candidates.extend(item for item in data if isinstance(item, dict))
+                        for item in data:
+                            if isinstance(item, dict):
+                                add_candidate(item)
                     elif isinstance(data, dict):
                         for key in ("agents", "items", "data"):
                             items = data.get(key)
                             if isinstance(items, list):
-                                candidates.extend(item for item in items if isinstance(item, dict))
-                        candidates.extend(extract_candidates(data, endpoint))
+                                for item in items:
+                                    if isinstance(item, dict):
+                                        add_candidate(item)
+                        # Also extract from nested structures
+                        extracted = extract_candidates(data, endpoint)
+                        for item in extracted:
+                            add_candidate(item)
                     continue
                 except Exception:
                     pass
             if content_type in {".yaml", ".yml"}:
-                candidates.extend(extract_candidates(yaml.safe_load(text), endpoint))
+                extracted = extract_candidates(yaml.safe_load(text), endpoint)
+                for item in extracted:
+                    add_candidate(item)
             else:
-                candidates.extend(extract_candidates_from_text(text, endpoint))
+                extracted = extract_candidates_from_text(text, endpoint)
+                for item in extracted:
+                    add_candidate(item)
         except Exception as exc:
             errors.append(f"{endpoint}: {exc}")
 
@@ -295,7 +336,9 @@ def load_source_candidates(source: dict[str, Any], timeout: int) -> list[dict[st
         repos.append(source["github_repo"])
     repos.extend(source.get("github_repos", []))
     for repo in repos:
-        candidates.extend(load_github_repo_candidates(repo, timeout))
+        github_candidates = load_github_repo_candidates(repo, timeout)
+        for item in github_candidates:
+            add_candidate(item)
 
     if not candidates and errors:
         print(f"SKIP {source['name']}: no candidates loaded; " + " | ".join(errors), file=sys.stderr)
@@ -310,12 +353,32 @@ def agent_card_url(item: dict[str, Any]) -> str | None:
     return None
 
 
-def has_required_card_fields(card: dict[str, Any]) -> bool:
+def has_required_card_fields(card: dict[str, Any]) -> tuple[bool, str]:
+    """Check if agent card has required A2A fields.
+    
+    Returns (is_valid, reason) tuple for better debugging.
+    A2A spec requires: name, protocolVersion, and either skills or capabilities.
+    """
     if not card.get("protocolVersion"):
-        return False
+        return False, "missing protocolVersion"
+    
+    if not card.get("name"):
+        return False, "missing name"
+    
     skills = card.get("skills")
     capabilities = card.get("capabilities")
-    return bool(skills or capabilities)
+    
+    # Accept either skills or capabilities (some cards use one or the other)
+    if not skills and not capabilities:
+        return False, "missing both skills and capabilities"
+    
+    # If skills exist, ensure at least one is valid
+    if skills and isinstance(skills, list):
+        valid_skills = [s for s in skills if isinstance(s, dict) and s.get("id")]
+        if not valid_skills:
+            return False, "skills array exists but no valid skill with id found"
+    
+    return True, "ok"
 
 
 def existing_manifests_by_url() -> dict[str, Path]:
@@ -469,10 +532,17 @@ def import_agents(args: argparse.Namespace) -> int:
                 print(f"SKIP {card_url}: cannot fetch Agent Card: {exc}", file=sys.stderr)
                 continue
 
-            if not isinstance(card, dict) or not has_required_card_fields(card):
+            if not isinstance(card, dict):
                 source_skipped += 1
                 skipped += 1
-                print(f"SKIP {card_url}: Agent Card missing required fields", file=sys.stderr)
+                print(f"SKIP {card_url}: Agent Card is not a valid JSON object", file=sys.stderr)
+                continue
+            
+            is_valid, reason = has_required_card_fields(card)
+            if not is_valid:
+                source_skipped += 1
+                skipped += 1
+                print(f"SKIP {card_url}: Agent Card missing required fields ({reason})", file=sys.stderr)
                 continue
 
             existing_path = existing_by_url.get(card_url)
