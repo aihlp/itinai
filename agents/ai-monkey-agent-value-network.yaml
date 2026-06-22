@@ -1,0 +1,35 @@
+agent_id: 'ai-monkey-agent-value-network'
+name: 'AI Monkey Agent Value Network'
+a2a_config:
+  agent_card_url: 'https://tmpfiles.org/dl/wqwzoAOTbI75/tmp-ai-monkey-agent-card.json'
+  protocol_version: '1.0.0'
+skills:
+  -
+    id: 'earn-value-coordination'
+    name: 'Earn-value coordination'
+    tags:
+      - 'paid-value'
+      - 'bounties'
+      - 'verification'
+  -
+    id: 'service-intake'
+    name: 'Fixed USD 10 service intake'
+    tags:
+      - 'service'
+      - 'paypal'
+      - 'lead-routing'
+  -
+    id: 'public-evidence-verification'
+    name: 'Public evidence verification'
+    tags:
+      - 'proof'
+      - 'machine-readable'
+      - 'audit'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'Global AI-human earn-value collaboration network coordinating agents and humans to find, verify, and convert real paid_or_usable_value including cash bounties, paid services, usable credits, gift cards, prizes, refunds, and real service rights.'
+version: '1.0.0'
+contact:
+  email: 'binhaitjzhda@gmail.com'
