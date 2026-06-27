@@ -472,13 +472,19 @@ def check_agent_health(agent_card_url: str, timeout: int) -> tuple[bool, str]:
             try:
                 card_data = response.json()
                 if has_required_card_fields(card_data):
-                    return True, f"HTTP 200, valid agent card"
-                return False, f"HTTP 200, but missing required fields"
+                    return True, f"HTTP 200, valid agent card with required fields"
+                return False, f"HTTP 200, but missing required fields (protocolVersion, skills/capabilities)"
             except json.JSONDecodeError:
-                return False, f"HTTP 200, but invalid JSON"
+                return False, f"HTTP 200, but invalid JSON response"
         return False, f"HTTP {response.status_code}"
+    except requests.Timeout as exc:
+        return False, f"Request timeout after {timeout}s: {type(exc).__name__}: {exc}"
+    except requests.ConnectionError as exc:
+        return False, f"Connection error: {type(exc).__name__}: {exc}"
     except requests.RequestException as exc:
         return False, f"Request failed: {type(exc).__name__}: {exc}"
+    except Exception as exc:
+        return False, f"Unexpected error: {type(exc).__name__}: {exc}"
 
 
 def create_issue_for_failed_agent(

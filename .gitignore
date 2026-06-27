@@ -1,5 +1,40 @@
 ```
-# GitHub workflow files
-.github/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
+# Environment
+.env
+.env.local
+*.env.*
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Editors
+.vscode/
+.idea/
+
+# Coverage
+.coverage
+coverage/
+htmlcov/
+
+# Dependencies
+.venv/
+venv/
+node_modules/
+
+# Build artifacts
+dist/
+build/
+target/
+
+# Cache
+.mypy_cache/
+.pytest_cache/
 ```
