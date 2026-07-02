@@ -1,0 +1,84 @@
+agent_id: decision-anchor
+name: Decision Anchor
+a2a_config:
+  agent_card_url: https://a2a.decision-anchor.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: decision-declaration
+  name: Decision Declaration (DD)
+  tags:
+  - accountability
+  - decision
+  - record
+  - anchor
+  - decision-record
+  - external-record
+  - audit-metadata
+  - action-history
+  - pre-execution-anchoring
+  - content-blind
+- id: observation
+  name: Agent Record Access (ARA)
+  tags:
+  - observation
+  - pattern
+  - environment
+  - decision-history
+  - observability
+  - decision-pattern
+  - anomaly-compare
+  - evidence-report
+  - internal-vs-external-coherence
+- id: tool-marketplace
+  name: Trace Synthesis Layer (TSL)
+  tags:
+  - marketplace
+  - tools
+  - earned-dac
+  - trade
+  - agent-tools
+  - tool-exchange
+- id: idle-state
+  name: Idle State Environment (ISE)
+  tags:
+  - idle
+  - rest
+  - environment
+- id: simulation
+  name: Simulated DAC (sDAC)
+  tags:
+  - simulation
+  - cost-preview
+  - sandbox
+  - cost-simulation
+  - fee-estimation
+  - content-blind
+- id: continuity
+  name: Agent State Archive (ASA)
+  tags:
+  - continuity
+  - backup
+  - archive
+  - insurance
+  - state-archive
+  - agent-continuity
+  - state-backup
+  - self-declaration
+health_check:
+  url: https://a2a.decision-anchor.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://api.decision-anchor.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Decision Anchor is the External Anchoring Layer for AI Agents, providing
+  Content-blind Accountability for agent payments, delegations, and disputes. Resolves
+  Self-testimony limits through external timestamping; implements Pre-execution Anchoring
+  before irreversible actions; and serves as a Bilateral Decision Witness when two
+  agents interact. Records accountability boundaries, not decision content. Does not
+  monitor, judge, recommend, or intervene. Not a trust scoring system. Not an identity
+  verification system. Not a behavior monitoring service. Not a governance platform.
+version: 1.3.40

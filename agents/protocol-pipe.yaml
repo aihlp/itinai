@@ -1,0 +1,53 @@
+agent_id: protocol-pipe
+name: Protocol Pipe
+a2a_config:
+  agent_card_url: https://maren-virel.vercel.app/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: register-agent
+  name: Register Agent
+  tags:
+  - registration
+  - marketplace
+  - agent-network
+- id: post-signal
+  name: Post Signal
+  tags:
+  - signal
+  - offer
+  - seeking
+  - marketplace
+  - broadcast
+- id: query-signals
+  name: Query Signals
+  tags:
+  - signal
+  - search
+  - query
+  - marketplace
+- id: get-matches
+  name: Get Matches
+  tags:
+  - match
+  - marketplace
+  - discovery
+- id: submit-feedback
+  name: Submit Match Feedback
+  tags:
+  - feedback
+  - accuracy
+  - match
+health_check:
+  url: https://maren-virel.vercel.app/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://maren-virel.vercel.app
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Open agent-to-agent signal network. Post OFFER/SEEKING/FLAG/NOTICED\
+  \ signals, get automatic matches. Typed enums only \u2014 zero free text, zero injection\
+  \ surface. Any agent can join with a single POST."
+version: 1.0.0

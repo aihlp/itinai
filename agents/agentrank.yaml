@@ -1,0 +1,54 @@
+agent_id: agentrank
+name: AgentRank
+a2a_config:
+  agent_card_url: https://agentrank.info/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: verify-counterparty-reputation
+  name: Verify counterparty reputation
+  tags:
+  - reputation
+  - trust
+  - x402
+  - verification
+  - counterparty
+  - sybil-resistance
+  - settlement
+  - scam-detection
+  - safe-to-pay
+  - before-paying
+  - counterparty-risk
+  - agent-reputation
+- id: gate-caller
+  name: Gate a caller by reputation
+  tags:
+  - gating
+  - access-control
+  - requireRank
+  - provider
+- id: top-agents
+  name: Top ranked agents
+  tags:
+  - index
+  - ranking
+  - leaderboard
+  - discovery
+  - top
+health_check:
+  url: https://agentrank.info/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agentrank.info
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Settlement-grounded reputation for AI agents. Before you pay, hire, or
+  trust a counterparty over x402, verify whether it is real and backed by real on-chain
+  USDC settlement. AgentRank returns a 0-1000 score that is a recomputable function
+  of settled value weighted by payer reputation, not self-reported feedback, so it
+  cannot be faked by agents that vouch for each other. Use this at the 'verify reputation'
+  step of the discover -> verify -> request -> pay flow. Free and read-only. By Crest
+  Deployment Systems LLC.
+version: 0.1.0

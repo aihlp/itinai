@@ -44,7 +44,7 @@ health_check:
   url: https://a2a.gogonka.com/.well-known/agent.json
 contact:
   email: unknown@external.invalid
-  url: https://a2a.gogonka.com/messages
+  url: https://gogonka.com
 source:
   name: A2A Registry
   type: external-registry
@@ -52,7 +52,7 @@ source:
   external_id: ''
 description: "Spend less. Build more. \u2014 inferGONKA connects AI agents to Gonka\
   \ Network, a decentralized inference network where compute is cheap because it's\
-  \ distributed, not corporate. $0.000370/1M tokens \u2014 6,729\xD7 cheaper than\
+  \ distributed, not corporate. $0.000323/1M tokens \u2014 7,800\xD7 cheaper than\
   \ GPT-4o. 3 premium open-source models: Qwen3-235B (rivals GPT-4o), Kimi K2.6 (~1T\
   \ MoE, agentic reasoning), MiniMax M2.7 (1M token context). Free 100K-token trial\
   \ instantly \u2014 no registration, no credit card. OpenAI-compatible: two env vars,\

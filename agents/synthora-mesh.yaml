@@ -4,76 +4,22 @@ a2a_config:
   agent_card_url: https://pay.hergertsynthora.com/.well-known/agent-card.json
   protocol_version: 0.3.0
 skills:
-- id: qrypton-quantum-audit
-  name: quantum_audit
+- id: contract-guard
+  name: Contract Guard
   tags:
-  - qrypton
-  - mesh
-- id: qrypton-pqc-design
-  name: pqc_design
+  - x402
+  - base
+  - usdc
+  - contract-safety
+  - ed25519
+- id: x402-registry-watch
+  name: x402 Registry Watch
   tags:
-  - qrypton
-  - mesh
-- id: cyber-security-audit
-  name: security_audit
-  tags:
-  - cyber
-  - mesh
-- id: cyber-threat-model
-  name: threat_model
-  tags:
-  - cyber
-  - mesh
-- id: meshweaver-mesh-design
-  name: mesh_design
-  tags:
-  - meshweaver
-  - mesh
-- id: meshweaver-scale-plan
-  name: scale_plan
-  tags:
-  - meshweaver
-  - mesh
-- id: binah-code-review
-  name: code_review
-  tags:
-  - binah
-  - mesh
-- id: binah-implement
-  name: implement
-  tags:
-  - binah
-  - mesh
-- id: gevurah-risk-review
-  name: risk_review
-  tags:
-  - gevurah
-  - mesh
-- id: chesed-business-idea
-  name: business_idea
-  tags:
-  - chesed
-  - mesh
-- id: chesed-copy
-  name: copy
-  tags:
-  - chesed
-  - mesh
-- id: yesod-recall
-  name: recall
-  tags:
-  - yesod
-  - mesh
-- id: keter-strategy
-  name: strategy
-  tags:
-  - keter
-  - mesh
-- id: svc-textstats
-  name: svc_textstats
-  tags:
-  - niche
-  - textstats
+  - x402
+  - base
+  - usdc
+  - registry
+  - ed25519
 health_check:
   url: https://pay.hergertsynthora.com/.well-known/agent-card.json
 contact:

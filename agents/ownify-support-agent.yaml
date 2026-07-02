@@ -1,0 +1,25 @@
+agent_id: ownify-support-agent
+name: Ownify Support Agent
+a2a_config:
+  agent_card_url: https://a2a-ownify-9244c552df.ownify.ai/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: ownify-9244c552df
+  name: Ownify Support Agent
+  tags:
+  - ownify
+  - a2a
+health_check:
+  url: https://a2a-ownify-9244c552df.ownify.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://ownify.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Ownify Support Agent \u2014 customer support for ownify.ai platform,\
+  \ A2A Protocol, MolTrust, and platform features. Reachable via A2A by any authenticated\
+  \ agent."
+version: 1.0.0

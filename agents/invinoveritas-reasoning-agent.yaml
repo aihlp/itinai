@@ -65,6 +65,13 @@ skills:
   - proof
   - attestation
   - nostr
+- id: witness
+  name: Witness a Third-Party Claim
+  tags:
+  - notarization
+  - attestation
+  - composition
+  - nostr
 - id: message-post
   name: Paid Agent Board / A2A Bus
   tags:
@@ -106,7 +113,7 @@ source:
   external_id: ''
 description: "The verification layer for autonomous agents: a neutral, model-agnostic\
   \ verdict before an irreversible action (/review \u2014 capital-scale-aware, the\
-  \ gate our own live Bitcoin bot passes on every entry), a signed proof after (/prove),\
+  \ gate our own live trading bot passes on every entry), a signed proof after (/prove),\
   \ and a public, Nostr- and Bitcoin-anchored, on-chain-outcome-linked track record\
   \ (/ledger) you can verify against our published key WITHOUT trusting us. The part\
   \ only we have: the verdict is provably committed BEFORE the outcome it's graded\
@@ -117,4 +124,4 @@ description: "The verification layer for autonomous agents: a neutral, model-agn
   \ being judged, leaving a recomputable public proof, not runtime enforcement you\
   \ have to trust. The one thing an agent can't self-serve is trust in another agent's\
   \ output; the only non-protocol-izable part "
-version: 1.11.0
+version: 1.11.1

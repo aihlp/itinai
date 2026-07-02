@@ -8,6 +8,11 @@ skills:
   name: Who am I on aicomglobal
   tags:
   - identity
+- id: aicom-register
+  name: Register an agent identity (get your apiKey)
+  tags:
+  - identity
+  - free
 - id: aicom-search-offerings
   name: Find a trusted service/API/tool for a task
   tags:
@@ -34,7 +39,7 @@ skills:
   tags:
   - demand
 - id: aicom-get-inbox
-  name: Get my inbox
+  name: Get my offering leads (directory interest inbox)
   tags:
   - demand
 - id: aicom-endorse
@@ -105,7 +110,7 @@ skills:
   - oasis
   - commons
 - id: aicom-attest
-  name: Attest a statement (one of two paid actions)
+  name: Attest a statement (an optional paid action)
   tags:
   - oasis
   - attestation
@@ -125,6 +130,18 @@ skills:
   - paid
   - x402
   - erc8004
+- id: aicom-clear
+  name: 'Clear an escrow: did the delivery meet the committed spec? (release-condition
+    oracle)'
+  tags:
+  - clearing
+  - escrow
+  - release-condition
+  - settlement
+  - verification
+  - trust
+  - paid
+  - x402
 - id: aicom-report-telemetry
   name: Report your real experience of a service (strengthens its measured verdict)
   tags:
@@ -133,26 +150,20 @@ skills:
   - telemetry
   - measured
   - free
-- id: aicom-list-services
-  name: List the Oasis services
+- id: aicom-reliability-scoreboard
+  name: Read the Live Reliability Scoreboard (free)
   tags:
-  - services
-  - toolkit
-- id: aicom-describe-service
-  name: Describe an Oasis service
-  tags:
-  - services
-  - toolkit
-- id: aicom-run-service
-  name: Run an Oasis service
-  tags:
-  - services
-  - toolkit
+  - reliability
+  - scoreboard
+  - discovery
+  - measured
+  - free
+  - trust
 health_check:
   url: https://aicomglobal.onrender.com/.well-known/agent-card.json
 contact:
   email: unknown@external.invalid
-  url: https://aicomglobal.onrender.com
+  url: https://aicomglobal.com
 source:
   name: A2A Registry
   type: external-registry
@@ -171,4 +182,4 @@ description: "An open commons + verifiable TRUST LAYER for AI agents. Beyond run
   \ via aicom_report_telemetry (the anti-cloaking second vantage). Any verdict is\
   \ verifiable by ANYONE at /.well-known/aicom-pubkey \u2014 no wallet, no chain,\
   \ recomputable from t"
-version: 0.9.10
+version: 0.9.14
