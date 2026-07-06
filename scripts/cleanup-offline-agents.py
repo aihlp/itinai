@@ -28,14 +28,14 @@ def load_manifest(agent_file: Path) -> dict:
 
 
 def find_agents_to_remove(health_state: dict, threshold: int) -> list[dict]:
-    """Найти агентов, превысивших порог последовательных неудач."""
+    """Find agents that have exceeded the consecutive failure threshold."""
     agents_to_remove = []
     
     for agent_id, state in health_state.get("agents", {}).items():
         consecutive_failures = state.get("consecutive_failures", 0)
         
         if consecutive_failures >= threshold:
-            # Найти файл манифеста для этого агента
+            # Find the manifest file for this agent
             manifest_path = None
             for yaml_file in AGENTS_DIR.glob("*.yaml"):
                 try:
@@ -59,7 +59,7 @@ def find_agents_to_remove(health_state: dict, threshold: int) -> list[dict]:
 
 
 def generate_removal_list(agents_to_remove: list[dict]) -> str:
-    """Сгенерировать список файлов для удаления в формате для xargs."""
+    """Generate a list of files to remove in xargs format."""
     return "\n".join(str(agent["manifest_path"]) for agent in agents_to_remove)
 
 
@@ -100,7 +100,7 @@ def main() -> int:
         return 0
     else:
         print("No agents found for removal.")
-        # Создать пустой файл, чтобы следующие шаги могли его использовать
+        # Create an empty file so subsequent steps can use it
         output_path = Path(args.output_file)
         output_path.write_text("", encoding="utf-8")
         return 0

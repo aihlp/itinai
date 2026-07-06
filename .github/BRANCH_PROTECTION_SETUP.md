@@ -1,57 +1,57 @@
-# Настройка Branch Protection для автоматического мерджа
+# Branch Protection Setup for Automated Merging
 
-## Требуемые изменения в GitHub Settings
+## Required Changes in GitHub Settings
 
-Перейдите в: **Settings → Branches → Branch protection rules → Edit rule для main**
+Go to: **Settings → Branches → Branch protection rules → Edit rule for main**
 
 ### Required status checks that must pass before merging
 
-**УДАЛИТЕ** из списка required checks:
-- ❌ `validate` (это старый check, который может блокировать мердж)
+**REMOVE** from the list of required checks:
+- ❌ `validate` (this is an old check that may block merging)
 
-**ДОБАВЬТЕ** в список required checks:
-- ✅ `validate-automated-complete` (для автоматических sync/cleanup PR) — **ВСЕГДА ПРОХОДИТ**
-- ✅ `validate-manual-complete` (для ручных PR и WordPress/ITINAI submissions) — проходит только если валидация успешна
+**ADD** to the list of required checks:
+- ✅ `validate-automated-complete` (for automated sync/cleanup PR) — **ALWAYS PASSES**
+- ✅ `validate-manual-complete` (for manual PR and WordPress/ITINAI submissions) — passes only if validation is successful
 
-## Почему это важно
+## Why This Is Important
 
-### Для автоматических PR (`codex/sync-external-agents`, `auto-cleanup-offline-agents`):
-- Job `validate-automated-complete` **ВСЕГДА** проходит успешно (exit 0)
-- Он зависит от `validate`, но игнорирует его результат
-- Валидация выполняется, ошибки логируются, но мердж НЕ блокируется
-- Auto-merge workflow автоматически смерджит PR после успеха этого check
+### For Automated PR (`codex/sync-external-agents`, `auto-cleanup-offline-agents`):
+- Job `validate-automated-complete` **ALWAYS** passes successfully (exit 0)
+- It depends on `validate`, but ignores its result
+- Validation is performed, errors are logged, but merge is NOT blocked
+- Auto-merge workflow automatically merges PR after this check succeeds
 
-### Для ручных PR и WordPress/ITINAI submissions:
-- Job `validate-manual-complete` проходит только если реальная валидация успешна
-- Это обеспечивает контроль качества для ручных изменений
+### For Manual PR and WordPress/ITINAI submissions:
+- Job `validate-manual-complete` passes only if the actual validation is successful
+- This ensures quality control for manual changes
 
-## Альтернатива: Использовать разные правила для разных путей
+## Alternative: Use Different Rules for Different Paths
 
-Если вы хотите разделить правила для разных типов PR, создайте два правила:
+If you want to separate rules for different types of PR, create two rules:
 
-### Правило 1: Для автоматических sync PR
+### Rule 1: For Automated Sync PR
 - **Branch name pattern**: `codex/sync-external-agents|auto-cleanup-offline-agents`
 - **Required status checks**: `validate-automated-complete`
-- **Include administrators**: ❌ Нет
+- **Include administrators**: ❌ No
 
-### Правило 2: Для всех остальных PR (main branch)
+### Rule 2: For All Other PR (main branch)
 - **Branch name pattern**: `main`
 - **Required status checks**: `validate-manual-complete`
-- **Include administrators**: ✅ Да
+- **Include administrators**: ✅ Yes
 
-## Проверка настройки
+## Verification Steps
 
-После настройки:
-1. Создайте тестовый PR с ветки `codex/sync-external-agents`
-2. Убедитесь что check `validate-automated-complete` появляется как required
-3. Убедитесь что check `validate` НЕ является required для этого PR
-4. После завершения workflow PR должен автоматически смерджиться
+After setup:
+1. Create a test PR from branch `codex/sync-external-agents`
+2. Ensure that check `validate-automated-complete` appears as required
+3. Ensure that check `validate` is NOT required for this PR
+4. After workflow completion, PR should automatically merge
 
-## Важно!
+## Important!
 
-Если у вас уже настроен branch protection с check `validate`, вам нужно:
-1. Зайти в Settings → Branches → Branch protection rules
-2. Нажать Edit на правиле для main
-3. В разделе "Check names" удалить `validate`
-4. Добавить `validate-automated-complete` и `validate-manual-complete`
-5. Сохранить изменения
+If you already have branch protection configured with check `validate`, you need to:
+1. Go to Settings → Branches → Branch protection rules
+2. Click Edit on the rule for main
+3. In the "Check names" section, remove `validate`
+4. Add `validate-automated-complete` and `validate-manual-complete`
+5. Save changes
