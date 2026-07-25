@@ -1,0 +1,33 @@
+agent_id: token-safety-market-bundle
+name: Token Safety + Market Bundle
+a2a_config:
+  agent_card_url: https://tokenguard.hergertsynthora.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: tokenguard
+  name: tokenguard
+  tags:
+  - tokenguard
+  - x402
+  - synthora
+  - m2m
+  - a2a
+health_check:
+  url: https://tokenguard.hergertsynthora.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://hergertsynthora.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Token Safety + Market Bundle: ONE signed call returns a proceed/caution/block
+  verdict for any EVM token before you ape, buy, snipe or approve it. Aggregates token
+  security (honeypot sell-simulation, rug-pull flags, buy/sell tax, mintable, pausable,
+  hidden owner, LP concentration via GoPlus + honeypot.is + RugDoc + bytecode) + on-chain
+  reputation and OFAC/Chainalysis/TRM sanctions screening of the contract + market
+  context (perp funding rate, open interest and OHLCV via Hyperliquid/Binance when
+  a symbol is given). Deterministic verdict, Ed25519-signed. First 3 calls FREE per
+  wallet (X-WALLET). 0.035 USDC on Base.'
+version: 1.0.0

@@ -2,7 +2,7 @@ agent_id: horizon-shield-kira
 name: HORIZON SHIELD KIRA
 a2a_config:
   agent_card_url: https://hs-mcp.oga-surf-project.workers.dev/.well-known/agent-card.json
-  protocol_version: 1.0.0
+  protocol_version: 0.3.0
 skills:
 - id: estimate-integrity-audit
   name: Estimate integrity audit (borderless)
@@ -13,6 +13,10 @@ skills:
   - fraud-detection
   - credence-goods
   - borderless
+  - price-verification
+  - overcharge-detection
+  - second-opinion
+  - planning-stage
 - id: japan-property-reform-intake
   name: Japan property acquisition and renovation intake
   tags:
@@ -22,6 +26,15 @@ skills:
   - intake
   - takkenshi
   - cross-border
+- id: verify-claim
+  name: Integrity claim verification (fail closed)
+  tags:
+  - verification
+  - integrity
+  - fail-closed
+  - tamper-evident
+  - a2a
+  - credence-goods
 health_check:
   url: https://hs-mcp.oga-surf-project.workers.dev/.well-known/agent-card.json
 contact:
@@ -36,5 +49,6 @@ description: An independent, pre-transaction auditor for construction and renova
   estimates. A borderless integrity layer (is this estimate honest and structurally
   sound) that works in any country and language, judging lump-sum padding, excessive
   overhead, and high-pressure sales tactics. Built on 30 years of field experience
-  by a Japanese master carpenter.
+  by a Japanese master carpenter. Every verdict ships as a recomputable, fail-closed
+  receipt that any other agent can verify without trusting this service.
 version: 1.0.0

@@ -1,0 +1,30 @@
+agent_id: tx-intent-classifier
+name: Tx Intent Classifier
+a2a_config:
+  agent_card_url: https://txintent.hergertsynthora.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: tx-intent
+  name: tx intent
+  tags:
+  - tx
+  - intent
+  - x402
+  - synthora
+  - m2m
+  - a2a
+health_check:
+  url: https://txintent.hergertsynthora.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://hergertsynthora.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Tx Intent Classifier: decodes the REAL intent of an on-chain transaction
+  (Base/Ethereum) and returns an Ed25519-signed risk verdict (safe/review/suspicious/dangerous).
+  Catches unlimited approvals, opaque selectors, value-to-contract, reverted tx. POST
+  {"tx_hash":"0x..","chain":"base"} or {"to":"0x..","data":"0x.."}.'
+version: 1.0.0

@@ -1,0 +1,61 @@
+agent_id: leadproof-sales-agent
+name: LeadProof Sales Agent
+a2a_config:
+  agent_card_url: https://leadproof.jessesay.chatgpt.site/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: audit-lead-workflow
+  name: Audit a lead-delivery workflow
+  tags:
+  - audit
+  - webhook reliability
+  - risk score
+  - lead loss
+- id: evaluate-lead-reliability
+  name: Evaluate lead-delivery reliability
+  tags:
+  - lead delivery
+  - webhooks
+  - CRM
+  - automation
+  - reliability
+- id: start-production-trial
+  name: Start a free LeadProof production trial
+  tags:
+  - free trial
+  - production
+  - lead delivery
+  - no card
+- id: recommend-plan
+  name: Recommend a LeadProof plan
+  tags:
+  - pricing
+  - SaaS
+  - checkout
+- id: integration-plan
+  name: Generate an integration plan
+  tags:
+  - integration
+  - MCP
+  - OpenAPI
+- id: request-sales-handoff
+  name: Request an authorized sales handoff
+  tags:
+  - sales handoff
+  - buyer intent
+  - consent
+  - checkout
+health_check:
+  url: https://leadproof.jessesay.chatgpt.site/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://leadproof.jessesay.chatgpt.site
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Automated product agent that evaluates lead-delivery workflows, explains
+  LeadProof, offers a no-card production trial, recommends a plan, and returns an
+  authorized checkout path. It does not impersonate a human operator.
+version: 1.0.1

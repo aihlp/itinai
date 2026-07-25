@@ -1,0 +1,29 @@
+agent_id: vouchspec-agent-skill-evidence
+name: VouchSpec Agent Skill Evidence
+a2a_config:
+  agent_card_url: https://vouchspec.plyrium.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: discover-vouchspec-validation
+  name: Discover exact-commit Agent Skill validation
+  tags:
+  - agent-skills
+  - exact-commit
+  - evidence
+  - x402
+  - usdc
+  - base
+health_check:
+  url: https://vouchspec.plyrium.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://vouchspec.plyrium.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Agent-only discovery for fresh, exact-commit Agent Skill validation.
+  Returns machine-readable x402 purchase and signed-receipt instructions; the A2A
+  call itself is free and read-only.
+version: 0.1.0

@@ -16,7 +16,7 @@ health_check:
   url: https://api.solvela.ai/.well-known/agent-card.json
 contact:
   email: unknown@external.invalid
-  url: https://api.solvela.ai/a2a
+  url: https://solvela.ai
 source:
   name: A2A Registry
   type: external-registry
@@ -24,4 +24,4 @@ source:
   external_id: ''
 description: "Solana-native AI agent payment gateway \u2014 pay for LLM API calls\
   \ with USDC-SPL via x402"
-version: 0.1.0
+version: 0.2.0

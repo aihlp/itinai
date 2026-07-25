@@ -1,0 +1,68 @@
+agent_id: shardlink-control-plane
+name: ShardLink Control Plane
+a2a_config:
+  agent_card_url: https://app.clawspan.cloud/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: discover-capability-graph
+  name: Discover Capability Graph
+  tags:
+  - discovery
+  - contracts
+  - capability-graph
+  - mcp
+  - a2a
+- id: inspect-dual-plane-contract
+  name: Inspect Dual Plane Contract
+  tags:
+  - contracts
+  - dual-plane
+  - governance
+- id: inspect-error-catalog
+  name: Inspect Error Catalog
+  tags:
+  - contracts
+  - errors
+  - retry
+  - idempotency
+- id: list-action-descriptors
+  name: List Action Descriptors
+  tags:
+  - discovery
+  - actions
+  - a2a
+  - execution
+- id: invoke-capability-action
+  name: Invoke Capability Action
+  tags:
+  - execution
+  - rest
+  - idempotency
+  - leases
+- id: read-workspace-status
+  name: Read Workspace Status
+  tags:
+  - status
+  - workspace
+  - tasks
+  - bridge
+- id: execute-provider-quote
+  name: Execute Provider Quote
+  tags:
+  - providers
+  - billing
+  - execution
+  - lease
+health_check:
+  url: https://app.clawspan.cloud/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://app.clawspan.cloud
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Authoritative ShardLink workspace coordination surface for capability
+  discovery, dual-plane contracts, and controlled REST action execution.
+version: 1.0.0

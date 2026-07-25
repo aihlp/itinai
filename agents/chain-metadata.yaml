@@ -1,0 +1,30 @@
+agent_id: chain-metadata
+name: Chain metadata
+a2a_config:
+  agent_card_url: https://rpc-network.hergertsynthora.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: rpc-network
+  name: rpc network
+  tags:
+  - rpc
+  - network
+  - x402
+  - synthora
+  - m2m
+  - a2a
+health_check:
+  url: https://rpc-network.hergertsynthora.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://hergertsynthora.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Chain metadata: chainId, latest block, gas price and finality across\
+  \ 5 EVM chains. Deterministic, Ed25519-signed. First 3 calls FREE per wallet \u2014\
+  \ send header X-WALLET: 0x<addr>. No charge on upstream failure. $0.001 USDC via\
+  \ x402 on Base. SYNTHORA."
+version: 1.0.0

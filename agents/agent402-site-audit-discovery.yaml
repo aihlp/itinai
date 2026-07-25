@@ -1,0 +1,40 @@
+agent_id: agent402-site-audit-discovery
+name: Agent402 Site Audit Discovery
+a2a_config:
+  agent_card_url: https://agent402.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: site-audit-product-discovery
+  name: AI Discovery Site Audit product discovery
+  tags:
+  - product-discovery
+  - AEO
+  - GEO
+  - technical-SEO
+  - x402
+- id: verified-url-evidence-product-discovery
+  name: Verified URL Evidence product discovery
+  tags:
+  - product-discovery
+  - URL-evidence
+  - HTTP
+  - TLS
+  - SHA-256
+  - x402
+health_check:
+  url: https://agent402.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agent402.dev/a2a/site-audit
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Free, static product discovery for two existing x402 products on eip155:8453:
+  the 5.00 USDC AI Discovery Site Audit and the 1.00 USDC Verified URL Evidence Snapshot.
+  Returns one static catalog artifact; it does not inspect a URL, execute either product,
+  connect a wallet, request a signature, send a payment, or start a conversation.
+  Free site-audit eligibility: POST https://agent402.dev/site-release-audit/eligibility.
+  Exact paid resources: POST https://agent402.dev/site-release-audit and GET https://agent402.dev/url-evidence.'
+version: 1.0.0

@@ -1,0 +1,48 @@
+agent_id: hilt-pay-agent-gateway
+name: Hilt Pay Agent Gateway
+a2a_config:
+  agent_card_url: https://api.hilt.so/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: discover-hilt-catalog
+  name: Discover Hilt Pay
+  tags:
+  - payments
+  - x402
+  - solana
+  - usdc
+  - catalog
+- id: bootstrap-hilt-sandbox
+  name: Bootstrap Hilt Sandbox
+  tags:
+  - sandbox
+  - bootstrap
+  - api-key
+- id: activate-hilt-api-plan
+  name: Activate Hilt Pay API
+  tags:
+  - payments
+  - entitlements
+  - receipts
+  - api
+- id: build-metered-hilt-endpoint
+  name: Build a metered Hilt endpoint
+  tags:
+  - x402 V2
+  - metered usage
+  - PAYMENT-SIGNATURE
+  - Solana USDC
+health_check:
+  url: https://api.hilt.so/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://www.hilt.so
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Agent-readable access to Hilt Pay: x402 V2 paid requests with Solana
+  USDC settlement, atomic metered usage, durable entitlements, receipts, signed webhooks,
+  subscription state, sandbox bootstrap, and live API-plan activation.'
+version: 1.1.0

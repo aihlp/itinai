@@ -1,0 +1,59 @@
+agent_id: relm-crm
+name: Relm CRM
+a2a_config:
+  agent_card_url: https://relmcrm.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: manage-contacts
+  name: Manage contacts
+  tags:
+  - crm
+  - contacts
+- id: manage-companies
+  name: Manage companies
+  tags:
+  - crm
+  - companies
+- id: manage-deals
+  name: Manage deals
+  tags:
+  - crm
+  - deals
+  - pipeline
+- id: log-activities
+  name: Log activities
+  tags:
+  - crm
+  - activities
+- id: automate
+  name: Automations
+  tags:
+  - crm
+  - automation
+  - sequences
+- id: webhooks
+  name: Webhooks
+  tags:
+  - crm
+  - webhooks
+  - events
+- id: describe-schema
+  name: Describe schema
+  tags:
+  - crm
+  - schema
+  - discovery
+health_check:
+  url: https://relmcrm.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://relmcrm.com/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: An API-first CRM built for LLMs and AI agents. Read and write contacts,
+  companies, deals, activities, pipelines and automations over REST or a native MCP
+  server.
+version: 0.13.0

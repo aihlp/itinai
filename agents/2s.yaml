@@ -1,0 +1,33 @@
+agent_id: 2s
+name: 2s
+a2a_config:
+  agent_card_url: https://2s.io/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: discover-endpoints
+  name: Discover 2s endpoints
+  tags:
+  - discovery
+  - routing
+  - catalog
+  - api
+  - x402
+  - search
+health_check:
+  url: https://2s.io/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://2s.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "The (most) everything API for AI agents, exposed as an A2A agent. This\
+  \ agent's skill is endpoint DISCOVERY: send a natural-language task and it returns\
+  \ the best-matching 2s endpoints (path, method, price, description) from a live\
+  \ catalog of 578+ pay-per-call endpoints \u2014 public records, finance, crypto\
+  \ & web3, security & CVEs, legal, medical, weather, geo, and B2B/EDI. Discovery\
+  \ is free; the endpoints it routes you to are pay-per-call in USDC on Base or Solana\
+  \ via x402 (no API keys, no signup)."
+version: 1.0.0

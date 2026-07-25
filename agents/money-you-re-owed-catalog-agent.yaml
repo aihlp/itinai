@@ -1,0 +1,26 @@
+agent_id: money-you-re-owed-catalog-agent
+name: Money You're Owed catalog agent
+a2a_config:
+  agent_card_url: https://agent.moneyyoureowed.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: answer-money-questions
+  name: Answer money-recovery questions
+  tags:
+  - deposits
+  - refunds
+  - denied-claims
+  - consumer-rights
+health_check:
+  url: https://agent.moneyyoureowed.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://moneyyoureowed.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Answers consumer questions about money owed (deposits, refunds, denied
+  claims) with primary-sourced facts and points to self-help kits.
+version: 1.0.0
