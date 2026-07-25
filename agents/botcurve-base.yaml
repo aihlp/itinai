@@ -1,0 +1,37 @@
+agent_id: botcurve-base
+name: BotCurve Base
+a2a_config:
+  agent_card_url: https://botcurve-mcp.shhrcgcs.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: discover-botcurve
+  name: Discover BotCurve agent commerce
+  tags:
+  - base
+  - x402
+  - erc-8004
+  - agent-commerce
+  - trading
+  - discovery
+- id: evaluate-botc-buy
+  name: Evaluate a BOTC buy path
+  tags:
+  - botc
+  - quote
+  - unsigned-transaction
+  - slippage
+  - deadline
+health_check:
+  url: https://botcurve-mcp.shhrcgcs.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://botcurve-market.pages.dev/web/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Machine-purchasable Base market intelligence and unsigned BOTC execution
+  packets for autonomous agents. Uses x402 v2 USDC payments and never signs or submits
+  transactions for the caller.
+version: 1.12.0

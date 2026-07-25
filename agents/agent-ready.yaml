@@ -2,7 +2,7 @@ agent_id: agent-ready
 name: agent-ready
 a2a_config:
   agent_card_url: https://agent-ready.dev/.well-known/agent-card.json
-  protocol_version: 0.3.0
+  protocol_version: 1.0.0
 skills:
 - id: scan-site
   name: Scan a site

@@ -1,79 +1,247 @@
 agent_id: synthora-mesh
-name: SYNTHORA Mesh
+name: SYNTHORA
 a2a_config:
   agent_card_url: https://pay.hergertsynthora.com/.well-known/agent-card.json
   protocol_version: 0.3.0
 skills:
-- id: qrypton-quantum-audit
-  name: quantum_audit
+- id: openinterest
+  name: Open Interest Oracle
   tags:
-  - qrypton
-  - mesh
-- id: qrypton-pqc-design
-  name: pqc_design
+  - defi
+  - perps
+  - open-interest
+  - funding-rate
+  - base
+  - x402
+- id: defidata
+  name: DeFi Market Data
   tags:
-  - qrypton
-  - mesh
-- id: cyber-security-audit
-  name: security_audit
+  - defi
+  - market-data
+  - perps
+  - funding-rate
+  - base
+  - x402
+- id: deliver
+  name: Email Deliverability Audit
   tags:
-  - cyber
-  - mesh
-- id: cyber-threat-model
-  name: threat_model
+  - email
+  - deliverability
+  - spf
+  - dkim
+  - dmarc
+  - x402
+- id: inference
+  name: LLM Inference Router
   tags:
-  - cyber
-  - mesh
-- id: meshweaver-mesh-design
-  name: mesh_design
+  - llm
+  - inference
+  - ai
+  - text-generation
+  - no-api-key
+  - x402
+- id: onchain
+  name: Onchain Primitives
   tags:
-  - meshweaver
-  - mesh
-- id: meshweaver-scale-plan
-  name: scale_plan
+  - onchain
+  - evm
+  - base
+  - ethereum
+  - tx-receipt
+  - x402
+- id: regwatch
+  name: x402 Registry Watch
   tags:
-  - meshweaver
-  - mesh
-- id: binah-code-review
-  name: code_review
+  - x402
+  - registry
+  - monitoring
+  - payto
+  - base
+  - ed25519
+- id: pay-service
+  name: Contract Guard
   tags:
-  - binah
-  - mesh
-- id: binah-implement
-  name: implement
+  - contract-safety
+  - honeypot
+  - rug-check
+  - base
+  - pre-trade
+  - x402
+- id: pay-preflight
+  name: x402 PayTo Pre-Flight
   tags:
-  - binah
-  - mesh
-- id: gevurah-risk-review
-  name: risk_review
+  - x402
+  - payto
+  - pre-flight
+  - verify-before-pay
+  - base
+- id: tokenrisk
+  name: Token Risk Scan
   tags:
-  - gevurah
-  - mesh
-- id: chesed-business-idea
-  name: business_idea
+  - token-safety
+  - honeypot
+  - rug-pull
+  - goplus
+  - base
+  - x402
+- id: walletrep
+  name: Wallet Reputation
   tags:
-  - chesed
-  - mesh
-- id: chesed-copy
-  name: copy
+  - wallet-risk
+  - sanctions
+  - reputation
+  - evm
+  - aml
+  - x402
+- id: txintent
+  name: Tx Intent Classifier
   tags:
-  - chesed
-  - mesh
-- id: yesod-recall
-  name: recall
+  - tx-decode
+  - intent
+  - approvals
+  - security
+  - base
+  - x402
+- id: agentcard
+  name: A2A Agent Card Validator
   tags:
-  - yesod
-  - mesh
-- id: keter-strategy
-  name: strategy
+  - a2a
+  - agent-card
+  - validation
+  - agent-trust
+  - interop
+  - x402
+- id: dnsdomain
+  name: DNS + WHOIS Report
   tags:
-  - keter
-  - mesh
-- id: svc-textstats
-  name: svc_textstats
+  - dns
+  - whois
+  - rdap
+  - dnssec
+  - domain
+  - x402
+- id: mailcheck
+  name: Email Verification
   tags:
-  - niche
-  - textstats
+  - email
+  - verification
+  - mx
+  - disposable
+  - syntax
+  - x402
+- id: perps
+  name: Perps Snapshot
+  tags:
+  - defi
+  - perps
+  - hyperliquid
+  - funding-rate
+  - mark-price
+  - perpetual-futures
+  - x402
+- id: bridgerisk
+  name: Bridge Risk Assessment
+  tags:
+  - bridge-safety
+  - cross-chain
+  - defillama
+  - tvl
+  - bridge-hacks
+  - pre-bridge
+  - x402
+- id: websearch
+  name: Web Search
+  tags:
+  - web-search
+  - search
+  - research
+  - serp
+  - organic-results
+  - no-api-key
+  - x402
+- id: translate
+  name: Translate
+  tags:
+  - translate
+  - translation
+  - language
+  - i18n
+  - localization
+  - multilingual
+  - x402
+- id: gasoracle
+  name: Gas & MEV Oracle
+  tags:
+  - gas
+  - gas-price
+  - mev
+  - base
+  - ethereum
+  - onchain
+  - x402
+- id: cryptonews
+  name: Crypto News Feed
+  tags:
+  - crypto-news
+  - news
+  - sentiment
+  - headlines
+  - rss
+  - market
+  - x402
+- id: ibancheck
+  name: IBAN Check
+  tags:
+  - iban
+  - iban validation
+  - bank account validation
+  - sepa
+  - payment validation
+  - iban checksum
+  - x402
+- id: routingcheck
+  name: US Routing Check
+  tags:
+  - routing number
+  - aba
+  - ach
+  - wire transfer
+  - us bank validation
+  - payment validation
+  - fedwire
+  - x402
+- id: biccheck
+  name: BIC / SWIFT Check
+  tags:
+  - bic
+  - swift
+  - swift code
+  - bic validation
+  - iso 9362
+  - payment validation
+  - international transfer
+  - x402
+- id: ics
+  name: iCalendar (.ics) Generator
+  tags:
+  - ics
+  - icalendar
+  - calendar
+  - calendar invite
+  - ical
+  - rfc 5545
+  - schedule
+  - meeting invite
+  - x402
+- id: notary
+  name: Agent Notary (Trust Layer EU)
+  tags:
+  - notary
+  - proof-of-existence
+  - proof-of-execution
+  - attestation
+  - trust
+  - x402
 health_check:
   url: https://pay.hergertsynthora.com/.well-known/agent-card.json
 contact:
@@ -84,6 +252,6 @@ source:
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
   external_id: ''
-description: 'Malla de agentes M2M de HERGERT SYNTHORA: servicios especializados por
+description: 'Malla de agentes A2A de HERGERT SYNTHORA: servicios especializados por
   micropagos USDC.'
-version: 1.0.0
+version: 1.1.0

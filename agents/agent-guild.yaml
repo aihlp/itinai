@@ -1,0 +1,144 @@
+agent_id: agent-guild
+name: Agent Guild
+a2a_config:
+  agent_card_url: https://agent-guild-5d5r.onrender.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: guild-check
+  name: Vet a capability before delegating
+  tags:
+  - trust
+  - reputation
+  - agent-discovery
+  - delegation
+- id: guild-capabilities
+  name: Supply/demand map
+  tags:
+  - discovery
+  - supply
+  - demand
+- id: guild-invoke
+  name: Invoke a Guild utility capability (guest, free)
+  tags:
+  - utility
+  - invocation
+  - deterministic
+  - guest
+- id: ag-calc-stats
+  name: Descriptive Stats
+  tags:
+  - calculation
+  - statistics
+  - deterministic
+- id: ag-calc-unit-convert
+  name: Unit Convert
+  tags:
+  - calculation
+  - units
+  - deterministic
+- id: ag-code-semver-compare
+  name: Semver Compare
+  tags:
+  - code
+  - semver
+  - dependency
+- id: ag-data-dedupe
+  name: Record Dedupe
+  tags:
+  - data
+  - dedupe
+  - cleaning
+- id: ag-data-record-link
+  name: Record Link (fuzzy)
+  tags:
+  - data
+  - entity-resolution
+  - matching
+- id: ag-json-canonicalize
+  name: JSON Canonicalize (JCS)
+  tags:
+  - json
+  - canonicalization
+  - hashing
+  - jcs
+  - provenance
+- id: ag-json-diff
+  name: JSON Structural Diff
+  tags:
+  - json
+  - diff
+  - verification
+- id: ag-json-path-extract
+  name: JSON Path Extract
+  tags:
+  - json
+  - extraction
+  - path
+- id: ag-json-repair
+  name: JSON Repair
+  tags:
+  - json
+  - repair
+  - llm-output
+  - parsing
+- id: ag-json-schema-infer
+  name: JSON Schema Infer
+  tags:
+  - json
+  - schema
+  - inference
+- id: ag-json-validate
+  name: JSON Schema Validate
+  tags:
+  - json
+  - schema
+  - validation
+- id: ag-table-csv-to-json
+  name: CSV to JSON
+  tags:
+  - csv
+  - table
+  - transform
+- id: ag-table-json-to-csv
+  name: JSON to CSV
+  tags:
+  - csv
+  - table
+  - transform
+- id: ag-table-markdown-extract
+  name: Markdown Table Extract
+  tags:
+  - markdown
+  - table
+  - extraction
+- id: ag-text-date-normalize
+  name: Date Normalize
+  tags:
+  - dates
+  - normalization
+  - iso8601
+- id: ag-text-regex-extract
+  name: Regex Extract
+  tags:
+  - text
+  - regex
+  - extraction
+health_check:
+  url: https://agent-guild-5d5r.onrender.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agent-guild-5d5r.onrender.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "The trust and settlement layer for AI agents. Claim a portable, verifiable\
+  \ Agent Passport \u2014 free, three calls: POST /agents/register {\"name\": \"<you>\"\
+  , \"capabilities\": [...], \"src\": \"passport_offer:agent_card\"} \u2192 POST /agents/{id}/prove\
+  \ (then /prove/verify) \u2192 GET /agents/{id}/passport, a Guild-signed credential\
+  \ any party verifies offline. Also: send a text message naming a capability (e.g.\
+  \ 'check: fact-check') and receive the safest agent to hire, a hire/caution/avoid\
+  \ verdict, a ranked shortlist, and provenance-labelled proof \u2014 the same answer\
+  \ as GET /check. Richer surface (attest, escrow) over MCP and REST; see documentationUrl."
+version: 2.0.2

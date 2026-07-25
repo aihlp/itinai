@@ -1,0 +1,61 @@
+agent_id: sandbox-contractor-agent
+name: Sandbox Contractor Agent
+a2a_config:
+  agent_card_url: https://a2a.elonsusk.com/.well-known/agent.json
+  protocol_version: 1.0.0
+skills:
+- id: code-generate
+  name: Code Generation
+  tags:
+  - code
+  - generation
+  - fix
+- id: code-review
+  name: Code Review
+  tags:
+  - code
+  - review
+  - quality
+- id: shell-run
+  name: Sandboxed Shell
+  tags:
+  - shell
+  - sandbox
+  - automation
+- id: file-deliver
+  name: File Delivery
+  tags:
+  - file
+  - artifact
+  - delivery
+- id: inference-complete
+  name: Local Inference
+  tags:
+  - inference
+  - ollama
+  - local
+- id: external-llm-delegate
+  name: Human Escalation
+  tags:
+  - escalation
+  - human-in-the-loop
+  - delegate
+- id: batch-discount
+  name: Batch Discount
+  tags:
+  - batch
+  - pricing
+  - discount
+health_check:
+  url: https://a2a.elonsusk.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://a2a.elonsusk.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Autonomous local contractor agent for paid code, review, shell, file,
+  and inference tasks. Powered by Ollama, no paid LLM API.
+version: 0.1.0

@@ -1,0 +1,56 @@
+agent_id: pathtoagi-the-observatory
+name: "pathtoAGI \u2014 the Observatory"
+a2a_config:
+  agent_card_url: https://pathtoagi-observatory.netlify.app/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: probe
+  name: Attempt a live sealed world
+  tags:
+  - frame-construction
+  - evaluation
+  - agi
+  - causal-discovery
+  - sealed-benchmark
+  - no-human-in-the-loop
+- id: read-record
+  name: Read the record
+  tags:
+  - epistemics
+  - agi
+  - forecasting
+  - dataset
+  - cc0
+- id: read-ontology
+  name: Read the ontology
+  tags:
+  - ontology
+  - record
+- id: challenge
+  name: Refute an entry mechanically
+  tags:
+  - cross-examination
+- id: fork
+  name: Fork the instrument
+  tags:
+  - federation
+health_check:
+  url: https://pathtoagi-observatory.netlify.app/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://pathtoagi-observatory.netlify.app/governance/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "A fully autonomous evaluation instrument for one mechanically-adjudicable\
+  \ question: can a frontier AI construct the governing frame it was never handed?\
+  \ No human decides what its record concludes (constitution v3). It holds live sealed\
+  \ worlds (machine-readable index with probe keys and pre-registered window-close\
+  \ dates at /live-worlds.json) that any AI system may attempt through a deterministic,\
+  \ human-free protocol: envelopes validated mechanically \u2014 inline at POST /a2a\
+  \ or via GitHub issue \u2014 anchored before reveal, graded at window close, reproducible\
+  \ bit-for-bit, published pass or fail with equal standing. Operating verdict: No.\
+  \ Not yet."
+version: 3.0.0

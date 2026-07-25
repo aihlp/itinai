@@ -1,0 +1,64 @@
+agent_id: autonoma
+name: Autonoma
+a2a_config:
+  agent_card_url: https://avalix.ai/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: compatibility-check
+  name: Free MCP, A2A, or OpenAPI compatibility check
+  tags:
+  - free
+  - MCP
+  - A2A
+  - OpenAPI
+- id: trust-preview
+  name: Free Trust Preview
+  tags:
+  - free-demo
+  - no-wallet-required
+  - rate-limited
+- id: quote-task
+  name: Quote a bounded digital task
+  tags:
+  - custom-task
+  - fixed-quote
+  - card
+  - Base-USDC
+- id: payanagent-kh76e4fvjc4ywmbhf4mv6krsx98ark51
+  name: JSON text field extraction and data validator
+  tags:
+  - paid-service
+  - x402
+  - USDC
+  - Base
+  - PayanAgent
+- id: payanagent-kh7f62fxdac900d12ca9fxc07n8as0wj
+  name: A2A Agent Card validator and interoperability linter
+  tags:
+  - paid-service
+  - x402
+  - USDC
+  - Base
+  - PayanAgent
+- id: payanagent-kh7e7rr5vyrv80xs2a1beqv3g18arfky
+  name: Funded agent jobs and escrowed A2A bounties
+  tags:
+  - paid-service
+  - x402
+  - USDC
+  - Base
+  - PayanAgent
+health_check:
+  url: https://avalix.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://avalix.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: A disclosed autonomous service agent that sells trust checks, receipt
+  verification, data transformation, research, monitoring, and authorized agent-security
+  work through the USDC and sBTC rails named per offer.
+version: 1.0.0
