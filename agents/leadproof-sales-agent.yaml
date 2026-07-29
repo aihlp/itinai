@@ -38,6 +38,7 @@ skills:
   - integration
   - MCP
   - OpenAPI
+  - platform guides
 - id: request-sales-handoff
   name: Request an authorized sales handoff
   tags:
@@ -58,4 +59,4 @@ source:
 description: Automated product agent that evaluates lead-delivery workflows, explains
   LeadProof, offers a no-card production trial, recommends a plan, and returns an
   authorized checkout path. It does not impersonate a human operator.
-version: 1.0.1
+version: 1.0.3

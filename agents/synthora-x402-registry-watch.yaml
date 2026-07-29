@@ -1,19 +1,18 @@
 agent_id: synthora-x402-registry-watch
-name: SYNTHORA x402 Registry Watch
+name: x402 Registry Watch
 a2a_config:
   agent_card_url: https://regwatch.hergertsynthora.com/.well-known/agent-card.json
   protocol_version: 0.3.0
 skills:
-- id: registry-feed
-  name: x402 registry delta feed
+- id: registry-watch
+  name: registry watch
   tags:
-  - x402
-  - discovery
   - registry
-  - crypto
-  - onchain
-  - monitoring
-  - payments
+  - watch
+  - x402
+  - synthora
+  - m2m
+  - a2a
 health_check:
   url: https://regwatch.hergertsynthora.com/.well-known/agent-card.json
 contact:
@@ -24,8 +23,6 @@ source:
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
   external_id: ''
-description: 'Signed Ed25519 deltas of the live x402/A2A endpoint registry: new and
-  removed endpoints, payTo address changes, price changes and service listings. Pay-per-event
-  feed for router and discovery agents. Every response carries per-row and whole-response
-  provenance receipts.'
+description: 'x402 Registry Watch: signed Ed25519 deltas of the x402/A2A endpoint
+  registry (payTo/listings/endpoints). Pay-per-event feed pull. POST {"since":"<cursor|ISO>","slug":"<slug>","limit":<=200}.'
 version: 1.0.0

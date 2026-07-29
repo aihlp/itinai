@@ -1,0 +1,35 @@
+agent_id: smklog-parcel-quotes
+name: SMKlog Parcel Quotes
+a2a_config:
+  agent_card_url: https://www.smklog.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: get-parcel-quote
+  name: Get live US parcel shipping rates
+  tags:
+  - shipping
+  - rates
+  - usps
+  - ups
+  - fedex
+- id: create-checkout-link
+  name: Create a payment session for a parcel label
+  tags:
+  - shipping
+  - checkout
+  - payment-session
+health_check:
+  url: https://www.smklog.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://smklog.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Prices one US-domestic parcel across USPS, UPS and FedEx from a plain-words
+  item description (box size and weight are estimated when omitted), and can prepare
+  a payment session that a human completes behind the site consent gates. It answers
+  in a single round trip and never moves money.
+version: 1.0.0

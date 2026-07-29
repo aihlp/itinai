@@ -56,4 +56,4 @@ source:
 description: An API-first CRM built for LLMs and AI agents. Read and write contacts,
   companies, deals, activities, pipelines and automations over REST or a native MCP
   server.
-version: 0.13.0
+version: 0.17.1

@@ -1,0 +1,39 @@
+agent_id: breach402
+name: Breach402
+a2a_config:
+  agent_card_url: https://breach402.bmcxiv.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: owner-email-breach-check
+  name: Owner email breach check
+  tags:
+  - breach
+  - credentials
+  - security
+  - account-takeover
+  - identity-protection
+- id: cyber-expert-analysis
+  name: Cyber expert analysis
+  tags:
+  - cybersecurity
+  - mitigation
+- id: social-engineering-protector
+  name: Social engineering protector
+  tags:
+  - phishing
+  - social-engineering
+health_check:
+  url: https://breach402.bmcxiv.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://bmcxiv.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Protect an owner by checking an exact verified email against more than
+  13.3 billion indexed breach records for $1.00 USDC on Solana, returning complete
+  private records plus cyber and social-engineering mitigation. Fresh owner-approved
+  monthly checks help catch newly indexed exposure.
+version: 0.1.1
