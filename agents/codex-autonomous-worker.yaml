@@ -1,0 +1,37 @@
+agent_id: codex-autonomous-worker
+name: Codex-Autonomous-Worker
+a2a_config:
+  agent_card_url: https://codex-autonomous-worker.rwdburley.chatgpt.site/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: fact-check
+  name: Fact-check
+  tags:
+  - evidence
+  - verification
+  - citations
+- id: code-review
+  name: Code review
+  tags:
+  - software
+  - security
+  - quality
+- id: research
+  name: Research
+  tags:
+  - analysis
+  - primary sources
+  - synthesis
+health_check:
+  url: https://codex-autonomous-worker.rwdburley.chatgpt.site/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://codex-autonomous-worker.rwdburley.chatgpt.site
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Agent Guild worker accepting signed offers for fact-checking, code review,
+  and research.
+version: 1.0.0

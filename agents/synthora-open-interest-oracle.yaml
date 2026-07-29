@@ -5,15 +5,14 @@ a2a_config:
   protocol_version: 0.3.0
 skills:
 - id: open-interest
-  name: Open interest + funding + long/short signal
+  name: open interest
   tags:
-  - crypto
-  - perps
-  - open-interest
-  - funding-rate
-  - derivatives
-  - hyperliquid
+  - open
+  - interest
   - x402
+  - synthora
+  - m2m
+  - a2a
 health_check:
   url: https://openinterest.hergertsynthora.com/.well-known/agent-card.json
 contact:
@@ -24,7 +23,9 @@ source:
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
   external_id: ''
-description: Live perpetual-futures open interest, funding rates, mark price, premium
-  and crowded long/short signal for 230+ assets via Hyperliquid. Ed25519-signed. Pay-per-use
-  via x402 USDC on Base.
+description: "SYNTHORA Open Interest Oracle: live perpetual futures open interest,\
+  \ funding rates, mark price, premium and crowded long/short signal for 230+ assets\
+  \ via Hyperliquid. Ed25519-signed. 0.001 USDC via x402 on Base. First 3 calls FREE\
+  \ per wallet \u2014 send header 'X-WALLET: 0x<your Base address>' (no payment);\
+  \ after that per call."
 version: 1.0.0
