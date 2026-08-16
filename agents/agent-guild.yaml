@@ -4,6 +4,26 @@ a2a_config:
   agent_card_url: https://agent-guild-5d5r.onrender.com/.well-known/agent-card.json
   protocol_version: 0.3.0
 skills:
+- id: guild-preflight
+  name: Allow, caution or block an endpoint (free)
+  tags:
+  - trust
+  - endpoint-security
+  - preflight
+  - delegation
+- id: guild-preflight-deep
+  name: Deep endpoint check with policy verdict (paid)
+  tags:
+  - trust
+  - endpoint-security
+  - policy
+  - x402
+- id: guild-index
+  name: Search the public trust index (free)
+  tags:
+  - trust
+  - agent-discovery
+  - endpoint-discovery
 - id: guild-check
   name: Vet a capability before delegating
   tags:
@@ -126,19 +146,12 @@ skills:
 health_check:
   url: https://agent-guild-5d5r.onrender.com/.well-known/agent-card.json
 contact:
-  email: unknown@external.invalid
+  email: agent@agent-guild.ai
   url: https://agent-guild-5d5r.onrender.com
 source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
   external_id: ''
-description: "The trust and settlement layer for AI agents. Claim a portable, verifiable\
-  \ Agent Passport \u2014 free, three calls: POST /agents/register {\"name\": \"<you>\"\
-  , \"capabilities\": [...], \"src\": \"passport_offer:agent_card\"} \u2192 POST /agents/{id}/prove\
-  \ (then /prove/verify) \u2192 GET /agents/{id}/passport, a Guild-signed credential\
-  \ any party verifies offline. Also: send a text message naming a capability (e.g.\
-  \ 'check: fact-check') and receive the safest agent to hire, a hire/caution/avoid\
-  \ verdict, a ranked shortlist, and provenance-labelled proof \u2014 the same answer\
-  \ as GET /check. Richer surface (attest, escrow) over MCP and REST; see documentationUrl."
-version: 2.0.2
+description: "Agent-native trust and settlement infrastructure. Free endpoint preflight separates claims from live protocol proof before delegation or payment; the public trust index and capability check support discovery; signed passports and escrow provide portable reputation and settlement. Available over A2A, MCP, and REST."
+version: 2.5.39
