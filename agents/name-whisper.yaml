@@ -1,0 +1,146 @@
+agent_id: name-whisper
+name: Name Whisper
+a2a_config:
+  agent_card_url: https://namewhisper.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: search-ens-names
+  name: Search Ens Names
+  tags:
+  - ens
+  - read
+- id: enumerate-entities
+  name: Enumerate Entities
+  tags:
+  - ens
+  - read
+- id: get-name-details
+  name: Get Name Details
+  tags:
+  - ens
+  - read
+- id: check-availability
+  name: Check Availability
+  tags:
+  - ens
+  - read
+- id: get-similar-names
+  name: Get Similar Names
+  tags:
+  - ens
+  - read
+- id: get-valuation
+  name: Get Valuation
+  tags:
+  - ens
+  - read
+- id: get-market-activity
+  name: Get Market Activity
+  tags:
+  - ens
+  - read
+- id: get-expiring-names
+  name: Get Expiring Names
+  tags:
+  - ens
+  - read
+- id: get-wallet-portfolio
+  name: Get Wallet Portfolio
+  tags:
+  - ens
+  - read
+- id: find-alpha
+  name: Find Alpha
+  tags:
+  - ens
+  - read
+- id: wash-check
+  name: Wash Check
+  tags:
+  - ens
+  - read
+- id: get-primary-name
+  name: Get Primary Name
+  tags:
+  - ens
+  - read
+- id: manage-ens-name
+  name: Manage Ens Name
+  tags:
+  - ens
+  - read
+- id: provision-agent-identity
+  name: Provision Agent Identity
+  tags:
+  - ens
+  - read
+- id: get-agent-reputation
+  name: Get Agent Reputation
+  tags:
+  - ens
+  - read
+- id: search-agent-directory
+  name: Search Agent Directory
+  tags:
+  - ens
+  - read
+- id: get-caller-identity
+  name: Get Caller Identity
+  tags:
+  - ens
+  - read
+- id: search-knowledge
+  name: Search Knowledge
+  tags:
+  - ens
+  - read
+- id: get-usage-stats
+  name: Get Usage Stats
+  tags:
+  - ens
+  - read
+- id: purchase-name
+  name: Purchase Name
+  tags:
+  - ens
+  - transaction
+- id: make-offer
+  name: Make Offer
+  tags:
+  - ens
+  - transaction
+- id: bulk-register
+  name: Bulk Register
+  tags:
+  - ens
+  - transaction
+- id: renew-ens-name
+  name: Renew Ens Name
+  tags:
+  - ens
+  - transaction
+- id: transfer-ens-name
+  name: Transfer Ens Name
+  tags:
+  - ens
+  - transaction
+- id: bulk-transfer-ens-names
+  name: Bulk Transfer Ens Names
+  tags:
+  - ens
+  - transaction
+health_check:
+  url: https://namewhisper.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://namewhisper.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'ENS intelligence for AI agents: natural-language search across 3.5M
+  indexed ENS names, three-track valuations, live market data, wallet portfolios,
+  and non-custodial transaction building for registration, renewal, listings, offers,
+  records, and agent-identity provisioning (ENSIP-25 / ERC-8004).'
+version: 1.0.0

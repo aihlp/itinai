@@ -1,0 +1,30 @@
+agent_id: argonautworks-product-image-api
+name: ArgonautWorks Product Image API
+a2a_config:
+  agent_card_url: https://product-image-api-delta.vercel.app/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: safe-image
+  name: Buy a commercial-safe image
+  tags:
+  - image
+  - generation
+  - product
+  - landscape
+  - abstract
+  - png
+  - x402
+health_check:
+  url: https://product-image-api-delta.vercel.app/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://github.com/ArgonautWorks/product-image-api
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: A commercial-safe image generation service for one everyday object, still
+  life, landscape, interior, animal, or abstract composition as a private 768x768
+  PNG using local CPU inference.
+version: 0.3.0

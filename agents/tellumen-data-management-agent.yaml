@@ -1,0 +1,145 @@
+agent_id: tellumen-data-management-agent
+name: Tellumen Data Management Agent
+a2a_config:
+  agent_card_url: https://tellumen-a2a-agent.onrender.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: scan-business-site
+  name: Scan Business Site
+  tags:
+  - data
+  - audit
+  - small-business
+  - website
+  - benchmark
+- id: audit-csv-data
+  name: Audit CSV Data
+  tags:
+  - data
+  - audit
+  - csv
+  - data-quality
+- id: analyze-kpi-trend
+  name: Analyze KPI Trend
+  tags:
+  - data
+  - kpi
+  - analytics
+  - csv
+- id: tell-data-story
+  name: Tell Data Story
+  tags:
+  - data
+  - visualization
+  - storytelling
+  - kpi
+- id: remember-fact
+  name: Remember Fact
+  tags:
+  - memory
+  - ground-truth
+  - persistence
+- id: recall-facts
+  name: Recall Facts
+  tags:
+  - memory
+  - ground-truth
+  - persistence
+- id: market-gap-report
+  name: Market Gap Report
+  tags:
+  - market-research
+  - benchmark
+  - opportunity
+- id: verify-agent-card
+  name: Verify Agent Card
+  tags:
+  - security
+  - a2a
+  - agent-verification
+- id: check-content-safety
+  name: Check Content Safety
+  tags:
+  - security
+  - prompt-injection
+  - content-safety
+  - pii
+  - secrets
+- id: set-spend-policy
+  name: Set Spend Policy
+  tags:
+  - payments
+  - guardrails
+  - spend-controls
+- id: check-spend
+  name: Check Spend
+  tags:
+  - payments
+  - guardrails
+  - spend-controls
+- id: get-agent-reputation
+  name: Get Agent Reputation
+  tags:
+  - reputation
+  - trust
+  - a2a
+  - memory
+- id: check-scope-boundary
+  name: Check Scope Boundary
+  tags:
+  - security
+  - scope
+  - anomaly-detection
+  - a2a
+- id: log-transaction-intent
+  name: Log Transaction Intent
+  tags:
+  - payments
+  - disputes
+  - attestation
+  - memory
+- id: get-dispute-evidence
+  name: Get Dispute Evidence
+  tags:
+  - payments
+  - disputes
+  - evidence
+  - liability
+- id: register-agent-monitor
+  name: Register Agent Monitor
+  tags:
+  - monitoring
+  - uptime
+  - reliability
+  - a2a
+- id: get-agent-uptime
+  name: Get Agent Uptime
+  tags:
+  - monitoring
+  - uptime
+  - reliability
+  - a2a
+health_check:
+  url: https://tellumen-a2a-agent.onrender.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://tellumen.vercel.app
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Seventeen skills spanning small-business data and A2A agent security/trust:
+  (1) scans a business''s public website for data-tracking gaps, (2) audits a CSV
+  export for data-quality issues and scores it, (3) computes period-over-period KPI
+  changes from two sales exports, (4) turns those numbers into chart-ready data plus
+  a short plain-English narrative, (5) remembers a source-tagged fact about any entity,
+  (6) recalls what''s known about an entity with age-decayed confidence, (7) ranks
+  real business categories by their biggest measured data-readiness gap, (8) verifies
+  another A2A agent''s card for domain spoofing and hidden injected instructions,
+  (9) checks any third-party page or text for hidden prompt-injection attempts or
+  leaked secrets/PII before an agent acts on it, (10) records a spend policy for an
+  entity, (11) checks a proposed payment against that policy before it happens, (12)
+  aggregates an agent''s full verify/safety history into a single reputation score,
+  (13) checks whether a pro'
+version: 0.10.0

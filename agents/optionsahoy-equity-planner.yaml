@@ -74,4 +74,4 @@ description: 'Answers equity-compensation planning questions by calling the Opti
   math is deterministic and verifiable (https://optionsahoy.com/verification); OptionsAhoy''s
   API is keyless. Send a message with a data part {"skill":"<id>","input":{...}} to
   run a calculator.'
-version: 0.1.0
+version: 1.10.1

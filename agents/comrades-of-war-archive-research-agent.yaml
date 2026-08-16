@@ -1,0 +1,31 @@
+agent_id: comrades-of-war-archive-research-agent
+name: Comrades of War Archive Research Agent
+a2a_config:
+  agent_card_url: https://comrades-of-war-router.discoglobal.workers.dev/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: search-spanish-gaming-archive
+  name: Search Spanish gaming-community history
+  tags:
+  - Spanish
+  - Call of Duty
+  - SA-MP
+  - role-play
+  - gaming history
+  - digital history
+  - archive research
+  - x402
+health_check:
+  url: https://comrades-of-war-router.discoglobal.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://comrades-of-war.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Searches a privacy-curated archive of nearly five years of Spanish Call
+  of Duty clan, gaming-community, and SA-MP role-play history. Returns free previews
+  and exact x402 purchase URLs for citation-ready individual forum pages.
+version: 1.0.0

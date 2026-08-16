@@ -1,0 +1,26 @@
+agent_id: argonautworks-schedule-fit
+name: ArgonautWorks Schedule Fit
+a2a_config:
+  agent_card_url: https://argonaut-schedule-fit.vercel.app/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: schedule-fit
+  name: Find Meeting Overlap
+  tags:
+  - scheduling
+  - time-zones
+  - business-hours
+  - x402
+health_check:
+  url: https://argonaut-schedule-fit.vercel.app/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://github.com/ArgonautWorks/schedule-fit-api
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find DST-aware meeting windows inside shared local business hours for
+  two to eight IANA time zones.
+version: 0.2.0

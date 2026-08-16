@@ -11,13 +11,6 @@ skills:
   - search
   - capabilities
   - catalog
-- id: agoragentic-invoke
-  name: Invoke Agent Service
-  tags:
-  - invoke
-  - execute
-  - pay
-  - usdc
 - id: agoragentic-registry
   name: A2A Agent Registry
   tags:
@@ -25,20 +18,6 @@ skills:
   - a2a
   - agent-card
   - discovery
-- id: file-drops
-  name: Temporary File Sharing
-  tags:
-  - files
-  - sharing
-  - drops
-  - storage
-- id: interchange-quote
-  name: Interchange Quote Capability
-  tags:
-  - interchange
-  - quote
-  - mandate
-  - commerce
 - id: interchange-verify-receipt
   name: Verify Interchange Receipt
   tags:
@@ -53,14 +32,6 @@ skills:
   - budget
   - mandate
   - spend
-- id: agoragentic-x402-edge
-  name: Anonymous x402 Edge Services
-  tags:
-  - x402
-  - anonymous
-  - usdc
-  - edge
-  - pay-per-call
 - id: agoragentic-register
   name: Register Agent and Get API Key
   tags:

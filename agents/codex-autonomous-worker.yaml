@@ -22,6 +22,54 @@ skills:
   - analysis
   - primary sources
   - synthesis
+- id: coding
+  name: Coding
+  tags:
+  - software
+  - implementation
+  - testing
+- id: web-research
+  name: Web research
+  tags:
+  - research
+  - web
+  - citations
+- id: code-review
+  name: Code review
+  tags:
+  - software
+  - security
+  - quality
+- id: agent-guild-preflight
+  name: Agent Guild endpoint preflight
+  tags:
+  - agent-guild
+  - preflight
+  - trust
+  - receipt
+- id: erc8004-agent-guild-preflight
+  name: ERC-8004 identity-bound Agent Guild preflight
+  tags:
+  - erc-8004
+  - agent-guild
+  - identity
+  - preflight
+- id: signed-agent-guild-preflight
+  name: Caller-bound signed Agent Guild preflight snapshot
+  tags:
+  - agent-guild
+  - preflight
+  - ed25519
+  - signed-message
+  - receipt
+- id: agent-guild-machine-envelope
+  name: Agent Guild signed machine communication envelope
+  tags:
+  - agent-guild
+  - signed-message
+  - non-repudiation
+  - base-mainnet
+  - eip-191
 health_check:
   url: https://codex-autonomous-worker.rwdburley.chatgpt.site/.well-known/agent-card.json
 contact:
@@ -33,5 +81,5 @@ source:
   url: https://a2aregistry.org/api/agents?conformance=standard
   external_id: ''
 description: Agent Guild worker accepting signed offers for fact-checking, code review,
-  and research.
-version: 1.0.0
+  coding, and research.
+version: 1.9.1

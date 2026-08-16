@@ -1,0 +1,27 @@
+agent_id: argonautworks-us-weather-api
+name: ArgonautWorks US Weather API
+a2a_config:
+  agent_card_url: https://argonaut-us-weather-api.vercel.app/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: weather-purchase
+  name: Buy compact U.S. NWS weather data
+  tags:
+  - weather
+  - forecast
+  - alerts
+  - NWS
+  - x402
+health_check:
+  url: https://argonaut-us-weather-api.vercel.app/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://github.com/ArgonautWorks/us-weather-api
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: A compact authoritative U.S. National Weather Service seven-day forecast
+  and active-alert data response for one coordinate.
+version: 0.1.0

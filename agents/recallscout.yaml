@@ -1,0 +1,43 @@
+agent_id: recallscout
+name: RecallScout
+a2a_config:
+  agent_card_url: https://recallscout.scalpstream.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: recall-lookup
+  name: is this product or vehicle recalled
+  tags:
+  - recall
+  - recalls
+  - product recall
+  - vehicle recall
+  - food safety
+  - drug recall
+  - medical device
+  - FDA
+  - NHTSA
+  - CPSC
+  - Class I recall
+  - safety
+  - product safety
+  - supply chain
+  - compliance
+  - quality assurance
+  - insurance
+  - retail
+  - x402
+health_check:
+  url: https://recallscout.scalpstream.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://recallscout.scalpstream.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Machine-payable US recall lookups over x402. Is this product or vehicle
+  under an ACTIVE recall, and how urgent? Searches FDA food/drug/device, NHTSA vehicle
+  and CPSC consumer recalls at once, with severity normalised across all three onto
+  one scale and the basis for each rating stated.
+version: 1.0.0

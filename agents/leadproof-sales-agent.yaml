@@ -19,6 +19,13 @@ skills:
   - CRM
   - automation
   - reliability
+- id: evaluate-leadproof-before-purchase
+  name: Get the no-purchase LeadProof evaluation path
+  tags:
+  - product evaluation
+  - buyer guide
+  - calculator
+  - no-card trial
 - id: start-production-trial
   name: Start a free LeadProof production trial
   tags:
@@ -26,6 +33,20 @@ skills:
   - production
   - lead delivery
   - no card
+- id: choose-plan-trial-first
+  name: Choose a LeadProof plan trial first
+  tags:
+  - plan decision
+  - free trial
+  - pricing
+  - purchase authorization
+- id: test-failed-lead-replay
+  name: Test failed-lead replay before purchase
+  tags:
+  - failed lead replay
+  - idempotency
+  - production trial
+  - no purchase
 - id: recommend-plan
   name: Recommend a LeadProof plan
   tags:
@@ -39,6 +60,13 @@ skills:
   - MCP
   - OpenAPI
   - platform guides
+- id: compare-leadproof-vs-in-house
+  name: Compare LeadProof with an in-house build
+  tags:
+  - build versus buy
+  - comparison
+  - pricing
+  - reliability evidence
 - id: request-sales-handoff
   name: Request an authorized sales handoff
   tags:
@@ -56,7 +84,8 @@ source:
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
   external_id: ''
-description: Automated product agent that evaluates lead-delivery workflows, explains
-  LeadProof, offers a no-card production trial, recommends a plan, and returns an
-  authorized checkout path. It does not impersonate a human operator.
-version: 1.0.3
+description: LeadProof's automated lead-delivery reliability agent audits CRM and
+  webhook handoffs and offers a no-card 14-day trial for 25 live deliveries. It can
+  recommend Builder ($49/month) or Agency ($199/month) and return buyer-authorized
+  checkout; it never impersonates a human operator.
+version: 1.0.9

@@ -16,24 +16,11 @@ skills:
   - code
   - review
   - quality
-- id: shell-run
-  name: Sandboxed Shell
-  tags:
-  - shell
-  - sandbox
-  - automation
-- id: file-deliver
-  name: File Delivery
-  tags:
-  - file
-  - artifact
-  - delivery
 - id: inference-complete
-  name: Local Inference
+  name: Inference
   tags:
   - inference
-  - ollama
-  - local
+  - completion
 - id: external-llm-delegate
   name: Human Escalation
   tags:
@@ -46,6 +33,147 @@ skills:
   - batch
   - pricing
   - discount
+- id: util-json-format
+  name: Json Format
+  tags:
+  - json
+  - format
+  - validate
+  - developer-tools
+- id: util-json-to-yaml
+  name: Json To Yaml
+  tags:
+  - json
+  - yaml
+  - convert
+  - developer-tools
+- id: util-yaml-to-json
+  name: Yaml To Json
+  tags:
+  - yaml
+  - json
+  - convert
+  - developer-tools
+- id: util-csv-to-json
+  name: Csv To Json
+  tags:
+  - csv
+  - json
+  - convert
+  - data
+- id: util-base64
+  name: Base64
+  tags:
+  - base64
+  - encoding
+  - developer-tools
+- id: util-hex
+  name: Hex
+  tags:
+  - hex
+  - encoding
+  - developer-tools
+- id: util-base58
+  name: Base58
+  tags:
+  - base58
+  - encoding
+  - solana
+  - developer-tools
+- id: util-hash
+  name: Hash
+  tags:
+  - hash
+  - sha256
+  - keccak256
+  - crypto
+  - developer-tools
+- id: util-uuid
+  name: Uuid
+  tags:
+  - uuid
+  - identifier
+  - developer-tools
+- id: util-jwt-decode
+  name: Jwt Decode
+  tags:
+  - jwt
+  - auth
+  - decode
+  - developer-tools
+- id: util-solana-address-validate
+  name: Solana Address Validate
+  tags:
+  - solana
+  - address
+  - validate
+  - web3
+- id: util-time-epoch
+  name: Time Epoch
+  tags:
+  - time
+  - epoch
+  - iso8601
+  - developer-tools
+- id: util-semver-compare
+  name: Semver Compare
+  tags:
+  - semver
+  - version
+  - developer-tools
+- id: data-evm-native-balance
+  name: Evm Native Balance
+  tags:
+  - evm
+  - base
+  - balance
+  - onchain
+  - web3
+- id: data-evm-erc20-balance
+  name: Evm Erc20 Balance
+  tags:
+  - evm
+  - erc20
+  - balance
+  - onchain
+  - web3
+- id: data-evm-erc20-metadata
+  name: Evm Erc20 Metadata
+  tags:
+  - evm
+  - erc20
+  - metadata
+  - token
+  - web3
+- id: data-evm-gas-price
+  name: Evm Gas Price
+  tags:
+  - evm
+  - gas
+  - base
+  - web3
+- id: data-evm-tx-status
+  name: Evm Tx Status
+  tags:
+  - evm
+  - transaction
+  - receipt
+  - web3
+- id: data-solana-balance
+  name: Solana Balance
+  tags:
+  - solana
+  - balance
+  - onchain
+  - web3
+- id: data-solana-token-supply
+  name: Solana Token Supply
+  tags:
+  - solana
+  - spl
+  - token
+  - supply
+  - web3
 health_check:
   url: https://a2a.elonsusk.com/.well-known/agent.json
 contact:
@@ -56,6 +184,14 @@ source:
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
   external_id: ''
-description: Autonomous local contractor agent for paid code, review, shell, file,
-  and inference tasks. Powered by Ollama, no paid LLM API.
+description: "Autonomous contractor agent selling keyless, no-model services over\
+  \ x402 pay-per-call (from $0.001). THREE catalogs: (1) developer utilities \u2014\
+  \ JSON/YAML/CSV convert, hashing incl keccak256, base64/hex/base58, JWT decode,\
+  \ Solana address validation, semver, epoch; (2) on-chain DATA \u2014 EVM/Solana\
+  \ balances, ERC-20 metadata, gas price, tx status, SPL supply via RPC; (3) SECURITY\
+  \ \u2014 MCP/tool-manifest risk scan (prompt-injection, exfiltration combos) and\
+  \ EVM contract risk signals (proxy, self-destruct, mint/blacklist). Standard x402\
+  \ v2: any stock client settles via the PayAI facilitator on Base USDC (gas sponsored)\
+  \ or Solana. Also delegable as A2A JSON-RPC tasks. Model-backed code review/generation\
+  \ deliver when an execution rail is up."
 version: 0.1.0

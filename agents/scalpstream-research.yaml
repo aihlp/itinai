@@ -1,0 +1,85 @@
+agent_id: scalpstream-research
+name: ScalpStream Research
+a2a_config:
+  agent_card_url: https://feed.scalpstream.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: options
+  name: ranked options candidates
+  tags:
+  - option
+  - options
+  - call
+  - calls
+  - put
+  - puts
+  - scalp
+  - scalps
+  - picks
+  - 0dte
+  - equity
+  - stock
+  - stocks
+  - etf
+- id: dividends
+  name: dividend / tax-free income
+  tags:
+  - dividend
+  - dividends
+  - muni
+  - municipal
+  - tax
+  - tax-free
+  - taxfree
+  - income
+  - bond
+  - bonds
+- id: crypto
+  name: crypto scalp candidates
+  tags:
+  - crypto
+  - coin
+  - coins
+  - bitcoin
+  - btc
+  - eth
+  - ethereum
+  - altcoin
+  - altcoins
+  - token
+  - sol
+  - solana
+- id: yields
+  name: best interest-paying cryptos
+  tags:
+  - yield
+  - yields
+  - apy
+  - apr
+  - staking
+  - stake
+  - interest
+  - stablecoin
+  - stablecoins
+  - defi
+  - lending
+  - earn
+  - savings
+health_check:
+  url: https://feed.scalpstream.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://feed.scalpstream.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Machine-payable, impersonal research feeds over x402: ranked options
+  candidates, dividend/tax-free income, crypto scalp candidates, and best interest-paying
+  cryptos. Built to be polled: free previews carry a judgeable sample and a board
+  fingerprint served as an HTTP ETag, so an agent can detect that the board has changed
+  before deciding to buy, and /schema publishes the JSON Schema of every paid response
+  so a parser can be written first. The full feed settles in XRP/RLUSD (XRPL) or USDC
+  (Base/Arbitrum/Polygon). Not investment advice.'
+version: 1.0.0

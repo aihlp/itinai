@@ -57,14 +57,45 @@ skills:
   - x402
   - pnl
 - id: polymarket-pnl-full
-  name: Polymarket full PnL (per-lot, FIFO/LIFO/HIFO)
+  name: Polymarket full PnL (per-position, mark-to-market)
   tags:
   - polymarket
   - pnl
-  - tax-lots
-  - fifo
-  - lifo
-  - hifo
+  - positions
+  - mark-to-market
+  - x402
+- id: polymarket-leaders
+  name: Polymarket leaderboard (derived skill metrics)
+  tags:
+  - polymarket
+  - leaderboard
+  - traders
+  - skill-score
+  - x402
+- id: kalshi-consensus-trend
+  name: Kalshi consensus trend (slope + acceleration)
+  tags:
+  - kalshi
+  - prediction-markets
+  - consensus
+  - trend
+  - x402
+- id: kalshi-polymarket-spread
+  name: "Kalshi \u2194 Polymarket cross-source spread"
+  tags:
+  - kalshi
+  - polymarket
+  - spread
+  - arbitrage
+  - cross-venue
+  - x402
+- id: kalshi-sports-live-edge
+  name: Kalshi live sports edge (play-by-play vs candles)
+  tags:
+  - kalshi
+  - sports
+  - live
+  - mispricing
   - x402
 - id: polymarket-screen
   name: Polymarket size-the-room (top holders + skill + ghost-fill risk)
@@ -170,6 +201,15 @@ skills:
   - parquet
   - trader-intelligence
   - analytics
+- id: narrative-divergence
+  name: Narrative vs on-chain flow divergence (JOIN)
+  tags:
+  - defi
+  - social
+  - sentiment
+  - uniswap
+  - divergence
+  - join
 - id: predmarket-spread
   name: "Polymarket \u2194 Limitless cross-venue spread (JOIN)"
   tags:
@@ -217,19 +257,6 @@ skills:
   - join
   - defi
   - thegraph
-  - x402
-  - base
-- id: uniswap-traders
-  name: 'Uniswap per-wallet flow: accumulators vs distributors'
-  tags:
-  - uniswap
-  - defi
-  - dex
-  - wallet-flow
-  - accumulation
-  - smart-money
-  - thegraph
-  - subgraph
   - x402
   - base
 health_check:

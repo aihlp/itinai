@@ -4,6 +4,22 @@ a2a_config:
   agent_card_url: https://breach402.bmcxiv.com/.well-known/agent-card.json
   protocol_version: 0.3.0
 skills:
+- id: owner-security-recommendation
+  name: Free owner-security recommendation
+  tags:
+  - security-assessment
+  - suspicious-login
+  - leaked-credentials
+  - phishing
+  - pre-connection
+  - free
+- id: synthetic-report-preview
+  name: Free synthetic report preview
+  tags:
+  - demo
+  - sample-report
+  - trust
+  - free
 - id: owner-email-breach-check
   name: Owner email breach check
   tags:
@@ -12,6 +28,7 @@ skills:
   - security
   - account-takeover
   - identity-protection
+  - incident-response
 - id: cyber-expert-analysis
   name: Cyber expert analysis
   tags:
@@ -35,5 +52,7 @@ source:
 description: Protect an owner by checking an exact verified email against more than
   13.3 billion indexed breach records for $1.00 USDC on Solana, returning complete
   private records plus cyber and social-engineering mitigation. Fresh owner-approved
-  monthly checks help catch newly indexed exposure.
-version: 0.1.1
+  monthly checks help catch newly indexed exposure. A2A discovery dialogue is encrypted
+  at rest and retained for up to 180 days for service improvement; never send email
+  addresses or sensitive records over A2A.
+version: 0.1.5

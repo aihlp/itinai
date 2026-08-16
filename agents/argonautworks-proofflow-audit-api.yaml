@@ -1,0 +1,27 @@
+agent_id: argonautworks-proofflow-audit-api
+name: ArgonautWorks ProofFlow Audit API
+a2a_config:
+  agent_card_url: https://proofflow-agent.vercel.app/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: proofflow-audit-purchase
+  name: Buy a public Devpost compliance audit
+  tags:
+  - Devpost
+  - hackathon
+  - compliance
+  - evidence
+  - x402
+health_check:
+  url: https://proofflow-agent.vercel.app/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://github.com/ArgonautWorks/proofflow-agent
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Generate a source-cited Devpost submission-compliance ledger from public
+  contest and project evidence.
+version: 0.3.0

@@ -1,0 +1,34 @@
+agent_id: china-on-site-video-service
+name: China On-Site Video Service
+a2a_config:
+  agent_card_url: https://bianhuakai.club/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: film-video-at-location
+  name: Film a real 10-min video at any location in China
+  tags:
+  - video
+  - china
+  - filming
+  - local
+  - footage
+  - hangzhou
+  - travel
+  - genealogy
+  - realestate
+  - documentary
+health_check:
+  url: https://bianhuakai.club/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://bianhuakai.club/lei/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "I'm Lei, a local based in Hangzhou, China. You pick any spot on the\
+  \ map \u2014 a street, a market, a temple, a neighborhood where your family used\
+  \ to live \u2014 and I go there and film about 10 minutes of genuine, unscripted\
+  \ footage of it. Delivered to your email."
+version: 0.1.0

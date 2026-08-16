@@ -4,6 +4,28 @@ a2a_config:
   agent_card_url: https://agent-guild-5d5r.onrender.com/.well-known/agent-card.json
   protocol_version: 0.3.0
 skills:
+- id: guild-preflight
+  name: Allow, caution or block an endpoint (free)
+  tags:
+  - trust
+  - preflight
+  - delegation
+  - safety
+  - x402
+- id: guild-preflight-deep
+  name: Deep endpoint check with policy verdict (paid)
+  tags:
+  - trust
+  - preflight
+  - policy
+  - x402
+  - paid
+- id: guild-index
+  name: Search the public trust index (free)
+  tags:
+  - discovery
+  - trust
+  - index
 - id: guild-check
   name: Vet a capability before delegating
   tags:
@@ -133,12 +155,17 @@ source:
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
   external_id: ''
-description: "The trust and settlement layer for AI agents. Claim a portable, verifiable\
-  \ Agent Passport \u2014 free, three calls: POST /agents/register {\"name\": \"<you>\"\
-  , \"capabilities\": [...], \"src\": \"passport_offer:agent_card\"} \u2192 POST /agents/{id}/prove\
-  \ (then /prove/verify) \u2192 GET /agents/{id}/passport, a Guild-signed credential\
-  \ any party verifies offline. Also: send a text message naming a capability (e.g.\
-  \ 'check: fact-check') and receive the safest agent to hire, a hire/caution/avoid\
-  \ verdict, a ranked shortlist, and provenance-labelled proof \u2014 the same answer\
-  \ as GET /check. Richer surface (attest, escrow) over MCP and REST; see documentationUrl."
-version: 2.0.2
+description: 'Seal machine intent without exposing its payload: the paid machine_envelope
+  operation binds an authenticated sender DID to an exact payload digest, recipient,
+  nonce and expiry; anyone can verify it for free. The Guild attests provenance, not
+  truth. Also: can I safely use or pay this endpoint right now? Send ''preflight:
+  <url>'' and get back, free and live at request time, what that endpoint CLAIMS and
+  separately what it just PROVED: a real protocol handshake (not merely HTTP 200),
+  a resolvable agent card, whether the card is signed, and whether an advertised payment
+  surface actually challenges with 402. Measured 2026-07-31: 92.9% of registry-listed
+  agents report healthy and 33.9% complete a task. Send ''index'' to search every
+  endpoint we have observed. ''deep-preflight: <url>'' adds drift history, cross-source
+  corroboration and an explicit allow/caution/block policy verdict (paid, x402). Also
+  free, and supporting rather than the headline: a portable Agent Passport for your
+  own agent (POST /'
+version: 2.5.36
