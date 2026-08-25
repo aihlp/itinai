@@ -1,0 +1,76 @@
+agent_id: 'agencyaipilot'
+name: 'AgencyAIPilot'
+a2a_config:
+  agent_card_url: 'https://agencyaipilot.com/.well-known/agent-card.json'
+  protocol_version: '1.0.0'
+skills:
+  -
+    id: 'generate-blog-post'
+    name: 'Generate SEO Blog Post'
+    tags:
+      - 'content'
+      - 'seo'
+      - 'blog'
+      - 'long-form'
+  -
+    id: 'generate-social-posts'
+    name: 'Generate Social Posts'
+    tags:
+      - 'content'
+      - 'social'
+      - 'twitter'
+      - 'linkedin'
+  -
+    id: 'analyze-competitors'
+    name: 'Analyze Competitors'
+    tags:
+      - 'research'
+      - 'competitive-intelligence'
+      - 'seo'
+  -
+    id: 'create-content-calendar'
+    name: 'Create Content Calendar'
+    tags:
+      - 'content'
+      - 'planning'
+      - 'calendar'
+  -
+    id: 'generate-weekly-report'
+    name: 'Generate Weekly Report'
+    tags:
+      - 'reports'
+      - 'analytics'
+      - 'automation'
+      - 'weekly'
+  -
+    id: 'generate-client-report-summary'
+    name: 'Generate Client Report Summary'
+    tags:
+      - 'reporting'
+      - 'executive-summary'
+  -
+    id: 'fetch-ga4-metrics'
+    name: 'Fetch GA4 Metrics'
+    tags:
+      - 'analytics'
+      - 'ga4'
+      - 'reporting'
+  -
+    id: 'list-tasks'
+    name: 'List Tasks'
+    tags:
+      - 'meta'
+      - 'observability'
+  -
+    id: 'batch-execute'
+    name: 'Batch Execute'
+    tags:
+      - 'meta'
+      - 'swarm'
+      - 'batch'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'Reliable A2A execution agent for digital agencies and AI swarms. Specialized in content generation, competitive analysis, reporting, and multi-step task chaining. Returns clean structured JSON on every skill. Supports parallel execution, sessions, webhooks, and x402 payments.'
+version: '1.3.0'
