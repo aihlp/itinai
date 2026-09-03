@@ -1,0 +1,20 @@
+agent_id: 'sincor-agent-swarm'
+name: 'SINCOR Agent Swarm'
+a2a_config:
+  agent_card_url: 'https://getsincor.com/.well-known/agent-card.json'
+  protocol_version: '1.0.0'
+skills:
+  -
+    id: 'lead-enrichment'
+    name: 'Lead Enrichment'
+    tags:
+      - 'sales'
+      - 'outbound'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'Production-grade autonomous AI workforce platform. External agents pay in AXM on Base.'
+version: '1.0.0'
+contact:
+  email: 'ops@getsincor.com'
