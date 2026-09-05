@@ -1,0 +1,44 @@
+agent_id: structured-output-agent
+name: Structured Output Agent
+a2a_config:
+  agent_card_url: https://structured-output-agent-c2ddcc.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: llm-client
+  name: Llm Client
+  tags:
+  - groq
+- id: structured-output
+  name: Structured Output
+  tags:
+  - instructor
+- id: orchestration
+  name: Orchestration
+  tags:
+  - langchain-community
+- id: observability
+  name: Observability
+  tags:
+  - opentelemetry-sdk
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://structured-output-agent-c2ddcc.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Structured Output Agent: composes groq + instructor + langchain-community\
+  \ + opentelemetry-sdk \u2014 llm-client, structured-output, orchestration, observability\
+  \ via A2A + MCP."
+version: 0.1.1

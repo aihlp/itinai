@@ -1,0 +1,35 @@
+agent_id: multi-provider-schema-output-agent
+name: Multi-Provider Schema Output Agent
+a2a_config:
+  agent_card_url: https://instructor-litellm-6af681.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: structured-output
+  name: Structured Output
+  tags:
+  - instructor
+- id: llm-client
+  name: Llm Client
+  tags:
+  - litellm
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://instructor-litellm-6af681.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Multi-Provider Schema Output Agent: composes instructor + litellm \u2014\
+  \ structured-output, llm-client via A2A + MCP."
+version: 0.1.1

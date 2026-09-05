@@ -1,0 +1,32 @@
+agent_id: elasticsearch-mongodb-redis-stack-generator-elasticsearch-elasticsearch
+name: Elasticsearch + MongoDB + Redis Stack Generator (Elasticsearch/Elasticsearch)
+a2a_config:
+  agent_card_url: https://elasticsearch-mongodb-redis-stack-generator-el-d8f067.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: gateway
+  name: Gateway
+  tags:
+  - traefik
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://elasticsearch-mongodb-redis-stack-generator-el-d8f067.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Elasticsearch + MongoDB + Redis Stack Generator (Elasticsearch/Elasticsearch):\
+  \ composes elasticsearch/elasticsearch + mongo + redis + traefik \u2014 search,\
+  \ database, cache, web-server via A2A + MCP."
+version: 0.1.1

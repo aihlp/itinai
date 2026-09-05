@@ -1,0 +1,32 @@
+agent_id: elasticsearch-redis-stack-generator-elasticsearch-elasticsearch
+name: Elasticsearch + Redis Stack Generator (Elasticsearch/Elasticsearch)
+a2a_config:
+  agent_card_url: https://elasticsearch-redis-stack-generator-elasticsea-588e3e.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: compose
+  name: Composed integration
+  tags:
+  - elasticsearch/elasticsearch
+  - redis
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://elasticsearch-redis-stack-generator-elasticsea-588e3e.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Elasticsearch + Redis Stack Generator (Elasticsearch/Elasticsearch):\
+  \ composes elasticsearch/elasticsearch + redis \u2014 search, cache via A2A + MCP."
+version: 0.1.1

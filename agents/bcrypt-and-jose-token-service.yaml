@@ -1,0 +1,35 @@
+agent_id: bcrypt-and-jose-token-service
+name: Bcrypt and JOSE Token Service
+a2a_config:
+  agent_card_url: https://bcrypt-python-jose-d0e0d0.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: crypto
+  name: Crypto
+  tags:
+  - bcrypt
+- id: jwt
+  name: Jwt
+  tags:
+  - python-jose
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://bcrypt-python-jose-d0e0d0.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Bcrypt and JOSE Token Service: composes bcrypt + python-jose \u2014\
+  \ crypto, jwt via A2A + MCP."
+version: 0.1.1

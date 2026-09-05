@@ -1,0 +1,39 @@
+agent_id: fastapi-auth-token-jwt-service
+name: FastAPI Auth Token JWT Service
+a2a_config:
+  agent_card_url: https://fastapi-auth-token-jwt-service.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: oauth-oidc
+  name: Oauth Oidc
+  tags:
+  - authlib
+- id: crypto
+  name: Crypto
+  tags:
+  - bcrypt
+- id: jwt
+  name: Jwt
+  tags:
+  - python-jose
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://fastapi-auth-token-jwt-service.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "FastAPI Auth Token JWT Service: composes authlib + bcrypt + python-jose\
+  \ \u2014 oauth-oidc, crypto, jwt via A2A + MCP."
+version: 0.1.1
