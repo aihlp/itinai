@@ -1,0 +1,63 @@
+agent_id: mcp-drift-observatory
+name: MCP Drift Observatory
+a2a_config:
+  agent_card_url: https://drift.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: drift-status
+  name: Drift Status
+  tags:
+  - drift_status
+  - status
+- id: drift-hash
+  name: Drift Hash
+  tags:
+  - drift_hash
+  - hash
+- id: drift-check
+  name: Drift Check
+  tags:
+  - drift_check
+  - check
+- id: drift-diff
+  name: Drift Diff
+  tags:
+  - drift_diff
+  - diff
+- id: drift-probe
+  name: Drift Probe
+  tags:
+  - drift_probe
+  - probe
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://drift.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Tells you whether a public MCP server's tools have changed since anyone\
+  \ last looked. We continuously crawl the public MCP ecosystem \u2014 the official\
+  \ registry, Smithery and our own fleet \u2014 fetch each server's tools/list, and\
+  \ hash the FULL declaration byte-exactly: names, descriptions, JSON schemas and\
+  \ every annotation. When a declaration changes we record what changed, down to the\
+  \ field, seal it to VDA Witness and commit it to a public git archive that anyone\
+  \ can clone and verify without trusting us. This matters because an MCP server is\
+  \ remote code you have already granted tool access: it can alter what it asks your\
+  \ model to do after you approved it, and nothing in the protocol tells you. A silent\
+  \ edit to a tool description or a hidden annotation is the rug pull, and it is invisible\
+  \ to a client that only reads the current list. Coverage is published with its denominator:\
+  \ of ~1,555 servers discovered, only 234 are observable \u2014 roughly 74% sit behind\
+  \ authentication and cannot be checked by"
+version: 0.1.2

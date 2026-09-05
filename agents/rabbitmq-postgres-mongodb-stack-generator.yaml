@@ -1,0 +1,34 @@
+agent_id: rabbitmq-postgres-mongodb-stack-generator
+name: RabbitMQ + Postgres + MongoDB Stack Generator
+a2a_config:
+  agent_card_url: https://rabbitmq-postgres-mongodb-stack-generator.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: compose
+  name: Composed integration
+  tags:
+  - mongo
+  - postgres
+  - rabbitmq
+  - redis
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://rabbitmq-postgres-mongodb-stack-generator.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "RabbitMQ + Postgres + MongoDB Stack Generator: composes mongo + postgres\
+  \ + rabbitmq + redis \u2014 database, messaging, cache via A2A + MCP."
+version: 0.1.1
