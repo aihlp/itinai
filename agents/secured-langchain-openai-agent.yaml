@@ -1,0 +1,48 @@
+agent_id: secured-langchain-openai-agent
+name: Secured LangChain OpenAI Agent
+a2a_config:
+  agent_card_url: https://bcrypt-langchain-core-mcp-25b8f1.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: crypto
+  name: Crypto
+  tags:
+  - bcrypt
+- id: orchestration
+  name: Orchestration
+  tags:
+  - langchain-core
+- id: agent-protocol
+  name: Agent Protocol
+  tags:
+  - mcp
+- id: llm-client
+  name: Llm Client
+  tags:
+  - openai
+- id: observability
+  name: Observability
+  tags:
+  - opentelemetry-sdk
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://bcrypt-langchain-core-mcp-25b8f1.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Secured LangChain OpenAI Agent: composes bcrypt + langchain-core + mcp\
+  \ + openai + opentelemetry-sdk \u2014 crypto, orchestration, agent-protocol, llm-client,\
+  \ observability via A2A + MCP."
+version: 0.1.1

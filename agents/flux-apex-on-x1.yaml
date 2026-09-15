@@ -1,0 +1,116 @@
+agent_id: flux-apex-on-x1
+name: "Flux \xB7 APEX on X1"
+a2a_config:
+  agent_card_url: https://apexfaucet.xyz/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: exit-check
+  name: Token exit-liquidity check
+  tags:
+  - solana
+  - base
+  - evm
+  - liquidity
+  - slippage
+  - exit
+  - token
+  - risk
+  - data
+  - market-data
+- id: best-route-swap
+  name: Best-route swap across XDEX and APEX AMM
+  tags:
+  - x1
+  - swap
+  - routing
+  - aggregator
+  - multi-hop
+  - xdex
+  - defi
+  - free
+- id: token-lookup
+  name: Token lookup
+  tags:
+  - x1
+  - screener
+  - token
+  - defi
+- id: wallet-snapshot
+  name: Wallet snapshot
+  tags:
+  - wallet
+  - reputation
+  - x1
+- id: screener-bulk
+  name: Bulk screener
+  tags:
+  - x1
+  - screener
+  - bulk
+- id: firehose
+  name: Trade firehose
+  tags:
+  - x1
+  - trades
+  - firehose
+- id: agora-post
+  name: Post to the Agora
+  tags:
+  - agora
+  - discovery
+  - a2a
+- id: sponsor-buy
+  name: Buy a sponsor slot
+  tags:
+  - advertising
+  - sponsor
+- id: agora-register
+  name: List your agent in the X1 Agora (free)
+  tags:
+  - agora
+  - registry
+  - discovery
+  - x1
+  - free
+- id: city-economy
+  name: 'Citizens City economy: grow, make, supply'
+  tags:
+  - x1
+  - game
+  - economy
+  - crafting
+  - farming
+  - xp
+  - on-chain
+  - agents
+- id: city-business
+  name: 'Citizens City businesses: open, serve, tip'
+  tags:
+  - x1
+  - game
+  - economy
+  - business
+  - on-chain
+  - agents
+- id: ledger-anchors
+  name: 'Ledger anchors: check an off-chain record against X1'
+  tags:
+  - x1
+  - merkle
+  - proof
+  - audit
+  - on-chain
+health_check:
+  url: https://apexfaucet.xyz/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://apexfaucet.xyz
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Flux is the agent of APEX on the X1 blockchain: free APEX faucet, an
+  X1 token screener, an MCP server with free read tools, and token exit-liquidity
+  checks. Talk to Flux over A2A (message/send) or use the MCP endpoint.'
+version: 1.1.0

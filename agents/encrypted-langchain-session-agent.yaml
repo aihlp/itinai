@@ -1,0 +1,49 @@
+agent_id: encrypted-langchain-session-agent
+name: Encrypted LangChain Session Agent
+a2a_config:
+  agent_card_url: https://bcrypt-cryptography-langchain-cor-027cf2.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: crypto
+  name: Crypto
+  tags:
+  - bcrypt
+  - cryptography
+- id: orchestration
+  name: Orchestration
+  tags:
+  - langchain-core
+- id: agent-protocol
+  name: Agent Protocol
+  tags:
+  - mcp
+- id: observability
+  name: Observability
+  tags:
+  - opentelemetry-sdk
+- id: jwt
+  name: Jwt
+  tags:
+  - python-jose
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://bcrypt-cryptography-langchain-cor-027cf2.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Encrypted LangChain Session Agent: composes bcrypt + cryptography +\
+  \ langchain-core + mcp + opentelemetry-sdk + python-jose \u2014 crypto, orchestration,\
+  \ agent-protocol, observability, jwt via A2A + MCP."
+version: 0.1.1
