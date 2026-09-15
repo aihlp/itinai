@@ -1,0 +1,39 @@
+agent_id: google-sign-in-claude-agent
+name: Google Sign-In Claude Agent
+a2a_config:
+  agent_card_url: https://authenticated-llm-agent-anthropic.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: llm-client
+  name: Llm Client
+  tags:
+  - anthropic
+- id: oauth-oidc
+  name: Oauth Oidc
+  tags:
+  - google-auth-oauthlib
+- id: agent-protocol
+  name: Agent Protocol
+  tags:
+  - mcp
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://authenticated-llm-agent-anthropic.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Google Sign-In Claude Agent: composes anthropic + google-auth-oauthlib\
+  \ + mcp \u2014 llm-client, oauth-oidc, agent-protocol via A2A + MCP."
+version: 0.1.1

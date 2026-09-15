@@ -1,0 +1,41 @@
+agent_id: langsmith-traced-openai-agent
+name: LangSmith Traced OpenAI Agent
+a2a_config:
+  agent_card_url: https://langchain-core-langchain-openai-l-736876.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: orchestration
+  name: Orchestration
+  tags:
+  - langchain-core
+  - langchain-openai
+- id: observability
+  name: Observability
+  tags:
+  - langsmith
+- id: llm-client
+  name: Llm Client
+  tags:
+  - openai
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://langchain-core-langchain-openai-l-736876.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "LangSmith Traced OpenAI Agent: composes langchain-core + langchain-openai\
+  \ + langsmith + openai \u2014 orchestration, observability, llm-client via A2A +\
+  \ MCP."
+version: 0.1.1

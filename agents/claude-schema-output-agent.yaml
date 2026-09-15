@@ -1,0 +1,35 @@
+agent_id: claude-schema-output-agent
+name: Claude Schema Output Agent
+a2a_config:
+  agent_card_url: https://structured-output-agent-89bcb0.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: llm-client
+  name: Llm Client
+  tags:
+  - anthropic
+- id: structured-output
+  name: Structured Output
+  tags:
+  - instructor
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://structured-output-agent-89bcb0.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Claude Schema Output Agent: composes anthropic + instructor \u2014 llm-client,\
+  \ structured-output via A2A + MCP."
+version: 0.1.1

@@ -1,0 +1,45 @@
+agent_id: google-sign-in-langchain-agent
+name: Google Sign-In LangChain Agent
+a2a_config:
+  agent_card_url: https://google-auth-oauthlib-langchain-la-d46b90.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: oauth-oidc
+  name: Oauth Oidc
+  tags:
+  - google-auth-oauthlib
+- id: orchestration
+  name: Orchestration
+  tags:
+  - langchain
+  - langchain-community
+- id: agent-protocol
+  name: Agent Protocol
+  tags:
+  - mcp
+- id: llm-client
+  name: Llm Client
+  tags:
+  - openai
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://google-auth-oauthlib-langchain-la-d46b90.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Google Sign-In LangChain Agent: composes google-auth-oauthlib + langchain\
+  \ + langchain-community + mcp + openai \u2014 oauth-oidc, orchestration, agent-protocol,\
+  \ llm-client via A2A + MCP."
+version: 0.1.1

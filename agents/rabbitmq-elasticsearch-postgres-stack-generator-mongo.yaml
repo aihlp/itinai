@@ -1,0 +1,35 @@
+agent_id: rabbitmq-elasticsearch-postgres-stack-generator-mongo
+name: RabbitMQ + Elasticsearch + Postgres Stack Generator (Mongo)
+a2a_config:
+  agent_card_url: https://rabbitmq-elasticsearch-postgres-stack-generator-mongo.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: compose
+  name: Composed integration
+  tags:
+  - elasticsearch/elasticsearch
+  - mongo
+  - postgres
+  - rabbitmq
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://rabbitmq-elasticsearch-postgres-stack-generator-mongo.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "RabbitMQ + Elasticsearch + Postgres Stack Generator (Mongo): composes\
+  \ elasticsearch/elasticsearch + mongo + postgres + rabbitmq \u2014 search, database,\
+  \ messaging via A2A + MCP."
+version: 0.1.1
