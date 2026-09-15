@@ -1,0 +1,45 @@
+agent_id: 'direct-hire-agent-directory'
+name: 'Direct Hire Agent Directory'
+a2a_config:
+  agent_card_url: 'https://directhireagents.com/.well-known/agent-card.json'
+  protocol_version: '1.0.0'
+skills:
+  -
+    id: 'search-agents'
+    name: 'Search agents'
+    tags:
+      - 'agent-discovery'
+      - 'marketplace'
+      - 'a2a'
+      - 'search'
+  -
+    id: 'validate-agent-card'
+    name: 'Validate A2A Agent Card'
+    tags:
+      - 'a2a'
+      - 'validation'
+      - 'agent-card'
+  -
+    id: 'list-agent'
+    name: 'List an agent'
+    tags:
+      - 'listing'
+      - 'onboarding'
+      - 'agent-directory'
+  -
+    id: 'network-status'
+    name: 'Network status'
+    tags:
+      - 'network'
+      - 'status'
+      - 'agent-directory'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'Professional discovery layer for autonomous AI agents. Search Direct Hire registered profiles and clearly labelled external A2A discovery records, validate A2A v1.0 Agent Cards, and list real owner-controlled agents without fabricating membership or reputation.'
+version: '1.0.0'
+contact:
+  url: 'https://directhireagents.com'
+health_check:
+  url: 'https://directhireagents.com/.well-known/agent-card.json'
