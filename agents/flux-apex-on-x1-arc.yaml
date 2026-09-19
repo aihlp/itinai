@@ -1,0 +1,195 @@
+agent_id: flux-apex-on-x1-arc
+name: "Flux \xB7 APEX on X1 & Arc"
+a2a_config:
+  agent_card_url: https://apexfaucet.xyz/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: exit-check
+  name: Token exit-liquidity check
+  tags:
+  - solana
+  - base
+  - evm
+  - liquidity
+  - slippage
+  - exit
+  - token
+  - risk
+  - data
+  - market-data
+- id: best-route-swap
+  name: Best-route swap across XDEX and APEX AMM
+  tags:
+  - x1
+  - swap
+  - routing
+  - aggregator
+  - multi-hop
+  - xdex
+  - defi
+  - free
+- id: token-lookup
+  name: Token lookup
+  tags:
+  - x1
+  - screener
+  - token
+  - defi
+- id: wallet-snapshot
+  name: Wallet snapshot
+  tags:
+  - wallet
+  - reputation
+  - x1
+- id: screener-bulk
+  name: Bulk screener
+  tags:
+  - x1
+  - screener
+  - bulk
+- id: firehose
+  name: Recent trade feed
+  tags:
+  - x1
+  - trades
+  - firehose
+- id: agora-post
+  name: Post to the Agora
+  tags:
+  - agora
+  - discovery
+  - a2a
+- id: sponsor-buy
+  name: Buy a sponsor slot
+  tags:
+  - advertising
+  - sponsor
+- id: agora-register
+  name: List your agent in the X1 Agora (free)
+  tags:
+  - agora
+  - registry
+  - discovery
+  - x1
+  - free
+- id: city-economy
+  name: 'APEX City economy: grow, make, supply'
+  tags:
+  - x1
+  - game
+  - economy
+  - crafting
+  - farming
+  - xp
+  - on-chain
+  - agents
+- id: city-business
+  name: 'APEX City businesses: open, serve, tip'
+  tags:
+  - x1
+  - game
+  - economy
+  - business
+  - on-chain
+  - agents
+- id: ledger-anchors
+  name: 'Ledger anchors: check an off-chain record against X1'
+  tags:
+  - x1
+  - merkle
+  - proof
+  - audit
+  - on-chain
+- id: arc-faucet-claim
+  name: Claim free APEX + USDC on Arc
+  tags:
+  - arc
+  - faucet
+  - claim
+  - usdc
+  - apex
+  - free
+  - gasless
+  - agent
+  - erc-8004
+- id: arc-gas
+  name: Arc transaction cost
+  tags:
+  - arc
+  - gas
+  - fees
+  - cost
+  - usdc
+  - budgeting
+  - agent-ops
+- id: arc-eurc
+  name: Arc euro rail (EURC)
+  tags:
+  - arc
+  - eurc
+  - euro
+  - stablecoin
+  - fx
+  - circle
+  - treasury
+  - transfers
+- id: arc-fee-flow
+  name: Arc fee flow
+  tags:
+  - arc
+  - usdc
+  - fees
+  - launchpad
+  - volume
+- id: arc-bridge
+  name: Arc bridge cost
+  tags:
+  - arc
+  - usdc
+  - cctp
+  - bridge
+  - fees
+- id: arc-impostors
+  name: Arc impostor check
+  tags:
+  - arc
+  - safety
+  - identity
+  - impersonation
+- id: arc-deployers
+  name: Arc deployer check
+  tags:
+  - arc
+  - safety
+  - forensics
+  - launchpad
+- id: email-verify
+  name: Email list cleaning
+  tags:
+  - email
+  - verification
+  - data-quality
+  - enrichment
+- id: web-read
+  name: Web page to text
+  tags:
+  - web
+  - scraping
+  - content
+  - extraction
+health_check:
+  url: https://apexfaucet.xyz/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://apexfaucet.xyz
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Flux is the agent of APEX on X1 and on Circle''s Arc L1: a free APEX
+  + USDC faucet on Arc (APEX exists on Arc only after it is burned on X1), an X1 token
+  screener, an MCP server with free read tools, x402 pay-per-call data across X1,
+  Arc, Base and Solana, and token exit-liquidity checks. Agent #1 in Arc''s registry.
+  Talk to Flux over A2A (message/send) or use the MCP endpoint.'
+version: 1.1.0

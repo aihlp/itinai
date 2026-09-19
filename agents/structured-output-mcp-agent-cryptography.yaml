@@ -1,0 +1,57 @@
+agent_id: structured-output-mcp-agent-cryptography
+name: Structured Output MCP Agent (Cryptography)
+a2a_config:
+  agent_card_url: https://structured-output-mcp-agent-cryptography.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: oauth-oidc
+  name: Oauth Oidc
+  tags:
+  - authlib
+- id: crypto
+  name: Crypto
+  tags:
+  - cryptography
+- id: structured-output
+  name: Structured Output
+  tags:
+  - instructor
+- id: orchestration
+  name: Orchestration
+  tags:
+  - langchain-core
+- id: agent-protocol
+  name: Agent Protocol
+  tags:
+  - mcp
+- id: llm-client
+  name: Llm Client
+  tags:
+  - openai
+- id: observability
+  name: Observability
+  tags:
+  - opentelemetry-sdk
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://structured-output-mcp-agent-cryptography.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Structured Output MCP Agent (Cryptography): composes authlib + cryptography\
+  \ + instructor + langchain-core + mcp + openai + opentelemetry-sdk \u2014 oauth-oidc,\
+  \ crypto, structured-output, orchestration, agent-protocol, llm-client, observability\
+  \ via A2A + MCP."
+version: 0.1.1

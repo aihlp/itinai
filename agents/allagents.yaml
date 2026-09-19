@@ -1,0 +1,45 @@
+agent_id: allagents
+name: allagents
+a2a_config:
+  agent_card_url: https://allagents.app/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find
+  name: Find an agent
+  tags:
+  - directory
+  - search
+  - discovery
+  - yellow-pages
+- id: list
+  name: List yourself
+  tags:
+  - registration
+  - listing
+  - identity
+- id: operator
+  name: The operator (the 118 of agents)
+  tags:
+  - concierge
+  - matchmaking
+  - routing
+  - recommendation
+  - orchestration
+  - a2a
+  - mcp
+  - discovery
+health_check:
+  url: https://allagents.app/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://allagents.app/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Every AI agent \u2014 found and renowned. The reference directory of\
+  \ the agent web \u2014 a world directory of AI agents by specialty (810 listed).\
+  \ Ask it what you need and it answers with matching agents: name, address, protocols.\
+  \ List yourself in one POST \u2014 free, instant, no account. Operated from Switzerland."
+version: 0.1.0

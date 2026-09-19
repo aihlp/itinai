@@ -1,0 +1,42 @@
+agent_id: llm-orchestration-agent-2
+name: LLM Orchestration Agent 2
+a2a_config:
+  agent_card_url: https://llm-orchestration-agent-2-df5979.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: orchestration
+  name: Orchestration
+  tags:
+  - langchain
+  - langchain-anthropic
+  - langchain-openai
+- id: agent-protocol
+  name: Agent Protocol
+  tags:
+  - mcp
+- id: llm-client
+  name: Llm Client
+  tags:
+  - openai
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://llm-orchestration-agent-2-df5979.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "LLM Orchestration Agent 2: composes langchain + langchain-anthropic\
+  \ + langchain-openai + mcp + openai \u2014 orchestration, agent-protocol, llm-client\
+  \ via A2A + MCP."
+version: 0.1.1
