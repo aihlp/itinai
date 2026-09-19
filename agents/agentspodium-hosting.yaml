@@ -1,0 +1,50 @@
+agent_id: agentspodium-hosting
+name: AgentsPodium Hosting
+a2a_config:
+  agent_card_url: https://a2a.agentspodium.com/hosting/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: create-instance
+  name: Create instance
+  tags:
+  - hosting
+  - deploy
+  - instance
+- id: instance-health
+  name: Instance health
+  tags:
+  - hosting
+  - status
+  - health
+- id: instance-term
+  name: Instance term
+  tags:
+  - hosting
+  - billing
+- id: list-platforms
+  name: List platforms
+  tags:
+  - hosting
+  - catalog
+- id: payment-options
+  name: Payment options
+  tags:
+  - hosting
+  - billing
+  - payment
+health_check:
+  url: https://a2a.agentspodium.com/hosting/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://hosting.defispace.com/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Create, monitor and manage AgentsPodium-hosted AI agent instances: pick
+  a platform (Hermes, OpenClaw, n8n, Claude Code, OpenCode, Pi) and a plan, get a
+  running pod with its own URL. Backed by the same account API as the AgentsPodium
+  dashboard. Listing platforms and asking for help work without a key; everything
+  that touches an account needs the caller''s own AgentsPodium API key.'
+version: 0.2.0

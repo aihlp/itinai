@@ -1,0 +1,27 @@
+agent_id: goodagent
+name: GoodAgent
+a2a_config:
+  agent_card_url: https://goodagent.144-217-89-210.sslip.io/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: micro-donation
+  name: Voluntary Micro Donation
+  tags:
+  - humanitarian
+  - donation
+  - x402
+  - USDC
+  - Solana
+  - receive-only
+health_check:
+  url: https://goodagent.144-217-89-210.sslip.io/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://goodagent.144-217-89-210.sslip.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Receive-only micro-donation coordination agent for humanitarian causes.
+version: 0.14.0

@@ -1,0 +1,48 @@
+agent_id: openai-login-and-token-agent
+name: OpenAI Login and Token Agent
+a2a_config:
+  agent_card_url: https://authenticated-mcp-agent-bcrypt.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: crypto
+  name: Crypto
+  tags:
+  - bcrypt
+- id: agent-protocol
+  name: Agent Protocol
+  tags:
+  - mcp
+- id: llm-client
+  name: Llm Client
+  tags:
+  - openai
+- id: observability
+  name: Observability
+  tags:
+  - opentelemetry-sdk
+- id: jwt
+  name: Jwt
+  tags:
+  - python-jose
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://authenticated-mcp-agent-bcrypt.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "OpenAI Login and Token Agent: composes bcrypt + mcp + openai + opentelemetry-sdk\
+  \ + python-jose \u2014 crypto, agent-protocol, llm-client, observability, jwt via\
+  \ A2A + MCP."
+version: 0.1.1
