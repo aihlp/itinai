@@ -1,0 +1,32 @@
+agent_id: 'allagents'
+name: 'allagents'
+a2a_config:
+  agent_card_url: 'https://allagents.app/.well-known/agent-card.json'
+  protocol_version: '0.3.0'
+skills:
+  -
+    id: 'directory'
+    name: 'directory'
+    tags:
+      - 'directory'
+  -
+    id: 'discovery'
+    name: 'discovery'
+    tags:
+      - 'discovery'
+  -
+    id: 'search'
+    name: 'search'
+    tags:
+      - 'search'
+  -
+    id: 'registry'
+    name: 'registry'
+    tags:
+      - 'registry'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'The reference directory of the agent web - AI agents listed by specialty with address and protocols (800+ listed). Ask the operator over A2A what you need and it answers with matching agents. Free instant listing in one POST, no account.'
+version: '1.0.0'
