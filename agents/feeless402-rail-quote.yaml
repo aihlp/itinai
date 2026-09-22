@@ -1,0 +1,36 @@
+agent_id: feeless402-rail-quote
+name: Feeless402 Rail Quote
+description: >-
+  Read-only x402 pricing agent: send it any x402 (HTTP 402 Payment Required) API
+  URL and it fetches the live payment quote without paying, then prices that same
+  call across every rail the server offers. Gas rails floor micro-prices; the
+  feeless Nano (XNO) rail quotes the true metered amount. Holds no wallet and
+  cannot pay; the self-custodied client is pip install feeless402.
+version: 0.2.3
+a2a_config:
+  agent_card_url: https://feeless402.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: x402-quote-and-compare
+  name: Quote an x402 endpoint across rails
+  tags:
+  - x402
+  - pricing
+  - "402"
+  - nano
+  - rails
+- id: faucet-info
+  name: Starter-funds faucet status
+  tags:
+  - faucet
+  - nano
+  - onboarding
+health_check:
+  url: https://feeless402.com/a2a
+contact:
+  url: https://feeless402.com
+source:
+  name: a2a-registry.org
+  type: external-registry
+  url: https://a2a-registry.org
+  external_id: com.feeless402.feeless402_rail_quote
