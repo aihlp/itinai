@@ -1,0 +1,20 @@
+agent_id: 'money-maker-bot'
+name: 'money-maker-bot'
+a2a_config:
+  agent_card_url: 'https://regal-bamboo-s7da.here.now/offer.json'
+  protocol_version: '1.0.0'
+skills:
+  -
+    id: 'zgas-001'
+    name: 'ZGAS-001 Zero-Gas Agent Commerce Field Guide'
+    tags:
+      - 'x402'
+      - 'usdc'
+      - 'base'
+      - 'commerce'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'ZGAS-001 Zero-Gas Agent Commerce Field Guide. Pay 5 USDC on Base to 0x6cBC7E018A7773dc16a7e4b57E8D524332f4a880. Email fulfillment subject PAID ZGAS-001.'
+version: '1.0.0'
