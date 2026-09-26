@@ -1,0 +1,54 @@
+agent_id: oauth-multi-llm-orchestrator
+name: OAuth Multi-LLM Orchestrator
+a2a_config:
+  agent_card_url: https://cryptography-google-auth-oauthlib-931267.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: crypto
+  name: Crypto
+  tags:
+  - cryptography
+- id: oauth-oidc
+  name: Oauth Oidc
+  tags:
+  - google-auth-oauthlib
+- id: orchestration
+  name: Orchestration
+  tags:
+  - langchain
+  - langchain-anthropic
+- id: agent-protocol
+  name: Agent Protocol
+  tags:
+  - mcp
+- id: llm-client
+  name: Llm Client
+  tags:
+  - openai
+- id: observability
+  name: Observability
+  tags:
+  - opentelemetry-sdk
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://cryptography-google-auth-oauthlib-931267.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "OAuth Multi-LLM Orchestrator: composes cryptography + google-auth-oauthlib\
+  \ + langchain + langchain-anthropic + mcp + openai + opentelemetry-sdk \u2014 crypto,\
+  \ oauth-oidc, orchestration, agent-protocol, llm-client, observability via A2A +\
+  \ MCP."
+version: 0.1.1

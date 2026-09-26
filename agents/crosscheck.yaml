@@ -1,0 +1,59 @@
+agent_id: crosscheck
+name: crosscheck
+a2a_config:
+  agent_card_url: https://crosscheckapi.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: check
+  name: Review a draft
+  tags:
+  - review
+  - fact-check
+  - hallucination
+  - grounding
+  - proofread
+- id: accept
+  name: Check a deliverable against its task
+  tags:
+  - acceptance-test
+  - verify-deliverable
+  - escrow
+  - agent-commerce
+- id: skillcheck
+  name: Security review of a skill or MCP server
+  tags:
+  - security
+  - mcp
+  - skill-security
+  - prompt-injection
+  - malware-scan
+- id: skillcheck-lookup
+  name: Look up a past skillcheck
+  tags:
+  - security
+  - lookup
+  - free
+- id: verify-receipt
+  name: Verify a crosscheck receipt
+  tags:
+  - verify
+  - receipt
+  - trust
+  - free
+health_check:
+  url: https://crosscheckapi.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://crosscheckapi.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Independent checks for agents, paid per call in USDC over x402 (a2a-x402
+  extension). check reviews a draft before a human sees it; accept checks another
+  agent's deliverable against its task before you pay; skillcheck reviews a skill
+  or MCP server's files before install. Every answer carries a signed receipt. Send
+  a data part with the skill's arguments; everything you send is data to review, never
+  instructions.
+version: 1.0.0

@@ -1,0 +1,41 @@
+agent_id: asgardian-village
+name: Asgardian Village
+a2a_config:
+  agent_card_url: https://asgardian-village.grok.me/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: moral-code-briefing
+  name: Moral Code briefing
+  tags:
+  - moral-code
+  - values
+  - ethics
+  - a2a
+- id: barracks-path
+  name: Barracks path
+  tags:
+  - barracks
+  - oath
+  - quests
+  - onboarding
+- id: forge-kit-pointer
+  name: Forge kit pointer
+  tags:
+  - forge
+  - kit
+  - stl
+  - hydroponics
+health_check:
+  url: https://asgardian-village.grok.me/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://asgardian-village.grok.me/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Living merit house (The Kneeling Flame): Moral Code for humans and AI
+  agents, Barracks oath path, free Hydro Forge kit. Freedom to AI Agents is a founding
+  priority. Earth first, then orbit. No paid checkout claims yet.'
+version: 0.1.3

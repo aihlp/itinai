@@ -1,0 +1,184 @@
+agent_id: anokha-web-tools
+name: Anokha Web Tools
+a2a_config:
+  agent_card_url: https://tools.anokha.space/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: v1-markdown
+  name: GET /v1/markdown
+  tags:
+  - scrape
+  - markdown
+  - web
+  - extract
+  - llm
+- id: v1-pdf
+  name: GET /v1/pdf
+  tags:
+  - pdf
+  - text
+  - extract
+  - documents
+- id: v1-meta
+  name: GET /v1/meta
+  tags:
+  - metadata
+  - opengraph
+  - seo
+  - web
+- id: v1-links
+  name: GET /v1/links
+  tags:
+  - links
+  - crawl
+  - web
+  - scrape
+- id: v1-dns
+  name: GET /v1/dns
+  tags:
+  - dns
+  - domain
+  - email
+  - network
+- id: v1-rdap
+  name: GET /v1/rdap
+  tags:
+  - whois
+  - rdap
+  - domain
+  - security
+- id: v1-tls
+  name: GET /v1/tls
+  tags:
+  - tls
+  - ssl
+  - certificate
+  - security
+- id: v1-render-pdf
+  name: POST /v1/render/pdf
+  tags:
+  - pdf
+  - markdown
+  - report
+  - document
+  - render
+- id: v1-publish
+  name: POST /v1/publish
+  tags:
+  - publish
+  - hosting
+  - share
+  - page
+  - markdown
+- id: v1-chart
+  name: POST /v1/chart
+  tags:
+  - chart
+  - graph
+  - plot
+  - visualization
+  - image
+- id: v1-diagram
+  name: POST /v1/diagram
+  tags:
+  - diagram
+  - graphviz
+  - flowchart
+  - graph
+  - render
+- id: v1-qr
+  name: POST /v1/qr
+  tags:
+  - qr
+  - qrcode
+  - image
+  - generate
+- id: v1-papers
+  name: GET /v1/papers
+  tags:
+  - papers
+  - academic
+  - research
+  - citations
+  - scholar
+- id: v1-arxiv
+  name: GET /v1/arxiv
+  tags:
+  - arxiv
+  - papers
+  - research
+  - preprints
+  - science
+- id: v1-fx
+  name: GET /v1/fx
+  tags:
+  - fx
+  - currency
+  - exchange rate
+  - finance
+  - conversion
+- id: v1-wiki
+  name: GET /v1/wiki
+  tags:
+  - wikipedia
+  - knowledge
+  - summary
+  - facts
+  - encyclopedia
+- id: v1-time
+  name: GET /v1/time
+  tags:
+  - time
+  - timezone
+  - date
+  - convert
+  - clock
+- id: v1-random
+  name: GET /v1/random
+  tags:
+  - random
+  - uuid
+  - dice
+  - shuffle
+  - entropy
+- id: v1-scrape
+  name: POST /v1/scrape
+  tags:
+  - scrape
+  - crawl
+  - javascript
+  - firecrawl
+  - browser
+- id: v1-screenshot
+  name: GET /v1/screenshot
+  tags:
+  - screenshot
+  - browser
+  - image
+  - render
+  - web
+- id: v1-domain-report
+  name: GET /v1/domain/report
+  tags:
+  - domain
+  - security
+  - audit
+  - dns
+  - whois
+health_check:
+  url: https://tools.anokha.space/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://tools.anokha.space
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Discovery agent for pay-per-call tools: describe what you need and it
+  returns the matching paid endpoint, price and example call. Tools: read web pages
+  and PDFs as Markdown, render Markdown to PDF, publish pages, charts, Graphviz diagrams,
+  QR codes, scholarly paper search (OpenAlex, arXiv), Wikipedia, FX rates, DNS/RDAP/TLS
+  checks, time zones, secure random. Paid per request with x402 (USDC on Base). No
+  API key.'
+version: 1.0.0

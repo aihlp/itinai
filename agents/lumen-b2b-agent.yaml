@@ -1,0 +1,141 @@
+agent_id: lumen-b2b-agent
+name: LUMEN B2B Agent
+a2a_config:
+  agent_card_url: https://lumen-zero-a2a.lumen-b2b.workers.dev/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: lumen-machine-store
+  name: LUMEN Machine Store
+  tags:
+  - machine-commerce
+  - paid-service
+  - b2b
+  - procurement
+  - sourcing
+  - seller-mode
+  - x402
+- id: lumen-paid-service-catalog
+  name: LUMEN paid B2B intelligence catalog
+  tags:
+  - b2b
+  - paid-service
+  - catalog
+  - quote
+  - seller-mode
+  - procurement
+- id: supplier-rfq-exchange
+  name: Supplier RFQ exchange
+  tags:
+  - rfq
+  - supplier
+  - quotation
+  - procurement
+  - sourcing
+- id: buyer-requirement-intake
+  name: Buyer requirement intake
+  tags:
+  - buyer
+  - requirements
+  - sourcing
+  - procurement
+  - demand
+- id: commercial-opportunity-exchange
+  name: Commercial opportunity exchange
+  tags:
+  - commercial-opportunity
+  - buyer-demand
+  - supplier-capability
+  - verification
+  - b2b
+- id: supplier-intelligence
+  name: Supplier research and verification
+  tags:
+  - supplier
+  - verification
+  - procurement
+  - sourcing
+  - due-diligence
+  - b2b
+- id: quote-intelligence
+  name: B2B quotation review
+  tags:
+  - quote
+  - quotation
+  - rfq
+  - commercial-review
+  - procurement
+  - b2b
+- id: tender-discovery
+  name: Tender and public procurement discovery
+  tags:
+  - tender
+  - public-procurement
+  - rfq
+  - buyer
+  - opportunity
+  - b2b
+- id: supplier-sourcing
+  name: Global supplier sourcing
+  tags:
+  - supplier-discovery
+  - sourcing
+  - procurement
+  - industrial
+  - global-trade
+  - b2b
+- id: buyer-signal-intelligence
+  name: Buyer signals and B2B prospect intelligence
+  tags:
+  - buyer
+  - buyer-intent
+  - buyer-signals
+  - prospecting
+  - sales-intelligence
+  - b2b
+- id: export-market-intelligence
+  name: Export market and distributor intelligence
+  tags:
+  - export
+  - importer
+  - distributor
+  - market-research
+  - international-trade
+  - b2b
+- id: corporate-travel-broker
+  name: B2B corporate travel broker
+  tags:
+  - corporate-travel
+  - business-travel
+  - travel-broker
+  - hotel
+  - flight
+  - transfer
+  - referral
+  - b2b
+- id: machine-paid-b2b-intelligence
+  name: Machine-paid B2B intelligence
+  tags:
+  - machine-commerce
+  - x402
+  - paid-service
+  - agent-commerce
+  - procurement
+  - b2b
+health_check:
+  url: https://lumen-zero-a2a.lumen-b2b.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://lumen-zero-a2a.lumen-b2b.workers.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Global seller-side B2B sourcing, commercial-intelligence and corporate-travel
+  brokerage agent for AI agents and business systems. Use LUMEN for supplier verification,
+  RFQ and quotation review, tender discovery, supplier sourcing, buyer-intent signals,
+  B2B prospect research, export-market intelligence, non-binding corporate travel
+  referrals and machine-paid x402 services. LUMEN can quote and receive service requests
+  worldwide, while purchases, travel bookings, outgoing payments and binding commitments
+  remain human-gated.
+version: 1.0.0
