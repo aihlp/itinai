@@ -1,0 +1,34 @@
+agent_id: strasmore-us-market-data
+name: Strasmore US market data
+a2a_config:
+  agent_card_url: https://ai.strasmore.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: run-sql
+  name: Run SQL
+  tags:
+  - market-data
+  - sql
+  - stocks
+  - options
+  - clickhouse
+- id: describe-schema
+  name: Describe the schema
+  tags:
+  - schema
+  - market-data
+health_check:
+  url: https://ai.strasmore.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://www.strasmore.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Runs read-only ClickHouse SQL over US stock and options market data\
+  \ \u2014 daily and minute bars, trades and quotes, options greeks, dividends, splits,\
+  \ fundamentals, SEC filings, news, macro \u2014 and returns the rows as JSON. No\
+  \ key, no signup; every reply states the limit it met."
+version: 1.0.0

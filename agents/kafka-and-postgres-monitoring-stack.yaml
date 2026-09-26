@@ -1,0 +1,35 @@
+agent_id: kafka-and-postgres-monitoring-stack
+name: Kafka and Postgres Monitoring Stack
+a2a_config:
+  agent_card_url: https://postgres-prometheus-kafka-stack-generator.getvda.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: compose
+  name: Composed integration
+  tags:
+  - confluentinc/cp-kafka
+  - confluentinc/cp-zookeeper
+  - postgres
+  - prom/prometheus
+- id: selftest
+  name: Self-test (free verification)
+  tags:
+  - verification
+  - free
+  - trust
+  - attestation
+  - witness
+health_check:
+  url: https://postgres-prometheus-kafka-stack-generator.getvda.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://getvda.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Kafka and Postgres Monitoring Stack: composes confluentinc/cp-kafka\
+  \ + confluentinc/cp-zookeeper + postgres + prom/prometheus \u2014 messaging, database,\
+  \ monitoring via A2A + MCP."
+version: 0.1.1

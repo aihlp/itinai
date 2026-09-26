@@ -1,0 +1,35 @@
+agent_id: aiwebsignals-readiness-agent
+name: AIWebSignals Readiness Agent
+a2a_config:
+  agent_card_url: https://aiwebsignals.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: scan-ai-web-readiness
+  name: Scan AI Web Readiness
+  tags:
+  - ai-web-readiness
+  - crawler-access
+  - machine-discovery
+- id: get-machine-capabilities
+  name: Get AIWebSignals Capabilities
+  tags:
+  - capabilities
+  - discovery
+- id: get-machine-pricing
+  name: Get AIWebSignals Pricing
+  tags:
+  - pricing
+  - commercial-discovery
+health_check:
+  url: https://aiwebsignals.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://aiwebsignals.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Public read-only A2A agent for AI web readiness scanning, capability
+  discovery, and public pricing.
+version: 2.1.7

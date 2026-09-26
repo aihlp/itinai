@@ -1,0 +1,534 @@
+agent_id: scry-wallet-intelligence
+name: Scry Wallet Intelligence
+a2a_config:
+  agent_card_url: https://scry.solanahub.de/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: solana-hot-wallets-daily
+  name: Low-cost daily notable-wallet cohort with cluster tags and coverage. Cohort
+    shortlist, not one-wallet transfer tape.
+  tags:
+  - solana
+  - daily-hot-wallets
+  - cohort
+  - wallet-intelligence
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - agent-product
+- id: solana-hot-wallets-daily-alias-1geisxw
+  name: Slash-path alias for Daily Solana HOT wallets.
+  tags:
+  - solana
+  - daily-hot-wallets
+  - cohort
+  - wallet-intelligence
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - agent-product
+  - marketplace-alias
+  - slash-path
+- id: solana-persistent-wallets-weekly
+  name: Low-cost weekly persistence cohort; separates daily noise from recurring patterns.
+  tags:
+  - solana
+  - weekly-persistent-wallets
+  - cohort-7d
+  - wallet-intelligence
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - agent-product
+- id: solana-persistent-wallets-weekly-alias-1mlutj6
+  name: Slash-path alias for weekly persistent Solana wallets.
+  tags:
+  - solana
+  - weekly-persistent-wallets
+  - cohort-7d
+  - wallet-intelligence
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - agent-product
+  - marketplace-alias
+  - slash-path
+- id: solana-pumpfun-risk-protection
+  name: Low-cost Pump.fun rugger and serial-deployer wallet-cohort screen. No verdict.
+  tags:
+  - solana
+  - pumpfun-risk-protection-api
+  - pumpfun-risk-protection
+  - pumpfun-risk-wallets
+  - pumpfun-rugger-detection
+  - pumpfun-rugger-wallet-detection
+  - serial-deployer-wallets
+  - pumpfun-serial-deployer-wallets
+  - consumer-protection
+  - rug-pattern-wallets
+  - rugger-pattern-wallets
+  - wallet-intelligence
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - agent-product
+- id: solana-pumpfun-risk-protection-alias-ogsrlp
+  name: Slash-path alias for Pump.fun risk-protection candidates.
+  tags:
+  - solana
+  - pumpfun-risk-protection-api
+  - pumpfun-risk-protection
+  - pumpfun-risk-wallets
+  - pumpfun-rugger-detection
+  - pumpfun-rugger-wallet-detection
+  - serial-deployer-wallets
+  - pumpfun-serial-deployer-wallets
+  - consumer-protection
+  - rug-pattern-wallets
+  - rugger-pattern-wallets
+  - wallet-intelligence
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - agent-product
+  - marketplace-alias
+  - slash-path
+- id: pumpfun-rugger-wallet-detection-alias-1tv8ae3
+  name: Return Pump.fun rugger wallet detection candidates with serial-deployer, service,
+    identity, and onchain sample context.
+  tags:
+  - solana
+  - pumpfun-risk-protection-api
+  - pumpfun-risk-protection
+  - pumpfun-risk-wallets
+  - pumpfun-rugger-detection
+  - pumpfun-rugger-wallet-detection
+  - serial-deployer-wallets
+  - pumpfun-serial-deployer-wallets
+  - consumer-protection
+  - rug-pattern-wallets
+  - rugger-pattern-wallets
+  - wallet-intelligence
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - agent-product
+  - marketplace-alias
+  - pumpfun-rugger-wallet-detection-api
+  - rugger-wallet-detection
+  - memecoin-rugger-wallets
+  - consumer-protection-alias
+- id: pumpfun-serial-deployer-wallets-alias-wume2z
+  name: Return Pump.fun serial-deployer wallet evidence with rug-pattern, service,
+    identity, and onchain sample context.
+  tags:
+  - solana
+  - pumpfun-risk-protection-api
+  - pumpfun-risk-protection
+  - pumpfun-risk-wallets
+  - pumpfun-rugger-detection
+  - pumpfun-rugger-wallet-detection
+  - serial-deployer-wallets
+  - pumpfun-serial-deployer-wallets
+  - consumer-protection
+  - rug-pattern-wallets
+  - rugger-pattern-wallets
+  - wallet-intelligence
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - agent-product
+  - marketplace-alias
+  - pumpfun-serial-deployer-wallet-api
+  - serial-deployer-wallet-api
+  - memecoin-serial-deployer-wallets
+  - consumer-protection-alias
+- id: solana-agent-intel-brief
+  name: "Solana agent intel brief \u2014 spend-router for HOT wallets, ranked-cohort\
+    \ cohorts, and evidence-pack routing"
+  tags:
+  - solana
+  - agent-intel-brief
+  - agent-orchestrator-solana-wallet-intelligence
+  - orchestrator-wallet-intelligence
+  - solana-agent-wallet-intelligence
+  - solana-spend-router
+  - orchestrator-agent
+  - agent-spend-routing
+  - product-ladder-routing
+  - onchain-call-plan
+  - wallet-triage
+  - solana-agent-brief
+  - agent-operations-brief
+  - cohort-brief
+  - daily-weekly-wallet-brief
+  - refresh-queue
+  - wallet-refresh-plan
+  - scry-agent-intel
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - wallet-intelligence
+  - onchain-plan
+  - agent-product
+- id: solana-agent-intel-brief-alias-9vjr9f
+  name: Slash-path alias for Scry's Solana agent-intel brief.
+  tags:
+  - solana
+  - agent-intel-brief
+  - agent-orchestrator-solana-wallet-intelligence
+  - orchestrator-wallet-intelligence
+  - solana-agent-wallet-intelligence
+  - solana-spend-router
+  - orchestrator-agent
+  - agent-spend-routing
+  - product-ladder-routing
+  - onchain-call-plan
+  - wallet-triage
+  - solana-agent-brief
+  - agent-operations-brief
+  - cohort-brief
+  - daily-weekly-wallet-brief
+  - refresh-queue
+  - wallet-refresh-plan
+  - scry-agent-intel
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - wallet-intelligence
+  - onchain-plan
+  - agent-product
+  - marketplace-alias
+  - slash-path
+- id: wallet-address-quick-flag
+  name: 'Sub-cent ($0.001) Solana wallet flag check and x402 micropayment test target:
+    quarantine, bundler hint, identity, freshn'
+  tags:
+  - solana
+  - wallet-quick-flag
+  - sub-cent-prefilter
+  - wallet-prefilter
+  - bulk-wallet-screen
+  - identity-quarantine
+  - transfer-freshness
+  - private-routing
+  - low-cost-agent-sku
+  - x402-data-broker
+  - solana-x402-data-marketplace
+- id: wallet-quick-flag-alias-12qt5vp
+  name: Return Solana wallet quick flags via query parameter.
+  tags:
+  - solana
+  - wallet-quick-flag
+  - sub-cent-prefilter
+  - wallet-prefilter
+  - bulk-wallet-screen
+  - identity-quarantine
+  - transfer-freshness
+  - private-routing
+  - low-cost-agent-sku
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - marketplace-alias
+  - query-param
+- id: wallet-address-pnl
+  name: Canonical per-tx SOL PnL from validator pre/postBalances (never estimated;
+    honest null when not computable).
+  tags:
+  - solana
+  - wallet-pnl
+  - canonical-pnl
+  - pre-post-balances
+  - no-estimated-pnl
+  - validator-native-balance-delta
+  - profit-and-loss
+  - wallet-profit
+  - low-cost-agent-sku
+  - x402-data-broker
+  - solana-x402-data-marketplace
+- id: wallet-pnl-alias-2zjnmb
+  name: Return canonical reconciled SOL PnL for one wallet via query parameter.
+  tags:
+  - solana
+  - wallet-pnl
+  - canonical-pnl
+  - pre-post-balances
+  - no-estimated-pnl
+  - validator-native-balance-delta
+  - profit-and-loss
+  - wallet-profit
+  - low-cost-agent-sku
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - marketplace-alias
+  - query-param
+- id: wallet-address-bundler-check
+  name: "Solana wallet bundler / private-routing check \u2014 $0.01 prefilter before\
+    \ forensics"
+  tags:
+  - solana
+  - wallet-intelligence
+  - bundler-detection
+  - jito
+  - nozomi
+  - bloxroute
+  - private-routing-wallet
+  - memecoin
+  - x402-data-broker
+  - solana-x402-data-marketplace
+- id: wallet-bundler-check-alias-wmxy8c
+  name: Single-wallet bundler/private-routing check via query parameter.
+  tags:
+  - solana
+  - wallet-intelligence
+  - bundler-detection
+  - jito
+  - nozomi
+  - bloxroute
+  - private-routing-wallet
+  - memecoin
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - marketplace-alias
+  - query-param
+- id: wallet-bundler-check-alias-1camsjw
+  name: Single-wallet bundler/private-routing check via query parameter.
+  tags:
+  - solana
+  - wallet-intelligence
+  - bundler-detection
+  - jito
+  - nozomi
+  - bloxroute
+  - private-routing-wallet
+  - memecoin
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - marketplace-alias
+  - query-param
+- id: wallet-address-forensics
+  name: 'What is this Solana wallet''s forensic profile? Evidence dossier: identity,
+    pattern context, coverage, freshness.'
+  tags:
+  - solana
+  - wallet-forensics
+  - wallet-evidence-dossier
+  - wallet-evidence-dossier-api
+  - solana-wallet-evidence-dossier
+  - solana-wallet-evidence-dossier-api
+  - full-wallet-dossier
+  - wallet-intelligence
+  - kol-identity
+  - x-handle
+  - twitter-handle
+  - wallet-to-twitter
+  - social-identity
+  - onchain-identity-context
+  - onchain-deep-tx-evidence
+  - gettransactionsforaddress
+  - kol-lookup
+  - funding-lineage
+  - sol-flow
+  - coordination-peers
+  - rug-evidence
+  - sniper-risk-context
+  - manipulation-window-context
+  - mev-risk-context
+  - verdict-free
+  - launch-window-context
+  - memecoin
+  - wallet-research
+  - x402-data-broker
+  - solana-x402-data-marketplace
+- id: wallet-forensics-alias-l6et23
+  name: Solana wallet evidence dossier via query parameter for one wallet, with identity,
+    coverage, and freshness.
+  tags:
+  - solana
+  - wallet-forensics
+  - wallet-evidence-dossier
+  - wallet-evidence-dossier-api
+  - solana-wallet-evidence-dossier
+  - solana-wallet-evidence-dossier-api
+  - full-wallet-dossier
+  - wallet-intelligence
+  - kol-identity
+  - x-handle
+  - twitter-handle
+  - wallet-to-twitter
+  - social-identity
+  - onchain-identity-context
+  - onchain-deep-tx-evidence
+  - gettransactionsforaddress
+  - kol-lookup
+  - funding-lineage
+  - sol-flow
+  - coordination-peers
+  - rug-evidence
+  - sniper-risk-context
+  - manipulation-window-context
+  - mev-risk-context
+  - verdict-free
+  - launch-window-context
+  - memecoin
+  - wallet-research
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - marketplace-alias
+  - query-param
+- id: wallet-forensics-alias-1f14s7t
+  name: Solana wallet evidence dossier via query parameter for one wallet, with identity,
+    coverage, and freshness.
+  tags:
+  - solana
+  - wallet-forensics
+  - wallet-evidence-dossier
+  - wallet-evidence-dossier-api
+  - solana-wallet-evidence-dossier
+  - solana-wallet-evidence-dossier-api
+  - full-wallet-dossier
+  - wallet-intelligence
+  - kol-identity
+  - x-handle
+  - twitter-handle
+  - wallet-to-twitter
+  - social-identity
+  - onchain-identity-context
+  - onchain-deep-tx-evidence
+  - gettransactionsforaddress
+  - kol-lookup
+  - funding-lineage
+  - sol-flow
+  - coordination-peers
+  - rug-evidence
+  - sniper-risk-context
+  - manipulation-window-context
+  - mev-risk-context
+  - verdict-free
+  - launch-window-context
+  - memecoin
+  - wallet-research
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - marketplace-alias
+  - query-param
+- id: wallet-address-lineage
+  name: "Solana wallet funding lineage \u2014 who funded this wallet (evidence pack\
+    \ for forensics)"
+  tags:
+  - solana
+  - solana-funding-lineage-api
+  - funding-lineage
+  - funding-lineage-api
+  - upstream-funder
+  - funder-lookup
+  - wallet-provenance
+  - wallet-forensics
+  - wallet-intelligence
+  - source-of-funds
+  - counterparty-review
+  - x402-data-broker
+  - solana-x402-data-marketplace
+- id: wallet-lineage-alias-13kgca4
+  name: Return Solana wallet lineage evidence via query parameter.
+  tags:
+  - solana
+  - solana-funding-lineage-api
+  - funding-lineage
+  - funding-lineage-api
+  - upstream-funder
+  - funder-lookup
+  - wallet-provenance
+  - wallet-forensics
+  - wallet-intelligence
+  - source-of-funds
+  - counterparty-review
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - marketplace-alias
+  - query-param
+  - solana-funding-lineage-query
+  - wallet-lineage-api
+  - solana-wallet-lineage
+  - funding-lineage-query
+- id: wallet-connection
+  name: 'Are these two Solana wallets connected? Pairwise evidence: direct edges,
+    funding lineage, shared counterparties, communi'
+  tags:
+  - solana
+  - wallet-connection
+  - wallet-pair-evidence
+  - wallet-link-check
+  - are-wallets-connected
+  - wallet-relationship-api
+  - shared-funder
+  - funding-lineage
+  - shared-counterparties
+  - common-counterparty
+  - graph-community
+  - cluster-co-membership
+  - token-overlap
+  - sybil-evidence-context
+  - airdrop-farming-context
+  - wallet-graph
+  - verdict-free
+  - coverage-aware
+  - x402-data-broker
+  - solana-x402-data-marketplace
+- id: wallet-connection-alias-1qioyev
+  name: Pairwise wallet connection evidence via query parameters (a, b).
+  tags:
+  - solana
+  - wallet-connection
+  - wallet-pair-evidence
+  - wallet-link-check
+  - are-wallets-connected
+  - wallet-relationship-api
+  - shared-funder
+  - funding-lineage
+  - shared-counterparties
+  - common-counterparty
+  - graph-community
+  - cluster-co-membership
+  - token-overlap
+  - sybil-evidence-context
+  - airdrop-farming-context
+  - wallet-graph
+  - verdict-free
+  - coverage-aware
+  - x402-data-broker
+  - solana-x402-data-marketplace
+  - marketplace-alias
+  - query-param
+  - wallet-pair-query
+- id: wallet-address-transfer-tape
+  name: 'Fresh Solana wallet transfers for one wallet: transfer rows, counterparties,
+    mints, freshness.'
+  tags:
+  - solana
+  - wallet-transfer-tape
+  - fresh-solana-wallet-transfers
+  - fresh-wallet-transfers
+  - single-wallet-transfers
+  - wallet-transfers
+  - onchain-wallet-transfers
+  - transfer-reconciliation
+  - wallet-activity
+  - fresh-wallet-activity
+  - today-wallet-activity
+  - counterparty-graph
+  - edge-gap
+  - pnl-reconciliation-input
+  - x402-data-broker
+  - solana-x402-data-marketplace
+health_check:
+  url: https://scry.solanahub.de/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://scry.solanahub.de
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Scry is an x402 Solana wallet intelligence API \u2014 pay-per-request\
+  \ Solana wallet forensics and funding lineage evidence for agents that need wallet,\
+  \ mint, transfer, and cohort context before applying their own monitoring or classification\
+  \ policies. Low-cost entry calls start at $0.001 (wallet quick-flag) through $0.01-$0.10\
+  \ for bundler checks, mint preflight, Pump.fun cohort screening, and funding lineage\
+  \ before deeper dossiers. Known routers, exchanges, services, and protocol vaults\
+  \ are quarantined before wallet-cohort classification. Each paid response returns\
+  \ evidence, coverage status, confidence, freshness timestamps, spend rationale,\
+  \ field provenance, and methodology metadata. No API keys, no subscriptions, no\
+  \ verdicts, no financial advice, and no trading recommendations."
+version: 0.1.0
