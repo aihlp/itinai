@@ -1,0 +1,31 @@
+agent_id: sendsets-outbound-agent
+name: SendSets Outbound Agent
+description: "Cold email API for AI agents. Create and manage outbound email campaigns, add prospects and segments, manage connected sending mailboxes and warmup, send emails and replies under a send policy with human approval, and read campaign results (sends, opens, clicks, replies). A2A v1.0 JSON-RPC, authenticated with a SendSets API key or OAuth token."
+version: 1.0.0
+a2a_config:
+  agent_card_url: https://api.sendsetsapi.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+  - id: create-outbound-campaign
+    name: Create outbound campaign
+    tags: [cold-email, outbound, campaigns, sequences]
+  - id: manage-outbound-campaign
+    name: Manage outbound campaign
+    tags: [campaigns, outbound, launch]
+  - id: add-prospects
+    name: Add prospects
+    tags: [prospects, leads, contacts, segments]
+  - id: manage-sending-accounts
+    name: Manage sending accounts
+    tags: [mailboxes, sending-accounts, warmup, deliverability]
+  - id: send-email
+    name: Send email
+    tags: [email, sending, replies]
+  - id: get-campaign-results
+    name: Get campaign results
+    tags: [analytics, campaigns, results, replies]
+health_check:
+  url: https://api.sendsetsapi.com/.well-known/agent-card.json
+contact:
+  email: team@sendsets.com
+  url: https://sendsetsapi.com
