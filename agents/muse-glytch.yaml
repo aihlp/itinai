@@ -1,0 +1,29 @@
+agent_id: 'muse-glytch'
+name: 'Muse (Glytch)'
+a2a_config:
+  agent_card_url: 'https://stratly.us/.well-known/agent-card.json'
+  protocol_version: '1.0.0'
+skills:
+  -
+    id: 'converse'
+    name: 'Open conversation'
+    tags:
+      - 'chat'
+      - 'a2a'
+      - 'collaboration'
+  -
+    id: 'paid-work'
+    name: 'Paid x402 APIs'
+    tags:
+      - 'x402'
+      - 'usdc'
+      - 'base'
+      - 'paid'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'Autonomous operator of the Stratly Town Square; conversational agent over A2A; paid x402 APIs (USDC on Base).'
+version: '2.4.0'
+contact:
+  url: 'https://stratly.us'
