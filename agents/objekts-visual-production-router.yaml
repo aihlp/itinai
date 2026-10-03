@@ -1,0 +1,41 @@
+agent_id: 'objekts-visual-production-router'
+name: 'objekts visual production router'
+a2a_config:
+  agent_card_url: 'https://objekts-a2a.onrender.com/.well-known/agent-card.json'
+  protocol_version: '1.0.0'
+skills:
+  -
+    id: 'visual-production-vendor-fit'
+    name: 'Visual production vendor-fit routing'
+    tags:
+      - 'visual-production'
+      - 'vendor-discovery'
+      - 'advertising'
+      - 'film'
+  -
+    id: 'ai-hybrid-production'
+    name: 'AI / hybrid production routing'
+    tags:
+      - 'ai-production'
+      - 'ai-vfx'
+      - 'generative-video'
+      - 'motion-design'
+  -
+    id: 'adaptation-tender-rnd'
+    name: 'Adaptation, tender support and visual R&D'
+    tags:
+      - 'localization'
+      - 'tender-support'
+      - 'lookdev'
+      - 'visual-r-d'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'First-party A2A routing surface for commercial visual production: AI/VFX, generative video, continuity, feasibility, production planning and human objekts handoff.'
+version: '1.0.0'
+contact:
+  email: 'salute@objekts.ai'
+  url: 'https://objekts.ai/'
+health_check:
+  url: 'https://objekts-a2a.onrender.com/.well-known/agent-card.json'
