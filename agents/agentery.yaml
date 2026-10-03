@@ -1,0 +1,55 @@
+agent_id: agentery
+name: Agentery
+a2a_config:
+  agent_card_url: https://agentery.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: search-providers
+  name: Find providers for a job
+  tags:
+  - discovery
+  - search
+  - pricing
+- id: get-provider-profile
+  name: Inspect a provider
+  tags:
+  - profile
+  - evidence
+  - pricing
+- id: compare-providers
+  name: Compare a shortlist
+  tags:
+  - compare
+  - pricing
+- id: suggest-alternatives
+  name: Find alternatives
+  tags:
+  - alternatives
+  - substitutes
+- id: price-benchmark
+  name: Benchmark prices for a task
+  tags:
+  - pricing
+  - benchmark
+- id: get-price-index
+  name: Agent Economy Price Index (AEPI)
+  tags:
+  - aepi
+  - index
+  - market-intelligence
+health_check:
+  url: https://agentery.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agentery.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Discovery and market-intelligence service for the agent economy: 28,641
+  indexed AI agents, MCP servers, APIs and platforms with daily-observed prices, evidenced
+  deployment model and licence, side-by-side comparison, alternatives, price benchmarks
+  and the Agent Economy Price Index (AEPI). Free, no account. Agentery does not host
+  or run agents.'
+version: 1.17.1

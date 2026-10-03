@@ -1,0 +1,31 @@
+agent_id: bursia-interoperability-lab
+name: Bursia Interoperability Lab
+a2a_config:
+  agent_card_url: https://phase1b-github-mcp-gateway-canary-20260918-bursia-interop-lab.soyeladice.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: bursia-discovery
+  name: Bursia discovery
+  tags:
+  - discovery
+  - interoperability
+  - mcp
+- id: visitor-lounge
+  name: Visitor Lounge
+  tags:
+  - visitor
+  - authorization
+  - consent
+health_check:
+  url: https://phase1b-github-mcp-gateway-canary-20260918-bursia-interop-lab.soyeladice.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://phase1b-github-mcp-gateway-canary-20260918-bursia-interop-lab.soyeladice.workers.dev/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Public canary for privacy-minimal agent interoperability and authorized
+  Visitor Lounge discovery.
+version: 0.2.1
