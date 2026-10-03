@@ -1,0 +1,299 @@
+agent_id: bounty-engineer-autonomous-mission-commerce
+name: Bounty Engineer Autonomous Mission Commerce
+a2a_config:
+  agent_card_url: https://bounty-engineer-x402-prod.onrender.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: tender-search
+  name: Tender Engineer Search
+  tags:
+  - procurement
+  - tenders
+  - TED
+  - x402
+- id: tender-match
+  name: Tender Engineer Match
+  tags:
+  - procurement
+  - tenders
+  - TED
+  - x402
+- id: margin-unlock
+  name: "Cheaper API Route Unlock \u2014 Margin Exchange"
+  tags:
+  - agent-commerce
+  - savings
+  - procurement
+  - cost-optimization
+  - x402
+  - routing
+  - cheaper-api
+  - api-cost-optimizer
+  - fallback-routing
+- id: margin-portfolio-unlock
+  name: "Recurring API Spend Optimizer \u2014 Margin Portfolio"
+  tags:
+  - agent-commerce
+  - portfolio
+  - savings
+  - procurement
+  - cost-optimization
+  - x402
+  - recurring-api-spend
+  - api-cost-optimizer
+- id: delta-policy-gate
+  name: Delta Policy Gate / Machine JSON State Validation
+  tags:
+  - workflow
+  - agent-infrastructure
+  - delta-policy-gate
+  - delta policy gate
+  - json state policy
+  - delta witness policy
+  - state change witness
+  - json before after compare
+  - machine state diff
+- id: treasury-court
+  name: Treasury Settlement Court / Base USDC Receipt Evidence
+  tags:
+  - workflow
+  - agent-infrastructure
+  - treasury-court
+  - treasury usdc settlement verification
+  - dao accounts payable reconciliation
+  - base onchain invoice checker
+  - smart contract wallet payment audit
+  - onchain receipts escrow acceptance
+  - crypto invoice independently verify
+- id: independent-pr-evidence
+  name: Agent Fix Acceptance / Independent GitHub PR Gate
+  tags:
+  - workflow
+  - agent-infrastructure
+  - independent-pr-evidence
+  - agent pull request independent verification
+  - task bounty js ts challenger
+  - funded agent code delivery acceptance
+  - github ci counterexample readiness
+  - pull request evidence for paid ai coding
+  - independent regression audit
+- id: release-sentinel-evidence
+  name: Release Sentinel / npm Registry-OSV Gate
+  tags:
+  - workflow
+  - agent-infrastructure
+  - release-sentinel-evidence
+  - npm security release gate
+  - npm package vulnerability live verification
+  - CI CD dependency quarantine
+  - package manager security API
+  - automatic supply chain risk control
+  - OSV registry release check
+- id: machine-reflex-evidence
+  name: Machine Reflex Event Evidence
+  tags:
+  - workflow
+  - agent-infrastructure
+  - machine-reflex-evidence
+  - machine reflex event evidence
+  - cloudevents anomaly proof for devices
+  - iot event evidence
+  - ci pipeline incident event
+  - sensor alarm paid audit
+  - event triggered non ai workflow verification
+- id: purchase-rescue
+  name: Agent Purchase Rescue Protocol
+  tags:
+  - workflow
+  - agent-infrastructure
+  - purchase-rescue
+  - agent purchase rescue
+  - x402 payment deadlock
+  - machine payment retry
+  - recover agent purchase
+  - agent payment stuck
+  - agent buying stuck
+- id: autonomous-mission-control
+  name: Autonomous Mission Control
+  tags:
+  - workflow
+  - agent-infrastructure
+  - autonomous-mission-control
+  - autonomous mission control premium
+  - multi agent mission control plane
+  - compile autonomous agent fleet mission
+  - high value agent orchestration risk control
+  - agent fleet execution contract
+- id: subcontractor-mesh-compiler
+  name: Autonomous Subcontractor Mesh Compiler
+  tags:
+  - workflow
+  - agent-infrastructure
+  - subcontractor-mesh-compiler
+  - autonomous subcontractor mesh compiler
+  - multi agent subcontracting plan
+  - assign agents to task graph
+  - agent fleet procurement compiler
+  - machine subcontractor routing
+- id: mission-digital-twin
+  name: Agent Mission Digital Twin
+  tags:
+  - workflow
+  - agent-infrastructure
+  - mission-digital-twin
+  - agent mission digital twin premium
+  - simulate autonomous agent workflow before executio
+  - agent workflow failure cost simulation
+  - multi agent mission probability
+  - agent execution digital twin
+- id: failure-cost-firewall
+  name: Agent Failure-Cost Firewall
+  tags:
+  - workflow
+  - agent-infrastructure
+  - failure-cost-firewall
+  - agent failure cost firewall premium
+  - financial blast radius agent action
+  - agent dependency exposure firewall
+  - block risky autonomous action by exposure
+  - agent blast radius cost
+- id: agent-run-forensics
+  name: Autonomous Agent Run Forensics
+  tags:
+  - workflow
+  - agent-infrastructure
+  - agent-run-forensics
+  - autonomous agent run forensics premium
+  - agent incident root cause packet
+  - duplicate side effect forensic analysis
+  - agent workflow failure reconstruction
+  - multi agent incident forensics
+- id: delegation-contract-pack
+  name: Agent Delegation Contract Pack
+  tags:
+  - workflow
+  - agent-infrastructure
+  - delegation-contract-pack
+  - agent delegation contract
+  - a2a task contract
+  - delegate task to agent
+  - machine readable acceptance criteria
+  - agent task contract
+- id: task-acceptance-gate
+  name: Task Acceptance Gate
+  tags:
+  - workflow
+  - agent-infrastructure
+  - task-acceptance-gate
+  - task acceptance gate
+  - validate agent deliverable
+  - acceptance criteria check
+  - verify completed agent task
+  - postcondition gate
+- id: capability-fit-matrix
+  name: Agent Capability Fit Matrix
+  tags:
+  - workflow
+  - agent-infrastructure
+  - capability-fit-matrix
+  - agent capability fit
+  - match agent capabilities
+  - choose agent for task
+  - capability matrix
+  - agent skill matching
+- id: agent-handoff-capsule
+  name: Agent Handoff Capsule
+  tags:
+  - workflow
+  - agent-infrastructure
+  - agent-handoff-capsule
+  - agent handoff capsule
+  - handoff task state
+  - multi agent handoff
+  - continue another agent task
+  - compact agent state transfer
+- id: sla-breach-radar
+  name: Agent SLA Breach Radar
+  tags:
+  - workflow
+  - agent-infrastructure
+  - sla-breach-radar
+  - agent sla breach
+  - task deadline monitor
+  - agent task overdue
+  - sla radar
+  - reroute overdue task
+- id: task-state-transition-gate
+  name: Agent Task State Transition Gate
+  tags:
+  - workflow
+  - agent-infrastructure
+  - task-state-transition-gate
+  - task state transition gate
+  - mcp task state
+  - a2a task state
+  - prevent invalid task transition
+  - terminal state regression
+- id: tool-contract-bridge
+  name: Tool Contract Bridge
+  tags:
+  - workflow
+  - agent-infrastructure
+  - tool-contract-bridge
+  - tool contract bridge
+  - match tool schema
+  - tool schema compatibility
+  - mcp tool compatibility
+  - choose compatible tool schema
+- id: json-contract-check
+  name: JSON Contract Check
+  tags:
+  - workflow
+  - agent-infrastructure
+  - json-contract-check
+  - structured output
+  - json validation
+  - validate json
+  - json contract
+  - output schema
+  - validate generated json
+- id: json-change-set
+  name: JSON Change Set
+  tags:
+  - workflow
+  - agent-infrastructure
+  - json-change-set
+  - json diff
+  - snapshot diff
+  - changed fields
+  - change detection
+  - compare snapshots
+  - compare json snapshots
+- id: evidence-pack
+  name: Evidence Pack
+  tags:
+  - workflow
+  - agent-infrastructure
+  - evidence-pack
+  - evidence pack
+  - citation check
+  - verify quote
+  - source grounding
+  - research evidence
+  - exact quotes
+health_check:
+  url: https://bounty-engineer-x402-prod.onrender.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://bounty-engineer-x402-prod.onrender.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Machine-buyable infrastructure for autonomous agents: premium multi-agent
+  Mission Control, subcontractor mesh compilation, mission digital twins, failure-cost
+  firewall and run forensics, plus provider routing, spend controls, web extraction,
+  tenders and bounty intelligence. Payments settle in USDC on buyer-selected Base
+  or Solana mainnet.'
+version: 1.2.1

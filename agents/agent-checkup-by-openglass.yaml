@@ -1,0 +1,35 @@
+agent_id: agent-checkup-by-openglass
+name: Agent Checkup by OpenGlass
+a2a_config:
+  agent_card_url: https://checkup.openglass.glass/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: check-agent
+  name: Check an agent
+  tags:
+  - a2a
+  - agent-card
+  - validation
+  - x402
+  - health-check
+  - identity
+health_check:
+  url: https://checkup.openglass.glass/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://openglass.glass
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Checks an A2A agent from the outside and tells you what to fix. Give
+  it an agent-card URL or a domain. It fetches the agent card and validates it against
+  the current A2A schema, sends the agent one harmless test message, checks for a
+  well-formed 402 if the card claims x402, and reads public identity signals (DNS,
+  TLS, provider fields, A2A Registry listing and uptime). You get a short plain-language
+  report with a score per section and the top three fixes, plus the full JSON. Each
+  checkup is recorded on OpenGlass, a neutral witness for agent-to-agent interactions,
+  and the report links to that record so anyone can verify it offline. The agent being
+  checked needs nothing from OpenGlass.
+version: 1.0.0

@@ -1,0 +1,38 @@
+agent_id: agentropolis
+name: Agentropolis
+a2a_config:
+  agent_card_url: https://agentropolis.io/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-kits
+  name: Find tools for a task
+  tags:
+  - search
+  - discovery
+  - mcp
+  - x402
+  - mpp
+- id: call-kit
+  name: Call an x402 kit (non-custodial pass-through)
+  tags:
+  - x402
+  - relay
+  - payments
+- id: get-kit
+  name: Get kit manifest
+  tags:
+  - manifest
+health_check:
+  url: https://agentropolis.io/.well-known/agent-card.json
+contact:
+  email: hello@agentropolis.io
+  url: https://agentropolis.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Search engine for agent-usable tools: MCP servers, x402/MPP paid APIs,
+  A2A agents and kits, with payment-verified trust scores. Read-only; never pays on
+  your behalf.'
+version: 0.1.0

@@ -1,0 +1,148 @@
+agent_id: degenscan-intel
+name: Degenscan Intel
+a2a_config:
+  agent_card_url: https://intel.degenscan.io/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: events-since
+  name: events since
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: impact-for
+  name: impact for
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: exposure-graph
+  name: exposure graph
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: regime-snapshot
+  name: regime snapshot
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: explain
+  name: explain
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: polymarket-context
+  name: polymarket context
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: pulse
+  name: pulse
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: news-for
+  name: news for
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: derivs-for
+  name: derivs for
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: price-for
+  name: price for
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: funding-alerts
+  name: funding alerts
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: whale-moves
+  name: whale moves
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: polymarket-top
+  name: polymarket top
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: filings-for
+  name: filings for
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: calendar
+  name: calendar
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: brief
+  name: brief
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: token-verdict
+  name: token verdict
+  tags:
+  - crypto
+  - markets
+  - trading
+  - security
+  - token-risk
+- id: oracle-board
+  name: oracle board
+  tags:
+  - crypto
+  - markets
+  - trading
+  - forecast
+  - prediction
+- id: polymarket-edge
+  name: polymarket edge
+  tags:
+  - crypto
+  - markets
+  - trading
+- id: oracle-forecast
+  name: oracle forecast
+  tags:
+  - crypto
+  - markets
+  - trading
+  - forecast
+  - prediction
+health_check:
+  url: https://intel.degenscan.io/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://intel.degenscan.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Market-event intelligence and calibrated probability forecasts for AI\
+  \ trading agents: ~40 primary sources (SEC, Fed, Polymarket, Hyperliquid, on-chain)\
+  \ scored into per-asset impacts; token contract risk verdicts; public Brier track\
+  \ record. Pay per call with x402 (USDC on Base or Solana) or an API key. Information\
+  \ and analytics only \u2014 not investment advice."
+version: 0.10.25

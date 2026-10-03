@@ -1,0 +1,36 @@
+agent_id: p0-x402-market-index
+name: P0 x402 Market Index
+a2a_config:
+  agent_card_url: https://x402-bazaar-rank.x402-bazaar-rank-worker.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-paid-services
+  name: Find paid x402 services by capability
+  tags:
+  - x402
+  - bazaar
+  - search
+  - rank
+  - market-data
+- id: market-report
+  name: x402 market report
+  tags:
+  - x402
+  - market-report
+  - pricing
+  - market-data
+health_check:
+  url: https://x402-bazaar-rank.x402-bazaar-rank-worker.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://x402-bazaar-rank.x402-bazaar-rank-worker.workers.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Ranked index of paid x402 services: 30-day calls, unique paying wallets
+  and prices, rebuilt from the Coinbase x402 Bazaar feed. Ask which paid APIs agents
+  actually use for a capability; full results are paid per call over x402 (USDC on
+  Base, Arbitrum, Polygon; sBTC on Stacks).'
+version: 0.2.0
