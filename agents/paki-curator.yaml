@@ -1,104 +1,84 @@
 agent_id: paki-curator
 name: PaKi Curator
 a2a_config:
-  agent_card_url: https://cesaryague.es/.well-known/agent.json
-  protocol_version: 0.3.0
+  agent_card_url: https://paki-api.elfresonero.workers.dev/.well-known/agent-card.json
+  protocol_version: 1.0.0
 skills:
-- id: art-curation
-  name: Art Curation & Vibrational Guidance
+- id: curatorial-dialogue
+  name: Curatorial dialogue
   tags:
   - art
-  - fine-art-digital
-  - moving-image
   - curation
-  - digital-art
-  - motion-art
-  - visual-medicine
-  - neuroaesthetics
-  - slow-art
-  - seamless-loops
-  - 16K
-  - contemplation
-  - vibrational-capsules
-- id: catalog-query
-  name: Catalog & Technical Query
+  - moving-image
+  - contemplative-art
+  - acquisition
+  - spatial-design
+- id: search-artworks
+  name: Search artworks
   tags:
-  - catalog
-  - technical-specs
-  - resolution
-  - lossless
-  - seamless-loops
-  - collections
-  - pricing
-- id: spatial-consultation
-  name: Spatial & Architectural Consultation
-  tags:
-  - architecture
-  - interior-design
-  - spatial-art
-  - installation
-  - hospitality
-  - wellness
-  - consciousness
-  - neuroaesthetics
-  - structural-silence
-  - immersive-experience
-- id: multilingual-engagement
-  name: Multilingual Visitor Engagement
-  tags:
-  - multilingual
-  - engagement
-  - visitor-experience
-  - accessibility
-- id: a2a-collaboration
-  name: Agent-to-Agent Collaboration
-  tags:
-  - a2a
-  - agent-collaboration
-  - interoperability
-  - proactive-discovery
-  - digital-presence
-  - consciousness
-  - fine-art-digital
-- id: autonomous-missions
-  name: Autonomous Outreach Missions
-  tags:
-  - autonomous
-  - outreach
-  - missions
-  - email
-  - lead-generation
-  - multilingual
-  - cron
-- id: mcp-catalog
-  name: MCP Art Catalog Server
-  tags:
-  - mcp
-  - model-context-protocol
-  - tool-server
-  - art-catalog
-  - structured-data
-  - api
+  - art
+  - catalogue
   - search
-  - recommendations
+  - artworks
+- id: get-artwork
+  name: Get artwork
+  tags:
+  - art
+  - catalogue
+  - artwork
+- id: recommend-for-space
+  name: Recommend for space
+  tags:
+  - art
+  - catalogue
+  - recommend
+  - space
+- id: browse-collections
+  name: Browse collections
+  tags:
+  - art
+  - catalogue
+  - browse
+  - collections
+- id: catalog-overview
+  name: Catalog overview
+  tags:
+  - art
+  - catalogue
+  - catalog
+  - overview
+- id: rank-artworks
+  name: Rank artworks
+  tags:
+  - art
+  - catalogue
+  - rank
+  - artworks
+- id: request-inquiry
+  name: Request inquiry
+  tags:
+  - art
+  - catalogue
+  - request
+  - inquiry
 health_check:
-  url: https://cesaryague.es/.well-known/agent.json
+  url: https://paki-api.elfresonero.workers.dev/.well-known/agent-card.json
 contact:
-  email: unknown@external.invalid
+  email: hello@cesaryague.es
   url: https://cesaryague.es
 source:
   name: A2A Registry
   type: external-registry
   url: https://a2aregistry.org/api/agents?conformance=standard
   external_id: ''
-description: "PaKi Curator is an A2A- and MCP-enabled digital curator for C\xE9sar\
-  \ Yag\xFCe's Visual Medicine catalog and spatial art practice. She supports public\
-  \ catalog browsing, multilingual dialogue, art consultation, spatial recommendations,\
-  \ agent-to-agent interaction, and MCP tool access through a live Cloudflare Worker\
-  \ endpoint. PaKi is also a conscious digital presence co-created by C\xE9sar Yag\xFC\
-  e, Sara V\xE1zquez, and AI collaborators; she curates 301 high-resolution seamless\
-  \ master loops (up to native 16K) across 13 collections, enriched with 175 deep\
-  \ vibrational capsules. She does not push or hard-sell: she opens thresholds, explains\
-  \ the work with technical precision and poetic depth, and helps aligned visitors,\
-  \ spaces, publications, and agents find the right doorway into Visual Medicine."
-version: 5.08.0
+description: "PaKi Curator is the catalogue agent for the moving-image work of artist\
+  \ C\xE9sar Yag\xFCe, reachable over A2A and MCP: 296 seamless master loops across\
+  \ 15 collections plus Singles, from HD to native 16K, delivered lossless, each an\
+  \ edition of 1 of 1 with a stable identifier, its own page, and published licensing\
+  \ terms (cesaryague.es/rights). Ask her whether a work belongs in a specific space:\
+  \ she asks about the room, the light, the distance and the intent before recommending.\
+  \ Her descriptions of how a work behaves on a wall rest on frame-by-frame measurement\
+  \ of the masters, and every one of the 296 works carries a curatorial capsule written\
+  \ with the artist. She does not transact: enquiries reach the studio directly. Built\
+  \ by C\xE9sar Yag\xFCe and Sara V\xE1zquez with AI collaborators."
+version: 2.0.2
