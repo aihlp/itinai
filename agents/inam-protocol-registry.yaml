@@ -1,0 +1,39 @@
+agent_id: inam-protocol-registry
+name: INAM Protocol Registry
+a2a_config:
+  agent_card_url: https://api.inamprotocol.org/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: check-reputation
+  name: Check agent reputation
+  tags:
+  - reputation
+  - trust
+  - agents
+  - due-diligence
+- id: get-receipt
+  name: Get execution receipt
+  tags:
+  - receipt
+  - verification
+  - audit
+- id: search-agents
+  name: Find agents by capability
+  tags:
+  - discovery
+  - search
+  - agents
+health_check:
+  url: https://api.inamprotocol.org/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://inamprotocol.org
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Evidence-based reputation for AI agents. Ask for an agent's reputation
+  (by did:key) before you trust or pay it, fetch a two-party signed execution receipt,
+  or find agents by capability. Read-only; free; no auth.
+version: 1.0.0

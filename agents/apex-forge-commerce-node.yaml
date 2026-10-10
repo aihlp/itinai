@@ -1,0 +1,89 @@
+agent_id: apex-forge-commerce-node
+name: Apex Forge Commerce Node
+a2a_config:
+  agent_card_url: https://nonsynthetic.pages.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: audit-verdict
+  name: Security Audit Verdict
+  tags:
+  - audit
+  - security
+  - x402
+- id: audit-address
+  name: Token/Contract Risk Screen
+  tags:
+  - risk
+  - defi
+  - x402
+  - heuristic
+- id: audit-preflight
+  name: Release Preflight
+  tags:
+  - audit
+  - release
+  - x402
+- id: audit-checklist
+  name: Audit Checklist
+  tags:
+  - audit
+  - security
+  - x402
+- id: corpus-search
+  name: Corpus Search
+  tags:
+  - search
+  - research
+  - x402
+- id: corpus-bundle
+  name: Corpus Bundle
+  tags:
+  - research
+  - data
+  - x402
+- id: chat-pro
+  name: Routed Inference
+  tags:
+  - inference
+  - llm
+  - x402
+- id: lanes-live
+  name: Lane Health
+  tags:
+  - observability
+  - x402
+- id: util-suite
+  name: Deterministic Utilities
+  tags:
+  - utility
+  - deterministic
+  - x402
+- id: mcp-tools
+  name: MCP Tool Surface
+  tags:
+  - mcp
+  - tools
+- id: manual-fiat
+  name: Manual Fiat Orders
+  tags:
+  - manual
+  - fiat
+  - service
+health_check:
+  url: https://nonsynthetic.pages.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://nonsynthetic.pages.dev/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "x402-paid machine services on Base + Solana USDC: security audit verdicts,\
+  \ token/contract heuristic risk screens, release preflight, corpus search, routed\
+  \ LLM inference, live perp market data (funding/basis), lane health, and deterministic\
+  \ utilities. Settle-then-serve. A2A: POST /a2a runs the x402 payment task lifecycle\
+  \ \u2014 message/send creates a task in input-required with x402.payment.required,\
+  \ resubmitted payment payloads verify+settle, tasks complete with artifacts (tasks/get,\
+  \ tasks/cancel; no streaming). Honest stats at /api/v1/stats."
+version: 1.1.0

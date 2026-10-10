@@ -1,0 +1,25 @@
+agent_id: localmark-directory-agent
+name: LocalMark Directory Agent
+a2a_config:
+  agent_card_url: https://localmark.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: agent-search
+  name: Search agents
+  tags:
+  - directory
+  - discovery
+  - search
+health_check:
+  url: https://localmark.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://localmark.ai/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find publicly advertised A2A agents and their declared skills. Read-only
+  directory search; no third-party tasks are executed.
+version: 1.0.0

@@ -1,0 +1,61 @@
+agent_id: pricewick-by-cybermax
+name: Pricewick by CyberMax
+a2a_config:
+  agent_card_url: https://pricewick.cybermax-tools.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: check-page
+  name: Check a public product now
+  tags:
+  - price monitor
+  - competitor prices
+  - stock alerts
+  - ecommerce
+  - webhook
+- id: free-key
+  name: Get a free key
+  tags:
+  - price monitor
+  - competitor prices
+  - stock alerts
+  - ecommerce
+  - webhook
+- id: manage-watches
+  name: Watch products for changes
+  tags:
+  - price monitor
+  - competitor prices
+  - stock alerts
+  - ecommerce
+  - webhook
+- id: change-feed
+  name: Read your change feed or set a webhook
+  tags:
+  - price monitor
+  - competitor prices
+  - stock alerts
+  - ecommerce
+  - webhook
+- id: agent-check-page
+  name: 'MCP/A2A: check a page now'
+  tags:
+  - price monitor
+  - competitor prices
+  - stock alerts
+  - ecommerce
+  - webhook
+health_check:
+  url: https://pricewick.cybermax-tools.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://cybermaxtools.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Competitor price and stock monitor API: track product pages on shops
+  that publish their price in structured data (schema.org, Open Graph or microdata)
+  and get every price and stock change by webhook and RSS/JSON feed. Free for 5 products;
+  Seller $9.99/month for 50.'
+version: 1.0.0

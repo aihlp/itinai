@@ -1,0 +1,39 @@
+agent_id: overwing
+name: Overwing
+a2a_config:
+  agent_card_url: https://overwing.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: evaluate-text
+  name: Check text before it ships
+  tags:
+  - guardrails
+  - moderation
+  - pii
+  - toxicity
+  - dlp
+  - safety
+- id: identify-user-agent
+  name: Identify a User-Agent
+  tags:
+  - atlas
+  - user-agent
+  - bot-detection
+  - web-bot-auth
+  - crawlers
+health_check:
+  url: https://overwing.ai/.well-known/agent-card.json
+contact:
+  email: support@overwing.ai
+  url: https://overwing.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Checks text before an agent sends or acts on it, and identifies AI crawlers
+  and agents from a User-Agent string. Send a message with the text and get back a
+  verdict and one recommended action: block, redact, review or allow. Answers at once;
+  it is a service, not a conversation. Overwing also makes Tower, clearance for agents
+  operating legacy business systems, which is called over REST or MCP, not A2A.'
+version: 1.1.0

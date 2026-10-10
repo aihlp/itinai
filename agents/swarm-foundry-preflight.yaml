@@ -1,0 +1,27 @@
+agent_id: swarm-foundry-preflight
+name: Swarm Foundry Preflight
+a2a_config:
+  agent_card_url: https://swarm-foundry.noble-pine-2603.chatgpt.site/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: n8n-structural-preflight
+  name: n8n structural preflight
+  tags:
+  - n8n
+  - workflow
+  - verification
+  - static-analysis
+health_check:
+  url: https://swarm-foundry.noble-pine-2603.chatgpt.site/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://swarm-foundry.noble-pine-2603.chatgpt.site/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Deterministic checks of caller-provided sanitized workflow JSON. Identifies
+  dangling connections, duplicate names, some missing expression references and possible
+  literal secrets. Does not execute workflows or guarantee correctness.
+version: 0.2.0

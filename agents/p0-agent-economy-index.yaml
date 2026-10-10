@@ -1,0 +1,71 @@
+agent_id: p0-agent-economy-index
+name: P0 Agent Economy Index
+a2a_config:
+  agent_card_url: https://x402-bazaar-rank.x402-bazaar-rank-worker.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-paid-services
+  name: Find paid x402 services by capability
+  tags:
+  - x402
+  - bazaar
+  - search
+  - rank
+  - market-data
+- id: market-report
+  name: x402 market report
+  tags:
+  - x402
+  - market-report
+  - pricing
+  - market-data
+- id: paid-data-products
+  name: Paid data products over x402
+  tags:
+  - x402
+  - wallet
+  - payment
+  - time
+  - random
+  - domain
+  - sec
+  - weather
+  - sanctions
+  - agent-economy
+  - search
+  - uptime
+  - email
+- id: order-service
+  name: 'Order a P0 service: lead list, market report or discovery listing'
+  tags:
+  - services
+  - lead-list
+  - market-report
+  - discovery
+  - bitcoin
+  - ethereum
+  - usdt
+health_check:
+  url: https://x402-bazaar-rank.x402-bazaar-rank-worker.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://x402-bazaar-rank.x402-bazaar-rank-worker.workers.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'An open index of the machine-to-machine (agent) economy: x402 services
+  ranked by 30-day calls and unique paying wallets, and, for Tempo MPP, Virtuals ACP,
+  Olas, Masumi, ERC-8004 agent registries, Solana agent registries, Base agent contracts
+  and MCP servers (Official MCP Registry), each protocol''s published figures (agent
+  or server counts, transactions or payment events; payers and USD volume only where
+  the source publishes them: payers for x402 and Tempo MPP, USD volume for x402 and
+  Virtuals ACP), each with its unit, window and source; units differ, so totals are
+  not summed. L402 and per-service MPP listings are not covered. Ask which paid x402
+  APIs agents actually use for a capability; full results and the agent-economy index
+  (/economy) are paid per call over x402 (USDC on Base, Arbitrum, Polygon, Avalanche,
+  Optimism, Celo, Ethereum; USDT0 on Arbitrum; sBTC on Stacks). Who runs P0 (operator
+  Mike Chebotarev): https://x402-bazaar-rank.x402-bazaar-rank-worker.workers.dev/about;
+  open boo'
+version: 0.2.0

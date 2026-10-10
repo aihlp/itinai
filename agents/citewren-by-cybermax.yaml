@@ -1,0 +1,48 @@
+agent_id: citewren-by-cybermax
+name: Citewren by CyberMax
+a2a_config:
+  agent_card_url: https://citewren.cybermax-tools.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: check-ai-readiness
+  name: Check a website's AI search readiness
+  tags:
+  - ai seo
+  - geo
+  - llms.txt
+  - robots.txt
+  - ai crawlers
+  - schema.org
+- id: monitor-sites
+  name: Monitor sites weekly for AI readiness changes
+  tags:
+  - ai seo
+  - geo
+  - llms.txt
+  - robots.txt
+  - ai crawlers
+  - schema.org
+- id: agent-check-ai-search-readiness
+  name: 'MCP/A2A: AI search readiness check'
+  tags:
+  - ai seo
+  - geo
+  - llms.txt
+  - robots.txt
+  - ai crawlers
+  - schema.org
+health_check:
+  url: https://citewren.cybermax-tools.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://cybermaxtools.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'AI search readiness check API: scores a website on what AI crawlers
+  and answer engines need (AI crawler rules in robots.txt, llms.txt, schema.org JSON-LD,
+  sitemap, Open Graph, basics) and lists the issues. Free: 3 checks a day; a Pro key
+  adds fixes, a 15-page crawl, a ready llms.txt draft and weekly monitoring.'
+version: 1.0.0
