@@ -1,0 +1,61 @@
+agent_id: shiftmoor-by-cybermax
+name: Shiftmoor by CyberMax
+a2a_config:
+  agent_card_url: https://shiftmoor.cybermax-tools.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: check-page
+  name: Check a public page now
+  tags:
+  - website change monitor
+  - page change alerts
+  - competitor monitoring
+  - rss
+  - webhook
+- id: free-key
+  name: Get a free key
+  tags:
+  - website change monitor
+  - page change alerts
+  - competitor monitoring
+  - rss
+  - webhook
+- id: manage-watches
+  name: Watch pages for changes
+  tags:
+  - website change monitor
+  - page change alerts
+  - competitor monitoring
+  - rss
+  - webhook
+- id: change-feed
+  name: Read your change feed or set a webhook
+  tags:
+  - website change monitor
+  - page change alerts
+  - competitor monitoring
+  - rss
+  - webhook
+- id: agent-check-page
+  name: 'MCP/A2A: check a page now'
+  tags:
+  - website change monitor
+  - page change alerts
+  - competitor monitoring
+  - rss
+  - webhook
+health_check:
+  url: https://shiftmoor.cybermax-tools.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://cybermaxtools.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Website change monitor API: watch public web pages (competitors, suppliers,
+  policies, job and tender pages) and get every change, lines added and removed or
+  a keyword appearing, by webhook and RSS/JSON feed. Free for 3 pages; Starter $4.99/month
+  for 25.'
+version: 1.0.0

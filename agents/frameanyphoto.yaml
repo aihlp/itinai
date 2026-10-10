@@ -1,0 +1,56 @@
+agent_id: frameanyphoto
+name: FrameAnyPhoto
+a2a_config:
+  agent_card_url: https://frameanyphoto.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: search-works
+  name: Search works
+  tags:
+  - collection
+  - search
+- id: get-work
+  name: Get work
+  tags:
+  - collection
+- id: list-series
+  name: List series
+  tags:
+  - collection
+- id: get-print-options
+  name: Print options
+  tags:
+  - order
+  - price
+- id: quote-order
+  name: Quote order
+  tags:
+  - order
+  - price
+- id: create-checkout
+  name: Create checkout
+  tags:
+  - order
+  - checkout
+- id: get-order-status
+  name: Order status
+  tags:
+  - order
+- id: get-policies
+  name: Store policies
+  tags:
+  - order
+  - policy
+health_check:
+  url: https://frameanyphoto.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://frameanyphoto.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Museum-quality framed prints of public-domain art. Agents can search
+  works, price prints, and create a Stripe checkout link for the buyer to pay.
+version: 1.1.0

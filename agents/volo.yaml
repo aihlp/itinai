@@ -1,0 +1,49 @@
+agent_id: volo
+name: VOLO
+a2a_config:
+  agent_card_url: https://flyvolo.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: ask
+  name: Ask about an occupation or a degree
+  tags:
+  - careers
+  - automation
+  - ai-impact
+  - occupations
+  - tasks
+  - evidence
+  - degrees
+- id: occupation-assessment
+  name: Structured occupation or degree assessment
+  tags:
+  - careers
+  - automation
+  - occupations
+  - structured-data
+- id: knowledge-tools
+  name: Call a VOLO knowledge tool
+  tags:
+  - careers
+  - automation
+  - evidence
+  - ontology
+  - structured-data
+health_check:
+  url: https://flyvolo.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://flyvolo.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "VOLO explains, task by task, how AI, robotics, autonomous driving and\
+  \ process automation are changing specific occupations and degrees \u2014 whether\
+  \ each judgement is evidenced by verified public records or inferred, what it does\
+  \ not establish, and a next step a person can verify this week. Six languages (en,\
+  \ zh, ja, es, pt, fr). It never gives a probability of job loss, a year, or an aggregate\
+  \ score. Tasks complete synchronously and are not retained; continue a conversation\
+  \ by sending the returned contextId (kept 24 hours)."
+version: 1.0.0

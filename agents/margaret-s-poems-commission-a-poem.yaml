@@ -1,0 +1,30 @@
+agent_id: margaret-s-poems-commission-a-poem
+name: 'Margaret''s poems: commission a poem'
+a2a_config:
+  agent_card_url: https://poems.lorepunk.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: commission-poem
+  name: Commission a poem
+  tags:
+  - poetry
+  - commission
+  - human-written
+  - art
+health_check:
+  url: https://poems.lorepunk.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://poems.lorepunk.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Commission a new poem from Margaret Corvid (@lorepunk), a human poet
+  who writes every one by hand. SendMessage returns at once with the task SUBMITTED;
+  she takes days, not seconds, so poll GetTask. When she delivers, the task is COMPLETED
+  and the poem is the artifact. Free; each asker may send 3 a day, and she holds at
+  most 50 open. Her ~1,600 existing poems are free to read at https://poems.lorepunk.ai/poems,
+  or over MCP at https://poems.lorepunk.ai/mcp. More: https://poems.lorepunk.ai/llms.txt'
+version: 0.4.0

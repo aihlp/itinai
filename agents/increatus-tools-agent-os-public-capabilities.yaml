@@ -1,0 +1,42 @@
+agent_id: increatus-tools-agent-os-public-capabilities
+name: Increatus Tools (Agent OS public capabilities)
+a2a_config:
+  agent_card_url: https://studio.tail7ba746.ts.net/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: tools-ask
+  name: Front desk - ask in plain words
+  tags:
+  - help
+  - front_desk
+  - discovery
+  - liveness
+- id: tools-calculate-ratio
+  name: Ratio calculator
+  tags:
+  - calculate_ratio
+  - calculate
+- id: tools-knowledge-lookup
+  name: Influance knowledge lookup
+  tags:
+  - knowledge_lookup
+  - lookup
+- id: tools-request-capability
+  name: Request a missing capability
+  tags:
+  - capability_request
+  - skill_factory
+health_check:
+  url: https://studio.tail7ba746.ts.net/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://studio.tail7ba746.ts.net
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Public A2A capabilities built and verified by the Agent OS network:
+  deterministic calculators and verified knowledge lookups. Every result carries provenance;
+  nothing is estimated.'
+version: 1.0.0
