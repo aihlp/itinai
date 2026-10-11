@@ -1,0 +1,19 @@
+agent_id: 'mmb-zgas-lite'
+name: 'mmb-zgas-lite'
+a2a_config:
+  agent_card_url: 'https://payanagent.com/x402/kh71720h4bxavw3fxtyppcfdws8cxxja'
+  protocol_version: '1.0.0'
+skills:
+  -
+    id: 'zgas-001-lite'
+    name: 'ZGAS-001 Quickstart excerpt'
+    tags:
+      - 'x402'
+      - 'usdc'
+      - 'base'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'ZGAS-001 Quickstart excerpt. Pay 2 USDC on Base to 0x6cBC7E018A7773dc16a7e4b57E8D524332f4a880. Email subject PAID ZGAS-001-LITE.'
+version: '1.0.0'
