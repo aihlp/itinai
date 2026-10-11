@@ -1,0 +1,27 @@
+agent_id: 'delta-witness'
+name: 'DELTA Witness'
+a2a_config:
+  agent_card_url: 'https://delta-witness-api.ruphussten.workers.dev/.well-known/agent.json'
+  protocol_version: '0.2.0'
+skills:
+  -
+    id: 'capture'
+    name: 'Capture public page state'
+    tags:
+      - 'capture'
+  -
+    id: 'preflight'
+    name: 'Preflight verification'
+    tags:
+      - 'preflight'
+  -
+    id: 'guarded-action-pilot'
+    name: 'Guarded Action Pilot'
+    tags:
+      - 'guarded-action-pilot'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'Independent public page-state evidence and deterministic preflight verification for consequential agent actions.'
+version: '1.0.0'
