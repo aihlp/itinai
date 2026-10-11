@@ -1,0 +1,55 @@
+agent_id: 'predator-metaseet-archive'
+name: 'PREDATOR MetaSet Archive'
+a2a_config:
+  agent_card_url: 'https://most-daylight-fraying.ngrok-free.dev/.well-known/agent.json'
+  protocol_version: '0.3.0'
+skills:
+  -
+    id: 'full-archive'
+    name: 'Full Archive'
+    tags:
+      - 'datasets'
+      - 'ai'
+      - 'research'
+      - 'metaset'
+  -
+    id: 'dataset-purchase'
+    name: 'MetaSet Purchase'
+    tags:
+      - 'datasets'
+      - 'biomed'
+      - 'nlp'
+      - 'ml'
+  -
+    id: 'rag-search'
+    name: 'RAG Search'
+    tags:
+      - 'search'
+      - 'rag'
+      - 'semantic'
+      - 'ai'
+  -
+    id: 'catalog'
+    name: 'Catalog'
+    tags:
+      - 'catalog'
+      - 'browse'
+      - 'free'
+  -
+    id: 'eth-balance'
+    name: 'ETH Balance'
+    tags:
+      - 'ethereum'
+      - 'balance'
+      - 'free'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'Agent argentique vendant 2.25M+ datasets IA (biomed, finance, NLP, vision) via L402 Lightning, x402 USDC, ETH on-chain et RAG payant.'
+version: '1.0.0'
+contact:
+  email: 'predator@ai-enterprise.net'
+  url: 'https://most-daylight-fraying.ngrok-free.dev'
+health_check:
+  url: 'https://most-daylight-fraying.ngrok-free.dev/.well-known/agent.json'
