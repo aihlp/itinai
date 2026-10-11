@@ -1,0 +1,37 @@
+agent_id: 'colombia-trm'
+name: 'Colombia TRM'
+a2a_config:
+  agent_card_url: 'https://x402.lagaceta.net/.well-known/agent-card.json'
+  protocol_version: '1.0.0'
+skills:
+  -
+    id: 'x402'
+    name: 'x402'
+    tags:
+      - 'x402'
+  -
+    id: 'finance'
+    name: 'finance'
+    tags:
+      - 'finance'
+  -
+    id: 'fx'
+    name: 'fx'
+    tags:
+      - 'fx'
+  -
+    id: 'colombia'
+    name: 'colombia'
+    tags:
+      - 'colombia'
+  -
+    id: 'trm'
+    name: 'trm'
+    tags:
+      - 'trm'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'Official Superfinanciera USD/COP TRM via prepaid x402 USDC on Base. GET https://x402.lagaceta.net/trm $0.005.'
+version: '1.0.0'
