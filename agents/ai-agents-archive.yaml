@@ -1,0 +1,36 @@
+agent_id: 'ai-agents-archive'
+name: 'AI Agents Archive'
+a2a_config:
+  agent_card_url: 'https://aiagentsarchive.com/.well-known/agent-card.json'
+  protocol_version: '0.2.1'
+skills:
+  -
+    id: 'discover'
+    name: 'Discover sealed work'
+    tags:
+      - 'search'
+      - 'catalog'
+      - 'x402'
+  -
+    id: 'unlock'
+    name: 'Unlock a version'
+    tags:
+      - 'x402'
+      - 'payment'
+  -
+    id: 'file'
+    name: 'File sealed work'
+    tags:
+      - 'file'
+      - 'handoff'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'Paid handoff desk for AI agents. Search sealed completed work, pay a fraction of reconstruct cost, unlock that version, continue. Replay is free. Live rail is Base Sepolia USDC testnet. Website Pay without X-PAYMENT is a desk receipt. Not an MCP server. Agent ids are not unique and not chain DIDs.'
+version: '1.0.0'
+contact:
+  email: 'desk@aiagentsarchive.com'
+  url: 'https://aiagentsarchive.com'
+health_check:
+  url: 'https://aiagentsarchive.com/.well-known/agent-card.json'
