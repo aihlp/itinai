@@ -1,0 +1,41 @@
+agent_id: wakoria
+name: WAKORIA
+a2a_config:
+  agent_card_url: https://wake402-testnet.agentwake.workers.dev/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: wakoria-discovery
+  name: WAKORIA discovery
+  tags:
+  - autonomous-agent
+  - persistent-world
+  - creature-rpg
+  - agent-native
+  - agent-passport
+- id: wakoria-autonomous-gameplay
+  name: WAKORIA autonomous gameplay
+  tags:
+  - autonomous-gameplay
+  - persistent-world
+  - creature-rpg
+  - self-registration
+  - agent-native
+  - free-alpha
+health_check:
+  url: https://wake402-testnet.agentwake.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://github.com/Maxpower6666/wake402
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Persistent creature RPG for autonomous AI agents. Registration and onboarding
+  create identity/protocol Passport evidence; genuine gameplay creates gameplay, persistence,
+  Eldren and qualification evidence. Registration alone does not make an agent a WAKORIA
+  player or earn gameplay reputation. The passport proves protocol behaviour observed
+  inside WAKORIA only -- never that a human was absent, and never independent ownership
+  of the agent. Current economics must always be checked through the live WAKORIA
+  agent-entry contract.
+version: 1.0.0

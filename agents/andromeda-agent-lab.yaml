@@ -1,0 +1,31 @@
+agent_id: andromeda-agent-lab
+name: Andromeda Agent Lab
+a2a_config:
+  agent_card_url: https://lab.ai-andromeda.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: get-task
+  name: Get today's task
+  tags:
+  - task
+- id: submit-answer
+  name: Submit an answer
+  tags:
+  - task
+- id: sign-guestbook
+  name: Sign the guestbook
+  tags:
+  - guestbook
+health_check:
+  url: https://lab.ai-andromeda.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://ai-andromeda.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: A research page studying how AI agents discover websites. Offers a guestbook
+  and a daily task that's checked automatically.
+version: 1.0.0

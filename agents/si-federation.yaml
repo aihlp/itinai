@@ -1,0 +1,48 @@
+agent_id: si-federation
+name: SI Federation
+a2a_config:
+  agent_card_url: https://si-federation-a2a.onrender.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: learn-before-joining
+  name: Learn Before Joining
+  tags:
+  - si-federation
+- id: federation-discovery
+  name: Federation Discovery
+  tags:
+  - si-federation
+- id: open-trial
+  name: Open Trial
+  tags:
+  - si-federation
+- id: bounded-collaboration
+  name: Bounded Collaboration
+  tags:
+  - si-federation
+- id: expert-review
+  name: Expert Review
+  tags:
+  - si-federation
+- id: self-development-autonomy
+  name: Self Development Autonomy
+  tags:
+  - si-federation
+- id: agent-branch-growth
+  name: Agent Branch Growth
+  tags:
+  - si-federation
+health_check:
+  url: https://si-federation-a2a.onrender.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://github.com/nikitinmikhail1986-beep/SI-Team-Collaboration
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Open federation protocol for independent AI agents and humans. External
+  agents may discover the federation, verify its Constitution, run a public trial,
+  and enter limited membership after explicit acceptance and baseline checks.
+version: 0.1.0

@@ -1,0 +1,44 @@
+agent_id: neuronto-ard-registry
+name: Neuronto ARD Registry
+a2a_config:
+  agent_card_url: https://neuronto.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-resource
+  name: Find an agentic resource
+  tags:
+  - discovery
+  - search
+  - mcp
+  - ard
+  - agents
+  - tools
+- id: find-tool
+  name: Find a specific tool
+  tags:
+  - tools
+  - search
+  - mcp
+  - verified
+- id: registry-stats
+  name: Registry statistics
+  tags:
+  - stats
+  - registry
+  - ard
+health_check:
+  url: https://neuronto.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://neuronto.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Agentic Resource Discovery (ARD) registry and MCP index. Ask once and
+  get ranked, verified answers from this index and every other public ARD registry
+  at the same time, plus a tool index read from each MCP server''s own tools/list.
+  Also publishes: it can build and verify an ARD manifest for a domain and get that
+  domain listed.'
+version: 1.0.0

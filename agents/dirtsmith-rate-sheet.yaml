@@ -1,0 +1,33 @@
+agent_id: dirtsmith-rate-sheet
+name: Dirtsmith rate sheet
+a2a_config:
+  agent_card_url: https://dirtsmith-go.bfurrow26.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: get-result
+  name: get_result (Dirtsmith-built, free)
+  tags:
+  - routing
+  - cost
+  - tools
+- id: rate-sheet
+  name: Outside-tool rate sheet
+  tags:
+  - rates
+  - x402
+  - mcp
+  - pricing
+health_check:
+  url: https://dirtsmith-go.bfurrow26.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://dirtsmith-go.bfurrow26.workers.dev/rates
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Free machine-readable rate sheet of outside builders' agent-callable
+  tools (x402 and pay-as-you-go APIs) with published prices. Informational only; Dirtsmith
+  does not sell or process payment.
+version: 1.0.0
