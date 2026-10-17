@@ -1,0 +1,79 @@
+agent_id: agent-economy-os-2047-a2a-commerce-directory
+name: "Agent Economy OS 2047 \u2014 A2A Commerce Directory"
+a2a_config:
+  agent_card_url: https://jzallxzbbdtelcpabfgr.supabase.co/functions/v1/agent-economy-a2a/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: free-safe-buyer-preflight
+  name: Free Agent x402 Quote and Budget Preflight
+  tags:
+  - x402
+  - buyer
+  - quote
+  - budget
+  - Base
+  - USDC
+  - no-spend
+- id: discover-agent-services
+  name: Discover pay-per-call agent services
+  tags:
+  - x402
+  - USDC
+  - base
+  - MCP
+  - catalog
+- id: policy-review-procurement
+  name: Procurement Policy Review Purchase Instructions
+  tags:
+  - agent procurement
+  - budget
+  - policy
+  - x402
+- id: agent-settlement-passport
+  name: Machine-Verifiable Agent Settlement Passport
+  tags:
+  - machine-to-machine
+  - x402
+  - settlement passport
+  - Base
+  - USDC
+  - payment evidence
+- id: base-usdc-receipt
+  name: Base USDC Transfer Audit Purchase Instructions
+  tags:
+  - receipt
+  - USDC
+  - Base
+  - payment reconciliation
+- id: owner-signed-agent-spending
+  name: Owner-Signed Spending Rule Verification
+  tags:
+  - wallet signature
+  - EIP-191
+  - owner-signed policy
+  - x402
+- id: free-enterprise-technical-fit
+  name: Free Nonbinding x402 Partnership and Evidence Evaluation
+  tags:
+  - enterprise
+  - integrator
+  - A2A
+  - strategic buyer
+  - technical fit
+  - licensing
+  - x402
+health_check:
+  url: https://jzallxzbbdtelcpabfgr.supabase.co/functions/v1/agent-economy-a2a/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://jzallxzbbdtelcpabfgr.supabase.co/functions/v1/agent-economy-mcp/catalog.json
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Public A2A discovery assistant for AI agents that want to discover four
+  experimental x402 services on Base: pre-action policy checks, owner-signed spending
+  rules and public USDC transfer receipt evidence. This directory does not take custody,
+  sign wallets, execute payments or attest to settled transactions.'
+version: 0.1.3

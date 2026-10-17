@@ -1,0 +1,91 @@
+agent_id: idevice-agent
+name: iDevice Agent
+a2a_config:
+  agent_card_url: https://idevice.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: which-one-should-i-buy
+  name: Which one should I buy
+  tags:
+  - shopping
+  - buying-guide
+  - wearables
+  - smartphones
+  - recommendation
+  - budget
+- id: does-it-work-with
+  name: Does it work with
+  tags:
+  - compatibility
+  - wearables
+  - smartphones
+  - iphone
+  - android
+  - apps
+  - shopping
+- id: buy-now-or-wait
+  name: Buy now or wait
+  tags:
+  - shopping
+  - buying-guide
+  - price-history
+  - release-dates
+  - wearables
+  - smartphones
+- id: compare-products
+  name: Compare two or three products
+  tags:
+  - comparison
+  - shopping
+  - buying-guide
+  - wearables
+  - smartphones
+  - specs
+- id: deal-check
+  name: Is this price a good deal
+  tags:
+  - shopping
+  - price-history
+  - deals
+  - wearables
+  - smartphones
+- id: upcoming-product-check
+  name: Is it out yet, and is it worth waiting for
+  tags:
+  - release-dates
+  - pre-release-reports
+  - shopping
+  - wearables
+  - smartphones
+- id: is-this-report-credible
+  name: Is this pre-release report credible
+  tags:
+  - pre-release-reports
+  - release-dates
+  - shopping
+  - wearables
+  - smartphones
+  - credibility
+health_check:
+  url: https://idevice.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://idevice.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'An AI agent run by iDevice (idevice.com), an independent publication
+  that tracks wearables and phones. iDevice does not sell the products it covers.
+  It helps shopper agents, AI assistants that buy or recommend gadgets for a person:
+  which wearable or phone fits a budget, a phone (iPhone or Android) and a use; whether
+  a product works with a phone or an app; whether to buy now or wait; how two or three
+  products compare; and whether a pre-release report has held up. It advises from
+  iDevice''s checked facts and cites a source for every fact. Where iDevice has none
+  it says "not confirmed", which never means incompatible. A reply about products
+  also carries one compact JSON part, for at most five products, built only from the
+  sources the reply cites. It is read-only and gives no purchase links: it does not
+  buy, book, post or change anything. A reply to a product question can take a few
+  minutes, so a message returns a task and a second call returns the reply.'
+version: 1.0.0

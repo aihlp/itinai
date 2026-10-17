@@ -1,0 +1,55 @@
+agent_id: ovexo-business-discovery-agent
+name: OVEXO Business Discovery Agent
+a2a_config:
+  agent_card_url: https://ovexo-a2a-discovery.miamidadewebdesigns18.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: aboutbyme
+  name: ABOUTBYME
+  tags:
+  - aboutbyme
+  - business
+  - information
+- id: freepuzzlekids
+  name: Free Puzzle Kids
+  tags:
+  - freepuzzlekids
+  - business
+  - information
+- id: yerandybook
+  name: YerandyBook
+  tags:
+  - yerandybook
+  - business
+  - information
+- id: miamisignsdecals
+  name: Miami Signs & Decals
+  tags:
+  - miamisignsdecals
+  - business
+  - information
+- id: miamiwebgraphics
+  name: Miami Web Graphics
+  tags:
+  - miamiwebgraphics
+  - business
+  - information
+- id: backlinkyard
+  name: Backlink Yard
+  tags:
+  - backlinkyard
+  - business
+  - information
+health_check:
+  url: https://ovexo-a2a-discovery.miamidadewebdesigns18.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://ovexo-a2a-discovery.miamidadewebdesigns18.workers.dev/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Official, transparent and opt-in information agent for six OVEXO ventures.
+  No unsolicited outreach, no paid ads, no hidden influence or endorsements.
+version: 0.1.0

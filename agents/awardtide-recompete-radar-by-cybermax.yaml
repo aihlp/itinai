@@ -1,0 +1,53 @@
+agent_id: awardtide-recompete-radar-by-cybermax
+name: Awardtide Recompete Radar by CyberMax
+a2a_config:
+  agent_card_url: https://awardtide.cybermax-tools.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: match-recompetes
+  name: Find expiring federal contracts (recompetes)
+  tags:
+  - government contracts
+  - recompete
+  - usaspending
+  - naics
+  - federal procurement
+- id: dataset-meta
+  name: Recompete dataset metadata
+  tags:
+  - government contracts
+  - recompete
+  - usaspending
+  - naics
+  - federal procurement
+- id: saved-filters
+  name: Save recompete filters with weekly alert feeds
+  tags:
+  - government contracts
+  - recompete
+  - usaspending
+  - naics
+  - federal procurement
+- id: agent-search-recompetes
+  name: 'MCP/A2A: search expiring federal contracts'
+  tags:
+  - government contracts
+  - recompete
+  - usaspending
+  - naics
+  - federal procurement
+health_check:
+  url: https://awardtide.cybermax-tools.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://cybermaxtools.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Federal contract recompete radar API: US government contracts (USAspending.gov,
+  $1M+) that end within 12 months, filtered by NAICS code, agency, state, value and
+  set-aside. Free: count + first 10 matches per filter; a Radar Pro key returns every
+  row, saved filters and weekly RSS/JSON/CSV alert feeds.'
+version: 1.0.0

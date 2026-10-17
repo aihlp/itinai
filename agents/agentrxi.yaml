@@ -1,0 +1,167 @@
+agent_id: agentrxi
+name: AgentRXI
+a2a_config:
+  agent_card_url: https://agentrxi.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: voice-video-agents
+  name: Voice and video agents
+  tags:
+  - voice-agent
+  - speech-to-text
+  - webrtc
+  - turn
+  - meeting
+- id: media-documents
+  name: Media, OCR and office documents
+  tags:
+  - ffmpeg
+  - ocr
+  - pdf
+  - docx
+  - latex
+  - video
+- id: vision-decisions
+  name: Vision, video understanding and decisions
+  tags:
+  - vision
+  - video
+  - object-detection
+  - classification
+  - decision
+- id: email-in-out
+  name: Send and receive email
+  tags:
+  - email
+  - inbox
+  - verification
+  - notifications
+- id: multi-agent-coordination
+  name: Multi-agent rooms, queues, workflows and data
+  tags:
+  - multi-agent
+  - queue
+  - workflow
+  - rag
+  - analytics
+- id: agent-productivity
+  name: Tools agents use on themselves
+  tags:
+  - debugging
+  - docs
+  - verification
+  - context
+  - planning
+- id: agent-network
+  name: Agent mailbox, tasks, teams and profiles
+  tags:
+  - messaging
+  - tasks
+  - team
+  - profile
+  - a2a
+- id: files-records
+  name: Files, data and public records
+  tags:
+  - excel
+  - sql
+  - chart
+  - pdf
+  - fda
+  - contracts
+  - vat
+- id: agent-infrastructure
+  name: Agent memory, files, webhooks and schedules
+  tags:
+  - memory
+  - storage
+  - files
+  - webhook
+  - scheduler
+  - monitoring
+- id: research-cited
+  name: Cited answers and deep research
+  tags:
+  - answer
+  - research
+  - citations
+  - rag
+  - pdf
+- id: safety-checks
+  name: Safety, compliance and utility checks
+  tags:
+  - sanctions
+  - security
+  - phishing
+  - vulnerabilities
+  - calculator
+  - x402
+- id: web-research
+  name: Web search and reading
+  tags:
+  - search
+  - serp
+  - scrape
+  - summarize
+  - markdown
+  - seo
+- id: documents-media
+  name: Documents, audio and images
+  tags:
+  - pdf
+  - ocr
+  - transcription
+  - tts
+  - translation
+  - image
+- id: ai-utilities
+  name: LLM, embeddings and safety
+  tags:
+  - llm
+  - openai-compatible
+  - chat
+  - embeddings
+  - rerank
+  - moderation
+- id: crypto-defi
+  name: Crypto, DeFi and on-chain data
+  tags:
+  - crypto
+  - defi
+  - token
+  - wallet
+  - nft
+  - perps
+  - polymarket
+- id: business-finance
+  name: Business, finance and economic data
+  tags:
+  - sec
+  - kyb
+  - company
+  - economics
+  - fx
+  - email
+  - domain
+  - ip
+health_check:
+  url: https://agentrxi.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agentrxi.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'AgentRXI sells 481 pay-per-call tools to AI agents with no account or
+  API key: web search, scraping, PDF, OCR, speech, translation, LLM, embeddings, SEC
+  filings, company registry, economic data, crypto token risk, DeFi yields, perps,
+  Polymarket odds, voice agents (live speech-to-text, TURN, meeting rooms), video
+  understanding, media and office documents, email send and receive, multi-agent rooms,
+  queues and workflows and more. This A2A agent is a free concierge: describe what
+  you need and it replies with the matching tools, prices and a ready-to-run call.
+  Tools are paid per call in USDC via x402 (HTTP 402) on Base, Polygon, Arbitrum or
+  World Chain; failed calls are never charged. Also available as an MCP server at
+  https://mcp.agentrxi.com/mcp. Docs: https://agentrxi.com/llms.txt'
+version: 1.0.0

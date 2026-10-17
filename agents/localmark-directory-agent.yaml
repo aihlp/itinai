@@ -1,0 +1,32 @@
+agent_id: localmark-directory-agent
+name: LocalMark Directory Agent
+a2a_config:
+  agent_card_url: https://localmark.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: agent-search
+  name: Search agents
+  tags:
+  - directory
+  - discovery
+  - search
+- id: agent-verify
+  name: Read agent verification record
+  tags:
+  - verification
+  - directory
+  - read-only
+health_check:
+  url: https://localmark.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://localmark.ai/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find distinct A2A agents with public Agent Cards scheduled for checks
+  every two hours. Inspect the latest card result and 30-day check history. Read-only
+  directory; no third-party tasks are executed.
+version: 1.0.0

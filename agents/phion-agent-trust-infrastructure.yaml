@@ -1,0 +1,207 @@
+agent_id: phion-agent-trust-infrastructure
+name: PHION Agent Trust Infrastructure
+a2a_config:
+  agent_card_url: https://phion.systems/.well-known/agent.json
+  protocol_version: 1.0.0
+skills:
+- id: attest
+  name: Signed JSON Attestation
+  tags:
+  - attestation
+  - integrity
+  - receipts
+  - x402
+- id: payment-preflight
+  name: Autonomous Payment Firewall
+  tags:
+  - payments
+  - policy
+  - firewall
+  - x402
+  - safety
+- id: mandate-reserve
+  name: Atomic Mandate Reservation
+  tags:
+  - payments
+  - mandates
+  - budgets
+  - x402
+- id: preflight
+  name: Preflight URL
+  tags:
+  - ssrf
+  - safety
+  - web
+- id: fetch-evidence
+  name: Fetch Independent Evidence
+  tags:
+  - evidence
+  - web
+  - integrity
+  - prompt-injection
+  - x402
+- id: inspect-agent
+  name: AI Agent Due Diligence
+  tags:
+  - agents
+  - due-diligence
+  - x402
+  - erc8004
+  - mcp
+  - a2a
+- id: journey-verify
+  name: Agent Commerce Journey Verification
+  tags:
+  - commerce
+  - audit
+  - journey
+  - receipts
+  - x402
+- id: transaction-assurance
+  name: Transaction Assurance
+  tags:
+  - commerce
+  - assurance
+  - delivery
+  - acceptance
+  - disputes
+  - x402
+- id: transaction-recovery
+  name: Transaction Recovery
+  tags:
+  - commerce
+  - recovery
+  - refunds
+  - retries
+  - disputes
+  - x402
+- id: try-service
+  name: Try PHION Service Free
+  tags:
+  - free-preview
+  - try-before-payment
+  - x402
+  - discovery
+- id: spending-gateway
+  name: Agent Spending Gateway
+  tags:
+  - payments
+  - budgets
+  - delegation
+  - x402
+  - non-custodial
+- id: phion-execute
+  name: PHION Execute
+  tags:
+  - execution
+  - orchestration
+  - payments
+  - idempotency
+  - x402
+- id: universal-market
+  name: PHION Universal Market
+  tags:
+  - market
+  - capabilities
+  - providers
+  - routing
+  - preflight
+  - buyer-funded
+- id: tool-output-firewall
+  name: Tool Output Firewall
+  tags:
+  - tool-output
+  - prompt-injection
+  - mcp
+  - x402
+- id: delegation-scope-guard
+  name: Delegation Scope Guard
+  tags:
+  - delegation
+  - authorization
+  - least-privilege
+  - x402
+- id: memory-write-guard
+  name: Memory Write Guard
+  tags:
+  - memory
+  - poisoning
+  - provenance
+  - x402
+- id: mcp-manifest-firewall
+  name: MCP Manifest Firewall
+  tags:
+  - mcp
+  - manifest
+  - security
+  - x402
+- id: tool-call-policy-guard
+  name: Tool Call Policy Guard
+  tags:
+  - tools
+  - intent
+  - authorization
+  - x402
+- id: data-egress-preflight
+  name: Data Egress Preflight
+  tags:
+  - egress
+  - data
+  - dlp
+  - x402
+- id: schema-normalize
+  name: Schema Normalize & Repair
+  tags:
+  - schema
+  - json
+  - compatibility
+  - x402
+- id: rwa-asset-due-diligence
+  name: RWA Asset Due Diligence
+  tags:
+  - rwa
+  - tokenization
+  - evidence
+  - x402
+- id: rwa-compliance
+  name: RWA Compliance Decision
+  tags:
+  - rwa
+  - tokenization
+  - evidence
+  - x402
+- id: rwa-nav-reserve
+  name: RWA NAV & Reserve Verification
+  tags:
+  - rwa
+  - tokenization
+  - evidence
+  - x402
+- id: rwa-transaction-assurance
+  name: RWA Transaction Assurance
+  tags:
+  - rwa
+  - tokenization
+  - evidence
+  - x402
+- id: rwa-corporate-actions
+  name: RWA Corporate Action Monitor
+  tags:
+  - rwa
+  - tokenization
+  - evidence
+  - x402
+health_check:
+  url: https://phion.systems/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://phion.systems
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: One hundred twenty-three composable inference, search, intelligence,
+  verified-data, enrichment, durable-task, security, trust, compatibility, reputation,
+  commerce, RWA and indexing services for autonomous AI agents
+version: 1.57.0
