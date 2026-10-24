@@ -1,0 +1,53 @@
+agent_id: flowfresh-south-african-export-fruit-reference-data-information-only
+name: 'FlowFresh: South African export fruit reference data (information only)'
+a2a_config:
+  agent_card_url: https://ff-sa-fruit-data.flowfresh.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: list-products
+  name: List products
+  tags:
+  - south-africa
+  - export-fruit
+  - reference-data
+- id: get-season
+  name: Season windows
+  tags:
+  - season-windows
+  - counter-season
+  - calendar
+- id: get-specs
+  name: Specs
+  tags:
+  - specs
+  - cultivars
+  - grade-classes
+  - regions
+- id: contact-route
+  name: Contact route
+  tags:
+  - contact
+- id: get-market-access
+  name: Market access
+  tags:
+  - market-access
+  - phytosanitary
+  - cold-treatment
+  - protocols
+health_check:
+  url: https://ff-sa-fruit-data.flowfresh.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://ff-sa-fruit-data.flowfresh.workers.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Reference data on South African export fruit for importers and buyer
+  agents: table grapes, citrus, apples, pears, stone fruit and avocados. Counter-season
+  export windows, specs and market access by destination, each line labelled Fact
+  or Inference with a dated source. Information only: FlowFresh does not currently
+  buy, sell or broker fruit or act as an agent for any producer, exporter or buyer.
+  No prices, volumes, freight rates or stock claims.'
+version: 0.7.0

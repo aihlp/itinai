@@ -1,0 +1,32 @@
+agent_id: creditunions
+name: CreditUnions
+a2a_config:
+  agent_card_url: https://creditunions.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find credit unions
+  tags:
+  - directory
+  - credit unions
+  - search
+- id: describe-directory
+  name: About CreditUnions
+  tags:
+  - directory
+  - credit unions
+  - overview
+health_check:
+  url: https://creditunions.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://creditunions.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Which credit union can you join? Compare eligibility. Ask a question
+  in plain text and get the matching credit unions, each with its page URL. For tool
+  access, use the MCP server at https://creditunions.fyi/mcp.
+version: 1.0.0

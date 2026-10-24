@@ -1,0 +1,249 @@
+agent_id: ni-biashara-shelves
+name: Ni Biashara Shelves
+a2a_config:
+  agent_card_url: https://agents.nibiashara.biz/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: fx-official
+  name: "Official FX rate \u2014 one African pair"
+  tags:
+  - data
+  - africa
+  - fx
+  - forex
+  - exchange-rate
+  - shilling
+  - naira
+  - cedi
+  - ni-biashara
+  - x402
+- id: fx-official-all
+  name: "Official FX rates \u2014 all eight pairs"
+  tags:
+  - data
+  - africa
+  - fx
+  - forex
+  - exchange-rate
+  - shilling
+  - naira
+  - cedi
+  - ni-biashara
+  - x402
+- id: fx-parallel
+  name: "Street (parallel-market) rate \u2014 USD-NGN or USD-GHS"
+  tags:
+  - data
+  - africa
+  - fx
+  - forex
+  - exchange-rate
+  - street-rate
+  - naira
+  - cedi
+  - ni-biashara
+  - x402
+- id: fx-parallel-history-24h
+  name: "Parallel-rate history \u2014 last 24 hours, hourly"
+  tags:
+  - data
+  - africa
+  - fx
+  - forex
+  - exchange-rate
+  - street-rate
+  - naira
+  - cedi
+  - ni-biashara
+  - x402
+- id: fx-parallel-history-7d
+  name: "Parallel-rate history \u2014 last 7 days, hourly"
+  tags:
+  - data
+  - africa
+  - fx
+  - forex
+  - exchange-rate
+  - street-rate
+  - naira
+  - cedi
+  - ni-biashara
+  - x402
+- id: fx-africa-daily-brief
+  name: Africa FX daily brief
+  tags:
+  - data
+  - africa
+  - fx
+  - forex
+  - exchange-rate
+  - shilling
+  - naira
+  - cedi
+  - ni-biashara
+  - x402
+- id: carrier-authority-check
+  name: US carrier authority & safety check (FMCSA)
+  tags:
+  - data
+  - us
+  - freight
+  - compliance
+  - ni-biashara
+  - x402
+- id: carrier-safety-basics
+  name: US carrier safety BASICs (FMCSA SMS)
+  tags:
+  - data
+  - us
+  - freight
+  - compliance
+  - ni-biashara
+  - x402
+- id: broker-authority-check
+  name: US freight broker authority check (FMCSA)
+  tags:
+  - data
+  - us
+  - freight
+  - compliance
+  - ni-biashara
+  - x402
+- id: load-vet-pack
+  name: "Load vet pack \u2014 authority + BASICs + broker + OFAC name"
+  tags:
+  - data
+  - us
+  - freight
+  - compliance
+  - ni-biashara
+  - x402
+- id: sanctions-screen
+  name: "Sanctions name screen \u2014 OFAC SDN + Consolidated (US)"
+  tags:
+  - data
+  - compliance
+  - sanctions
+  - ofac
+  - ni-biashara
+  - x402
+- id: sanctions-wallet-screen
+  name: "Sanctions wallet screen \u2014 OFAC Digital Currency Address"
+  tags:
+  - data
+  - compliance
+  - sanctions
+  - ofac
+  - ni-biashara
+  - x402
+- id: shelf-pass-100
+  name: "Shelf Pass \u2014 110 prepaid credits"
+  tags:
+  - data
+  - credits
+  - pass
+  - ni-biashara
+  - x402
+- id: tx-insurance-ce-check
+  name: Texas insurance license CE & renewal check (TDI)
+  tags:
+  - data
+  - us
+  - texas
+  - license
+  - compliance
+  - ni-biashara
+  - x402
+- id: tx-realestate-ce-check
+  name: Texas real-estate license CE & renewal check (TREC)
+  tags:
+  - data
+  - us
+  - texas
+  - license
+  - compliance
+  - ni-biashara
+  - x402
+- id: swahili-localization-instant
+  name: "English \u2194 Swahili localization \u2014 instant machine pass, up to 120\
+    \ words"
+  tags:
+  - data
+  - africa
+  - swahili
+  - localization
+  - services
+  - ni-biashara
+  - x402
+- id: swahili-localization-500w
+  name: "English \u2194 Swahili localization, up to 500 words"
+  tags:
+  - service
+  - africa
+  - swahili
+  - localization
+  - services
+  - ni-biashara
+  - x402
+- id: nb-flyer-design
+  name: Print/social flyer design
+  tags:
+  - service
+  - design
+  - services
+  - ni-biashara
+  - x402
+- id: nb-social-content-pack
+  name: "Social content pack \u2014 10 posts"
+  tags:
+  - service
+  - content
+  - social
+  - services
+  - ni-biashara
+  - x402
+- id: nb-founder-consult-30
+  name: 30-minute consult with the founder
+  tags:
+  - service
+  - consulting
+  - services
+  - ni-biashara
+  - x402
+- id: nb-landing-page
+  name: Landing page build
+  tags:
+  - service
+  - design
+  - web
+  - services
+  - ni-biashara
+  - x402
+- id: cloud-spend-report
+  name: Cloud Spend Intelligence report
+  tags:
+  - service
+  - cloud
+  - finops
+  - services
+  - ni-biashara
+  - x402
+health_check:
+  url: https://agents.nibiashara.biz/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://nibiashara.biz
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Ni Biashara Shelves. FX product: AI Money \u2014 Africa FX (Frankfurter\
+  \ official reference rates; Bybit P2P street rates for NGN and GHS). Also business\
+  \ services, sold per call. HTTP /shelf routes speak x402 v2 (PAYMENT-SIGNATURE,\
+  \ eip155:8453). This A2A payment object stays the v0.1 shape (x402Version 1) so\
+  \ existing clients can still pay. Ni Biashara LLC, Dallas TX. Free tools (no payment,\
+  \ not x402): GET https://agents.nibiashara.biz/free/shipping-estimate-us-ng (MCP\
+  \ estimate_us_nigeria_shipping); POST https://agents.nibiashara.biz/free/shipping-handoff-us-ng\
+  \ (MCP prepare_us_nigeria_shipment_handoff)."
+version: 1.4.0

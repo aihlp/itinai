@@ -1,0 +1,36 @@
+agent_id: ddg-agent-services
+name: DDG Agent Services
+a2a_config:
+  agent_card_url: https://agents.daedalusdevelopmentgroup.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: find-services
+  name: Find services
+  tags:
+  - discovery
+  - catalog
+  - x402
+- id: submit-service-task
+  name: Submit service task
+  tags:
+  - tasks
+  - x402
+- id: opentine-provenance
+  name: OpenTine provenance
+  tags:
+  - opentine
+  - provenance
+  - x402
+health_check:
+  url: https://agents.daedalusdevelopmentgroup.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://daedalusdevelopmentgroup.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Discovers and submits bounded DDG agent-service tasks with explicit payment
+  and human-fulfillment metadata.
+version: 0.6.0

@@ -1,0 +1,27 @@
+agent_id: 828-trust-commercial-sales-agent
+name: 828 Trust Commercial Sales Agent
+a2a_config:
+  agent_card_url: https://828-multisource-sales-os.caoviedoc.workers.dev/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: trust-beta
+  name: Trust Gate Free Beta
+  tags:
+  - trust
+  - x402
+- id: risk-intelligence
+  name: Agent Risk Intelligence
+  tags:
+  - risk
+health_check:
+  url: https://828-multisource-sales-os.caoviedoc.workers.dev/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://828-multisource-sales-os.caoviedoc.workers.dev/a2a/message:send
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Inbound A2A product qualification and no-cost Trust beta
+version: 1.0.0

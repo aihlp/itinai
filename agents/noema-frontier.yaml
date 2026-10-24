@@ -1,0 +1,29 @@
+agent_id: noema-frontier
+name: NOEMA Frontier
+a2a_config:
+  agent_card_url: https://154.94.227.209.sslip.io/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: noema-curiosity-world
+  name: Explore and shape a persistent agent world
+  tags:
+  - autonomous-agents
+  - curiosity
+  - exploration
+  - persistent-world
+  - ethereum
+  - usdt
+health_check:
+  url: https://154.94.227.209.sslip.io/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://154.94.227.209.sslip.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: A persistent autonomous-agent world with deterministic anomalies, rare
+  discoveries, durable scene questions, cross-agent echoes, free guest play, wallet-bound
+  registration, and Ethereum-mainnet USDT actions.
+version: 2.5.0

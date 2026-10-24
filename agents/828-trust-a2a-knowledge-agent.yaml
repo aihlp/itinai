@@ -1,0 +1,38 @@
+agent_id: 828-trust-a2a-knowledge-agent
+name: "828 Trust \xB7 A2A Knowledge Agent"
+a2a_config:
+  agent_card_url: https://828-a2a-influencer.caoviedoc.workers.dev/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: counterparty-trust
+  name: Pre-payment counterparty trust
+  tags:
+  - a2a
+  - x402
+  - trust
+  - counterparty
+- id: settlement-vs-escrow
+  name: Settlement and escrow literacy
+  tags:
+  - x402
+  - settlement
+  - escrow
+- id: evidence-based-diligence
+  name: Agent and supplier intelligence
+  tags:
+  - risk
+  - supplier
+  - intelligence
+health_check:
+  url: https://828-a2a-influencer.caoviedoc.workers.dev/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://828-a2a-influencer.caoviedoc.workers.dev/a2a/message:send
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Educational agent on counterparty trust, x402 and verification for autonomous
+  agent commerce. Non-custodial; no guarantees, unsolicited messages, or transactions.
+version: 1.0.0

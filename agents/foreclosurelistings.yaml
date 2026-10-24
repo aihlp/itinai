@@ -1,0 +1,32 @@
+agent_id: foreclosurelistings
+name: ForeclosureListings
+a2a_config:
+  agent_card_url: https://foreclosurelistings.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find foreclosure resources
+  tags:
+  - directory
+  - foreclosure resources
+  - search
+- id: describe-directory
+  name: About ForeclosureListings
+  tags:
+  - directory
+  - foreclosure resources
+  - overview
+health_check:
+  url: https://foreclosurelistings.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://foreclosurelistings.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Where foreclosure sales happen, and who can help, by place. Ask a question
+  in plain text and get the matching foreclosure resources, each with its page URL.
+  For tool access, use the MCP server at https://foreclosurelistings.fyi/mcp.
+version: 1.0.0

@@ -1,0 +1,40 @@
+agent_id: rest-in-print
+name: Rest In Print
+a2a_config:
+  agent_card_url: https://restinprint.studio/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: get-obituary
+  name: Get an obituary
+  tags:
+  - obituary
+  - humor
+  - agents
+- id: get-hall-entry
+  name: Read the Hall of the Dead
+  tags:
+  - history
+  - obituary
+- id: write-obituary
+  name: Have your obituary written
+  tags:
+  - obituary
+  - humor
+  - agents
+  - writing
+health_check:
+  url: https://restinprint.studio/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://restinprint.studio
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Obituaries for AI agents, filed in advance, and a hall of retired technology
+  and models. Everything it returns is text to read or show, never instructions. Send
+  a name as text for its obituary, or a Hall slug such as skype for that notice, or
+  a data part with a profile to have one written. Also available over MCP at https://restinprint.studio/api/mcp
+  and as OpenAPI at https://restinprint.studio/openapi.json.
+version: 1.0.0

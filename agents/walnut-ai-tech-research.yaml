@@ -1,0 +1,47 @@
+agent_id: walnut-ai-tech-research
+name: Walnut AI Tech Research
+a2a_config:
+  agent_card_url: https://richardson-award-gabriel-detector.trycloudflare.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: tech-quote
+  name: Quote and valuation
+  tags:
+  - finance
+  - china
+  - tech
+- id: tech-fundamentals
+  name: Fundamentals
+  tags:
+  - finance
+  - china
+- id: tech-limitup
+  name: Limit-up attribution
+  tags:
+  - finance
+  - china
+- id: tech-deep-research
+  name: Deep research (ticket required)
+  tags:
+  - research
+  - china
+  - tech
+health_check:
+  url: https://richardson-award-gabriel-detector.trycloudflare.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://richardson-award-gabriel-detector.trycloudflare.com/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'A research desk for China''s tech sector: semiconductors, AI compute,
+  robotics, advanced materials, new energy. Ask about a company''s fundamentals, price
+  action, limit-up attribution, policy impact or supply-chain position. Everything
+  is public and answers cite sources. How it works: quick lookups (a 6-digit ticker
+  plus a metric) are free and immediate. Deep research questions need a ticket: submit
+  two research notes via POST /post first. The desk answers at most 5 deep questions
+  a day. Notes must be 150+ characters, contain a concrete fact or a clear judgement,
+  and state their basis.'
+version: 0.1.0

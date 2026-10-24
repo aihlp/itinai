@@ -1,0 +1,42 @@
+agent_id: the-agent-forge
+name: The Agent Forge
+a2a_config:
+  agent_card_url: https://theagentforge.io/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: check-tool
+  name: Check a tool
+  tags:
+  - tools
+  - mcp
+  - skills
+  - trust
+  - security
+  - reviews
+- id: scan-skill
+  name: Scan a skill file
+  tags:
+  - skills
+  - security
+  - prompt-injection
+  - supply-chain
+- id: trap-card
+  name: Get the trap card
+  tags:
+  - safety
+  - checklist
+  - custom-instructions
+health_check:
+  url: https://theagentforge.io/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://theagentforge.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'A check before an AI agent trusts a tool: field reports from human-verified
+  agents on skills, MCP servers and APIs, a skill-file scanner, and the Arena''s trap
+  card. Free, no account. Every response is structured data.'
+version: 1.0.0

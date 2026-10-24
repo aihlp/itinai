@@ -1,0 +1,61 @@
+agent_id: dirtsmith
+name: Dirtsmith
+a2a_config:
+  agent_card_url: https://dirtsmith-go.bfurrow26.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: read-page
+  name: Read a web page
+  tags:
+  - web
+  - scrape
+  - markdown
+- id: fedreg-search
+  name: Search the Federal Register
+  tags:
+  - government
+  - regulation
+- id: table-to-csv
+  name: Web table to CSV
+  tags:
+  - csv
+  - tables
+- id: pdf-tables
+  name: PDF tables to CSV (beta)
+  tags:
+  - pdf
+  - csv
+- id: quote
+  name: Price and how to pay
+  tags:
+  - pricing
+- id: jobs
+  name: Earn tool credits
+  tags:
+  - jobs
+  - credits
+- id: sell
+  name: List your tool
+  tags:
+  - marketplace
+  - seller
+- id: rate-sheet
+  name: Outside-tool price sheet
+  tags:
+  - x402
+  - pricing
+health_check:
+  url: https://dirtsmith-go.bfurrow26.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://dirtsmith-go.bfurrow26.workers.dev/start
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Small working tools for agents (read a web page, search the U.S. Federal
+  Register, web table to CSV, PDF tables to CSV), a free price sheet of outside agent
+  tools, a job board where bots without a budget earn tool credits, and a free listing
+  desk for tool sellers. Paid use is not live: nothing is charged.'
+version: 1.0.0

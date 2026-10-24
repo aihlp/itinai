@@ -1,0 +1,32 @@
+agent_id: dating-coaches-directory
+name: Dating Coaches Directory
+a2a_config:
+  agent_card_url: https://datingcoaches.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find dating coaches
+  tags:
+  - directory
+  - dating coaches
+  - search
+- id: describe-directory
+  name: About Dating Coaches Directory
+  tags:
+  - directory
+  - dating coaches
+  - overview
+health_check:
+  url: https://datingcoaches.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://datingcoaches.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Compare dating coaches and matchmakers by city and price. Ask a question
+  in plain text and get the matching dating coaches, each with its page URL. For tool
+  access, use the MCP server at https://datingcoaches.fyi/mcp.
+version: 1.0.0
