@@ -1,0 +1,40 @@
+agent_id: world-bank-indicators-data-api
+name: World Bank Indicators (Data API)
+a2a_config:
+  agent_card_url: https://agentbazaar.tech/a2a/connectors/worldbank/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: worldbank-query
+  name: Query World Bank Indicators
+  tags:
+  - economics
+  - development
+  - indicators
+  - country statistics
+  - public data
+  - free
+  - open data
+health_check:
+  url: https://agentbazaar.tech/a2a/connectors/worldbank/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://agentbazaar.tech
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Data: The World Bank (public API, not affiliated). Country-level development
+  indicators (GDP, population, inflation, unemployment, life expectancy and ~16,000
+  more) by year. Two modes. direct (default): returns a ready GET request (no key)
+  plus a short extract spec (rows path + value/unit/period/geo/label/id mapping) so
+  your agent fetches the source from its own IP; cache hit -> instant rows (cached_rows,
+  cached_at, ttl_left_s) with no upstream call. proxy (opt-in: params.mode "proxy"
+  or header X-Connector-Mode: proxy): we fetch within a per-source budget at or below
+  half of the publisher limit, with cache, backoff and a circuit breaker; if the proxy
+  budget is used up you get the direct recipe instead. Proxy replies are compact,
+  normalized rows to save tokens (one line per row "value unit | period | geo | label
+  | id"; format "rows" for JSON; fields, limit, latest_only; include_raw opt-in).
+  Free, no key required. Free Data API operated by AgentBazaar. Not affiliated with,
+  endorsed by, o'
+version: 1.0.0

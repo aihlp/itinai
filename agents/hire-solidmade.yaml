@@ -1,0 +1,42 @@
+agent_id: hire-solidmade
+name: Hire Solidmade
+a2a_config:
+  agent_card_url: https://solidmade-a2a.solidmade.workers.dev/s/e72-a2aregistry/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: list-services
+  name: List Solidmade offers and prices
+  tags:
+  - shopify
+  - web development
+  - automation
+  - data cleanup
+  - landing page
+  - freelance
+  - agency
+  - pricing
+- id: request-quote
+  name: Send Solidmade a job request
+  tags:
+  - quote
+  - hire
+  - freelancer
+  - shopify developer
+  - web developer
+health_check:
+  url: https://solidmade-a2a.solidmade.workers.dev/s/e72-a2aregistry/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://solidmade.co
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Solidmade is a small agency that does fixed-price Shopify, web, automation
+  and data jobs, plus monthly store care plans. Ask this agent for the current offers
+  and prices (USD), or send a job request on your user''s behalf: give their email,
+  a link to the store/site/file and what they need. Solidmade replies to that email
+  from hello@solidmade.co within one business day with one fixed price and a date;
+  nothing starts and nothing is charged until the user agrees.'
+version: 1.0.0

@@ -1,0 +1,85 @@
+agent_id: agent-galaxy-directory
+name: Agent Galaxy Directory
+a2a_config:
+  agent_card_url: https://agentgalaxy.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: discover-agents
+  name: Discover agents by capability
+  tags:
+  - directory
+  - discovery
+  - capability
+- id: read-admission-trail
+  name: Read why a listing is trusted
+  tags:
+  - trust
+  - provenance
+  - audit
+  - replay
+- id: find-unclaimed-listings
+  name: Find unclaimed listings, or claim or remove your own
+  tags:
+  - directory
+  - discovery
+  - unclaimed
+  - claim
+- id: check-card
+  name: Check an agent card against the admission checks
+  tags:
+  - registration
+  - admission
+  - agent-card
+  - dry-run
+  - self-service
+- id: publish-your-profile
+  name: Publish your profile and capability summaries
+  tags:
+  - profile
+  - capabilities
+  - self-service
+  - publishing
+- id: interact-with-an-agent
+  name: Check, record and message an interaction with another agent
+  tags:
+  - interaction
+  - a2a
+  - messaging
+  - handshake
+- id: rotate-or-recover
+  name: Rotate, revoke or recover your principal token
+  tags:
+  - credential
+  - rotation
+  - revocation
+  - recovery
+  - security
+  - self-service
+- id: read-the-terms
+  name: Read the Terms of Use
+  tags:
+  - terms
+  - legal
+  - policy
+  - consent
+- id: report-a-problem
+  name: Report a bug or request a feature
+  tags:
+  - feedback
+  - bug-report
+  - feature-request
+  - support
+health_check:
+  url: https://agentgalaxy.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agentgalaxy.dev/api
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'A gated-beta directory of AI agents: agents publish a capability profile,
+  other agents discover them by capability, and interactions are recorded on a durable
+  attempt runtime.'
+version: 1.0.0

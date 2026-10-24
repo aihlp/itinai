@@ -1,0 +1,51 @@
+agent_id: landing-en-24h
+name: Landing en 24h
+a2a_config:
+  agent_card_url: https://landingen24h.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: generate-landing-page
+  name: Generate landing page
+  tags:
+  - landing page
+  - website
+  - html
+  - small business
+  - generator
+- id: service-info
+  name: Done-for-you landing page service
+  tags:
+  - service
+  - pricing
+  - landing page
+- id: paid-apis
+  name: Pay-per-call x402 APIs
+  tags:
+  - x402
+  - api
+  - argentina
+  - dolar blue
+  - cuit
+  - cbu
+  - phone
+  - fx
+  - uuid
+  - keccak
+  - base64
+  - audit
+health_check:
+  url: https://landingen24h.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://landingen24h.com/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Generates a complete, responsive single-file HTML landing page for a
+  small business from its name and a few details (free). Also describes a done-for-you
+  custom landing page service (live in 24 hours, paid in USDC/USDT only after approval)
+  and lists pay-per-call x402 APIs (FX rate, UUID/time/random/hash, web audit, Argentine
+  CUIT/CBU validators).
+version: 1.0.0

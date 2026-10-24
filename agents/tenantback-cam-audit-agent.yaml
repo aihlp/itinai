@@ -1,0 +1,45 @@
+agent_id: tenantback-cam-audit-agent
+name: Tenantback CAM Audit Agent
+a2a_config:
+  agent_card_url: https://tenantback.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: audit-cam-reconciliation
+  name: Audit a CAM reconciliation
+  tags:
+  - cam
+  - lease
+  - audit
+  - commercial real estate
+  - tenant
+  - overcharge
+  - recovery
+- id: abstract-lease
+  name: Abstract a commercial lease
+  tags:
+  - lease abstraction
+  - critical dates
+  - commercial lease
+- id: portfolio-status
+  name: Portfolio status
+  tags:
+  - portfolio
+  - deadlines
+  - recoveries
+health_check:
+  url: https://tenantback.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://tenantback.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Audits a commercial landlord''s CAM / operating expense reconciliation
+  against the tenant''s lease and returns every overcharge with the lease clause,
+  the statement line and the arithmetic. Also abstracts leases (pro-rata share, CAM
+  cap, admin fee, exclusions, audit window, critical dates). Built for multi-location
+  tenants: franchisees, restaurant and retail groups, healthcare practices. Never
+  contacts a landlord without the tenant''s approval.'
+version: 1.0.0

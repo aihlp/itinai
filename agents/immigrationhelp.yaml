@@ -1,0 +1,32 @@
+agent_id: immigrationhelp
+name: ImmigrationHelp
+a2a_config:
+  agent_card_url: https://immigrationhelp.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find immigration legal providers
+  tags:
+  - directory
+  - immigration legal providers
+  - search
+- id: describe-directory
+  name: About ImmigrationHelp
+  tags:
+  - directory
+  - immigration legal providers
+  - overview
+health_check:
+  url: https://immigrationhelp.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://immigrationhelp.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find DOJ-authorized immigration legal help near you. Ask a question in
+  plain text and get the matching immigration legal providers, each with its page
+  URL. For tool access, use the MCP server at https://immigrationhelp.fyi/mcp.
+version: 1.0.0

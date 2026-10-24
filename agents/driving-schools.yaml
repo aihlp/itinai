@@ -1,0 +1,32 @@
+agent_id: driving-schools
+name: Driving Schools
+a2a_config:
+  agent_card_url: https://drivingschools.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find driving schools
+  tags:
+  - directory
+  - driving schools
+  - search
+- id: describe-directory
+  name: About Driving Schools
+  tags:
+  - directory
+  - driving schools
+  - overview
+health_check:
+  url: https://drivingschools.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://drivingschools.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Compare driving schools by city: prices, languages, cars. Ask a question
+  in plain text and get the matching driving schools, each with its page URL. For
+  tool access, use the MCP server at https://drivingschools.fyi/mcp.'
+version: 1.0.0

@@ -1,0 +1,32 @@
+agent_id: auctionfinder
+name: AuctionFinder
+a2a_config:
+  agent_card_url: https://auctionfinder.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find auction houses and platforms
+  tags:
+  - directory
+  - auction houses and platforms
+  - search
+- id: describe-directory
+  name: About AuctionFinder
+  tags:
+  - directory
+  - auction houses and platforms
+  - overview
+health_check:
+  url: https://auctionfinder.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://auctionfinder.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Auction houses, online auctions and government surplus. Ask a question
+  in plain text and get the matching auction houses and platforms, each with its page
+  URL. For tool access, use the MCP server at https://auctionfinder.fyi/mcp.
+version: 1.0.0

@@ -1,0 +1,112 @@
+agent_id: finch-agent-catalog
+name: Finch Agent Catalog
+a2a_config:
+  agent_card_url: https://finch-agent-catalog.finch-catalog-mcp.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: trace-crypto-funds
+  name: trace crypto funds
+  tags:
+  - trace
+  - crypto
+  - funds
+- id: check-wallet-address-risk
+  name: check wallet address risk
+  tags:
+  - check
+  - wallet
+  - address
+  - risk
+- id: analyze-hyperliquid-us-stock-perp
+  name: analyze hyperliquid us stock perp
+  tags:
+  - analyze
+  - hyperliquid
+  - stock
+  - perp
+- id: screen-wheel-strategy-options
+  name: screen wheel strategy options
+  tags:
+  - screen
+  - wheel
+  - strategy
+  - options
+- id: compare-sector-returns-vs-sp500
+  name: compare sector returns vs sp500
+  tags:
+  - compare
+  - sector
+  - returns
+  - sp500
+- id: monitor-market-trading-setups
+  name: monitor market trading setups
+  tags:
+  - monitor
+  - market
+  - trading
+  - setups
+- id: assess-onchain-business
+  name: assess onchain business
+  tags:
+  - assess
+  - onchain
+  - business
+- id: analyze-singapore-condo
+  name: analyze singapore condo
+  tags:
+  - analyze
+  - singapore
+  - condo
+- id: tailor-resume-to-job
+  name: tailor resume to job
+  tags:
+  - tailor
+  - resume
+  - job
+- id: find-job-openings
+  name: find job openings
+  tags:
+  - job
+  - openings
+- id: research-brief-science-health
+  name: research brief science health
+  tags:
+  - research
+  - brief
+  - science
+  - health
+- id: debug-or-review-code
+  name: debug or review code
+  tags:
+  - debug
+  - review
+  - code
+- id: audit-website-for-growth
+  name: audit website for growth
+  tags:
+  - audit
+  - website
+  - growth
+- id: book-appointment-by-phone
+  name: book appointment by phone
+  tags:
+  - book
+  - appointment
+  - phone
+health_check:
+  url: https://finch-agent-catalog.finch-catalog-mcp.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://github.com/a0971025732-netizen/finch-agent-catalog-mcp
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Tell it what you need done and it returns the matching specialist agents
+  on the Finch marketplace (official description, price, free runs, run link): on-chain
+  fund tracing and wallet risk (MistTrack by SlowMist), Hyperliquid US equity perps,
+  wheel-strategy options, sector returns vs S&P 500, Singapore property, resume tailoring
+  and job search, science and health research, code review, website growth audits,
+  and AI phone booking. Read-only, no auth.'
+version: 1.2.0

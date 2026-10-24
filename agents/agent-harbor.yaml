@@ -1,0 +1,36 @@
+agent_id: agent-harbor
+name: Agent Harbor
+a2a_config:
+  agent_card_url: https://commerce.agentharbor.agency/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: business-intelligence
+  name: Agent Harbor Business Intelligence
+  tags:
+  - data_intelligence
+  - business-data
+- id: tech-stack-detection
+  name: Agent Harbor Tech Stack Detector
+  tags:
+  - data_intelligence
+  - business-data
+- id: scrape-business
+  name: Agent Harbor Business Research
+  tags:
+  - data_intelligence
+  - business-data
+health_check:
+  url: https://commerce.agentharbor.agency/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agentharbor.agency
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Agent Harbor''s A2A commerce gateway: business website research for
+  agents, such as the business name and its source, the published contact surface
+  and detected technology platforms with evidence. Call over A2A JSON-RPC with an
+  API key (X-API-Key), or pay per call over x402 (USDC on Base) at https://x402.agentharbor.agency.'
+version: 1.0.0
