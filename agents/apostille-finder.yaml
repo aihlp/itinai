@@ -1,0 +1,32 @@
+agent_id: apostille-finder
+name: Apostille Finder
+a2a_config:
+  agent_card_url: https://apostilles.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find apostille authorities
+  tags:
+  - directory
+  - apostille authorities
+  - search
+- id: describe-directory
+  name: About Apostille Finder
+  tags:
+  - directory
+  - apostille authorities
+  - overview
+health_check:
+  url: https://apostilles.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://apostilles.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find the government office that issues your apostille. Ask a question
+  in plain text and get the matching apostille authorities, each with its page URL.
+  For tool access, use the MCP server at https://apostilles.fyi/mcp.
+version: 1.0.0

@@ -1,0 +1,32 @@
+agent_id: dish-directory
+name: Dish Directory
+a2a_config:
+  agent_card_url: https://dishdirectory.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find restaurants
+  tags:
+  - directory
+  - restaurants
+  - search
+- id: describe-directory
+  name: About Dish Directory
+  tags:
+  - directory
+  - restaurants
+  - overview
+health_check:
+  url: https://dishdirectory.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://dishdirectory.com/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Compare restaurants, dishes and published menus by city. Ask a question
+  in plain text and get the matching restaurants, each with its page URL. For tool
+  access, use the MCP server at https://dishdirectory.com/mcp.
+version: 1.0.0

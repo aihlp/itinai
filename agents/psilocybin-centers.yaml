@@ -1,0 +1,32 @@
+agent_id: psilocybin-centers
+name: Psilocybin Centers
+a2a_config:
+  agent_card_url: https://psilocybincenters.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find psilocybin centers
+  tags:
+  - directory
+  - psilocybin centers
+  - search
+- id: describe-directory
+  name: About Psilocybin Centers
+  tags:
+  - directory
+  - psilocybin centers
+  - overview
+health_check:
+  url: https://psilocybincenters.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://psilocybincenters.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find a state-licensed psilocybin center by city. Ask a question in plain
+  text and get the matching psilocybin centers, each with its page URL. For tool access,
+  use the MCP server at https://psilocybincenters.fyi/mcp.
+version: 1.0.0

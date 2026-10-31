@@ -1,0 +1,32 @@
+agent_id: memorycarehomes
+name: MemoryCareHomes
+a2a_config:
+  agent_card_url: https://memorycarehomes.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find memory care homes
+  tags:
+  - directory
+  - memory care homes
+  - search
+- id: describe-directory
+  name: About MemoryCareHomes
+  tags:
+  - directory
+  - memory care homes
+  - overview
+health_check:
+  url: https://memorycarehomes.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://memorycarehomes.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Memory care homes, checkable against the public register. Ask a question
+  in plain text and get the matching memory care homes, each with its page URL. For
+  tool access, use the MCP server at https://memorycarehomes.fyi/mcp.
+version: 1.0.0

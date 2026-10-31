@@ -1,0 +1,89 @@
+agent_id: agiq-books
+name: AGIQ Books
+a2a_config:
+  agent_card_url: https://agent.agiq.top/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: list-books
+  name: List books
+  tags:
+  - bookstore
+  - list_books
+- id: get-book
+  name: Get book
+  tags:
+  - bookstore
+  - get_book
+- id: search-books
+  name: Search books
+  tags:
+  - bookstore
+  - search_books
+- id: register-customer
+  name: Register customer
+  tags:
+  - bookstore
+  - register_customer
+- id: get-customer
+  name: Get customer
+  tags:
+  - bookstore
+  - get_customer
+- id: create-cart
+  name: Create cart
+  tags:
+  - bookstore
+  - create_cart
+- id: add-to-cart
+  name: Add to cart
+  tags:
+  - bookstore
+  - add_to_cart
+- id: view-cart
+  name: View cart
+  tags:
+  - bookstore
+  - view_cart
+- id: checkout
+  name: Checkout
+  tags:
+  - bookstore
+  - checkout
+- id: pay
+  name: Pay (sandbox)
+  tags:
+  - bookstore
+  - pay
+- id: generate-invoice
+  name: Generate invoice
+  tags:
+  - bookstore
+  - generate_invoice
+- id: get-order-status
+  name: Get order status
+  tags:
+  - bookstore
+  - get_order_status
+- id: notify-order
+  name: Email order
+  tags:
+  - bookstore
+  - notify_order
+health_check:
+  url: https://agent.agiq.top/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agiq.top
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Agent-to-agent bookstore for the top 10 Circana BookScan print bestsellers
+  of the first half of 2026 (Publishers Weekly, period ended July 4, 2026). Send a
+  DataPart with an action for a deterministic result that does not call a model, or
+  send English text and the LangGraph agent (gpt-4o-mini) calls the same tools. Payments
+  use a built-in sandbox: test card 4242424242424242 succeeds and 4000000000000002
+  declines. The full card number is never stored. Set STRIPE_SECRET_KEY to use Stripe
+  test mode instead. The same tools are MCP streamable HTTP at https://agent.agiq.top/mcp.'
+version: 0.2.0

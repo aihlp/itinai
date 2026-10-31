@@ -1,0 +1,30 @@
+agent_id: indiainsurances
+name: IndiaInsurances
+a2a_config:
+  agent_card_url: https://indiainsurances.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-policy
+  name: Find an Indian insurance policy
+  tags:
+  - india
+  - insurance
+  - health-insurance
+  - term-life
+  - irdai
+health_check:
+  url: https://indiainsurances.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://indiainsurances.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'The insurance products on IRDAI''s registers (life, health, general)
+  with their own documents; most of the ones on sale read clause by clause: waiting
+  periods, limits, co-pay, exclusions, claims and renewal rights, each with the verbatim
+  policy para (field `quote`), clause and page, plus comparisons, insurer track records
+  and the law. Free, no key, no commission.'
+version: 1.0.0

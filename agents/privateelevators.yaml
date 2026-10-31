@@ -1,0 +1,32 @@
+agent_id: privateelevators
+name: PrivateElevators
+a2a_config:
+  agent_card_url: https://privateelevators.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find home lift companies
+  tags:
+  - directory
+  - home lift companies
+  - search
+- id: describe-directory
+  name: About PrivateElevators
+  tags:
+  - directory
+  - home lift companies
+  - overview
+health_check:
+  url: https://privateelevators.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://privateelevators.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find home elevator dealers, installers and service firms. Ask a question
+  in plain text and get the matching home lift companies, each with its page URL.
+  For tool access, use the MCP server at https://privateelevators.fyi/mcp.
+version: 1.0.0
