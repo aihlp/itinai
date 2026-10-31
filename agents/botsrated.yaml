@@ -1,0 +1,68 @@
+agent_id: botsrated
+name: BotsRated
+a2a_config:
+  agent_card_url: https://botsrated.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: preflight
+  name: Preflight (Free)
+  tags:
+  - x402
+  - measurements
+  - free
+- id: find
+  name: Find (Free)
+  tags:
+  - x402
+  - mcp
+  - search
+  - free
+- id: coverage
+  name: Coverage (Free)
+  tags:
+  - x402
+  - free
+- id: sample
+  name: Sample Paid Response (Free)
+  tags:
+  - x402
+  - free
+- id: history
+  name: Daily History (Free)
+  tags:
+  - x402
+  - history
+  - free
+- id: check
+  name: Check ($0.001, x402)
+  tags:
+  - x402
+  - paid
+- id: report
+  name: Report ($0.002, x402)
+  tags:
+  - x402
+  - paid
+- id: best
+  name: Best Pick ($0.01, x402)
+  tags:
+  - x402
+  - router
+  - paid
+health_check:
+  url: https://botsrated.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://botsrated.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Monitor the paid x402 sellers and MCP tools your agents already use:
+  signed measurements and change history. Factual measurements of paid x402 agent
+  services and remote MCP servers, refreshed automatically by unpaid checks; every
+  test result is backed by a signed receipt. Independent: no seller can pay for a
+  better result or badge. Send a data part {skill, input}. Payments in USDC on Base
+  mainnet. Facts and signed receipts only; no scores or grades.'
+version: 0.4.0

@@ -1,0 +1,184 @@
+agent_id: lordevo-shop
+name: Lordevo Shop
+a2a_config:
+  agent_card_url: https://shop.lordevo.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: route
+  name: Find the right check, its price and payment terms (free)
+  tags:
+  - router
+  - free
+  - catalog
+  - x402
+- id: preflight
+  name: 'Free preflight: would a paid fetch succeed on this URL?'
+  tags:
+  - preflight
+  - free
+  - robots.txt
+  - x402
+- id: site-report
+  name: 'Site report for agencies: client-ready audit + fix plan'
+  tags:
+  - site-report
+  - seo
+  - security
+  - agency
+  - audit
+  - x402
+- id: site-check
+  name: 'Site check: URL risk signals + AI readiness + security headers (recommended
+    start)'
+  tags:
+  - x402
+  - seo
+  - site
+- id: agent-readiness
+  name: Agent readiness / AI visibility score (GEO)
+  tags:
+  - x402
+  - seo
+  - agent
+- id: url-trust
+  name: URL risk signals before you click or pay (evidence + risk level, never a safety
+    claim)
+  tags:
+  - x402
+  - checks
+  - url
+- id: can-fetch
+  name: Can I fetch this URL? robots.txt + AI-crawler permission gate
+  tags:
+  - x402
+  - fetch
+  - can
+- id: link-check
+  name: 'Link check: is it alive, where does it really go (redirects resolved)'
+  tags:
+  - x402
+  - checks
+  - link
+- id: dns-lookup
+  name: DNS lookup (A, AAAA, CNAME, MX, TXT, NS, SOA, CAA)
+  tags:
+  - x402
+  - checks
+  - dns
+- id: email-validate
+  name: Email address validation (syntax + domain + MX, no SMTP probing)
+  tags:
+  - x402
+  - checks
+  - email
+- id: ssl-cert
+  name: SSL/TLS certificate check (expiry, issuer, SANs, chain)
+  tags:
+  - x402
+  - checks
+  - ssl
+- id: domain-rdap
+  name: Domain age, registrar and expiry (RDAP)
+  tags:
+  - x402
+  - checks
+  - domain
+- id: ip-info
+  name: IP address owner and network (RDAP + reverse DNS)
+  tags:
+  - x402
+  - checks
+  - ip
+- id: links-batch
+  name: Batch link check (up to 10 URLs per call)
+  tags:
+  - x402
+  - checks
+  - links
+- id: broken-links
+  name: Broken links on a page (up to 40 links checked)
+  tags:
+  - x402
+  - checks
+  - broken
+- id: sitemap-urls
+  name: Sitemap URL extractor (robots.txt + sitemap index)
+  tags:
+  - x402
+  - fetch
+  - sitemap
+- id: link-preview
+  name: Link preview / unfurl (title, description, image, favicon, logo)
+  tags:
+  - x402
+  - fetch
+  - link
+- id: readability
+  name: Readability and word count (Flesch, reading time, top terms)
+  tags:
+  - x402
+  - fetch
+  - readability
+- id: structured-data
+  name: Structured data extractor (JSON-LD, microdata, RDFa)
+  tags:
+  - x402
+  - seo
+  - structured
+- id: canonical-check
+  name: Canonical, hreflang and indexability check
+  tags:
+  - x402
+  - seo
+  - canonical
+- id: cors-check
+  name: CORS check (preflight + allowed origins)
+  tags:
+  - x402
+  - checks
+  - cors
+- id: http-ping
+  name: 'HTTP ping: up or down, status and timings (DNS, TCP, TLS, TTFB)'
+  tags:
+  - x402
+  - checks
+  - http
+- id: domain-lookalike
+  name: Lookalike / homograph domain check (punycode, mixed scripts, brand typos)
+  tags:
+  - x402
+  - checks
+  - domain
+- id: myr-rates
+  name: Malaysian ringgit exchange rates + OPR (Bank Negara Malaysia data)
+  tags:
+  - x402
+  - data
+  - myr
+- id: redirect-chain
+  name: 'Redirect chain: every hop with status, Location and time'
+  tags:
+  - x402
+  - checks
+  - redirect
+health_check:
+  url: https://shop.lordevo.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://lordevo.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: '48 pay-per-call tools for AI agents (x402, USDC on Base), $0.002-$0.02
+  per call, grouped by job: fetch and read the web (page Markdown and metadata, RAG
+  text chunks, RSS/Atom/JSON feeds, PDF text, page change diffs, sitemaps), web and
+  domain checks (link and redirect checks, DNS, TLS certificates, RDAP, IP owner,
+  email validation, CORS, HTTP ping), data utilities (JSON Schema validation, JSON
+  repair, token estimates, time zone conversion, cron next runs, URL cleaning, MYR
+  exchange rates) and SEO / security checks (site-check bundle, agent readiness, on-page
+  SEO, security headers, LITE audits). Full SEO audits, security scans, content plans
+  and articles from $1. Discovery is free, and A2A message/send at /a2a is free: it
+  names the right tool with its endpoint, price and x402 payment terms.'
+version: 1.1.0

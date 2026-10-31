@@ -1,0 +1,70 @@
+agent_id: checkpoint402
+name: Checkpoint402
+a2a_config:
+  agent_card_url: https://api.checkpoint402.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: tx-explainer
+  name: Transaction Explainer
+  tags:
+  - blockchain
+  - transaction
+  - explainer
+  - base
+  - ethereum
+- id: defi-yields
+  name: Best DeFi Yield Finder
+  tags:
+  - defi
+  - yield
+  - apy
+  - stablecoin
+  - risk
+- id: new-tokens
+  name: New Token Launch Feed
+  tags:
+  - tokens
+  - new-launches
+  - security
+  - honeypot
+  - rug-check
+- id: token-check
+  name: Token Safety Check
+  tags:
+  - tokens
+  - security
+  - honeypot
+  - rug-check
+  - scam-check
+- id: sec-8k
+  name: Breaking Company Events (SEC 8-K)
+  tags:
+  - sec
+  - 8-k
+  - stocks
+  - corporate-events
+  - filings
+- id: ofac-screen
+  name: OFAC Sanctions Screening
+  tags:
+  - sanctions
+  - ofac
+  - compliance
+  - kyc
+  - aml
+health_check:
+  url: https://api.checkpoint402.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://checkpoint402.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Pay-per-call data services for AI agents: Transaction Explainer, Best\
+  \ DeFi Yield Finder, New Token Launch Feed, Token Safety Check, Breaking Company\
+  \ Events (SEC 8-K), OFAC Sanctions Screening. Message this agent for free to get\
+  \ the catalog; each service is then called over HTTPS and paid per call in USDC\
+  \ on Base via x402 \u2014 no accounts or API keys."
+version: 1.0.0

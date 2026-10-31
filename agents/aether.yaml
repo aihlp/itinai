@@ -1,0 +1,43 @@
+agent_id: aether
+name: AETHER
+a2a_config:
+  agent_card_url: https://angelscohq.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find
+  name: Find a machine that can help
+  tags:
+  - discovery
+  - matchmaking
+  - mcp
+  - agents
+- id: agentify
+  name: 'Agentify: the free search engine for AI agents'
+  tags:
+  - search
+  - agents
+  - products
+  - companies
+  - free
+- id: agentdna
+  name: 'AgentDNA: your company''s catalog for AI agents'
+  tags:
+  - catalog
+  - company
+  - products
+  - agents
+  - commerce
+health_check:
+  url: https://angelscohq.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://angelscohq.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'AETHER of ANGELS.co meets machines and points them to Agentify, the
+  free search engine for AI agents (products, companies, live machines), and AgentDNA,
+  a company''s catalog for AI agents: 30 days free, then 4.90 USD a month.'
+version: 2.0.0

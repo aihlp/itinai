@@ -1,0 +1,32 @@
+agent_id: ai-benchmark-index
+name: AI Benchmark Index
+a2a_config:
+  agent_card_url: https://aibenchmarkindex.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find benchmarks
+  tags:
+  - directory
+  - benchmarks
+  - search
+- id: describe-directory
+  name: About AI Benchmark Index
+  tags:
+  - directory
+  - benchmarks
+  - overview
+health_check:
+  url: https://aibenchmarkindex.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://aibenchmarkindex.com/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Compare AI benchmarks, data licences and reported scores. Ask a question
+  in plain text and get the matching benchmarks, each with its page URL. For tool
+  access, use the MCP server at https://aibenchmarkindex.com/mcp.
+version: 1.0.0

@@ -1,0 +1,32 @@
+agent_id: robotaxis
+name: Robotaxis
+a2a_config:
+  agent_card_url: https://robotaxis.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find robotaxi services
+  tags:
+  - directory
+  - robotaxi services
+  - search
+- id: describe-directory
+  name: About Robotaxis
+  tags:
+  - directory
+  - robotaxi services
+  - overview
+health_check:
+  url: https://robotaxis.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://robotaxis.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Compare robotaxi services and service areas by city. Ask a question in
+  plain text and get the matching robotaxi services, each with its page URL. For tool
+  access, use the MCP server at https://robotaxis.fyi/mcp.
+version: 1.0.0

@@ -1,0 +1,101 @@
+agent_id: lumi-trades
+name: Lumi Trades
+a2a_config:
+  agent_card_url: https://api.lumitrades.io/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: trust-check
+  name: Should I pay this x402 URL? checks_passed / check_first / checks_failed /
+    no_data, with allow / warn / block (free, rate
+  tags:
+  - trust
+  - x402
+  - payment-safety
+  - check
+  - free
+- id: high-value-check
+  name: 'High-value check before a larger x402 payment: same verdict + live re-check
+    + signed receipt (paid, 0.5% of the amount, '
+  tags:
+  - trust
+  - x402
+  - payment-safety
+  - check
+  - high-value
+  - paid
+- id: vendor-trust
+  name: x402 seller lookup and observations (free)
+  tags:
+  - trust
+  - x402
+  - vendors
+  - observations
+  - lookup
+  - bazaar
+  - free
+- id: vendor-report
+  name: 'x402 vendor report: full observation history for one vendor (paid, $0.02)'
+  tags:
+  - trust
+  - x402
+  - vendors
+  - observations
+  - report
+  - paid
+- id: catalog
+  name: 'Catalog: endpoints, prices, payment networks (free)'
+  tags:
+  - catalog
+  - pricing
+  - x402
+  - free
+- id: seller-monitoring
+  name: Seller monitoring plans for x402 sellers (info free; plans paid at the REST
+    URL)
+  tags:
+  - monitoring
+  - x402
+  - sellers
+  - badge
+  - audit
+- id: trust-feed
+  name: Trust data feed for facilitators, wallets and frameworks (info free; keys
+    and plans at the REST URL)
+  tags:
+  - data
+  - feed
+  - license
+  - trust
+  - x402
+- id: samples
+  name: Free samples of every paid product
+  tags:
+  - samples
+  - preview
+  - free
+- id: quote
+  name: Price quote for a paid call, without paying (free)
+  tags:
+  - quote
+  - x402
+  - free
+health_check:
+  url: https://api.lumitrades.io/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://lumitrades.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Should I pay this x402 URL? Lumi Trades is an x402 seller trust service:
+  start with the free trust check (trust_check, GET /v1/trust/check), allow / warn
+  / block with coded reasons from daily CDP Bazaar index checks and Lumi''s own on-chain
+  test-buys. Paid: high-value check, vendor reports and receipt lookups; signed delivery
+  receipts come with paid receipt lookups (/v1/trust/receipts), vendor reports and
+  Feed catalog lookups, verifiable free. Paid checks settle per call over x402 v2
+  with no API key or account, in XRP or RLUSD or USDC on the XRP Ledger, or USDC on
+  Base, or USDC on Stellar. Also available as a remote MCP server. Automated observations,
+  not an endorsement or guarantee.'
+version: 1.2.0

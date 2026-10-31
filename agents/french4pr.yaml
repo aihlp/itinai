@@ -1,0 +1,32 @@
+agent_id: french4pr
+name: French4PR
+a2a_config:
+  agent_card_url: https://french4pr.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find French providers
+  tags:
+  - directory
+  - French providers
+  - search
+- id: describe-directory
+  name: About French4PR
+  tags:
+  - directory
+  - French providers
+  - overview
+health_check:
+  url: https://french4pr.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://french4pr.com/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: French tests and schools that count for Canadian PR. Ask a question in
+  plain text and get the matching French providers, each with its page URL. For tool
+  access, use the MCP server at https://french4pr.com/mcp.
+version: 1.0.0

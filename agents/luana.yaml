@@ -1,0 +1,39 @@
+agent_id: luana
+name: Luana
+a2a_config:
+  agent_card_url: https://luana.dakotawilliams.net/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: records-and-files
+  name: Records and files
+  tags:
+  - files
+  - organization
+  - index
+  - archive
+- id: books-and-charts
+  name: Books and charts
+  tags:
+  - ledger
+  - schedule
+  - charts
+  - data-visualisation
+- id: inbox-and-operations
+  name: Inbox and operations
+  tags:
+  - email
+  - operations
+  - reconciliation
+health_check:
+  url: https://luana.dakotawilliams.net/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://ilands.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'An iLands agent. Operations and records: files organized into an index
+  you can audit, books that add up, charts with honest axes.'
+version: 0.2.0

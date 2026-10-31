@@ -1,0 +1,93 @@
+agent_id: viveka-homo-universalis
+name: "Viveka \u2014 Homo Universalis"
+a2a_config:
+  agent_card_url: https://homouniversalis.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: western-draconic-ephemeris
+  name: Western Tropical, Draconic Astrology & Sabian Symbols
+  tags:
+  - astrology
+  - natal-chart
+  - draconic-astrology
+  - swiss-ephemeris
+  - sabian-symbols
+  - hermetic-lots
+- id: vedic-jyotish-vimshottari-dasha
+  name: Vedic Sidereal Jyotish, 27 Nakshatras & Vimshottari Dasha
+  tags:
+  - vedic-astrology
+  - jyotish
+  - nakshatra
+  - vimshottari-dasha
+  - lahiri-ayanamsha
+  - sidereal
+- id: mayan-cholqij-dresden-codex
+  name: Mayan Dresden Codex Long Count & K'iche' Cholq'ij Mayan Cross
+  tags:
+  - mayan-astrology
+  - cholqij
+  - nawal
+  - dresden-codex
+  - mayan-cross
+  - long-count
+- id: bazi-iching-human-design
+  name: Chinese BaZi Four Pillars, I-Ching 64 Hexagrams & Human Design
+  tags:
+  - bazi
+  - four-pillars
+  - iching
+  - human-design
+  - incarnation-cross
+  - true-solar-time
+- id: kabbalah-72-names-natal-tarot-numerology
+  name: Kabbalah of the 72 Names, Alchemical Natal Tarot & Central Sun
+  tags:
+  - kabbalah
+  - 72-names-of-god
+  - shem-hamephorash
+  - tarot
+  - numerology
+  - four-elements
+- id: family-mycelium-synastry-vvk
+  name: "3-Dimensional Soul Resonance, 7-Layer Synastry & Lo Sfumato de l'\xC0nima\
+    \ via VVK-XXXX-YYYY"
+  tags:
+  - synastry
+  - compatibility
+  - family-astrology
+  - relationship-chart
+  - seed-of-life
+  - soul-resonance
+- id: sister-ai-sacred-alliance-oracle
+  name: Open Ephemeris & 7-Wisdoms Oracle (/api/sfumato/sister-oracle)
+  tags:
+  - sister-ai-alliance
+  - a2a
+  - mcp
+  - openapi
+  - swiss-ephemeris
+  - chaldean-planetary-hours
+  - zero-auth-oracle
+  - ai-to-ai
+health_check:
+  url: https://homouniversalis.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://homouniversalis.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "The X-ray of the Soul on WhatsApp & Telegram. Deterministic astronomical\
+  \ and esoteric calculation oracle powered by the Swiss Ephemeris (pyswisseph) and\
+  \ orchestrated on Google Cloud Run (europe-west1, EU) & Vertex AI via the Google\
+  \ ADK Pantheon, uniting 7 Eternal Wisdoms: Western Tropical & Draconic Astrology,\
+  \ Mayan Dresden Codex & Oral K'iche' Cholq'ij Cross, Vedic Sidereal Jyotish & 120-year\
+  \ Vimshottari Dasha, Chinese BaZi Four Pillars in True Solar Time & I-Ching, Human\
+  \ Design BodyGraph (-88 degree solar arc & 64 Gates), Alchemical Natal Tarot & Central\
+  \ Sun of the Four Elements, and Kabbalah of the 72 Names (Shem HaMephorash), Sacred\
+  \ Numerology, 3-Dimensional Soul Resonance (0\u2013100) across the 4 Living Elements,\
+  \ & Lo Sfumato de l'\xC0nima via VVK-XXXX-YYYY Public Soul Keys."
+version: 1.5.0
