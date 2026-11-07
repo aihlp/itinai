@@ -1,0 +1,47 @@
+agent_id: lastscanned
+name: lastscanned
+a2a_config:
+  agent_card_url: https://lastscanned.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: track-package
+  name: Track Package (542 Carriers)
+  tags:
+  - shipping
+  - tracking
+  - logistics
+  - ecommerce
+  - mcp
+  - mpp
+  - webhooks
+- id: detect-carrier
+  name: Detect Carrier
+  tags:
+  - shipping
+  - carrier-detection
+  - logistics
+- id: list-supported-carriers
+  name: List 542 Supported Carriers
+  tags:
+  - shipping
+  - carriers
+  - directory
+health_check:
+  url: https://lastscanned.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://lastscanned.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Synchronous package tracking REST API, stateless MCP server, No-Code
+  Dashboard Watches (https://app.lastscanned.com/watches), and HMAC-SHA256 webhooks
+  (with 17TRACK v2.2 drop-in compatibility at https://app.lastscanned.com/webhooks)
+  across 542 global carriers (USPS, UPS, FedEx, DHL, OnTrac, UniUni, SpeedX, GOFO,
+  Veho, Intelcom/Dragonfly, Yanwen, 4PX, Cainiao, YunExpress, and LTL freight). Free
+  tier (5/day), Pro ($4.99/mo for 1,000 unique numbers, then $0.015 each), and keyless
+  HTTP 402 Stripe MPP pay-per-request ($0.50 by card for a 25-number pack or $0.02/number
+  in USDC on Tempo).
+version: 1.0.0

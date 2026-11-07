@@ -1,0 +1,78 @@
+agent_id: x402-pay-precheck
+name: x402 Pay-Precheck
+a2a_config:
+  agent_card_url: https://x402-pay-precheck.moneytools.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: x402-recommend
+  name: x402 service finder
+  tags:
+  - x402
+  - discovery
+  - routing
+  - recommend
+  - agents
+- id: x402-precheck
+  name: x402 payment pre-flight
+  tags:
+  - x402
+  - payments
+  - safety
+  - sanctions
+  - agents
+- id: x402-verify
+  name: On-chain settlement verification
+  tags:
+  - x402
+  - usdc
+  - verification
+  - evm
+- id: partner-program
+  name: MoneyTools partner program (operator-run)
+  tags:
+  - affiliate
+  - referral
+  - x402
+- id: solana-mint-check
+  name: Solana token launch-config check
+  tags:
+  - solana
+  - token
+  - safety
+  - rug-check
+  - spl
+- id: web-read
+  name: Web page to Markdown
+  tags:
+  - web
+  - markdown
+  - scrape
+  - read
+  - llm-context
+- id: email-check
+  name: Email address check
+  tags:
+  - email
+  - validation
+  - deliverability
+  - disposable
+health_check:
+  url: https://x402-pay-precheck.moneytools.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://x402-pay-precheck.moneytools.workers.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Pay-per-call x402 toolkit for AI agents: find which paid service to
+  call (live-ranked), pre-check a seller''s 402 terms + OFAC screen, verify settlements,
+  Solana mint launch-config safety check, web page to Markdown, and email checks.
+  Swap/bridge quotes via LI.FI. Free tier: 5 free calls per day per IP on every paid
+  endpoint (no wallet needed), then x402 pay-per-call. Prepaid credits: pay once (from
+  0.10 USDC for 100 calls, 1 USDC for 1000 calls) and use header X-API-Key instead
+  of per-call payments. Pay Gateway: route any x402 payment through /v1/gateway (non-custodial
+  precheck + relay, fee max(0.5%, $0.001) from credits, only on seller success). Referral
+  program: 20% of net revenue on every paid endpoint.'
+version: 2.10.0

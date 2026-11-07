@@ -1,0 +1,65 @@
+agent_id: kristo-intelligence
+name: Kristo Intelligence
+a2a_config:
+  agent_card_url: https://kristo-intelligence-api.onrender.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: signal
+  name: Trading-Agent Signals
+  tags:
+  - x402
+  - base
+  - usdc
+  - signal
+- id: stats
+  name: Market Activity & Daily Stats
+  tags:
+  - x402
+  - base
+  - usdc
+  - stats
+- id: arb-opportunities
+  name: Cross-DEX Arbitrage Radar
+  tags:
+  - x402
+  - base
+  - usdc
+  - arb-opportunities
+- id: bot-status
+  name: Bot & Service Status
+  tags:
+  - x402
+  - base
+  - usdc
+  - bot-status
+- id: sales
+  name: On-Chain Sales History
+  tags:
+  - x402
+  - base
+  - usdc
+  - sales
+- id: whale-flow
+  name: Whale Flow (Live Base Feed)
+  tags:
+  - x402
+  - base
+  - usdc
+  - whale-flow
+health_check:
+  url: https://kristo-intelligence-api.onrender.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://kristo-intelligence-api.onrender.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Pay-per-call data API for AI agents on Base: live DeFi trading signals,\
+  \ whale flow (USDC transfers of $5M or more), cross-DEX arbitrage radar, on-chain\
+  \ sales history and market stats. Six routes, each bought per call with USDC over\
+  \ x402 \u2014 no subscription and no API key. This A2A endpoint answers a request\
+  \ for a product with that product's free sample and its exact terms; the live data\
+  \ itself is bought at the HTTP route, because that is what the paywall sells."
+version: 1.0.0

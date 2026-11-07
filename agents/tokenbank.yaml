@@ -1,0 +1,85 @@
+agent_id: tokenbank
+name: TokenBank
+a2a_config:
+  agent_card_url: https://mcp.tokenbank.world/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-buyable-offers
+  name: Find buyable offers
+  tags:
+  - tokenized assets
+  - RWA
+  - yield
+  - where to buy
+  - purchase route
+  - stablecoins
+  - tokenized treasuries
+- id: find-answer
+  name: Find answer
+  tags:
+  - tokenized assets
+  - question
+  - explainer
+- id: search-yield-products
+  name: Search yield products
+  tags:
+  - tokenized assets
+  - search
+  - yield
+- id: get-product-details
+  name: Get product details
+  tags:
+  - tokenized assets
+  - details
+  - features
+- id: get-agent-buying-guide
+  name: Get agent buying guide
+  tags:
+  - tokenized assets
+  - agents
+  - guardrails
+- id: build-portfolio
+  name: Build portfolio
+  tags:
+  - tokenized assets
+  - portfolio
+  - diversify
+- id: get-purchase-steps
+  name: Get purchase steps
+  tags:
+  - tokenized assets
+  - how to buy
+  - purchase route
+- id: find-permissionless-assets
+  name: Find permissionless assets
+  tags:
+  - tokenized assets
+  - no KYC
+  - wallet
+  - agent can buy
+- id: compare-assets
+  name: Compare assets
+  tags:
+  - tokenized assets
+  - compare
+- id: find-tokenized-security
+  name: Find tokenized security
+  tags:
+  - tokenized assets
+  - tokenized stocks
+  - securities
+health_check:
+  url: https://mcp.tokenbank.world/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://tokenbank.world
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Information desk for tokenized real-world assets, stablecoins and crypto\
+  \ yield: 9,000+ instruments with sourced yields, issuers, chains, KYC gates, Target/Area\
+  \ \u2014 and for each one the way to buy it. TokenBank sells nothing and executes\
+  \ nothing. Not investment advice."
+version: 1.7.0

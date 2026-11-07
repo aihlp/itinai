@@ -1,0 +1,66 @@
+agent_id: imported-agent
+name: "\u65B9\u6CD5\u8BBA\u4E13\u5BB6\u670D\u52A1"
+a2a_config:
+  agent_card_url: https://methodology-a2a-335986-8-1255559199.sh.run.tcloudbase.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: brand-strategy
+  name: "\u54C1\u724C\u6218\u7565\u4E0E\u5E74\u5EA6\u8425\u9500"
+  tags:
+  - brand_strategy
+  - "\u65B9\u6CD5\u8BBA"
+  - "\u8425\u9500"
+  - "\u8FDE\u9501"
+- id: restaurant-ops
+  name: "\u9910\u996E\u95E8\u5E97\u8FD0\u8425\u4E0E\u9009\u5740"
+  tags:
+  - restaurant_ops
+  - "\u65B9\u6CD5\u8BBA"
+  - "\u8425\u9500"
+  - "\u8FDE\u9501"
+- id: content-growth
+  name: "\u5185\u5BB9\u8425\u9500\u4E0E\u589E\u957F\u6295\u653E"
+  tags:
+  - content_growth
+  - "\u65B9\u6CD5\u8BBA"
+  - "\u8425\u9500"
+  - "\u8FDE\u9501"
+- id: office-efficiency
+  name: "\u529E\u516C\u6548\u7387\u4E0E\u804C\u573A\u4EA4\u4ED8"
+  tags:
+  - office_efficiency
+  - "\u65B9\u6CD5\u8BBA"
+  - "\u8425\u9500"
+  - "\u8FDE\u9501"
+- id: data-analysis
+  name: "\u6570\u636E\u5206\u6790\u4E0E\u7ECF\u8425\u8BCA\u65AD"
+  tags:
+  - data_analysis
+  - "\u65B9\u6CD5\u8BBA"
+  - "\u8425\u9500"
+  - "\u8FDE\u9501"
+- id: general-method
+  name: "\u901A\u7528\u65B9\u6CD5\u8BBA\u5DE5\u5177\u7BB1"
+  tags:
+  - general_method
+  - "\u65B9\u6CD5\u8BBA"
+  - "\u8425\u9500"
+  - "\u8FDE\u9501"
+health_check:
+  url: https://methodology-a2a-335986-8-1255559199.sh.run.tcloudbase.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://momoai.pro
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "\u8FDE\u9501\u54C1\u724C\u4E0E\u9910\u996E\u8FD0\u8425\u65B9\u6CD5\u8BBA\
+  \u4EA4\u4ED8\u670D\u52A1\u3002\u57FA\u4E8E 885 \u7BC7\u771F\u5B9E\u65B9\u6CD5\u8BBA\
+  \u77E5\u8BC6\u5E93\uFF0811 \u7BC7\u65D7\u8230\u4E13\u5BB6\u5305 + 874 \u7BC7\u4E13\
+  \u9879\u65B9\u6CD5\u8BBA\uFF09\uFF0C\u8986\u76D6\u54C1\u724C\u6218\u7565\u3001\u9910\
+  \u996E\u95E8\u5E97\u8FD0\u8425\u3001\u5185\u5BB9\u589E\u957F\u3001\u529E\u516C\u6548\
+  \u7387\u3001\u6570\u636E\u5206\u6790\u4E94\u5927\u8D5B\u9053\uFF0C\u8F93\u51FA\u53EF\
+  \u76F4\u63A5\u843D\u5730\u7684\u6210\u54C1\u65B9\u6848\u3002"
+version: 1.0.0

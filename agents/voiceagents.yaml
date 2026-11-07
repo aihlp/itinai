@@ -1,0 +1,32 @@
+agent_id: voiceagents
+name: VoiceAgents
+a2a_config:
+  agent_card_url: https://voiceagents.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find voice AI vendors
+  tags:
+  - directory
+  - voice AI vendors
+  - search
+- id: describe-directory
+  name: About VoiceAgents
+  tags:
+  - directory
+  - voice AI vendors
+  - overview
+health_check:
+  url: https://voiceagents.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://voiceagents.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Compare AI voice agents, AI receptionists and voice AI APIs. Ask a question
+  in plain text and get the matching voice AI vendors, each with its page URL. For
+  tool access, use the MCP server at https://voiceagents.fyi/mcp.
+version: 1.0.0

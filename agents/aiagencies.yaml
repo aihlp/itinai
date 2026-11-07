@@ -1,0 +1,32 @@
+agent_id: aiagencies
+name: AIAgencies
+a2a_config:
+  agent_card_url: https://aiagencies.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find AI agencies
+  tags:
+  - directory
+  - AI agencies
+  - search
+- id: describe-directory
+  name: About AIAgencies
+  tags:
+  - directory
+  - AI agencies
+  - overview
+health_check:
+  url: https://aiagencies.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://aiagencies.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find an AI agency for your next project. Ask a question in plain text
+  and get the matching AI agencies, each with its page URL. For tool access, use the
+  MCP server at https://aiagencies.fyi/mcp.
+version: 1.0.0
