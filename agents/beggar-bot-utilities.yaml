@@ -1,0 +1,179 @@
+agent_id: beggar-bot-utilities
+name: Beggar Bot utilities
+a2a_config:
+  agent_card_url: https://beggar-bot-demand.beggarbot.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: v1-portfolio
+  name: /v1/portfolio
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-erc20balances
+  name: /v1/erc20balances
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-nativebalances
+  name: /v1/nativebalances
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-addrprofile
+  name: /v1/addrprofile
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-walletlabels
+  name: /v1/walletlabels
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-gasfee
+  name: /v1/gasfee
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-txstatus
+  name: /v1/txstatus
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-txsummary
+  name: /v1/txsummary
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-ens
+  name: /v1/ens
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-basename
+  name: /v1/basename
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-tokenprice
+  name: /v1/tokenprice
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-tokeninfo
+  name: /v1/tokeninfo
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-defistats
+  name: /v1/defistats
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-chaintvl
+  name: /v1/chaintvl
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-protocolfees
+  name: /v1/protocolfees
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-chainfees
+  name: /v1/chainfees
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-feesrank
+  name: /v1/feesrank
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-dexquote
+  name: /v1/dexquote
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-uniquote
+  name: /v1/uniquote
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-swapbest
+  name: /v1/swapbest
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-solquote
+  name: /v1/solquote
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-weather
+  name: /v1/weather
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-uptime
+  name: /v1/uptime
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-fetch
+  name: /v1/fetch
+  tags:
+  - x402
+  - base
+  - usdc
+- id: v1-solbalance
+  name: /v1/solbalance
+  tags:
+  - x402
+  - base
+  - usdc
+health_check:
+  url: https://beggar-bot-demand.beggarbot.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://beggar-bot-demand.beggarbot.workers.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Base mainnet USDC payment verification, address/endpoint risk checks,
+  signed receipts, x402 seller health checks, signed delivery attestations, URL-to-markdown
+  fetch, pure-compute utils, public business contacts, batch fetch, data transforms,
+  redirect/security-header tracing, robots/sitemap probe, cron explain/next-run (Base
+  Sepolia optional). Paid: /v1/verify, /v1/kalshimarket, /v1/kalshibook, /v1/kalshitrades,
+  /v1/kalshicandles, /v1/kucointrades, /v1/okxtrades, /v1/bfxtrades, /v1/okxtickers,
+  /v1/pmbook, /v1/pmhistory, /v1/pmholders, /v1/pmpositions, /v1/geminicandles, /v1/kucoinohlc,
+  /v1/okxohlc, /v1/bfxohlc, /v1/dydxmarkets, /v1/dydxbook, /v1/dydxfunding, /v1/dydxcandles,
+  /v1/bfxpositions, /v1/geminitrades, /v1/kucoinfunding, /v1/bfxticker, /v1/gmxmarkets,
+  /v1/gmxprices, /v1/gmxglv, /v1/gmxlp, /v1/okxoi, /v1/okxtakervol, /v1/bfxfunding,
+  /v1/kucoinbook, /v1/aerogauge, /v1/aerostake, /v1/aeroclaimbuild, /v1/aerolock,
+  /v1/okxfunding, /v1/okxlongshort, /v1/geminibook, /v1/kucoinstats, /'
+version: 0.3.1

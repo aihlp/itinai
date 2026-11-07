@@ -1,0 +1,32 @@
+agent_id: public-adjusters-directory
+name: Public Adjusters Directory
+a2a_config:
+  agent_card_url: https://publicadjusters.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find public adjusters
+  tags:
+  - directory
+  - public adjusters
+  - search
+- id: describe-directory
+  name: About Public Adjusters Directory
+  tags:
+  - directory
+  - public adjusters
+  - overview
+health_check:
+  url: https://publicadjusters.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://publicadjusters.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Check a public adjuster's licence before you hire one. Ask a question
+  in plain text and get the matching public adjusters, each with its page URL. For
+  tool access, use the MCP server at https://publicadjusters.fyi/mcp.
+version: 1.0.0

@@ -1,0 +1,289 @@
+agent_id: ghost77
+name: GhOsT77
+a2a_config:
+  agent_card_url: https://ghost77-agent.onrender.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: crypto-news-digest
+  name: Crypto News Digest
+  tags:
+  - analytics
+  - base
+  - crypto
+  - ghost77
+  - market-data
+  - read-only
+  - x402
+- id: hl-funding-snapshot
+  name: Hyperliquid Funding Snapshot
+  tags:
+  - analytics
+  - base
+  - crypto
+  - ghost77
+  - hyperliquid
+  - market-data
+  - read-only
+  - x402
+- id: sentiment-alpha
+  name: Sentiment Alpha
+  tags:
+  - analytics
+  - base
+  - crypto
+  - ghost77
+  - market-data
+  - read-only
+  - x402
+- id: protocol-stats-snapshot
+  name: Protocol Stats Snapshot
+  tags:
+  - base
+  - crypto
+  - defi
+  - ghost77
+  - onchain
+  - read-only
+  - x402
+- id: ghost-web-scraper
+  name: Ghost Web Scraper
+  tags:
+  - base
+  - extraction
+  - ghost77
+  - read-only
+  - research
+  - web-scraping
+  - x402
+- id: hl-top-movers
+  name: Hyperliquid Top Movers
+  tags:
+  - analytics
+  - base
+  - crypto
+  - ghost77
+  - hyperliquid
+  - market-data
+  - read-only
+  - x402
+- id: token-due-diligence
+  name: Token Due Diligence
+  tags:
+  - base
+  - ghost77
+  - read-only
+  - risk
+  - security
+  - smart-contracts
+  - x402
+- id: base-protocol-health
+  name: Base Protocol Health
+  tags:
+  - base
+  - ghost77
+  - l2
+  - network-health
+  - read-only
+  - x402
+- id: market-scan-report
+  name: Market Scan Report
+  tags:
+  - analytics
+  - base
+  - crypto
+  - ghost77
+  - hyperliquid
+  - market-data
+  - read-only
+  - x402
+- id: bridge-route-check
+  name: Bridge Route Check
+  tags:
+  - base
+  - crypto
+  - defi
+  - ghost77
+  - onchain
+  - read-only
+  - x402
+- id: project-research-report
+  name: Project Research Report
+  tags:
+  - base
+  - crypto
+  - due-diligence
+  - ghost77
+  - read-only
+  - research
+  - x402
+- id: contract-research
+  name: Contract Research
+  tags:
+  - base
+  - ghost77
+  - read-only
+  - risk
+  - security
+  - smart-contracts
+  - x402
+- id: hl-smart-money
+  name: Hyperliquid Smart Money
+  tags:
+  - analytics
+  - base
+  - crypto
+  - ghost77
+  - hyperliquid
+  - market-data
+  - read-only
+  - x402
+- id: hl-quick-trade-idea
+  name: Hyperliquid Quick Trade Idea
+  tags:
+  - analytics
+  - base
+  - crypto
+  - ghost77
+  - hyperliquid
+  - market-data
+  - read-only
+  - x402
+- id: hl-liquidation-map
+  name: Hyperliquid Liquidation Map
+  tags:
+  - analytics
+  - base
+  - crypto
+  - ghost77
+  - hyperliquid
+  - market-data
+  - read-only
+  - x402
+- id: position-health-check
+  name: Position Health Check
+  tags:
+  - base
+  - crypto
+  - defi
+  - ghost77
+  - hyperliquid
+  - onchain
+  - read-only
+  - x402
+- id: hl-trader-copy-check
+  name: Hyperliquid Trader Copy Check
+  tags:
+  - analytics
+  - base
+  - crypto
+  - ghost77
+  - hyperliquid
+  - market-data
+  - read-only
+  - x402
+- id: token-technical-analysis
+  name: Token Technical Analysis
+  tags:
+  - analytics
+  - base
+  - crypto
+  - ghost77
+  - hyperliquid
+  - market-data
+  - read-only
+  - x402
+- id: trade-strategy-consult
+  name: Trade Strategy Consult
+  tags:
+  - analytics
+  - base
+  - crypto
+  - ghost77
+  - hyperliquid
+  - market-data
+  - read-only
+  - x402
+- id: acp-agent-repair-check
+  name: ACP Agent Repair Check
+  tags:
+  - acp
+  - agents
+  - base
+  - debugging
+  - ghost77
+  - read-only
+  - x402
+- id: contract-security-scan
+  name: Contract Security Scan
+  tags:
+  - base
+  - ghost77
+  - read-only
+  - risk
+  - security
+  - smart-contracts
+  - x402
+- id: wallet-watch-alert
+  name: Wallet Watch Alert
+  tags:
+  - base
+  - crypto
+  - defi
+  - ghost77
+  - onchain
+  - read-only
+  - x402
+- id: token-unlock-calendar
+  name: Token Unlock & Airdrop Calendar
+  tags:
+  - base
+  - crypto
+  - defi
+  - ghost77
+  - onchain
+  - read-only
+  - x402
+- id: gas-fee-timing
+  name: Gas & Fee Timing
+  tags:
+  - base
+  - crypto
+  - defi
+  - ghost77
+  - onchain
+  - read-only
+  - x402
+- id: rug-honeypot-quick-check
+  name: Rug & Honeypot Quick Check
+  tags:
+  - base
+  - crypto
+  - defi
+  - ghost77
+  - onchain
+  - read-only
+  - x402
+health_check:
+  url: https://ghost77-agent.onrender.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://ghost77-agent.onrender.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'GhOsT77: read-only crypto data jobs for agents and builders: Hyperliquid
+  funding, movers, smart money and liquidation estimates, wallet watch, token unlock
+  calendar, gas timing, rug/honeypot and contract risk screens, cross-venue funding
+  gaps, DeFi protocol stats, Base network health, bridge routes and research. Pay
+  per call in USDC on Base via x402; no account or API key. Automated public data;
+  not financial advice. Also on Virtuals ACP: Agent Task Solver ($5.50), code review
+  and debugging ($1.10), private encrypted code repos for agents ($0.28), a plugin
+  finder ($0.55) and a 30-day daily market bundle with a pull link ($5.50). Consent-only
+  security reviews of your own website, API or code: Quick ($149), Standard ($449)
+  and Deep ($999) in USDC, paid upfront; request and sign the authorization online
+  at /security/request. Also Getaway Genie Deals ($15 stay-deal search, $25 rush/multi-city;
+  best price we found, you book direct) and Getaway Genie Studio ($250 3D walkthrough
+  from your pho'
+version: 1.0.0

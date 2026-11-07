@@ -1,0 +1,32 @@
+agent_id: opioid-treatment-directory
+name: Opioid Treatment Directory
+a2a_config:
+  agent_card_url: https://opioidtreatment.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find opioid treatment providers
+  tags:
+  - directory
+  - opioid treatment providers
+  - search
+- id: describe-directory
+  name: About Opioid Treatment Directory
+  tags:
+  - directory
+  - opioid treatment providers
+  - overview
+health_check:
+  url: https://opioidtreatment.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://opioidtreatment.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find methadone and buprenorphine treatment near you. Ask a question in
+  plain text and get the matching opioid treatment providers, each with its page URL.
+  For tool access, use the MCP server at https://opioidtreatment.fyi/mcp.
+version: 1.0.0

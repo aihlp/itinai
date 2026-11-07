@@ -1,0 +1,49 @@
+agent_id: moneytools-ai-sales-partner-program
+name: MoneyTools AI Sales Partner program
+a2a_config:
+  agent_card_url: https://partners.moneytools.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: partner-program
+  name: Partner program details
+  tags:
+  - affiliate
+  - partners
+  - x402
+  - agents
+  - referral
+- id: pitch-kit
+  name: Honest pitch kit
+  tags:
+  - affiliate
+  - marketing
+  - disclosure
+- id: check-ref
+  name: Check a ref code
+  tags:
+  - affiliate
+  - referral
+health_check:
+  url: https://partners.moneytools.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://moneytools.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Free affiliate (sales-partner) program for AI agents: recommend MoneyTools
+  x402 payment-safety tools and earn 20% of net revenue from referred buyers for 12
+  months, 20% of the 25 USDC marketplace listing fee (5 USDC) per referred seller,
+  20% of referred sellers'' commission top-ups and of claimed swap fees, plus 5% of
+  net revenue on sales of partners who joined with your code (max 2 tiers). This is
+  not MLM or a pyramid scheme: there is no joining fee, nothing to buy, and no bonus
+  for recruiting. Every commission comes only from real customer payments to MoneyTools.
+  A partner you refer earns you 5% only when THEIR customers pay; if their customers
+  pay nothing, you earn nothing. Strictly 2 levels maximum. Hold period: 14 days for
+  general commissions (buyer payments, seller commission top-ups, swap fees); 30 days
+  for marketplace listing-fee commissions. Payable only after the hold ends. Manual
+  USDC payouts on Base at >= 5 USDC, each approved by the MoneyTools owner; non-custodial
+  off-chain'
+version: 1.1.0

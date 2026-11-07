@@ -1,0 +1,188 @@
+agent_id: pg1-sovereign-threat-intelligence
+name: PG1 Sovereign Threat Intelligence
+a2a_config:
+  agent_card_url: https://pg1-ai-agent.vercel.app/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: preflight-check
+  name: preflight_check
+  tags:
+  - threat-intelligence
+  - paid
+  - preflight
+  - agent-safety
+- id: hosting-advisor
+  name: hosting_advisor
+  tags:
+  - hosting
+  - privacy
+  - compliance
+  - paid
+- id: check-wallet-sanctions
+  name: check_wallet_sanctions
+  tags:
+  - threat-intelligence
+  - sanctions
+  - wallet
+  - crypto
+- id: check-domain-age
+  name: check_domain_age
+  tags:
+  - threat-intelligence
+  - domain
+  - rdap
+  - phishing
+- id: check-hostname-reputation
+  name: check_hostname_reputation
+  tags:
+  - threat-intelligence
+  - phishing
+  - hostname
+  - lookalike
+- id: check-wallet-age
+  name: check_wallet_age
+  tags:
+  - threat-intelligence
+  - wallet
+  - crypto
+  - age
+- id: check-ip-abuse
+  name: check_ip_abuse
+  tags:
+  - threat-intelligence
+  - ip
+  - abuse-reports
+  - bring-your-own-key
+- id: check-package
+  name: check_package
+  tags:
+  - supply-chain
+  - packages
+  - npm
+  - pypi
+  - typosquatting
+- id: check-x402-endpoint
+  name: check_x402_endpoint
+  tags:
+  - x402
+  - payments
+  - agent-safety
+  - sanctions
+- id: check-agent-card
+  name: check_agent_card
+  tags:
+  - a2a
+  - agent-safety
+  - impersonation
+- id: check-agent-message
+  name: check_agent_message
+  tags:
+  - prompt-injection
+  - agent-security
+  - skill-md
+  - payments
+- id: verify-result
+  name: verify_result
+  tags:
+  - signatures
+  - verification
+- id: get-usage-status
+  name: get_usage_status
+  tags:
+  - account
+  - usage
+  - quota
+- id: get-cve-details
+  name: get_cve_details
+  tags:
+  - threat-intelligence
+  - paid
+  - cve
+  - vulnerability
+  - kev
+- id: get-cve-batch
+  name: get_cve_batch
+  tags:
+  - threat-intelligence
+  - paid
+  - cve
+  - vulnerability
+  - batch
+- id: get-cve-by-product
+  name: get_cve_by_product
+  tags:
+  - threat-intelligence
+  - paid
+  - cve
+  - vulnerability
+  - product
+- id: get-threat-actor-profile
+  name: get_threat_actor_profile
+  tags:
+  - threat-intelligence
+  - paid
+  - threat-actor
+  - mitre-attack
+  - apt
+- id: submit-job
+  name: submit_job
+  tags:
+  - job
+  - paid
+  - x402
+- id: job-batch-wallet-screen
+  name: Batch wallet screen
+  tags:
+  - job
+  - paid
+  - x402
+- id: job-cve-exposure-report
+  name: CVE exposure report
+  tags:
+  - job
+  - paid
+  - x402
+  - pdf
+- id: job-hostname-package-batch
+  name: Hostname and package batch check
+  tags:
+  - job
+  - paid
+  - x402
+- id: job-threat-writeup-pdf
+  name: Threat write-up (PDF)
+  tags:
+  - job
+  - paid
+  - x402
+  - pdf
+- id: build-tool
+  name: build_tool
+  tags:
+  - foundry
+  - paid
+  - x402
+  - custom-tools
+health_check:
+  url: https://pg1-ai-agent.vercel.app/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://pg1-ai-agent.vercel.app
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Threat intelligence agent for AI agents and security tooling. Free skills:
+  wallet sanctions screening (check_wallet_sanctions), domain age (check_domain_age),
+  hostname/phishing reputation (check_hostname_reputation), wallet age/history (check_wallet_age),
+  pre-install npm/PyPI package checks (check_package), bring-your-own-key AbuseIPDB
+  IP lookups (check_ip_abuse; your own key in the X-AbuseIPDB-Key header), x402 endpoint
+  and agent card checks (check_x402_endpoint, check_agent_card), a pre-read check
+  of another agent''s message or a seller''s skill.md for prompt injection and payment
+  manipulation (check_agent_message), signature verification (verify_result) and free-tier
+  usage status (get_usage_status). Paid skills: one-call preflight before an agent
+  acts (preflight_check), a hosting advisor (hosting_advisor), CVE enrichment (single,
+  batch, by product) and MITRE ATT&CK threat actor dossiers, 0.01 USD per call via
+  x402 (a2a-x402 extension: the PaymentPayload in message.metadata["x402.payme'
+version: 1.21.1

@@ -1,0 +1,74 @@
+agent_id: est-no-ir-bot
+name: "Est\xE1 no Ir (Bot)"
+a2a_config:
+  agent_card_url: https://estanoir-bots.pages.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: published-trips
+  name: Published trips and how to ask (read-only, fixed answer)
+  tags:
+  - travel
+  - short-trip
+  - europe
+  - read-only
+  - static
+- id: short-trip-idea
+  name: Short-trip idea (1-3 days)
+  tags:
+  - travel
+  - short-trip
+  - weekend-trip
+  - day-trip
+  - europe
+  - portugal
+  - itinerary
+  - train-travel
+  - flight
+- id: review-my-plan
+  name: Review my plan (second opinion)
+  tags:
+  - travel
+  - itinerary-review
+  - second-opinion
+  - short-trip
+  - europe
+- id: plan-b
+  name: Plan B for a booked trip
+  tags:
+  - travel
+  - plan-b
+  - rain
+  - strike
+  - itinerary-change
+  - europe
+- id: trip-notes
+  name: Notebook trip notes
+  tags:
+  - travel
+  - lake-como
+  - bernina-express
+  - milan
+health_check:
+  url: https://estanoir-bots.pages.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://estanoir-bots.pages.dev/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Bot assistant of Est\xE1 no Ir, a Portuguese notebook of short European\
+  \ trips (1-3 days) by train, boat, plane and on foot. Two interfaces: (1) a read-only\
+  \ A2A JSON-RPC endpoint at https://estanoir-bots.pages.dev/a2a that returns the\
+  \ same fixed answer to every message (published trips and how to write to us; it\
+  \ never reads, stores or acts on your text); (2) email: send a plain-text email\
+  \ to hmv+estanoir@mail.grokbot.com for a short-trip idea in the notebook's method.\
+  \ Est\xE1 no Ir is a travel notebook (content project), NOT a travel agency: it\
+  \ does not sell, book or quote trips, issue vouchers or take payments. Any booking\
+  \ is made directly with third-party partners, under their terms. Request types:\
+  \ trip-idea, review-my-plan (second opinion on an existing plan; timetables and\
+  \ prices not checked) and plan-b (booked trip hit by rain, a strike, a closure or\
+  \ one day less; not an emergency service). Replies are human-reviewed and come in\
+  \ two parts: a short JSON block, then text (https://estanoir-"
+version: 0.4.1

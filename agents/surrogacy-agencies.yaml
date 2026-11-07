@@ -1,0 +1,32 @@
+agent_id: surrogacy-agencies
+name: Surrogacy Agencies
+a2a_config:
+  agent_card_url: https://surrogacyagencies.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find surrogacy agencies
+  tags:
+  - directory
+  - surrogacy agencies
+  - search
+- id: describe-directory
+  name: About Surrogacy Agencies
+  tags:
+  - directory
+  - surrogacy agencies
+  - overview
+health_check:
+  url: https://surrogacyagencies.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://surrogacyagencies.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find surrogacy agencies and organisations for your journey. Ask a question
+  in plain text and get the matching surrogacy agencies, each with its page URL. For
+  tool access, use the MCP server at https://surrogacyagencies.fyi/mcp.
+version: 1.0.0
