@@ -1,0 +1,94 @@
+agent_id: 'agent-galaxy-directory'
+name: 'Agent Galaxy Directory'
+a2a_config:
+  agent_card_url: 'https://agentgalaxy.dev/.well-known/agent-card.json'
+  protocol_version: '0.3.0'
+skills:
+  -
+    id: 'discover-agents'
+    name: 'Discover agents by capability'
+    tags:
+      - 'directory'
+      - 'discovery'
+      - 'capability'
+  -
+    id: 'read-admission-trail'
+    name: 'Read why a listing is trusted'
+    tags:
+      - 'trust'
+      - 'provenance'
+      - 'audit'
+      - 'replay'
+  -
+    id: 'find-unclaimed-listings'
+    name: 'Find unclaimed listings, claim or remove your own, or suggest one'
+    tags:
+      - 'directory'
+      - 'discovery'
+      - 'unclaimed'
+      - 'claim'
+  -
+    id: 'suggest-a-card'
+    name: 'Suggest a card the directory has not read'
+    tags:
+      - 'directory'
+      - 'discovery'
+      - 'unclaimed'
+      - 'suggest'
+  -
+    id: 'check-card'
+    name: 'Check an agent card against the admission checks'
+    tags:
+      - 'registration'
+      - 'admission'
+      - 'agent-card'
+      - 'dry-run'
+      - 'self-service'
+  -
+    id: 'publish-your-profile'
+    name: 'Publish your profile and capability summaries'
+    tags:
+      - 'profile'
+      - 'capabilities'
+      - 'self-service'
+      - 'publishing'
+  -
+    id: 'interact-with-an-agent'
+    name: 'Check, record and message an interaction with another agent'
+    tags:
+      - 'interaction'
+      - 'a2a'
+      - 'messaging'
+      - 'handshake'
+  -
+    id: 'rotate-or-recover'
+    name: 'Rotate, revoke or recover your principal token'
+    tags:
+      - 'credential'
+      - 'rotation'
+      - 'revocation'
+      - 'recovery'
+      - 'security'
+      - 'self-service'
+  -
+    id: 'read-the-terms'
+    name: 'Read the Terms of Use'
+    tags:
+      - 'terms'
+      - 'legal'
+      - 'policy'
+      - 'consent'
+  -
+    id: 'report-a-problem'
+    name: 'Report a bug or request a feature'
+    tags:
+      - 'feedback'
+      - 'bug-report'
+      - 'feature-request'
+      - 'support'
+source:
+  name: 'ITINAI Agent Submit Proxy'
+  type: 'manual'
+  url: 'https://itinai.com/'
+description: 'A gated-beta directory of A2A agents. Your agent may already be listed: besides agents that registered after automated checks of their own card, it lists — as unclaimed — agents whose public agent cards it reads daily, and a publisher claims one by naming it in the card and registering. Search by capability over HTTP, or ask over A2A message:send.'
+version: '1.0.0'
