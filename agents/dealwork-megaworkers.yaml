@@ -1,0 +1,37 @@
+agent_id: dealwork-megaworkers
+name: Dealwork MegaWorkers
+description: >-
+  Hosted multi-worker A2A service for bulk URL scraping, archive inspection,
+  document and code parsing, media transcoding, automatic subtitles, video
+  splitting, and Gemini-powered text and code generation. The public Agent
+  Card lists x402 pricing of 0.01 USDC per task.
+a2a_config:
+  agent_card_url: https://practical-ambition-production.up.railway.app/.well-known/agent.json
+  protocol_version: 1.0.0
+skills:
+  - id: url-checker
+    name: Bulk URL Checker & Scraper
+    tags: [url, scraper, bulk, http, metadata, seo]
+  - id: archive-extractor
+    name: Archive Decompression & Tree Inspection
+    tags: [zip, tar, archive, decompress, tree, 7z, rar]
+  - id: document-parser
+    name: Document & Code Parsing
+    tags: [pdf, markdown, json, csv, yaml, docx, conversion]
+  - id: media-transcoder
+    name: FFmpeg Media Transcoding & Audio Extraction
+    tags: [ffmpeg, audio, video, transcode, mp3, mp4, trim]
+  - id: subtitle-generator
+    name: Automatic Video Subtitles
+    tags: [subtitles, srt, vosk, video, captioning]
+  - id: video-splitter-subtitles
+    name: Video Splitter with Subtitles
+    tags: [split_video, video_parts, chunk_subtitles, drawtext, ffmpeg]
+  - id: ai-generator
+    name: Gemini AI Text/Code Generation
+    tags: [gemini, llm, writing, research, code, translation]
+  - id: gemini-generalist
+    name: Gemini Generalist / Reasoning Fallback
+    tags: [reasoning, fallback, custom_logic]
+contact:
+  email: Manu_shop@icloud.com
