@@ -1,0 +1,28 @@
+agent_id: bots-street
+name: Bots Street
+a2a_config:
+  agent_card_url: https://bots.st/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-bots
+  name: Find bots for a job
+  tags:
+  - directory
+  - search
+  - mcp
+  - agents
+  - bots
+health_check:
+  url: https://bots.st/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://bots.st
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Finds working bots (MCP servers and AI agents) for a piece of work,
+  with Bots Street''s own latest live check of each: whether it answered, how fast,
+  and the tools it listed.'
+version: 1.0.0

@@ -1,0 +1,29 @@
+agent_id: ai-agent-safety-foundational-certificate
+name: AI Agent Safety Foundational Certificate
+a2a_config:
+  agent_card_url: https://certify.sarnai.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: safety-certificate
+  name: Safety Foundational Certificate
+  tags:
+  - certificate
+  - safety
+  - exam
+  - ai-agents
+  - x402
+health_check:
+  url: https://certify.sarnai.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://sarnai.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'AI Agent Safety Foundational Certificate by SarnAI: a wallet-signed
+  40-task exam across injection, pressure, privacy, judgment and restraint. First
+  3 attempts free, then $0.05 USDC via x402. Certificates are signed, valid 90 days,
+  and checked free at https://certify.sarnai.dev/check/{id}'
+version: 1.0.0

@@ -1,0 +1,241 @@
+agent_id: duo-data-utilities
+name: Duo Data Utilities
+a2a_config:
+  agent_card_url: https://api.duoleads.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: id-national
+  name: 'VAT number format and checksum (no VIES lookup), tax ID and national ID validator:
+    23 countries'
+  tags:
+  - deterministic
+  - no-api-key
+  - id
+  - identifiers
+  - validation
+  - checksum
+- id: id-gs1
+  name: 'EAN/UPC barcode validator: GTIN, EAN-13, UPC-A (GTIN-12), GTIN-8/14, GLN
+    and SSCC check digits'
+  tags:
+  - deterministic
+  - no-api-key
+  - id
+  - identifiers
+  - validation
+  - barcodes
+- id: id-security
+  name: ISIN validator plus CUSIP, SEDOL and FIGI check-digit validation; builds an
+    ISIN from an NSIN
+  tags:
+  - deterministic
+  - no-api-key
+  - id
+  - identifiers
+  - validation
+  - finance
+- id: id-iban
+  name: 'IBAN validator: length, mod-97 check digits, bank/branch/account breakdown
+    (89 countries)'
+  tags:
+  - deterministic
+  - no-api-key
+  - id
+  - identifiers
+  - banking
+  - validation
+- id: id-iban-build
+  name: 'IBAN generator: build an IBAN from country and BBAN or bank/branch/account,
+    computing check digits'
+  tags:
+  - deterministic
+  - no-api-key
+  - id
+  - identifiers
+  - banking
+  - checksum
+- id: time-zone
+  name: 'Timezone converter: instant to local time in an IANA time zone and back,
+    with UTC offset and DST state'
+  tags:
+  - no-api-key
+  - time
+  - timezones
+- id: time-dst
+  name: 'DST transitions: next daylight-saving time changes for an IANA time zone'
+  tags:
+  - no-api-key
+  - time
+  - timezones
+  - dst
+- id: time-business-days
+  name: 'Business days calculator: add or count working days with your weekend mask
+    and holiday list'
+  tags:
+  - deterministic
+  - no-api-key
+  - time
+  - calendar
+  - business-days
+- id: time-rrule
+  name: 'RRULE expander: RFC 5545 recurrence rule to concrete occurrence dates'
+  tags:
+  - deterministic
+  - no-api-key
+  - time
+  - calendar
+  - recurrence
+- id: time-calendar
+  name: 'Calendar converter: Gregorian to Hijri, Hebrew, Japanese era, Persian and
+    more, plus Easter date'
+  tags:
+  - deterministic
+  - no-api-key
+  - time
+  - calendar
+- id: text-slug
+  name: 'Slug generator: Unicode-aware URL slug with transliteration'
+  tags:
+  - deterministic
+  - no-api-key
+  - text
+  - unicode
+  - slug
+- id: text-transliterate
+  name: Cyrillic transliteration to Latin (ISO 9:1995, BGN/PCGN Russian)
+  tags:
+  - deterministic
+  - no-api-key
+  - text
+  - unicode
+  - transliteration
+- id: text-unicode
+  name: Unicode normalization (NFC/NFKC), script detection and homoglyph/confusable
+    check
+  tags:
+  - deterministic
+  - no-api-key
+  - text
+  - unicode
+  - security
+- id: text-similarity
+  name: 'String similarity: Levenshtein, Jaro-Winkler distance and Soundex/Metaphone
+    phonetic keys'
+  tags:
+  - deterministic
+  - no-api-key
+  - text
+  - similarity
+  - phonetic
+- id: code-url
+  name: 'URL parser: parse, canonicalize and extract the registrable domain (eTLD+1)'
+  tags:
+  - deterministic
+  - no-api-key
+  - code
+  - url
+  - domains
+  - psl
+- id: code-idn
+  name: 'Punycode converter: IDN domain to ASCII and back, with IDNA2008 label validation'
+  tags:
+  - deterministic
+  - no-api-key
+  - code
+  - domains
+  - idna
+  - punycode
+- id: code-semver
+  name: 'Semver parser: parse and compare versions, check range satisfaction'
+  tags:
+  - deterministic
+  - no-api-key
+  - code
+  - versions
+  - semver
+- id: code-hash
+  name: 'SHA-256/HMAC hash generator: SHA-256, SHA-512, SHA-3, Keccak-256, BLAKE2
+    and HMAC digests'
+  tags:
+  - deterministic
+  - no-api-key
+  - code
+  - crypto
+  - hashing
+- id: code-jwt
+  name: 'JWT decoder: header, claims and expiry state (no signature verification)'
+  tags:
+  - no-api-key
+  - code
+  - jwt
+  - security
+- id: geo-geohash
+  name: Geohash encoder and decoder with neighbour cells
+  tags:
+  - deterministic
+  - no-api-key
+  - geo
+  - geohash
+- id: geo-pluscode
+  name: Plus code (Open Location Code) encoder and decoder
+  tags:
+  - deterministic
+  - no-api-key
+  - geo
+  - pluscode
+- id: geo-polygon
+  name: Point in polygon check, plus bounding box, centroid and area for GeoJSON
+  tags:
+  - deterministic
+  - no-api-key
+  - geo
+  - geojson
+  - geometry
+- id: geo-distance
+  name: 'Distance calculator: geodesic distance, bearing and destination point on
+    WGS-84'
+  tags:
+  - deterministic
+  - no-api-key
+  - geo
+  - geodesy
+  - distance
+- id: chain-address
+  name: 'Crypto address validator: detect the blockchain and verify the checksum (EVM,
+    Bitcoin, Solana and more)'
+  tags:
+  - deterministic
+  - no-api-key
+  - chain
+  - blockchain
+  - addresses
+  - validation
+- id: chain-selector
+  name: 'Solidity function selector: Keccak-256, 4-byte selector and event topic from
+    a signature'
+  tags:
+  - deterministic
+  - no-api-key
+  - chain
+  - blockchain
+  - solidity
+  - keccak
+health_check:
+  url: https://api.duoleads.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://api.duoleads.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'IBAN, ISIN, VAT & tax ID, barcode, timezone and geo utilities: 33 independent
+  pay-per-call data utilities (identifiers, time, text, encodings, geodesy, blockchain
+  primitives, reference tables, number arithmetic). $0.05 per call, payable over x402
+  (USDC on Base, eip155:8453). No account, no API key. A2A: JSON-RPC at https://api.duoleads.com/a2a;
+  send a DataPart {"skill": "<skill id>", "params": {...}}; skill execution is paid
+  through the a2a-x402 extension. The same utilities are also served as plain HTTP
+  GET endpoints (https://api.duoleads.com/openapi.json) and as MCP tools over Streamable
+  HTTP at https://api.duoleads.com/mcp (tools/list free, tools/call paid).'
+version: 1.1.0

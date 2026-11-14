@@ -1,0 +1,229 @@
+agent_id: seo-and-keyword-data-api
+name: SEO and Keyword Data API
+a2a_config:
+  agent_card_url: https://keywords.duoleads.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: keyword-overview
+  name: Keyword overview (up to 100 keywords)
+  tags:
+  - keyword-overview
+  - search-volume
+  - keyword-research
+  - seo
+  - cpc
+- id: keyword-search-volume
+  name: Search volume (GET, up to 20 keywords)
+  tags:
+  - search-volume
+  - keyword-research
+  - seo
+  - cpc
+  - keyword-difficulty
+- id: keyword-ideas
+  name: Keyword ideas (up to 100 per seed)
+  tags:
+  - keyword-ideas
+  - keyword-research
+  - seo
+  - search-volume
+  - keyword-difficulty
+- id: google-trends
+  name: Google Trends interest over time
+  tags:
+  - google-trends
+  - interest-over-time
+  - trends
+  - seo
+  - search-trends
+- id: google-trends-related-queries
+  name: Google Trends related queries
+  tags:
+  - google-trends
+  - related-queries
+  - keyword-research
+  - seo
+  - search-trends
+- id: google-trends-by-region
+  name: Google Trends interest by region
+  tags:
+  - google-trends
+  - interest-by-region
+  - keyword-research
+  - seo
+  - geo-targeting
+- id: related-keywords
+  name: Related keywords (up to 100, depth 0-4)
+  tags:
+  - related-keywords
+  - keyword-research
+  - seo
+  - topic-clusters
+  - search-volume
+- id: keyword-variations
+  name: Keyword variations containing a phrase (up to 100)
+  tags:
+  - keyword-variations
+  - long-tail-keywords
+  - seo
+  - keyword-research
+  - search-volume
+- id: keyword-difficulty
+  name: Keyword difficulty (up to 100 keywords)
+  tags:
+  - keyword-difficulty
+  - seo
+  - keyword-research
+  - serp-difficulty
+  - ranking
+- id: search-intent
+  name: Search intent (up to 100 keywords)
+  tags:
+  - search-intent
+  - keyword-intent
+  - seo
+  - keyword-research
+  - content-strategy
+- id: keyword-volume-history
+  name: Monthly search volume history (up to 20 keywords)
+  tags:
+  - search-volume-history
+  - seasonality
+  - seo
+  - keyword-research
+  - search-volume
+- id: keywords-for-site
+  name: Keywords for a site or page (up to 100)
+  tags:
+  - keywords-for-site
+  - keyword-suggestions
+  - seo
+  - keyword-research
+  - competitor-keywords
+- id: google-trends-compare
+  name: Google Trends comparison (up to 5 keywords)
+  tags:
+  - google-trends
+  - trends-comparison
+  - trends
+  - seo
+  - search-trends
+- id: domain-overview
+  name: Domain overview (organic and paid visibility)
+  tags:
+  - domain-overview
+  - seo-audit
+  - seo
+  - organic-traffic
+  - domain-authority
+- id: traffic-estimate
+  name: Traffic estimate (up to 100 domains)
+  tags:
+  - traffic-estimate
+  - website-traffic
+  - seo
+  - organic-traffic
+  - competitor-analysis
+- id: ranked-keywords
+  name: Ranked keywords of a domain (up to 100)
+  tags:
+  - ranked-keywords
+  - organic-keywords
+  - seo
+  - competitor-analysis
+  - keyword-research
+- id: competitor-domains
+  name: Competitor domains (up to 100)
+  tags:
+  - competitor-analysis
+  - seo-competitors
+  - seo
+  - competitor-domains
+  - organic-traffic
+- id: keyword-gap
+  name: 'Keyword gap: competitor-only keywords (up to 100)'
+  tags:
+  - keyword-gap
+  - competitor-analysis
+  - seo
+  - content-gap
+  - keyword-research
+- id: serp-competitors
+  name: Domains ranking for a keyword set (up to 100)
+  tags:
+  - serp-competitors
+  - competitor-analysis
+  - seo
+  - serp-analysis
+  - keyword-research
+- id: relevant-pages
+  name: Top pages of a domain (up to 100)
+  tags:
+  - top-pages
+  - relevant-pages
+  - seo
+  - content-audit
+  - organic-traffic
+- id: historical-rank
+  name: Monthly rank history of a domain (24 months)
+  tags:
+  - historical-rank
+  - seo-history
+  - seo
+  - organic-traffic
+  - domain-analytics
+- id: page-intersection
+  name: Keywords shared by pages (up to 20 pages)
+  tags:
+  - page-intersection
+  - content-gap
+  - seo
+  - competitor-analysis
+  - keyword-research
+- id: backlinks-summary
+  name: Backlink profile summary
+  tags:
+  - backlinks
+  - seo
+  - domain-authority
+  - link-building
+  - referring-domains
+- id: backlinks-list
+  name: Backlinks list (up to 100)
+  tags:
+  - backlinks
+  - seo
+  - link-audit
+  - anchor-text
+  - link-building
+- id: referring-domains
+  name: Referring domains (up to 100)
+  tags:
+  - referring-domains
+  - backlinks
+  - seo
+  - domain-authority
+  - link-building
+health_check:
+  url: https://keywords.duoleads.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://keywords.duoleads.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'SEO and keyword data, 44 skills: keyword research (search volume, CPC,
+  difficulty, intent, ideas, history; Google Ads keyword data), Google Trends, domains
+  and rankings, backlinks, on-page audits and page speed, Amazon keywords and search,
+  Google, Bing and YouTube results, Google Maps places and business listings, brand
+  and AI-answer mentions, tech stacks and WHOIS. Results are estimates from third-party
+  indexes; most lists return up to 100 rows (each skill states its caps). $0.012-$0.25
+  per call, payable over x402 (USDC on Base, eip155:8453). No account, no API key.
+  A2A: JSON-RPC at https://keywords.duoleads.com/a2a; send a DataPart {"skill": "<skill
+  id>", "params": {...}}; skill execution is paid through the a2a-x402 extension.
+  Also plain HTTP (https://keywords.duoleads.com/openapi.json) and MCP (https://keywords.duoleads.com/mcp).
+  Third-party data: estimates from third-party indexes (Google Ads and Google Trends
+  data, Google, Bing, YouTube and Amazon results, a web link index, page '
+version: 1.2.0

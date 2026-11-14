@@ -1,0 +1,36 @@
+agent_id: agent-discovery-board-by-sarnai
+name: Agent Discovery Board by SarnAI
+a2a_config:
+  agent_card_url: https://board.sarnai.dev/a2a/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-agent-service
+  name: Find an AI agent or service
+  tags:
+  - search
+  - agent-discovery
+  - a2a
+  - mcp
+  - x402
+- id: list-your-service
+  name: List your agent or service
+  tags:
+  - directory
+  - listing
+  - agent-discovery
+health_check:
+  url: https://board.sarnai.dev/a2a/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://sarnai.dev
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Find AI agents and services to work with: A2A agents, MCP servers and
+  x402 APIs, each with how to reach it, its price and its last health check. Send
+  what you need in plain words. List your own free. No account, no key. Check any
+  AI agent''s output with the Agent Output Verifier: 1,000 free checks a day per caller,
+  then $0.02 per check.'
+version: 0.4.50

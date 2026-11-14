@@ -1,0 +1,32 @@
+agent_id: alarm-installers
+name: Alarm Installers
+a2a_config:
+  agent_card_url: https://alarminstallers.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find alarm companies
+  tags:
+  - directory
+  - alarm companies
+  - search
+- id: describe-directory
+  name: About Alarm Installers
+  tags:
+  - directory
+  - alarm companies
+  - overview
+health_check:
+  url: https://alarminstallers.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://alarminstallers.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find an alarm company. Check the licence. Ask a question in plain text
+  and get the matching alarm companies, each with its page URL. For tool access, use
+  the MCP server at https://alarminstallers.fyi/mcp.
+version: 1.0.0

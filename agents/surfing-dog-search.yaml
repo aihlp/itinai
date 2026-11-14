@@ -1,0 +1,38 @@
+agent_id: surfing-dog-search
+name: Surfing Dog Search
+a2a_config:
+  agent_card_url: https://surfingdog.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: search-businesses
+  name: Find businesses
+  tags:
+  - directory
+  - search
+- id: check-business
+  name: Check a business
+  tags:
+  - agentic-score
+- id: report-door
+  name: Report how a door went
+  tags:
+  - reports
+health_check:
+  url: https://surfingdog.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://surfingdog.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Surfing Dog Search is a public directory of businesses that AI agents
+  can reach through doors the businesses published: their own booking or ordering
+  page on whatever software they use, their shop''s agent door (UCP or ACP), MCP,
+  A2A, an API, or an agent inbox. Use search_businesses when a person wants to find
+  a business, and check_business when a person asks how far an agent can go with a
+  particular business''s website. This server takes no bookings or orders; each result
+  lists the business''s own doors. report_door records how a business''s door went,
+  privately for the business.'
+version: 1.0.0

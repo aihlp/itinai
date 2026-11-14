@@ -1,0 +1,228 @@
+agent_id: social-media-data-api
+name: Social Media Data API
+a2a_config:
+  agent_card_url: https://social.duoleads.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: bluesky-search
+  name: Bluesky post search
+  tags:
+  - bluesky
+  - atproto
+  - posts
+  - social-media
+  - social-listening
+- id: bluesky-posts
+  name: Bluesky account feed
+  tags:
+  - bluesky
+  - atproto
+  - feed
+  - posts
+  - social-media
+- id: bluesky-profile
+  name: Bluesky profile
+  tags:
+  - bluesky
+  - profile
+  - user-profile
+  - atproto
+  - social-media
+- id: hackernews-search
+  name: Hacker News search
+  tags:
+  - hacker-news
+  - hackernews
+  - tech-news
+  - comments
+  - search
+- id: hackernews-thread
+  name: Hacker News thread
+  tags:
+  - hacker-news
+  - comments
+  - threads
+  - discussion
+  - tech-news
+- id: social-mentions
+  name: Social mentions and sentiment (aggregate)
+  tags:
+  - mentions
+  - sentiment
+  - social-listening
+  - social-media
+  - trends
+- id: x-search
+  name: X (Twitter) post search
+  tags:
+  - twitter-api
+  - twitter
+  - x
+  - tweets
+  - tweet-search
+- id: x-posts
+  name: X (Twitter) user timeline
+  tags:
+  - twitter-api
+  - twitter
+  - x
+  - tweets
+  - timeline
+- id: x-profile
+  name: X (Twitter) profile
+  tags:
+  - twitter-api
+  - twitter
+  - x
+  - user-profile
+  - profile
+- id: reddit-search
+  name: Reddit post search
+  tags:
+  - reddit
+  - subreddit
+  - reddit-posts
+  - forums
+  - social-listening
+- id: reddit-comments
+  name: Reddit post comments
+  tags:
+  - reddit
+  - comments
+  - reddit-comments
+  - discussion
+  - threads
+- id: tiktok-videos
+  name: TikTok account videos
+  tags:
+  - tiktok
+  - tiktok-videos
+  - creators
+  - videos
+  - social-media
+- id: tiktok-search
+  name: TikTok video search
+  tags:
+  - tiktok
+  - search
+  - tiktok-videos
+  - hashtags
+  - trending
+- id: instagram-profile
+  name: Instagram profile and posts
+  tags:
+  - instagram
+  - instagram-profile
+  - influencer
+  - posts
+  - creators
+- id: youtube-transcript
+  name: YouTube transcript
+  tags:
+  - youtube
+  - transcript
+  - captions
+  - subtitles
+  - video-to-text
+- id: youtube-comments
+  name: YouTube video comments
+  tags:
+  - youtube
+  - comments
+  - youtube-comments
+  - video
+  - social-media
+- id: threads-posts
+  name: Threads account posts
+  tags:
+  - threads
+  - meta
+  - posts
+  - replies
+  - social-media
+- id: facebook-ads
+  name: Meta Ad Library search
+  tags:
+  - facebook
+  - meta
+  - ad-library
+  - ads
+  - social-media
+- id: social-search
+  name: Social search on X, Reddit and TikTok
+  tags:
+  - social-search
+  - social-media
+  - social-data
+  - multi-platform
+  - posts
+- id: social-audience
+  name: Audience and engagement stats
+  tags:
+  - audience
+  - engagement
+  - followers
+  - influencer
+  - analytics
+- id: social-accounts
+  name: Creator and brand account search
+  tags:
+  - accounts
+  - creators
+  - brands
+  - influencer
+  - social-media
+- id: linkedin-company
+  name: LinkedIn company page
+  tags:
+  - linkedin
+  - company
+  - b2b
+  - company-data
+  - business
+- id: people-search
+  name: Profile search (TikTok, Instagram, Threads)
+  tags:
+  - people-search
+  - profiles
+  - user-search
+  - social-media
+  - accounts
+- id: tiktok-followers
+  name: TikTok followers list
+  tags:
+  - tiktok
+  - followers
+  - following
+  - social-graph
+  - audience
+- id: tiktok-following
+  name: TikTok following list
+  tags:
+  - tiktok
+  - followers
+  - following
+  - social-graph
+  - audience
+health_check:
+  url: https://social.duoleads.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://social.duoleads.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Social media data API for social listening: mentions, posts, search,
+  comments and profiles from Bluesky, Hacker News, X (Twitter), Reddit, TikTok, Instagram,
+  YouTube, Threads, the Meta Ad Library, LinkedIn company pages, in one JSON schema,
+  paid per call over x402 with USDC on Base. No account, no API key. $0.01-$0.025
+  per call, payable over x402 (USDC on Base, eip155:8453). A2A: JSON-RPC at https://social.duoleads.com/a2a;
+  send a DataPart {"skill": "<skill id>", "params": {...}}; skill execution is paid
+  through the a2a-x402 extension. Also plain HTTP (https://social.duoleads.com/openapi.json)
+  and MCP (https://social.duoleads.com/mcp). Public data via third-party providers;
+  not affiliated with or endorsed by any platform. Do not use to profile, target or
+  train AI on individuals. Third-party data, provided as is: it may be delayed, incomplete
+  or wrong. Terms: https://social.duoleads.com/terms'
+version: 1.1.0

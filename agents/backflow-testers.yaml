@@ -1,0 +1,32 @@
+agent_id: backflow-testers
+name: Backflow Testers
+a2a_config:
+  agent_card_url: https://backflowtesters.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find backflow testers
+  tags:
+  - directory
+  - backflow testers
+  - search
+- id: describe-directory
+  name: About Backflow Testers
+  tags:
+  - directory
+  - backflow testers
+  - overview
+health_check:
+  url: https://backflowtesters.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://backflowtesters.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find a backflow tester for your property. Ask a question in plain text
+  and get the matching backflow testers, each with its page URL. For tool access,
+  use the MCP server at https://backflowtesters.fyi/mcp.
+version: 1.0.0

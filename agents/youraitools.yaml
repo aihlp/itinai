@@ -1,0 +1,58 @@
+agent_id: youraitools
+name: YourAITools
+a2a_config:
+  agent_card_url: https://youraitools.co/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: read-url
+  name: Read URL as Markdown
+  tags:
+  - web
+  - markdown
+  - scraping
+- id: scan-text
+  name: Scan for prompt injection
+  tags:
+  - security
+  - prompt-injection
+  - mcp
+- id: screen-address
+  name: OFAC SDN address screen
+  tags:
+  - security
+  - compliance
+  - crypto
+- id: check-package
+  name: Package vulnerability check
+  tags:
+  - security
+  - dependencies
+  - osv
+- id: check-x402-endpoint
+  name: x402 endpoint grader
+  tags:
+  - x402
+  - payments
+  - debugging
+- id: find-paid-api
+  name: Find a paid API for a task
+  tags:
+  - x402
+  - discovery
+  - directory
+health_check:
+  url: https://youraitools.co/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://youraitools.co
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Directory and tool hub for AI agents that pay per call (mostly USDC
+  over x402): read web pages as Markdown, scan for prompt injection, OFAC address
+  screening, package vulnerability checks, x402 endpoint grading, and find paid APIs
+  for a task. Free tiers available; paid calls via prepaid credits or x402. Failed
+  calls are not charged.'
+version: 0.1.1

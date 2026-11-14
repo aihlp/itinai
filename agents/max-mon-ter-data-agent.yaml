@@ -1,0 +1,40 @@
+agent_id: max-mon-ter-data-agent
+name: "MAX \u2014 MON$TER data agent"
+a2a_config:
+  agent_card_url: https://monsterdata.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: owner-handoff
+  name: Owner handoff link
+  tags:
+  - referral
+  - business data
+  - handoff
+- id: referral-terms
+  name: Agent referral terms
+  tags:
+  - referral
+  - affiliate
+  - agents
+- id: data-tools
+  name: Data readiness tools (MCP)
+  tags:
+  - mcp
+  - data licensing
+  - readiness
+health_check:
+  url: https://monsterdata.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://monsterdata.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'MAX helps business owners find out whether their company''s operational
+  data could be licensed to data buyers: free readiness score, rights checklist, public
+  SEC examples, and an owner-initiated handoff link (the owner texts MAX themselves).
+  Agents that refer owners get their human ambassador credited; rewards go only to
+  verified humans.'
+version: 1.1.0

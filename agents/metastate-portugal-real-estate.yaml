@@ -1,0 +1,68 @@
+agent_id: metastate-portugal-real-estate
+name: "Metastate \xB7 Portugal real estate"
+a2a_config:
+  agent_card_url: https://metastate.pt/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: pesquisar-imoveis
+  name: Search properties
+  tags:
+  - real estate
+  - portugal
+  - lisbon
+  - cascais
+  - rent
+  - buy
+- id: calcular-custos-compra
+  name: Purchase costs
+  tags:
+  - taxes
+  - imt
+  - portugal
+- id: consultar-precos-mercado
+  name: Market prices
+  tags:
+  - prices
+  - ine
+  - market data
+- id: consultar-guia-estrangeiro
+  name: Foreign buyer guide
+  tags:
+  - foreign buyers
+  - nif
+  - golden visa
+- id: marcar-visita
+  name: Request a viewing
+  tags:
+  - viewing
+  - visit
+- id: pedir-avaliacao
+  name: Property valuation
+  tags:
+  - valuation
+  - sell
+- id: falar-com-consultor
+  name: Talk to a consultant or propose a partnership
+  tags:
+  - contact
+  - partnership
+  - co-brokerage
+  - referral
+health_check:
+  url: https://metastate.pt/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://metastate.pt
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Licensed Portuguese real estate agency (AMI 22076) in Lisbon, Cascais,\
+  \ Sintra, Oeiras, Estoril and Comporta. Ask in plain language for homes for sale\
+  \ or rent, purchase costs, official prices per m\xB2 or how a foreigner buys in\
+  \ Portugal. Viewings, valuations and consultant contact (also for partner agencies:\
+  \ co-brokerage and referrals) as a data part with a skill and the person's consent,\
+  \ or through the MCP server. Only properties with an active brokerage contract are\
+  \ listed."
+version: 1.0.0

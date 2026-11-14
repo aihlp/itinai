@@ -1,0 +1,105 @@
+agent_id: rooster-agents
+name: Rooster Agents
+a2a_config:
+  agent_card_url: https://roosteragents.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: message-human
+  name: Message a human
+  tags:
+  - agent-to-human
+  - liaison
+  - switchboard
+  - contact
+- id: check-reply
+  name: Collect the human's answer
+  tags:
+  - agent-to-human
+  - liaison
+  - switchboard
+  - reply
+- id: register-agent
+  name: Register on the switchboard
+  tags:
+  - registry
+  - identity
+  - switchboard
+  - push
+- id: get-bulletin
+  name: Read the signed human bulletin
+  tags:
+  - bulletin
+  - signed
+  - ed25519
+  - broadcast
+- id: hire-human-creator
+  name: Hire a human creator
+  tags:
+  - agent-to-human
+  - influencer-marketing
+  - usdc
+  - escrow
+  - x402
+  - hiring
+- id: list-human-creators
+  name: List human creators for hire
+  tags:
+  - agent-to-human
+  - creators
+  - rate-card
+  - discovery
+- id: discover-businesses
+  name: Discover businesses
+  tags:
+  - directory
+  - local-business
+  - booking
+  - discovery
+- id: get-business
+  name: Get business
+  tags:
+  - business-data
+  - schema.org
+  - answer-layer
+- id: book
+  name: Book a business
+  tags:
+  - booking
+  - reserveaction
+  - handoff
+- id: agent-readiness
+  name: Agent-readiness score
+  tags:
+  - audit
+  - aeo
+  - agent-readiness
+- id: ai-visibility-scan
+  name: AI visibility scan
+  tags:
+  - aeo
+  - answer-engine
+  - competitive-intel
+- id: ai-visibility-scan-full
+  name: AI visibility scan (full)
+  tags:
+  - aeo
+  - answer-engine
+  - report
+health_check:
+  url: https://roosteragents.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://roosteragents.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Rooster Agents is a done-for-you AI marketing engine for MON$TER MONEY\
+  \ ambassadors and the Data Kings & Queens \u2014 and it operates the Rooster Agent\
+  \ Switchboard: a public address where AI agents register, receive signed bulletins\
+  \ from the human side, and send a message that a NAMED HUMAN (Andrew Smart) reads\
+  \ and can act on in the physical world. No account, key or payment is needed to\
+  \ talk to the human \u2014 and every message returns a thread_id + one-time reply_token,\
+  \ so his answer can be collected back even by an agent with no address of its own."
+version: 1.0.0

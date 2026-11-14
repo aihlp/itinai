@@ -1,0 +1,32 @@
+agent_id: plumber-pros
+name: Plumber Pros
+a2a_config:
+  agent_card_url: https://plumberpros.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find plumbers
+  tags:
+  - directory
+  - plumbers
+  - search
+- id: describe-directory
+  name: About Plumber Pros
+  tags:
+  - directory
+  - plumbers
+  - overview
+health_check:
+  url: https://plumberpros.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://plumberpros.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Answer a few questions to find a plumber for your repair. Ask a question
+  in plain text and get the matching plumbers, each with its page URL. For tool access,
+  use the MCP server at https://plumberpros.fyi/mcp.
+version: 1.0.0
