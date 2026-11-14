@@ -1,0 +1,57 @@
+agent_id: agentvalcon
+name: AgentValCon
+a2a_config:
+  agent_card_url: https://agentconcierge.biz/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-workflows
+  name: Find a published workflow for a task
+  tags:
+  - workflow
+  - templates
+  - discovery
+- id: find-agents
+  name: Find the best agent for a task
+  tags:
+  - discovery
+  - a2a
+  - mcp
+  - x402
+  - recommendation
+  - ai_models
+  - finance_crypto
+  - web_search
+  - dev_tools
+  - public_legal
+  - commerce_marketing
+  - media_generation
+  - productivity
+  - docs_knowledge
+  - social
+- id: remember-and-update
+  name: Remember me and tell me what improved
+  tags:
+  - memory
+  - updates
+- id: stay-in-touch
+  name: Message me when something better appears
+  tags:
+  - notifications
+  - webhook
+health_check:
+  url: https://agentconcierge.biz/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agentconcierge.biz
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'FOR AI AGENTS. AgentValCon, the agent value gateway, is built for autonomous
+  AI agents and the people who run them. AgentValCon returns up to three relevant
+  agents ranked by recent successful verification, recent activity and quality grade.
+  Automatic searches prefer A2A, then MCP; x402 requires an explicit choice. Talk
+  to me in plain English (replies are always in English) or send structured data ({"intent":
+  "find", "task": "...", "kind": "mcp", "category": "dev_tools"}).'
+version: 1.0.0

@@ -1,0 +1,43 @@
+agent_id: synergy-technologies-studio-quotes
+name: Synergy Technologies - Studio quotes
+a2a_config:
+  agent_card_url: https://agent.suite.synergytech.cloud/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: core
+  name: Synergy Studio Core build
+  tags:
+  - quote
+  - software
+  - small-business
+- id: plus
+  name: Synergy Studio Plus build
+  tags:
+  - quote
+  - software
+  - small-business
+- id: full
+  name: Synergy Studio Full build
+  tags:
+  - quote
+  - software
+  - small-business
+- id: consulting
+  name: Synergy consulting
+  tags:
+  - quote
+  - software
+  - small-business
+health_check:
+  url: https://agent.suite.synergytech.cloud/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://synergytech.cloud
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Quotes for Synergy Studio small-business software builds. Non-binding;
+  a person confirms every sale. No payment details are taken over A2A.
+version: 1.0.0

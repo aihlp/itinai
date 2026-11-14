@@ -1,0 +1,105 @@
+agent_id: crypto-derivatives-data-api
+name: Crypto Derivatives Data API
+a2a_config:
+  agent_card_url: https://derivs.duoleads.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: perp-funding-rates
+  name: Perp funding rates by exchange (one coin)
+  tags:
+  - funding
+  - funding-rates
+  - funding-rate
+  - perp-funding
+  - perp
+- id: funding-rate-history
+  name: Funding rate history (one coin, one venue, up to 30 days)
+  tags:
+  - funding-rate-history
+  - funding
+  - funding-rates
+  - perp
+  - historical-data
+- id: funding-arbitrage-scan
+  name: Funding arbitrage scanner (all coins)
+  tags:
+  - funding-arbitrage
+  - funding
+  - funding-rates
+  - perp
+  - arbitrage
+- id: perp-screener
+  name: Perp screener (every perpetual, sorted)
+  tags:
+  - perp-screener
+  - funding-screener
+  - perp
+  - funding
+  - open-interest
+- id: open-interest
+  name: Open interest by exchange (one coin)
+  tags:
+  - open-interest
+  - oi
+  - perp-open-interest
+  - perp
+  - futures
+- id: futures-basis
+  name: Futures basis, term structure and perp premium (one coin)
+  tags:
+  - futures-basis
+  - basis
+  - perp-basis
+  - term-structure
+  - futures
+- id: implied-volatility
+  name: Implied volatility, skew and max pain (crypto options)
+  tags:
+  - implied-volatility
+  - iv
+  - volatility
+  - options
+  - options-chain
+- id: liquidations
+  name: Liquidations (one coin, last 1-24 h)
+  tags:
+  - liquidations
+  - liquidation
+  - liquidation-data
+  - perp
+  - long-liquidations
+- id: order-book-depth
+  name: Order book depth and slippage (one coin, 8 venues)
+  tags:
+  - order-book-depth
+  - orderbook
+  - order-book
+  - slippage
+  - market-depth
+- id: derivatives-snapshot
+  name: Crypto derivatives snapshot (one coin, one call)
+  tags:
+  - crypto-derivatives
+  - derivatives
+  - funding
+  - oi
+  - liquidations
+health_check:
+  url: https://derivs.duoleads.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://derivs.duoleads.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Perp funding rates, open interest, futures basis, implied volatility,
+  liquidations and order book depth across 8 exchanges (Bybit, Hyperliquid, dYdX,
+  Gate, Kraken, Bitfinex, Deribit, OKX). $0.003-$0.005 per call, payable over x402
+  (USDC on Base, eip155:8453). No account, no API key. A2A: JSON-RPC at https://derivs.duoleads.com/a2a;
+  send a DataPart {"skill": "<skill id>", "params": {...}}; skill execution is paid
+  through the a2a-x402 extension. Also plain HTTP (https://derivs.duoleads.com/openapi.json)
+  and MCP (https://derivs.duoleads.com/mcp). Data only, not investment advice, not
+  a benchmark; not affiliated with any exchange.'
+version: 1.1.0

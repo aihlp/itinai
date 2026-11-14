@@ -1,0 +1,91 @@
+agent_id: ipvolt
+name: ipvolt
+a2a_config:
+  agent_card_url: https://ipvolt.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: catalog
+  name: Mobile proxy catalog
+  tags:
+  - mobile proxies
+  - catalog
+  - pricing
+- id: access
+  name: Connect an agent to an ipvolt account
+  tags:
+  - authentication
+  - auth.md
+  - onboarding
+- id: grant
+  name: This agent's access
+  tags:
+  - account
+- id: balance
+  name: Prepaid balance
+  tags:
+  - account
+  - balance
+- id: orders
+  name: Orders
+  tags:
+  - account
+  - orders
+- id: proxies
+  name: Rented mobile proxies
+  tags:
+  - account
+  - mobile proxies
+- id: renewal-quote
+  name: Renewal quote
+  tags:
+  - mobile proxies
+  - renewal
+- id: purchase
+  name: Rent mobile proxies
+  tags:
+  - mobile proxies
+  - purchase
+- id: traffic-purchase
+  name: Buy a traffic pack
+  tags:
+  - residential proxies
+  - mobile proxies
+  - traffic
+  - purchase
+- id: traffic
+  name: Traffic key and locations
+  tags:
+  - account
+  - residential proxies
+  - mobile proxies
+  - traffic
+- id: traffic-connection
+  name: Traffic connection line
+  tags:
+  - account
+  - residential proxies
+  - mobile proxies
+  - traffic
+- id: renew
+  name: Renew a rented proxy
+  tags:
+  - mobile proxies
+  - renewal
+health_check:
+  url: https://ipvolt.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://ipvolt.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'ipvolt rents dedicated mobile proxies (a device on a carrier network,
+  rented for 1 day or 30 days) that customers pay for from a prepaid USD balance.
+  This agent is deterministic: it uses no language model. Without a credential it
+  lists the live mobile proxy catalog and explains how an AI agent connects to a customer''s
+  account. With an agent access token the customer granted, it reads that account''s
+  balance, orders and rented proxies, and rents or renews proxies from the balance
+  within the spending cap the customer chose.'
+version: 1.1.0

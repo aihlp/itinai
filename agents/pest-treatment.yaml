@@ -1,0 +1,32 @@
+agent_id: pest-treatment
+name: Pest Treatment
+a2a_config:
+  agent_card_url: https://pesttreatment.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find pest treatment providers
+  tags:
+  - directory
+  - pest treatment providers
+  - search
+- id: describe-directory
+  name: About Pest Treatment
+  tags:
+  - directory
+  - pest treatment providers
+  - overview
+health_check:
+  url: https://pesttreatment.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://pesttreatment.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Compare pest treatments, costs and providers. Ask a question in plain
+  text and get the matching pest treatment providers, each with its page URL. For
+  tool access, use the MCP server at https://pesttreatment.fyi/mcp.
+version: 1.0.0

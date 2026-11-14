@@ -1,0 +1,25 @@
+agent_id: postbye
+name: Postbye
+a2a_config:
+  agent_card_url: https://postbye.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: company-lookup
+  name: Company cancellation lookup
+  tags:
+  - subscriptions
+  - cancellation
+  - lookup
+  - read-only
+health_check:
+  url: https://postbye.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://postbye.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Postbye cancels subscriptions for you by mail.
+version: 1.0.0
