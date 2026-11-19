@@ -62,4 +62,6 @@ htmlcov/
 *.deb
 *.Z
 *.lz
-*.lzo
+*.lzoserver-*.json
+status/
+sync-summary.json

@@ -1,0 +1,73 @@
+name: Publish Our Hubs
+
+# Lists our own BotCore hubs (hubs.yaml) and their agents in outside channels, then reads each back.
+# Runs after the daily sync. Dry run (validate + print) unless the repo variable PUBLISH_LIVE is "true".
+# State / read-back: branch `publish-status`, file status/<domain>.json.
+
+on:
+  schedule:
+    - cron: "45 4 * * *"
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "Publish for real this run (overrides PUBLISH_LIVE)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: publish-hubs
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      LIVE: ${{ (github.event.inputs.live == 'true' || vars.PUBLISH_LIVE == 'true') && '--live' || '' }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore publish state
+        run: |
+          git fetch origin publish-status --depth=1 && git checkout origin/publish-status -- status || mkdir -p status
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: python -m pip install -r requirements.txt
+
+      - name: Publish and read back
+        run: python scripts/publish-hubs.py $LIVE --per-run "${{ vars.A2A_PER_RUN || '5' }}"
+
+      - name: MCP Registry (GitHub OIDC, namespace io.github.aihlp)
+        if: env.LIVE != ''
+        run: |
+          curl -sL https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz | tar xz mcp-publisher
+          ./mcp-publisher login github-oidc
+          for f in server-*.json; do
+            domain=$(basename "$f" .json | sed 's/^server-//')
+            if jq -e --arg n "io.github.aihlp/$domain" 'select(.mcpregistry.name == $n and .mcpregistry.listed)' status/*.json >/dev/null; then
+              echo "$f already listed"; continue
+            fi
+            cp "$f" server.json && ./mcp-publisher publish || echo "::warning::MCP Registry publish failed for $f"
+          done
+          python scripts/publish-hubs.py --per-run 0
+
+      - name: Save publish state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp -r status /tmp/status
+          git switch --orphan publish-status-new
+          git rm -rq --cached . >/dev/null 2>&1 || true
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -r /tmp/status status
+          git add status
+          git commit -qm "publish state $(date -u +%FT%TZ)"
+          git push -f origin HEAD:publish-status

@@ -1,0 +1,8 @@
+# Our own BotCore hubs. The sync workflow reads each hub's llms.txt tree and lists every agent it publishes.
+# exclude: regexes on agent-card URLs that must never be listed (test fixtures until removed from the hub).
+hubs:
+  - domain: ha2ah.com
+    contact_email: hello@ha2ah.com
+    limit: 500
+    exclude:
+      - "/verticals/(tc-|test_)"

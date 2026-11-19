@@ -151,14 +151,14 @@ jobs:
         if: always() && steps.check-wp-submission.outputs.is_wp_submission == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: validation-health-results-${{ github.head_ref }}
+          name: validation-health-results-pr-${{ github.event.pull_request.number }}
           path: health-results.json
 
       - name: Upload validation results (WordPress or ITINAI submission)
         if: always() && steps.check-wp-submission.outputs.is_wp_submission == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: validation-results-${{ github.head_ref }}
+          name: validation-results-pr-${{ github.event.pull_request.number }}
           path: |
             agents/*.yaml
             schemas/agent-manifest.schema.json
