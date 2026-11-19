@@ -144,7 +144,8 @@
             "github-gallery",
             "hub",
             "marketplace",
-            "manual"
+            "manual",
+            "botcore-hub"
           ]
         },
         "url": {

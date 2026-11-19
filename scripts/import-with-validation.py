@@ -93,6 +93,29 @@ DEFAULT_SOURCES = [
         ],
     },
 ]
+LLMS_TXT_RE = re.compile(r"https://[^\s\"'<>)]*/llms\.txt")
+
+
+def load_hub_sources() -> list[dict[str, Any]]:
+    """Our own BotCore hubs (hubs.yaml): every agent the hub lists in its llms.txt tree."""
+    path = ROOT / "hubs.yaml"
+    if not path.exists():
+        return []
+    hubs = (yaml.safe_load(path.read_text(encoding="utf-8")) or {}).get("hubs") or []
+    return [
+        {
+            "name": f"BotCore hub {hub['domain']}",
+            "type": "botcore-hub",
+            "urls": [f"https://{hub['domain']}/llms.txt"],
+            "follow_llms_txt": True,
+            "exclude": hub.get("exclude", []),
+            "contact_email": hub.get("contact_email"),
+            "limit": hub.get("limit"),
+        }
+        for hub in hubs
+    ]
+
+
 AGENT_CARD_URL_KEYS = {
     "agent_card_url",
     "agentCardUrl",
@@ -104,7 +127,7 @@ AGENT_CARD_URL_KEYS = {
     "well_known_url",
 }
 AGENT_CARD_URL_RE = re.compile(
-    r"https://[^\s\"'<>)]*/\.well-known/(?:agent-card|agent)\.json",
+    r"https://[^\s\"'<>)]*/(?:\.well-known/(?:agent-card|agent)|agent-card)\.json",
     re.IGNORECASE,
 )
 
@@ -275,7 +298,8 @@ def load_source_candidates(source: dict[str, Any], timeout: int) -> list[dict[st
     candidates: list[dict[str, Any]] = []
     errors: list[str] = []
 
-    for endpoint in source.get("urls", []):
+    endpoints = list(source.get("urls", []))
+    for endpoint in endpoints:
         try:
             text = request_text(endpoint, timeout)
             content_type = Path(urlparse(endpoint).path).suffix.lower()
@@ -297,6 +321,8 @@ def load_source_candidates(source: dict[str, Any], timeout: int) -> list[dict[st
                 candidates.extend(extract_candidates(yaml.safe_load(text), endpoint))
             else:
                 candidates.extend(extract_candidates_from_text(text, endpoint))
+            if source.get("follow_llms_txt"):
+                endpoints.extend(u for u in LLMS_TXT_RE.findall(text) if u not in endpoints)
         except Exception as exc:
             errors.append(f"{endpoint}: {exc}")
 
@@ -306,6 +332,10 @@ def load_source_candidates(source: dict[str, Any], timeout: int) -> list[dict[st
     repos.extend(source.get("github_repos", []))
     for repo in repos:
         candidates.extend(load_github_repo_candidates(repo, timeout))
+
+    excluded = [re.compile(p) for p in source.get("exclude", [])]
+    if excluded:
+        candidates = [c for c in candidates if not any(p.search(str(agent_card_url(c) or "")) for p in excluded)]
 
     if not candidates and errors:
         print(f"SKIP {source['name']}: no candidates loaded; " + " | ".join(errors), file=sys.stderr)
@@ -320,8 +350,18 @@ def agent_card_url(item: dict[str, Any]) -> str | None:
     return None
 
 
+def card_protocol_version(card: dict[str, Any]) -> str | None:
+    """A2A 0.x puts protocolVersion on the card; A2A 1.0 puts it on each supportedInterfaces entry."""
+    if card.get("protocolVersion"):
+        return str(card["protocolVersion"])
+    for interface in card.get("supportedInterfaces") or []:
+        if isinstance(interface, dict) and interface.get("protocolVersion"):
+            return str(interface["protocolVersion"])
+    return None
+
+
 def has_required_card_fields(card: dict[str, Any]) -> bool:
-    if not card.get("protocolVersion"):
+    if not card_protocol_version(card):
         return False
     skills = card.get("skills")
     capabilities = card.get("capabilities")
@@ -365,13 +405,13 @@ def skill_manifest(skill: dict[str, Any], index: int) -> dict[str, Any]:
     return {"id": skill_id, "name": name, "tags": clean_tags}
 
 
-def contact_email(card: dict[str, Any], item: dict[str, Any]) -> str:
+def contact_email(card: dict[str, Any], item: dict[str, Any], fallback: str | None = None) -> str:
     for source in (card.get("contact"), item.get("contact"), card.get("provider"), item.get("provider")):
         if isinstance(source, dict):
             email = source.get("email")
             if isinstance(email, str) and "@" in email:
                 return email
-    return "unknown@external.invalid"
+    return fallback or "unknown@external.invalid"
 
 
 def contact_url(card: dict[str, Any], item: dict[str, Any]) -> str | None:
@@ -398,11 +438,11 @@ def build_manifest(
         "name": name,
         "a2a_config": {
             "agent_card_url": card_url,
-            "protocol_version": normalize_version(card.get("protocolVersion")),
+            "protocol_version": normalize_version(card_protocol_version(card)),
         },
         "skills": [skill_manifest(skill, index + 1) for index, skill in enumerate(skills[:25])],
         "health_check": {"url": card_url},
-        "contact": {"email": contact_email(card, item)},
+        "contact": {"email": contact_email(card, item, source.get("contact_email"))},
         "source": {
             "name": source["name"],
             "type": source["type"],
@@ -552,7 +592,7 @@ def create_issue_for_failed_agent(
 def process_agents(args: argparse.Namespace) -> int:
     sources = [
         {"name": "Custom Registry", "type": "external-registry", "urls": args.endpoint}
-    ] if args.endpoint else DEFAULT_SOURCES
+    ] if args.endpoint else DEFAULT_SOURCES + load_hub_sources()
     existing_by_url = existing_manifests_by_url()
     existing_paths = set(AGENTS_DIR.glob("*.yaml"))
     imported = 0
@@ -571,7 +611,7 @@ def process_agents(args: argparse.Namespace) -> int:
         print(f"SOURCE {source['name']}: {len(agents)} candidate(s)")
 
         for item in agents:
-            if args.limit and source_imported >= args.limit:
+            if source_imported >= (source.get("limit") or args.limit or float("inf")):
                 break
 
             card_url = agent_card_url(item)
@@ -684,7 +724,7 @@ def main() -> int:
     parser.add_argument(
         "--source",
         action="append",
-        choices=[slugify(source["name"]) for source in DEFAULT_SOURCES],
+        choices=[slugify(source["name"]) for source in DEFAULT_SOURCES + load_hub_sources()],
         help="Source slug to import. Can be passed multiple times. Defaults to all sources.",
     )
     parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT_SECONDS)

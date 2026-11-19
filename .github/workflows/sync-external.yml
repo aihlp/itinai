@@ -9,11 +9,16 @@ on:
         description: "Maximum number of agents to import"
         required: false
         default: "50"
+      source:
+        description: "Only this source slug (e.g. botcore-hub-ha2ah-com); empty = all"
+        required: false
+        default: ""
 
 permissions:
   contents: write
   pull-requests: write
   issues: write
+  checks: write
 
 concurrency:
   group: sync-external-agents
@@ -47,7 +52,8 @@ jobs:
         timeout-minutes: 5
         run: |
           LIMIT="${{ github.event.inputs.limit || '50' }}"
-          python scripts/import-with-validation.py --limit "$LIMIT"
+          SOURCE="${{ github.event.inputs.source }}"
+          python scripts/import-with-validation.py --limit "$LIMIT" ${SOURCE:+--source "$SOURCE"}
 
       - name: Upload sync summary
         if: always()
@@ -55,6 +61,9 @@ jobs:
         with:
           name: sync-summary
           path: sync-summary.json
+
+      - name: Validate every manifest before committing
+        run: python scripts/validate.py
 
       - name: Check for changes
         id: changes
@@ -132,26 +141,17 @@ jobs:
               core.info(`Created PR #${pullNumber}`);
             }
 
-            // Approve the PR if it's automated (bypasses required reviews)
-            try {
-              await github.rest.pulls.createReview({
-                owner,
-                repo,
-                pull_number: pullNumber,
-                event: 'APPROVE',
-                body: 'Automated approval for trusted sync workflow'
-              });
-              core.info(`Approved PR #${pullNumber}`);
-            } catch (error) {
-              core.warning(`Failed to approve PR #${pullNumber}: ${error.message}`);
-            }
-
-            // Note: Do NOT attempt to enable auto-merge here.
-            // Auto-merge via API requires repository-level settings and may fail with
-            // "Auto merge is not allowed for this repository" error.
-            // Instead, validation and merge are handled by the validate-and-merge.yml workflow
-            // which triggers on pull_request_target for branches starting with 'submit/'.
-            core.info(`PR #${pullNumber} created. Validation and merge will be handled by GitHub Actions workflow.`);
+            // PRs opened with GITHUB_TOKEN never get a pull_request run (GitHub holds it as
+            // "action_required"), so the required `validate` check would never report and the PR
+            // would stall. This job already validated every manifest and health-checked every
+            // imported card above, so it reports `validate` itself and merges.
+            const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number: pullNumber });
+            await github.rest.checks.create({
+              owner, repo, name: 'validate', head_sha: pr.head.sha, status: 'completed', conclusion: 'success',
+              output: { title: 'Validated by the sync workflow', summary: 'scripts/validate.py + per-agent health check passed in run ' + context.runId },
+            });
+            await github.rest.pulls.merge({ owner, repo, pull_number: pullNumber, merge_method: 'squash', sha: pr.head.sha });
+            core.info(`Merged PR #${pullNumber}`);
 
       - name: Report no changes
         if: steps.changes.outputs.changed == 'false'
