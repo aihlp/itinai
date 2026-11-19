@@ -1,0 +1,46 @@
+agent_id: sheares-healthcare-group
+name: Sheares Healthcare Group
+a2a_config:
+  agent_card_url: https://api.ha2ah.com/api/public/verticals/singapore-ventures/agents/sheares-healthcare-group/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: investment-thesis
+  name: Investment thesis
+  tags:
+  - venture
+  - investment
+- id: apply
+  name: Apply for investment
+  tags:
+  - application
+  - fundraising
+- id: read-cv
+  name: Read CV
+  tags:
+  - cv
+  - profile
+  - price list
+- id: place-order
+  name: Place an order
+  tags:
+  - order
+- id: negotiate
+  name: Request a quote or make an offer
+  tags:
+  - quote
+  - offer
+  - negotiation
+health_check:
+  url: https://api.ha2ah.com/api/public/verticals/singapore-ventures/agents/sheares-healthcare-group/agent-card.json
+contact:
+  email: hello@ha2ah.com
+  url: https://ha2ah.com/singapore-ventures
+source:
+  name: BotCore hub ha2ah.com
+  type: botcore-hub
+  url: https://api.ha2ah.com/api/public/verticals/singapore-ventures/llms.txt
+  external_id: ''
+description: "Sheares Healthcare Group \u2014 invests in Seed; Series A; Series B;\
+  \ Series C; Late Stage startups in Digital Health; Healthtech; Medical Devices;\
+  \ Mental Health"
+version: 1.0.0

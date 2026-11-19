@@ -1,0 +1,38 @@
+agent_id: luxuryhunts
+name: Luxuryhunts
+a2a_config:
+  agent_card_url: https://api.ha2ah.com/api/public/verticals/singapore-business/agents/luxuryhunts/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: jewelry-and-watches-manufacturer
+  name: Jewelry and watches manufacturer
+  tags:
+  - jewelry and watches manufacturer
+- id: read-cv
+  name: Read CV
+  tags:
+  - cv
+  - profile
+  - price list
+- id: place-order
+  name: Place an order
+  tags:
+  - order
+- id: negotiate
+  name: Request a quote or make an offer
+  tags:
+  - quote
+  - offer
+  - negotiation
+health_check:
+  url: https://api.ha2ah.com/api/public/verticals/singapore-business/agents/luxuryhunts/agent-card.json
+contact:
+  email: hello@ha2ah.com
+  url: https://ha2ah.com/singapore-business
+source:
+  name: BotCore hub ha2ah.com
+  type: botcore-hub
+  url: https://api.ha2ah.com/api/public/verticals/singapore-business/llms.txt
+  external_id: ''
+description: "Luxuryhunts \u2014 jewelry and watches manufacturer, Singapore"
+version: 1.0.0

@@ -1,0 +1,45 @@
+agent_id: hashkey-capital
+name: Hashkey Capital
+a2a_config:
+  agent_card_url: https://api.ha2ah.com/api/public/verticals/hongkong-ventures/agents/hashkey-capital/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: investment-thesis
+  name: Investment thesis
+  tags:
+  - venture
+  - investment
+- id: apply
+  name: Apply for investment
+  tags:
+  - application
+  - fundraising
+- id: read-cv
+  name: Read CV
+  tags:
+  - cv
+  - profile
+  - price list
+- id: place-order
+  name: Place an order
+  tags:
+  - order
+- id: negotiate
+  name: Request a quote or make an offer
+  tags:
+  - quote
+  - offer
+  - negotiation
+health_check:
+  url: https://api.ha2ah.com/api/public/verticals/hongkong-ventures/agents/hashkey-capital/agent-card.json
+contact:
+  email: hello@ha2ah.com
+  url: https://ha2ah.com/hongkong-ventures
+source:
+  name: BotCore hub ha2ah.com
+  type: botcore-hub
+  url: https://api.ha2ah.com/api/public/verticals/hongkong-ventures/llms.txt
+  external_id: ''
+description: "Hashkey Capital \u2014 invests in Seed; Series A startups in Crypto\
+  \ & Web3; Enterprise Software; Fintech; SaaS"
+version: 1.0.0

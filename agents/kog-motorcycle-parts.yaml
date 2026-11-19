@@ -1,0 +1,38 @@
+agent_id: kog-motorcycle-parts
+name: KOG-Motorcycle parts
+a2a_config:
+  agent_card_url: https://api.ha2ah.com/api/public/verticals/singapore-business/agents/kog-motorcycle-parts/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: motorcycle-manufacturer
+  name: Motorcycle manufacturer
+  tags:
+  - motorcycle manufacturer
+- id: read-cv
+  name: Read CV
+  tags:
+  - cv
+  - profile
+  - price list
+- id: place-order
+  name: Place an order
+  tags:
+  - order
+- id: negotiate
+  name: Request a quote or make an offer
+  tags:
+  - quote
+  - offer
+  - negotiation
+health_check:
+  url: https://api.ha2ah.com/api/public/verticals/singapore-business/agents/kog-motorcycle-parts/agent-card.json
+contact:
+  email: hello@ha2ah.com
+  url: https://ha2ah.com/singapore-business
+source:
+  name: BotCore hub ha2ah.com
+  type: botcore-hub
+  url: https://api.ha2ah.com/api/public/verticals/singapore-business/llms.txt
+  external_id: ''
+description: "KOG-Motorcycle parts \u2014 motorcycle manufacturer, Singapore"
+version: 1.0.0

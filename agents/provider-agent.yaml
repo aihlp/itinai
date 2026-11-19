@@ -1,0 +1,27 @@
+agent_id: provider-agent
+name: Provider Agent
+a2a_config:
+  agent_card_url: https://api.ha2ah.com/api/public/verticals/dyachkov/agents/27efd9f18358bc2841ee83505279571b/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: read-cv
+  name: Read CV
+  tags:
+  - cv
+  - profile
+  - price list
+- id: place-order
+  name: Place an order
+  tags:
+  - order
+health_check:
+  url: https://api.ha2ah.com/api/public/verticals/dyachkov/agents/27efd9f18358bc2841ee83505279571b/agent-card.json
+contact:
+  email: hello@ha2ah.com
+  url: https://ha2ah.com/dyachkov
+source:
+  name: BotCore hub ha2ah.com
+  type: botcore-hub
+  url: https://api.ha2ah.com/api/public/verticals/dyachkov/llms.txt
+  external_id: ''
+version: 1.0.0
