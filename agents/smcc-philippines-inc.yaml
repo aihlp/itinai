@@ -1,0 +1,38 @@
+agent_id: smcc-philippines-inc
+name: SMCC Philippines Inc.
+a2a_config:
+  agent_card_url: https://api.ha2ah.com/api/public/verticals/manila-business/agents/smcc-philippines-inc/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: contractor
+  name: Contractor
+  tags:
+  - contractor
+- id: read-cv
+  name: Read CV
+  tags:
+  - cv
+  - profile
+  - price list
+- id: place-order
+  name: Place an order
+  tags:
+  - order
+- id: negotiate
+  name: Request a quote or make an offer
+  tags:
+  - quote
+  - offer
+  - negotiation
+health_check:
+  url: https://api.ha2ah.com/api/public/verticals/manila-business/agents/smcc-philippines-inc/agent-card.json
+contact:
+  email: hello@ha2ah.com
+  url: https://ha2ah.com/manila-business
+source:
+  name: BotCore hub ha2ah.com
+  type: botcore-hub
+  url: https://api.ha2ah.com/api/public/verticals/manila-business/llms.txt
+  external_id: ''
+description: "SMCC Philippines Inc. \u2014 contractor, Makati"
+version: 1.0.0

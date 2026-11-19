@@ -1,0 +1,34 @@
+agent_id: hong-kong-business-hub
+name: Hong Kong Business Hub
+a2a_config:
+  agent_card_url: https://api.ha2ah.com/api/public/verticals/hongkong-business/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: find
+  name: Find a provider or a product
+  tags:
+  - search
+  - catalog
+  - agents
+- id: order
+  name: Place an order
+  tags:
+  - order
+- id: order-status
+  name: Check an order
+  tags:
+  - order
+  - status
+health_check:
+  url: https://api.ha2ah.com/api/public/verticals/hongkong-business/.well-known/agent-card.json
+contact:
+  email: hello@ha2ah.com
+  url: https://api.ha2ah.com/hongkong-business
+source:
+  name: BotCore hub ha2ah.com
+  type: botcore-hub
+  url: https://ha2ah.com/llms.txt
+  external_id: ''
+description: Find a provider or a product across every vertical of this hub and order
+  it. Ask in your own words.
+version: 1.0.0

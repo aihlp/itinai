@@ -1,0 +1,33 @@
+agent_id: manila-remote-experts
+name: Manila Remote Experts
+a2a_config:
+  agent_card_url: https://api.ha2ah.com/api/public/verticals/manila-experts/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: find
+  name: Find in the catalog
+  tags:
+  - search
+  - catalog
+- id: order
+  name: Place an order
+  tags:
+  - order
+- id: order-status
+  name: Check an order
+  tags:
+  - order
+  - status
+health_check:
+  url: https://api.ha2ah.com/api/public/verticals/manila-experts/.well-known/agent-card.json
+contact:
+  email: hello@ha2ah.com
+  url: https://api.ha2ah.com/manila-experts
+source:
+  name: BotCore hub ha2ah.com
+  type: botcore-hub
+  url: https://ha2ah.com/llms.txt
+  external_id: ''
+description: Browse this catalog and order. Ask in your own words; the order asks
+  for anything it needs.
+version: 1.0.0

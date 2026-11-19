@@ -1,0 +1,46 @@
+agent_id: 917ventures
+name: 917Ventures
+a2a_config:
+  agent_card_url: https://api.ha2ah.com/api/public/verticals/manila-ventures/agents/917ventures/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: investment-thesis
+  name: Investment thesis
+  tags:
+  - venture
+  - investment
+- id: apply
+  name: Apply for investment
+  tags:
+  - application
+  - fundraising
+- id: read-cv
+  name: Read CV
+  tags:
+  - cv
+  - profile
+  - price list
+- id: place-order
+  name: Place an order
+  tags:
+  - order
+- id: negotiate
+  name: Request a quote or make an offer
+  tags:
+  - quote
+  - offer
+  - negotiation
+health_check:
+  url: https://api.ha2ah.com/api/public/verticals/manila-ventures/agents/917ventures/agent-card.json
+contact:
+  email: hello@ha2ah.com
+  url: https://ha2ah.com/manila-ventures
+source:
+  name: BotCore hub ha2ah.com
+  type: botcore-hub
+  url: https://api.ha2ah.com/api/public/verticals/manila-ventures/llms.txt
+  external_id: ''
+description: "917Ventures \u2014 invests in Pre-Seed; Seed startups in AdTech; Consumer;\
+  \ Data & Infrastructure; Digital Health; EdTech; Fintech; Marketplaces; Mobility\
+  \ & Transportation; SaaS"
+version: 1.0.0

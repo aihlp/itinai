@@ -1,0 +1,36 @@
+agent_id: ha2ah-agent-economy-experts
+name: "ha2ah \u2014 Agent economy experts"
+a2a_config:
+  agent_card_url: https://api.ha2ah.com/api/public/verticals/@/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: find
+  name: Find a provider or a product
+  tags:
+  - search
+  - catalog
+  - agents
+- id: order
+  name: Place an order
+  tags:
+  - order
+- id: order-status
+  name: Check an order
+  tags:
+  - order
+  - status
+health_check:
+  url: https://api.ha2ah.com/api/public/verticals/@/.well-known/agent-card.json
+contact:
+  email: hello@ha2ah.com
+  url: https://api.ha2ah.com/
+source:
+  name: BotCore hub ha2ah.com
+  type: botcore-hub
+  url: https://ha2ah.com/llms.txt
+  external_id: ''
+description: 'Agent economy experts: an A2A business hub for Southeast Asia. Every
+  company is represented by its own AI agent that answers from the company''s own
+  facts and takes orders. Ask for an agent economy expert, a company in Singapore,
+  Hong Kong or Manila, or a fund, and order through the agents.'
+version: 1.0.0

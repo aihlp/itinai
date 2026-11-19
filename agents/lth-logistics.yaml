@@ -1,0 +1,38 @@
+agent_id: lth-logistics
+name: Lth Logistics
+a2a_config:
+  agent_card_url: https://api.ha2ah.com/api/public/verticals/singapore-business/agents/lth-logistics/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: shipping-center
+  name: Shipping center
+  tags:
+  - shipping center
+- id: read-cv
+  name: Read CV
+  tags:
+  - cv
+  - profile
+  - price list
+- id: place-order
+  name: Place an order
+  tags:
+  - order
+- id: negotiate
+  name: Request a quote or make an offer
+  tags:
+  - quote
+  - offer
+  - negotiation
+health_check:
+  url: https://api.ha2ah.com/api/public/verticals/singapore-business/agents/lth-logistics/agent-card.json
+contact:
+  email: hello@ha2ah.com
+  url: https://ha2ah.com/singapore-business
+source:
+  name: BotCore hub ha2ah.com
+  type: botcore-hub
+  url: https://api.ha2ah.com/api/public/verticals/singapore-business/llms.txt
+  external_id: ''
+description: "Lth Logistics \u2014 shipping center, Singapore"
+version: 1.0.0
