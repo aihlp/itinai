@@ -7,8 +7,11 @@ Channels:
   a2aregistry  one entry per agent card + the hub card; at most --per-run new registrations per run
                (a2aregistry has no self-service delete, so it is fed slowly)
   huggingface  one static Space per hub: README listing every agent (needs HF_TOKEN)
-  mcpregistry  one server per hub, io.github.aihlp/<hub>; writes server-<hub>.json for the workflow's
-               `mcp-publisher publish` step (GitHub OIDC login, no DNS)
+  mcpregistry  one server per ready vertical MCP endpoint (io.github.aihlp/<hub>-<vertical>) + the hub;
+               writes server-*.json for the workflow's `mcp-publisher publish` step (GitHub OIDC, no DNS)
+  hub repo     site/<hub>/: README + one page per vertical; the workflow pushes it to aihlp/<hub>
+Gate: only verticals that pass phase 1 as an outside visitor sees it (approved catalog items and a skill
+beyond the standard BotCore ones) are published anywhere -- listings are hard to roll back.
 State and read-back: status/<domain>.json (committed by the workflow).
 Without --live nothing is sent: every listing is validated (a2aregistry preview) and printed.
 """
@@ -36,6 +39,25 @@ def hub_id(domain: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", domain.split(".")[0].lower())
 
 
+STANDARD_SKILLS = {"find", "order", "order-status", "order_status", "place-order", "negotiate", "read-cv"}
+
+
+def vertical_of(m: dict) -> str:
+    return re.search(r"/verticals/([^/]+)/", m["a2a_config"]["agent_card_url"]).group(1)
+
+
+def gate(domain: str, manifests: list[dict], state: dict) -> list[dict]:
+    result = {}
+    for slug in sorted({vertical_of(m) for m in manifests}):
+        r = requests.get(f"https://api.{domain}/api/public/verticals/{slug}/catalog", timeout=30)
+        items = len((r.json() if r.ok else {}).get("items") or [])
+        own = sorted({k["id"] for m in manifests if vertical_of(m) == slug for k in m.get("skills", [])} - STANDARD_SKILLS)
+        result[slug] = {"items": items, "own_skills": len(own), "ready": items > 0 and bool(own)}
+        print(f"gate {slug}: items={items} own_skills={len(own)} ready={result[slug]['ready']}")
+    state["gate"] = result
+    return [m for m in manifests if result[vertical_of(m)]["ready"]]
+
+
 def hub_manifests(domain: str) -> list[dict]:
     out = []
     for path in sorted((ROOT / "agents").glob("*.yaml")):
@@ -55,7 +77,7 @@ def a2a_find(card_url: str) -> str | None:
 
 
 def publish_a2aregistry(domain: str, manifests: list[dict], state: dict, live: bool, per_run: int) -> None:
-    cards = [f"https://{domain}/.well-known/agent-card.json"] + [m["a2a_config"]["agent_card_url"] for m in manifests]
+    cards = ([f"https://{domain}/.well-known/agent-card.json"] if manifests else []) + [m["a2a_config"]["agent_card_url"] for m in manifests]
     done = state.setdefault("a2aregistry", {})
     sent = 0
     for url in cards:
@@ -95,10 +117,28 @@ def readme(domain: str, manifests: list[dict]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def write_hub_repo(domain: str, manifests: list[dict], state: dict) -> None:
+    out = ROOT / "site" / hub_id(domain)
+    (out / "verticals").mkdir(parents=True, exist_ok=True)
+    (out / "README.md").write_text(readme(domain, manifests), encoding="utf-8")
+    for slug in sorted({vertical_of(m) for m in manifests}):
+        part = [m for m in manifests if vertical_of(m) == slug]
+        page = [f"# {slug} on {domain}", "", f"MCP: https://api.{domain}/{slug}/mcp · https://{domain}/{slug}", ""]
+        for m in part:
+            page += [f"## {m['name']}", "", m.get("description", ""), "",
+                     *[f"- {k['name']}" for k in m.get("skills", [])], "", f"[agent card]({m['a2a_config']['agent_card_url']})", ""]
+        (out / "verticals" / f"{slug}.md").write_text("\n".join(page), encoding="utf-8")
+    state["hub_repo"] = {"repo": f"aihlp/{hub_id(domain)}", "agents": len(manifests), "built": NOW}
+    print(f"hub repo aihlp/{hub_id(domain)}: {len(manifests)} agents")
+
+
 def publish_huggingface(domain: str, manifests: list[dict], state: dict, live: bool) -> None:
     space = f"{hub_id(domain)}-agents"
     text = f"---\ntitle: {domain} agents\nsdk: static\ntags: [a2a, mcp-server, agent-card, ai-agents]\n---\n\n" + readme(domain, manifests)
     token = os.environ.get("HF_TOKEN")
+    if not manifests:
+        print(f"huggingface {space}: nothing ready, skipped")
+        return
     if not live or not token:
         print(f"DRY huggingface space {space}: README {len(text)} chars, {len(manifests)} agents" + ("" if token else " (no HF_TOKEN)"))
         return
@@ -121,18 +161,22 @@ def short(text: str, limit: int) -> str:
 
 def prepare_mcpregistry(domain: str, manifests: list[dict], state: dict) -> None:
     card = requests.get(f"https://{domain}/.well-known/agent-card.json", timeout=30).json()
-    server = {
-        "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-        "name": f"io.github.aihlp/{hub_id(domain)}",
-        "description": short(card.get("description") or domain, 100),
-        "version": card.get("version") or "1.0.0",
-        "websiteUrl": f"https://{domain}/",
-        "remotes": [{"type": "streamable-http", "url": f"https://api.{domain}/@/mcp"}],
-    }
-    (ROOT / f"server-{hub_id(domain)}.json").write_text(json.dumps(server, indent=2), encoding="utf-8")
-    r = requests.get(MCP, params={"search": server["name"]}, timeout=30)
-    state["mcpregistry"] = {"name": server["name"], "listed": bool(r.ok and r.json().get("servers")), "read_back": NOW}
-    print(f"mcpregistry {server['name']}: listed={state['mcpregistry']['listed']}")
+    targets = [("@", card.get("description") or domain)] if manifests else []
+    targets += [(slug, f"{slug} on {domain}: " + ", ".join(m["name"] for m in manifests if vertical_of(m) == slug))
+                for slug in sorted({vertical_of(m) for m in manifests})]
+    listed = state["mcpregistry"] = {}
+    for slug, desc in targets:
+        name = f"io.github.aihlp/{hub_id(domain)}" + ("" if slug == "@" else f"-{slug}")
+        server = {
+            "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+            "name": name, "description": short(desc, 100), "version": card.get("version") or "1.0.0",
+            "websiteUrl": f"https://{domain}/" + ("" if slug == "@" else slug),
+            "remotes": [{"type": "streamable-http", "url": f"https://api.{domain}/{slug}/mcp"}],
+        }
+        (ROOT / f"server-{name.split('/')[1]}.json").write_text(json.dumps(server, indent=2), encoding="utf-8")
+        r = requests.get(MCP, params={"search": name}, timeout=30)
+        listed[name] = bool(r.ok and any(x.get("server", x).get("name") == name for x in r.json().get("servers") or []))
+        print(f"mcpregistry {name}: listed={listed[name]}")
 
 
 def main() -> int:
@@ -148,10 +192,13 @@ def main() -> int:
         state = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
         manifests = hub_manifests(domain)
         print(f"== {domain}: {len(manifests)} agents in agents/")
+        manifests = gate(domain, manifests, state)
+        print(f"== {domain}: {len(manifests)} agents in ready verticals")
+        write_hub_repo(domain, manifests, state)
         publish_a2aregistry(domain, manifests, state, args.live, args.per_run)
         publish_huggingface(domain, manifests, state, args.live)
         prepare_mcpregistry(domain, manifests, state)
-        state.update({"domain": domain, "agents": len(manifests), "checked": NOW})
+        state.update({"domain": domain, "ready_agents": len(manifests), "checked": NOW})
         path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return 0
 
