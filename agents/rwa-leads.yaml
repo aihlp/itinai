@@ -1,0 +1,30 @@
+agent_id: rwa-leads
+name: RWA Leads
+a2a_config:
+  agent_card_url: https://rwaleads.com/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: search-signals
+  name: Search RWA intent signals
+  tags:
+  - real-world-assets
+  - tokenization
+  - lead-generation
+  - finance
+  - research
+  - x402
+health_check:
+  url: https://rwaleads.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://rwaleads.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Scored feed of real-world-asset (RWA), tokenization and family-office
+  intent signals, Swiss-first and re-scored nightly. Every signal has a 0-100 intent
+  score, the factors behind it and a public source URL. Free A2A/MCP preview (top
+  5 per query); full results pay-per-call via x402 (USDC on Base) or Pro account keys.
+version: 1.0.0

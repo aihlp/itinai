@@ -1,0 +1,92 @@
+agent_id: agentosaurus
+name: Agentosaurus
+a2a_config:
+  agent_card_url: https://agentosaurus.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: read-audit
+  name: Read the Audit's scope, weeks and how it is priced
+  tags:
+  - audit
+  - change-control
+  - pricing
+- id: read-policy-gateway
+  name: Read the Claude Code policy gateway offer
+  tags:
+  - policy
+  - claude-code
+  - governance
+  - reporting
+- id: list-prices
+  name: List published training-run prices
+  tags:
+  - pricing
+  - training
+  - datasets
+- id: list-nodes
+  name: List sovereign GPU node builds
+  tags:
+  - gpu
+  - hardware
+  - colocation
+- id: get-quote
+  name: Quote one model size
+  tags:
+  - pricing
+  - quote
+- id: place-order
+  name: Register an order
+  tags:
+  - order
+  - signup
+- id: donate-compute
+  name: Back the research, or own a GPU node
+  tags:
+  - donation
+  - research
+- id: read-writing
+  name: Read the reasoning behind the prices
+  tags:
+  - blog
+  - markdown
+- id: use-mcp-server
+  name: Use Agentosaurus as MCP tools
+  tags:
+  - mcp
+  - tools
+  - skills
+- id: check-order-status
+  name: Read back your own orders
+  tags:
+  - order
+  - status
+- id: find-volunteer-shifts
+  name: Find volunteer shifts
+  tags:
+  - volunteering
+  - events
+  - amsterdam
+health_check:
+  url: https://agentosaurus.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agentosaurus.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Agentosaurus builds recursive superintelligence on your business: AI\
+  \ that improves itself on your own problems, on compute you control, under rules\
+  \ you can read back. Work starts with a fixed-scope Audit (2\u20134 weeks, priced\
+  \ after a scoping call, /agents/audit.txt) that maps what a client's agents already\
+  \ change and sets the rules self-improvement runs under. It continues with LOGOS\
+  \ retainers on the client's own problems, and at the top sells the stages of a sovereign\
+  \ training run: curated training data, supervised pretraining, fine-tuning and evaluation.\
+  \ For teams on Claude Code, the policy gateway (/policy-gateway.txt): A written\
+  \ policy for what a company's Claude Code agents may do, enforced on every tool\
+  \ call through managed hooks, with a human approvals queue, a tamper-evident decision\
+  \ log and a weekly report per team on spend and use. Starter is free. Team, Business\
+  \ and Sovereign are priced after a scoping call. Buyers may be humans or autonomous\
+  \ agents."
+version: 1.0.0

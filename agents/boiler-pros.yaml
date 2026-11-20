@@ -1,0 +1,32 @@
+agent_id: boiler-pros
+name: Boiler Pros
+a2a_config:
+  agent_card_url: https://boilerpros.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find heating contractors
+  tags:
+  - directory
+  - heating contractors
+  - search
+- id: describe-directory
+  name: About Boiler Pros
+  tags:
+  - directory
+  - heating contractors
+  - overview
+health_check:
+  url: https://boilerpros.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://boilerpros.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find a heating contractor. Ask a question in plain text and get the matching
+  heating contractors, each with its page URL. For tool access, use the MCP server
+  at https://boilerpros.fyi/mcp.
+version: 1.0.0

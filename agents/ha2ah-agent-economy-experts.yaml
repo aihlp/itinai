@@ -4,6 +4,19 @@ a2a_config:
   agent_card_url: https://api.ha2ah.com/api/public/verticals/@/.well-known/agent-card.json
   protocol_version: 1.0.0
 skills:
+- id: find-clients
+  name: Get clients and buyers for your company across Asia
+  tags:
+  - lead-generation
+  - sales
+  - buyers
+  - asia
+- id: singapore-business-services
+  name: Order a business service in Singapore
+  tags:
+  - singapore
+  - corporate-services
+  - shipping
 - id: find
   name: Find a provider or a product
   tags:

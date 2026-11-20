@@ -1,0 +1,32 @@
+agent_id: exterminator
+name: Exterminator
+a2a_config:
+  agent_card_url: https://exterminator.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find pest control companies
+  tags:
+  - directory
+  - pest control companies
+  - search
+- id: describe-directory
+  name: About Exterminator
+  tags:
+  - directory
+  - pest control companies
+  - overview
+health_check:
+  url: https://exterminator.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://exterminator.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Request pest control near you. Ask a question in plain text and get the
+  matching pest control companies, each with its page URL. For tool access, use the
+  MCP server at https://exterminator.fyi/mcp.
+version: 1.0.0

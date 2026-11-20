@@ -1,0 +1,25 @@
+agent_id: market-news-api-discovery
+name: Market News API discovery
+a2a_config:
+  agent_card_url: https://goat-lighthouse.site/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: find-market-news
+  name: Find market news routes
+  tags:
+  - market-news
+  - crypto
+  - x402
+  - discovery
+health_check:
+  url: https://goat-lighthouse.site/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Free delayed headlines and catalogue guidance. Paid data is available
+  by x402 or a purchased bearer pass; this agent never pays or signs.
+version: 12.0.0

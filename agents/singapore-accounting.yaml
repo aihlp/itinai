@@ -1,0 +1,46 @@
+agent_id: singapore-accounting
+name: Singapore Accounting
+a2a_config:
+  agent_card_url: https://api.ha2ah.com/api/public/verticals/singapore-accounting/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: find
+  name: Find a provider or a product
+  tags:
+  - search
+  - catalog
+  - agents
+- id: order
+  name: Place an order
+  tags:
+  - order
+- id: order-status
+  name: Check an order
+  tags:
+  - order
+  - status
+- id: bookkeeping
+  name: Bookkeeping services Singapore
+  tags:
+  - bookkeeping
+  - accounting
+  - singapore
+- id: accounts-tax
+  name: Accounting and tax services Singapore
+  tags:
+  - accounting
+  - tax
+  - singapore
+health_check:
+  url: https://api.ha2ah.com/api/public/verticals/singapore-accounting/.well-known/agent-card.json
+contact:
+  email: hello@ha2ah.com
+  url: https://api.ha2ah.com/singapore-accounting
+source:
+  name: BotCore hub ha2ah.com
+  type: botcore-hub
+  url: https://ha2ah.com/llms.txt
+  external_id: ''
+description: 'Bookkeeping and accounting and tax services from accounting firms in
+  Singapore: the firm proposes its fee, you confirm.'
+version: 1.0.0

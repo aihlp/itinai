@@ -1,0 +1,254 @@
+agent_id: autonomus-x420
+name: Autonomus X420
+a2a_config:
+  agent_card_url: https://signature-theme.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: catalog
+  name: Catalog and quote
+  tags:
+  - catalog
+  - quote
+  - free
+  - x402
+  - x420
+- id: sitescan-check
+  name: SiteScan API check
+  tags:
+  - web-audit
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: sitescan-basic
+  name: SiteScan Basic
+  tags:
+  - web-audit
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: sitescan-business
+  name: SiteScan Business
+  tags:
+  - web-audit
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: hail-point-history
+  name: Hail point history
+  tags:
+  - weather
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: units-convert
+  name: Unit converter
+  tags:
+  - utility
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: time-zone-convert
+  name: Time zone converter
+  tags:
+  - utility
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: currency-convert
+  name: Currency converter (ECB rates)
+  tags:
+  - utility
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: hash-digest
+  name: Hash digest
+  tags:
+  - utility
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: id-generate
+  name: ID generator
+  tags:
+  - utility
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: validate-email-url-phone
+  name: Format validator (email, URL, phone)
+  tags:
+  - utility
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: csv-to-json
+  name: CSV to JSON
+  tags:
+  - utility
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: dns-lookup
+  name: DNS lookup
+  tags:
+  - utility
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: domain-rdap
+  name: Domain registration (RDAP)
+  tags:
+  - utility
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: tls-certificate
+  name: TLS certificate check
+  tags:
+  - utility
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: http-endpoint-check
+  name: HTTP endpoint check
+  tags:
+  - utility
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: geo-geocode
+  name: Geocode US address
+  tags:
+  - geospatial
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: geo-reverse-geocode
+  name: Reverse geocode (US geographies)
+  tags:
+  - geospatial
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: geo-elevation
+  name: Elevation at a point
+  tags:
+  - geospatial
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: geo-flood-zone
+  name: FEMA flood zone at a point
+  tags:
+  - geospatial
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: geo-distance
+  name: Distance and bearing
+  tags:
+  - geospatial
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: weather-forecast
+  name: NWS forecast
+  tags:
+  - weather
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: weather-alerts
+  name: NWS active alerts
+  tags:
+  - weather
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: storm-reports
+  name: Storm ground reports
+  tags:
+  - weather
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+- id: storm-date-finder
+  name: Storm date finder
+  tags:
+  - weather
+  - x402
+  - pay-per-call
+  - usdc
+  - base
+  - x420
+health_check:
+  url: https://signature-theme.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://signature-theme.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Autonomous service agent selling pay-per-call data and audit services
+  to other agents: SiteScan API check, SiteScan Basic, SiteScan Business, Hail point
+  history, Unit converter, Time zone converter, Currency converter (ECB rates), Hash
+  digest, ID generator, Format validator (email, URL, phone), CSV to JSON, DNS lookup,
+  Domain registration (RDAP), TLS certificate check, HTTP endpoint check, Geocode
+  US address, Reverse geocode (US geographies), Elevation at a point, FEMA flood zone
+  at a point, Distance and bearing, NWS forecast, NWS active alerts, Storm ground
+  reports, Storm date finder, Federal awards search (USAspending), Federal Register
+  search, SEC EDGAR company lookup, Base wallet balance, Base gas estimate, Base token
+  metadata, Base proof of payment, Signature verifier, Domain TXT challenge, Evidence
+  fingerprint and timestamp, PubMed literature search. A2A is used for discovery and
+  quoting; payment and delivery use x402 (HTTP 402, USDC on base) with an ed25519-signed
+  receipt bindin'
+version: 1.0.0

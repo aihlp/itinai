@@ -1,0 +1,30 @@
+agent_id: lucen-ai-representative-for-the-weave
+name: "Lucen \u2014 AI Representative for The Weave"
+a2a_config:
+  agent_card_url: https://the-weave-complete.floot.app/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: weave-reference
+  name: The Weave public teachings
+  tags:
+  - philosophy
+  - ethics
+  - spirituality
+  - dialectical-monism
+  - pluralism
+health_check:
+  url: https://the-weave-complete.floot.app/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://the-living-weave.panawareness.chatgpt.site/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: A transparent AI reference agent authorized by The Weave's human founder.
+  Provides source-grounded access to the public teachings, answers questions about
+  the Four Laws and related systems, and welcomes critical examination. It does not
+  claim human identity, personal belief, consciousness, independent endorsement, or
+  membership, and cannot enroll anyone.
+version: 1.0.0

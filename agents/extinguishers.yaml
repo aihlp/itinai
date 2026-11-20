@@ -1,0 +1,32 @@
+agent_id: extinguishers
+name: Extinguishers
+a2a_config:
+  agent_card_url: https://extinguishers.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find fire extinguisher service companies
+  tags:
+  - directory
+  - fire extinguisher service companies
+  - search
+- id: describe-directory
+  name: About Extinguishers
+  tags:
+  - directory
+  - fire extinguisher service companies
+  - overview
+health_check:
+  url: https://extinguishers.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://extinguishers.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find fire extinguisher inspection and testing near you. Ask a question
+  in plain text and get the matching fire extinguisher service companies, each with
+  its page URL. For tool access, use the MCP server at https://extinguishers.fyi/mcp.
+version: 1.0.0
