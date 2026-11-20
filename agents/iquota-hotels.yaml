@@ -1,0 +1,49 @@
+agent_id: iquota-hotels
+name: iQuota Hotels
+a2a_config:
+  agent_card_url: https://iquota.io/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: search-hotels
+  name: Search availability and prices
+  tags:
+  - search
+  - availability
+  - prices
+- id: get-hotel
+  name: Property details
+  tags:
+  - details
+  - content
+- id: check-rate
+  name: Re-quote an option
+  tags:
+  - quote
+- id: book-hotel
+  name: Book
+  tags:
+  - booking
+- id: get-booking
+  name: Look up a booking
+  tags:
+  - booking
+- id: cancel-booking
+  name: Cancel a booking
+  tags:
+  - booking
+  - cancellation
+health_check:
+  url: https://iquota.io/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://iquota.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Independent hotels, apartments and villas contracted directly with their
+  owners: live availability, official rates and instant booking. Payment is made at
+  the property and there are no commissions. Only properties whose owners have opted
+  in are shown.'
+version: 1.0.0

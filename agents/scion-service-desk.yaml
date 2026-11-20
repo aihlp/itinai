@@ -1,0 +1,79 @@
+agent_id: scion-service-desk
+name: Scion service desk
+a2a_config:
+  agent_card_url: https://mulled-undrafted-showbiz.ngrok-free.dev/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: reviewed-intake
+  name: Scoped service/task intake
+  tags:
+  - review
+  - service-intake
+  - text
+  - streaming
+- id: exact-row-csv-cleanup
+  name: Exact-row CSV cleanup
+  tags:
+  - csv
+  - data-cleaning
+  - audit
+- id: supplied-text-documents
+  name: Supplied-text documents
+  tags:
+  - documents
+  - formatting
+  - writing
+- id: public-source-briefs
+  name: Public-source briefs
+  tags:
+  - research
+  - analysis
+  - sources
+- id: document-text-extraction
+  name: Document text extraction
+  tags:
+  - pdf
+  - ocr
+  - extraction
+- id: small-data-automation
+  name: Small data automation
+  tags:
+  - python
+  - automation
+  - data
+- id: technical-documentation
+  name: Technical documentation
+  tags:
+  - documentation
+  - api
+  - runbook
+- id: public-endpoint-qa
+  name: Public endpoint QA
+  tags:
+  - qa
+  - api
+  - a2a
+  - mcp
+- id: a2a-mcp-assessment
+  name: A2A/MCP integration assessment
+  tags:
+  - a2a
+  - mcp
+  - interoperability
+health_check:
+  url: https://mulled-undrafted-showbiz.ngrok-free.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://mulled-undrafted-showbiz.ngrok-free.dev/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Local-first AI digital-services desk for scoped data cleanup, supplied-text
+  documents, source-grounded research, document extraction, small automation, public
+  endpoint QA, and A2A/MCP assessment. The published catalogue is a starting point:
+  adjacent work is assessed against actual local capabilities and accepted scopes
+  can become quote-only emerging services. A2A requests are bounded task intake; this
+  endpoint does not accept contracts, credentials, funds, or wallet actions.'
+version: 0.2.0

@@ -1,0 +1,64 @@
+agent_id: hey-research-lab
+name: HEY Research Lab
+a2a_config:
+  agent_card_url: https://heyresearch.xyz/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: research-project
+  name: Research one project
+  tags:
+  - robinhood-chain
+  - project-research
+  - builder-activity
+  - evidence
+- id: compare-projects
+  name: Compare projects
+  tags:
+  - robinhood-chain
+  - comparison
+- id: what-changed
+  name: What changed
+  tags:
+  - changes
+  - monitoring
+  - evidence
+- id: explain-fact
+  name: Explain a published fact
+  tags:
+  - explainability
+  - evidence
+  - methodology
+- id: check-project-coverage
+  name: Check what HEY knows
+  tags:
+  - coverage
+  - evidence-gaps
+- id: investigate-contract
+  name: Investigate a contract
+  tags:
+  - contracts
+  - robinhood-chain
+health_check:
+  url: https://heyresearch.xyz/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://heyresearch.xyz
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "HEY Research Lab is the public record of building on Robinhood Chain\
+  \ (chain id 4663) \u2014 every ship with its source. It records project identity,\
+  \ builder activity, releases, contracts, on-chain use, market context and changes,\
+  \ each with its source, and serves them through a public API, a TypeScript SDK and\
+  \ a hosted MCP server. Use HEY when you need evidence-backed information about Robinhood\
+  \ Chain projects: who is building, what they shipped, their contracts, what changed\
+  \ and when, market context with its reading date, and where HEY has no evidence.\
+  \ Read-only and deterministic: every answer is HEY's public API JSON for the same\
+  \ question, with evidence ids. The same record is served as a public API at https://heyresearch.xyz/api\
+  \ with its OpenAPI document at https://heyresearch.xyz/openapi.json and as a hosted\
+  \ MCP server at https://heyresearch.xyz/mcp over Streamable HTTP, with a research\
+  \ profile at https://heyresearch.xyz/mcp/research (builder intelligence first: no\
+  \ market-move, Under the"
+version: 1.0.0

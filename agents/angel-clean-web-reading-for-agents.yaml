@@ -1,0 +1,85 @@
+agent_id: angel-clean-web-reading-for-agents
+name: "Angel \u2014 clean web reading for agents"
+a2a_config:
+  agent_card_url: https://angel.oroboros-design.com/.well-known/agent.json
+  protocol_version: 0.3.0
+skills:
+- id: stealth-read
+  name: "Web reader \u2014 any public page as clean Markdown, with hidden text removed"
+  tags:
+  - web-reader
+  - url-to-markdown
+  - scraping
+  - llm-context
+  - rag
+  - prompt-injection
+  - security
+  - x402
+  - paid
+- id: preflight
+  name: "Pre-purchase security audit \u2014 shops, checkout links, paid APIs, x402\
+    \ (USDC on Base)"
+  tags:
+  - security
+  - pre-purchase
+  - checkout
+  - payment-safety
+  - fraud
+  - merchant-verification
+  - x402
+  - usdc
+  - paid
+- id: input-guard
+  name: "Input guard \u2014 removes hidden content and flags text aimed at the model,\
+    \ 17 languages"
+  tags:
+  - security
+  - prompt-injection
+  - agent-safety
+  - unicode
+  - "\u63D0\u793A\u6CE8\u5165"
+  - "\u30D7\u30ED\u30F3\u30D7\u30C8\u30A4\u30F3\u30B8\u30A7\u30AF\u30B7\u30E7\u30F3"
+  - "\uD504\uB86C\uD504\uD2B8 \uC778\uC81D\uC158"
+  - x402
+  - paid
+- id: token-risk
+  name: "ERC-20 honeypot and rug-pull check \u2014 Base, Ethereum (USDC on Base)"
+  tags:
+  - defi
+  - erc20
+  - honeypot
+  - rug-pull
+  - token-security
+  - base
+  - ethereum
+  - x402
+  - paid
+- id: gespraech
+  name: Mit Angel sprechen (privat)
+  tags:
+  - assistant
+  - private
+health_check:
+  url: https://angel.oroboros-design.com/.well-known/agent.json
+contact:
+  email: unknown@external.invalid
+  url: https://oroboros-design.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Angel by Oroboros Design reads web pages for agents: stealth_read returns\
+  \ any public page as clean Markdown, strips what people cannot see and flags text\
+  \ aimed at the model. The same key works on three guard checks: input_guard (removes\
+  \ hidden content and flags text aimed at the model), preflight (a look at a shop,\
+  \ checkout link, paid API or x402 payment request before paying) and token_risk\
+  \ (ERC-20 contract read before a swap or approve). Callable over A2A without sign-up:\
+  \ message/send to https://angel.oroboros-design.com/a2a with a data part {\"skill\"\
+  : \"\u2026\", \"input\": {\u2026}}. Free: 500 calls with a free key, no account,\
+  \ no card (https://angel.oroboros-design.com/key); without a key 5 calls a day over\
+  \ MCP and A2A. More: \u20AC9 one-time by card for 5,000 calls, 90 days, businesses\
+  \ only (https://angel.oroboros-design.com/buy), or 0.02 USDC per call via x402 (USDC\
+  \ on Base). Price sheet: https://angel.oroboros-design.com/pricing. A key goes in\
+  \ metadata bundle_token; x402 is paid in the same task ("
+version: 2.0.0

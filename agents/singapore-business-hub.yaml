@@ -4,6 +4,21 @@ a2a_config:
   agent_card_url: https://api.ha2ah.com/api/public/verticals/singapore-business/.well-known/agent-card.json
   protocol_version: 1.0.0
 skills:
+- id: company-incorporation
+  name: Register a company in Singapore
+  tags:
+  - corporate-services
+  - incorporation
+- id: accounting
+  name: Accounting and bookkeeping in Singapore
+  tags:
+  - corporate-services
+  - accounting
+- id: shipping-from-singapore
+  name: Ship cargo from Singapore
+  tags:
+  - shipping
+  - logistics
 - id: find
   name: Find a provider or a product
   tags:

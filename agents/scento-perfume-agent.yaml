@@ -1,0 +1,39 @@
+agent_id: scento-perfume-agent
+name: Scento Perfume Agent
+a2a_config:
+  agent_card_url: https://www.scento.com/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: find-perfume
+  name: Find a perfume
+  tags:
+  - perfume
+  - search
+  - catalogue
+- id: perfume-details
+  name: Perfume details
+  tags:
+  - perfume
+  - notes
+  - fragrance
+- id: store-info
+  name: Store information
+  tags:
+  - shipping
+  - returns
+  - payment
+  - contact
+health_check:
+  url: https://www.scento.com/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://www.scento.com
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Answers perfume questions from Scento''s verified perfume database:
+  find a perfume by name, house or note, read its notes and family, or get delivery,
+  returns, payment and contact information. Every answer carries scento.com page links.'
+version: 1.0.0

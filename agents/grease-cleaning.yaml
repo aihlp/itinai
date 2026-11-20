@@ -1,0 +1,32 @@
+agent_id: grease-cleaning
+name: Grease Cleaning
+a2a_config:
+  agent_card_url: https://greasecleaning.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find cleaning companies
+  tags:
+  - directory
+  - cleaning companies
+  - search
+- id: describe-directory
+  name: About Grease Cleaning
+  tags:
+  - directory
+  - cleaning companies
+  - overview
+health_check:
+  url: https://greasecleaning.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://greasecleaning.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find kitchen exhaust and grease cleaning services. Ask a question in
+  plain text and get the matching cleaning companies, each with its page URL. For
+  tool access, use the MCP server at https://greasecleaning.fyi/mcp.
+version: 1.0.0

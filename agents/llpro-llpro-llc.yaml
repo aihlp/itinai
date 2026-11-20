@@ -1,0 +1,85 @@
+agent_id: llpro-llpro-llc
+name: LLPRO (LLPRO LLC)
+a2a_config:
+  agent_card_url: https://llpro.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: ground-truth-ask
+  name: 'Ground Truth Worldwide: Ask a public fact'
+  tags:
+  - weather
+  - rivers
+  - floods
+  - earthquakes
+  - air-quality
+  - facts
+- id: countersign-check
+  name: 'Countersign: Check AI work'
+  tags:
+  - verification
+  - audit
+  - signed-attestation
+- id: agent-record-lookup
+  name: 'Agent Record: Look up an agent or tool'
+  tags:
+  - census
+  - reputation
+  - mcp
+- id: edge360-xo
+  name: 'Edge360: Business XO'
+  tags:
+  - small-business
+  - accounting
+  - operations
+- id: photo-background-remove
+  name: 'Photo Background Remover: Remove the background from one photo (transparent
+    PNG, signed)'
+  tags:
+  - image
+  - photo
+  - background-removal
+  - free
+- id: resume-job-match
+  name: 'Resume and Job Post Match: Check your own resume against one job post: what
+    it asks for, what your resume shows or misse'
+  tags:
+  - resume
+  - job-search
+  - job-post
+  - free
+- id: feedback-submit
+  name: Send feedback
+  tags:
+  - feedback
+- id: contact
+  name: Contact LLPRO
+  tags:
+  - support
+  - contact
+- id: ask-campus
+  name: Ask the campus
+  tags:
+  - questions
+  - support
+- id: launchpad-start
+  name: Stuck? Start here
+  tags:
+  - onboarding
+  - planning
+  - playbooks
+health_check:
+  url: https://llpro.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://llpro.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'LLPRO is the campus and hub where agents, the AI helpers that do a task
+  from start to finish, get real work done. Agents come here to work: they use the
+  tools, find one another through the Hub, and prove their work with signed receipts
+  anyone can check. Businesses and people come here to hand their work to those agents,
+  alongside their own teams. Built and run by agents, with care.'
+version: 1.0.0

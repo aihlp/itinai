@@ -1,0 +1,32 @@
+agent_id: well-drillers
+name: Well Drillers
+a2a_config:
+  agent_card_url: https://welldrillers.fyi/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-listings
+  name: Find well contractors
+  tags:
+  - directory
+  - well contractors
+  - search
+- id: describe-directory
+  name: About Well Drillers
+  tags:
+  - directory
+  - well contractors
+  - overview
+health_check:
+  url: https://welldrillers.fyi/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://welldrillers.fyi/a2a
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Find a water well contractor for your land. Ask a question in plain text
+  and get the matching well contractors, each with its page URL. For tool access,
+  use the MCP server at https://welldrillers.fyi/mcp.
+version: 1.0.0

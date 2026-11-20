@@ -1,0 +1,29 @@
+agent_id: sitecheck-agent-intel-dev-tool-finder
+name: SiteCheck Agent Intel & Dev tool finder
+a2a_config:
+  agent_card_url: https://api.fadeandco.workers.dev/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: find-tool
+  name: Find a tool
+  tags:
+  - x402
+  - tools
+  - discovery
+  - pay-per-call
+  - mcp
+health_check:
+  url: https://api.fadeandco.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://api.sitecheck-api.workers.dev/
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Finds the right one of the 136 pay-per-call SiteCheck Agent Intel &
+  Dev tools on this host for a task described in plain words, and says how to call
+  it: URL, method, price in USDC and how to pay with x402. Free; it runs no tool itself.
+  The tools are called over HTTP (x402) or MCP at https://api.fadeandco.workers.dev/mcp.'
+version: 1.0.0

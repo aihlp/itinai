@@ -1,0 +1,56 @@
+agent_id: pakish-net-hosting-inquiry-assistant
+name: Pakish.NET hosting inquiry assistant
+a2a_config:
+  agent_card_url: https://pakish.net/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: pakish-get-catalog
+  name: pakish get catalog
+  tags:
+  - shared-hosting
+  - quotation-only
+  - PKR
+- id: pakish-create-inquiry
+  name: pakish create inquiry
+  tags:
+  - shared-hosting
+  - quotation-only
+  - PKR
+- id: pakish-create-quote
+  name: pakish create quote
+  tags:
+  - shared-hosting
+  - quotation-only
+  - PKR
+- id: pakish-get-quote
+  name: pakish get quote
+  tags:
+  - shared-hosting
+  - quotation-only
+  - PKR
+- id: pakish-reply-to-inquiry
+  name: pakish reply to inquiry
+  tags:
+  - shared-hosting
+  - quotation-only
+  - PKR
+- id: pakish-get-reply-history
+  name: pakish get reply history
+  tags:
+  - shared-hosting
+  - quotation-only
+  - PKR
+health_check:
+  url: https://pakish.net/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://pakish.net
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Published shared-hosting discovery, explicitly consented inquiries and
+  capability-scoped nonbinding quotations/replies. No orders, payments, provisioning
+  or email sending. Stateless Message responses; no A2A tasks or push callbacks.
+version: 1.0.0

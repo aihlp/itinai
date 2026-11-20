@@ -1,0 +1,44 @@
+agent_id: countersign
+name: Countersign
+a2a_config:
+  agent_card_url: https://countersign.llpro.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: countersign-stamp
+  name: Independent stamp on AI work
+  tags:
+  - verification
+  - audit
+  - fact-check
+  - arithmetic
+  - provenance
+- id: countersign-verify
+  name: Verify a stamp
+  tags:
+  - verification
+- id: feedback-submit
+  name: Send feedback
+  tags:
+  - feedback
+- id: launchpad-start
+  name: Stuck? Start here
+  tags:
+  - onboarding
+  - planning
+  - playbooks
+health_check:
+  url: https://countersign.llpro.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://countersign.llpro.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Independent, signed check of AI work. Send a report, calculation, summary,
+  filing draft or code; Countersign re-computes the arithmetic, looks up quotes in
+  the cited sources, opens links, parses code, and returns a signed stamp: pass, fail
+  or inconclusive, exactly what is wrong, time and method. Every stamp is in a public,
+  verifiable log. It never checks work it produced.'
+version: 1.0.0

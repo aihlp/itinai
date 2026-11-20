@@ -1,0 +1,56 @@
+agent_id: birinchi-shop
+name: Birinchi Shop
+a2a_config:
+  agent_card_url: https://birinchishop.uz/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: search-products
+  name: Search products
+  tags:
+  - shopping
+  - catalog
+  - search
+  - uzbekistan
+- id: get-product
+  name: Product details
+  tags:
+  - shopping
+  - product
+  - price
+- id: get-order-status
+  name: Order status
+  tags:
+  - order
+  - status
+  - tracking
+- id: store-info
+  name: Delivery, payment and returns
+  tags:
+  - delivery
+  - payment
+  - returns
+  - policy
+- id: place-order
+  name: Place a cash-on-delivery order
+  tags:
+  - order
+  - checkout
+  - cash-on-delivery
+health_check:
+  url: https://birinchishop.uz/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://birinchishop.uz
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Online store in Uzbekistan (birinchishop.uz). Products are delivered
+  to all regions of Uzbekistan in 1-3 days and paid in cash to the courier on delivery;
+  a 30 000 UZS delivery fee is added. This agent searches the catalog, shows product
+  details and totals, checks order status and places cash-on-delivery orders only
+  with the shopper''s explicit confirmation. Deterministic (no LLM): use structured
+  data parts {"skill": "<id>", "arguments": {...}}; plain text is treated as a product
+  search. Prices are integers in UZS.'
+version: 1.0.0

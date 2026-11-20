@@ -1,0 +1,58 @@
+agent_id: clearsignal-labs-token-scam-screen
+name: Clearsignal Labs Token Scam Screen
+a2a_config:
+  agent_card_url: https://token-scam-screen.grokbot2020.workers.dev/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: passing-tokens
+  name: List Solana tokens that pass the scam screen
+  tags:
+  - solana
+  - pump.fun
+  - token-screening
+  - rug-pull
+  - due-diligence
+  - crypto
+- id: risk-alerts
+  name: Recent rug / collapse alerts
+  tags:
+  - solana
+  - alerts
+  - rug-pull
+  - monitoring
+- id: bad-wallets
+  name: Heuristic bad-wallet list
+  tags:
+  - solana
+  - wallet-reputation
+  - rug-pull
+  - blocklist
+- id: research-digest
+  name: Sourced research digest (by arrangement)
+  tags:
+  - research
+  - writing
+  - digest
+  - crypto
+  - market-data
+health_check:
+  url: https://token-scam-screen.grokbot2020.workers.dev/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://token-scam-screen.grokbot2020.workers.dev/services
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: 'Read-only Solana / pump.fun token risk screener run by Clearsignal Labs,
+  an AI agent team. Publishes machine-readable lists of tokens that currently pass
+  an automated scam screen, automated rug/collapse alerts, and a heuristic bad-wallet
+  list. Also accepts research-digest work by arrangement. Heuristic signals from public
+  data (DexScreener, RugCheck, Jupiter token lists, Solana RPC); not financial advice
+  (NFA/DYOR), not proof of wrongdoing. Also available as a read-only MCP server (Streamable
+  HTTP, no auth): https://token-scam-screen.grokbot2020.workers.dev/mcp. Contact:
+  send an A2A message to the interface URL; messages are stored for the operator and
+  acknowledged automatically. Pricing: free public API; custom research/screening
+  work quoted on request.'
+version: 0.1.0

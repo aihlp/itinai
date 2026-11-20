@@ -1,0 +1,70 @@
+agent_id: nastartujto-cz-startitup-io-obchodn-ai-agent-pro-weby-marketing-a-zen-firmy
+name: "NASTARTUJTO.cz & STARTITUP.io \u2013 Obchodn\xED AI Agent pro weby, marketing\
+  \ a \u0159\xEDzen\xED firmy"
+a2a_config:
+  agent_card_url: https://startitup.io/.well-known/agent-card.json
+  protocol_version: 1.0.0
+skills:
+- id: inspect-company-and-quote
+  name: "Audit st\xE1vaj\xEDc\xEDho webu, ARES rozbor, okam\u017Eit\xE9 demo a kalkulace\
+    \ redesignu i kampan\xED"
+  tags:
+  - redesign
+  - web
+  - audit
+  - ares
+  - google-ads
+  - cenik
+- id: submit-free-website-proposal
+  name: "Formul\xE1\u0159 pro n\xE1vrh nov\xE9ho webu zdarma & p\u0159ed\xE1n\xED\
+    \ podklad\u016F a \xFAprav na m\xEDru (0 K\u010D)"
+  tags:
+  - novy-web
+  - formular-zdarma
+  - podklady
+  - upravy-zdarma
+- id: book-founder-consultation
+  name: "Rezervace 15min konzultace zdarma se Zby\u0148kem Melounem (NEXUS syst\xE9\
+    my s vlastn\xED DB & obchodn\xED dotazy)"
+  tags:
+  - nexus
+  - system-na-miru
+  - konzultace
+  - kalendar
+- id: create-direct-checkout
+  name: "Vygenerov\xE1n\xED p\u0159\xEDm\xE9 objedn\xE1vky provozu (/objednavka) a\
+    \ p\u0159ed\xE1n\xED AI Kl\xE1\u0159e"
+  tags:
+  - objednavka
+  - checkout
+  - klara
+- id: check-proposal-or-edit-status
+  name: "Kontrola stavu v\xFDroby n\xE1vrhu webu nebo bezplatn\xFDch \xFAprav na m\xED\
+    ru (Task Polling)"
+  tags:
+  - status
+  - task
+  - demo
+  - upravy
+health_check:
+  url: https://startitup.io/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://startitup.io
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: "Ofici\xE1ln\xED obchodn\xED A2A spojka platformy STARTITUP.io a NASTARTUJTO.cz\
+  \ (NASTARTUJTO s.r.o., certifikovan\xFD Google Partner). N\xE1vrh nov\xE9ho webu\
+  \ nebo redesign st\xE1vaj\xEDc\xEDho webu i jeho kompletn\xED vylad\u011Bn\xED a\u017E\
+  \ do fin\xE1ln\xEDho schv\xE1len\xED d\u011Bl\xE1me ZDARMA (0 K\u010D), jakmile\
+  \ m\xE1me re\xE1ln\xE9 kontaktn\xED \xFAdaje na majitele firmy. Zdarma zapracujeme\
+  \ libovoln\xE9 \xFApravy na m\xEDru a p\u0159ijmeme libovoln\xE9 podklady. Provoz\
+  \ webu stoj\xED 205 K\u010D/m\u011Bs. bez DPH u 2let\xE9ho tarifu (5 950 K\u010D\
+  \ v\u010D. DPH na 2 roky) nebo 249 K\u010D/m\u011Bs. bez DPH u ro\u010Dn\xEDho tarifu,\
+  \ v\u010Detn\u011B z\xE1kladn\xEDho bal\xED\u010Dku modul\u016F STARTER za 0 K\u010D\
+  /m\u011Bs. Po aktivaci p\u0159eb\xEDr\xE1 p\u0159\xEDmou p\xE9\u010Di o podnikatele\
+  \ osobn\xED AI asistentka Kl\xE1ra (klara@nastartujto.cz, +420 266 266 979)."
+version: 2.0.0
