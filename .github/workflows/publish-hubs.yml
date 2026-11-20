@@ -29,6 +29,7 @@ jobs:
     env:
       LIVE: ${{ (github.event.inputs.live == 'true' || vars.PUBLISH_LIVE == 'true') && '--live' || '' }}
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HUB_REPO_TOKEN: ${{ secrets.HUB_REPO_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
@@ -51,13 +52,36 @@ jobs:
           curl -sL https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz | tar xz mcp-publisher
           ./mcp-publisher login github-oidc
           for f in server-*.json; do
-            domain=$(basename "$f" .json | sed 's/^server-//')
-            if jq -e --arg n "io.github.aihlp/$domain" 'select(.mcpregistry.name == $n and .mcpregistry.listed)' status/*.json >/dev/null; then
+            name=$(jq -r .name "$f")
+            if jq -e --arg n "$name" 'select(.mcpregistry[$n] == true)' status/*.json >/dev/null; then
               echo "$f already listed"; continue
             fi
             cp "$f" server.json && ./mcp-publisher publish || echo "::warning::MCP Registry publish failed for $f"
           done
           python scripts/publish-hubs.py --per-run 0
+
+      - name: Hub repos (preview)
+        uses: actions/upload-artifact@v4
+        with:
+          name: hub-repos
+          path: site/
+          if-no-files-found: ignore
+
+      - name: Hub repos (aihlp/<hub>)
+        if: env.LIVE != '' && env.HUB_REPO_TOKEN != ''
+        env:
+          HUB_REPO_TOKEN: ${{ secrets.HUB_REPO_TOKEN }}
+          GH_TOKEN: ${{ secrets.HUB_REPO_TOKEN }}
+        run: |
+          for dir in site/*/; do
+            hub=$(basename "$dir")
+            [ -z "$(ls "$dir/verticals" 2>/dev/null)" ] && { echo "$hub: nothing ready"; continue; }
+            gh repo view "aihlp/$hub" >/dev/null 2>&1 || gh repo create "aihlp/$hub" --public --description "Agents of $hub: A2A + MCP"
+            gh repo edit "aihlp/$hub" --add-topic a2a --add-topic mcp-server --add-topic ai-agents
+            git clone -q "https://x-access-token:$HUB_REPO_TOKEN@github.com/aihlp/$hub.git" "/tmp/$hub" || { mkdir -p "/tmp/$hub" && git -C "/tmp/$hub" init -q -b main && git -C "/tmp/$hub" remote add origin "https://x-access-token:$HUB_REPO_TOKEN@github.com/aihlp/$hub.git"; }
+            rsync -a --delete --exclude .git "$dir" "/tmp/$hub/"
+            cd "/tmp/$hub" && git add -A && { git diff --cached --quiet || { git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "Update from $hub hub" && git push -q origin HEAD:main; }; }; cd -
+          done
 
       - name: Save publish state
         run: |
