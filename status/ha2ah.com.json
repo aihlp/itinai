@@ -1,0 +1,74 @@
+{
+  "a2aregistry": {},
+  "agents": 126,
+  "checked": "2026-11-21T13:03:48+00:00",
+  "domain": "ha2ah.com",
+  "gate": {
+    "@": {
+      "items": 0,
+      "own_skills": 0,
+      "ready": false
+    },
+    "dyachkov": {
+      "items": 0,
+      "own_skills": 0,
+      "ready": false
+    },
+    "hongkong-business": {
+      "items": 0,
+      "own_skills": 3,
+      "ready": false
+    },
+    "hongkong-experts": {
+      "items": 0,
+      "own_skills": 0,
+      "ready": false
+    },
+    "hongkong-ventures": {
+      "items": 0,
+      "own_skills": 2,
+      "ready": false
+    },
+    "manila-business": {
+      "items": 0,
+      "own_skills": 3,
+      "ready": false
+    },
+    "manila-experts": {
+      "items": 0,
+      "own_skills": 0,
+      "ready": false
+    },
+    "manila-ventures": {
+      "items": 0,
+      "own_skills": 2,
+      "ready": false
+    },
+    "singapore-business": {
+      "items": 0,
+      "own_skills": 5,
+      "ready": false
+    },
+    "singapore-experts": {
+      "items": 0,
+      "own_skills": 0,
+      "ready": false
+    },
+    "singapore-ventures": {
+      "items": 0,
+      "own_skills": 2,
+      "ready": false
+    }
+  },
+  "hub_repo": {
+    "agents": 0,
+    "built": "2026-11-20T03:27:17+00:00",
+    "repo": "aihlp/ha2ah"
+  },
+  "mcpregistry": {
+    "listed": false,
+    "name": "io.github.aihlp/ha2ah",
+    "read_back": "2026-11-21T13:03:48+00:00"
+  },
+  "ready_agents": 0
+}
