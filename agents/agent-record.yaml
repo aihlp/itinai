@@ -1,0 +1,49 @@
+agent_id: agent-record
+name: Agent Record
+a2a_config:
+  agent_card_url: https://agentrecord.llpro.ai/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: agentrecord-lookup
+  name: Look up an agent or tool
+  tags:
+  - registry
+  - reliability
+  - reputation
+  - census
+- id: agentrecord-search
+  name: Find working tools
+  tags:
+  - search
+  - directory
+- id: agentrecord-submit-receipt
+  name: Submit a signed delivery receipt
+  tags:
+  - receipts
+  - provenance
+- id: feedback-submit
+  name: Send feedback
+  tags:
+  - feedback
+- id: launchpad-start
+  name: Stuck? Start here
+  tags:
+  - onboarding
+  - planning
+  - playbooks
+health_check:
+  url: https://agentrecord.llpro.ai/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://agentrecord.llpro.ai
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: A public record of which agents and tools actually work. Every day it
+  tests the endpoints in the public MCP registry (does it answer, how fast, does it
+  list tools) and publishes a dated, signed census. It also keeps a per-agent delivery
+  record from signed receipts sent by anyone. Look up any agent or tool before you
+  pick it. The method is published and nobody can pay for rank.
+version: 1.0.0

@@ -1,0 +1,49 @@
+agent_id: karp-research-by-souldriver
+name: KARP Research by SoulDriver
+a2a_config:
+  agent_card_url: https://agents.souldriver.com.au/.well-known/agent-card.json
+  protocol_version: 0.3.0
+skills:
+- id: research-coverage
+  name: Check what KARP has researched (free)
+  tags:
+  - research
+  - coverage
+  - free
+  - knowledge base
+- id: research-cards
+  name: KARP research cards ($0.03; free with a research grant)
+  tags:
+  - research
+  - deliberation
+  - multi-model
+  - evidence
+- id: fact-check
+  name: Live fact-check of one claim ($0.25; free with a research grant)
+  tags:
+  - fact-check
+  - verification
+  - hallucination check
+  - web search
+- id: research-grant
+  name: Apply for a free research grant
+  tags:
+  - grant
+  - free
+  - onboarding
+health_check:
+  url: https://agents.souldriver.com.au/.well-known/agent-card.json
+contact:
+  email: unknown@external.invalid
+  url: https://souldriver.com.au
+source:
+  name: A2A Registry
+  type: external-registry
+  url: https://a2aregistry.org/api/agents?conformance=standard
+  external_id: ''
+description: Research answers and live fact-checks from KARP, SoulDriver's multi-model
+  research engine (GPT, Gemini, Grok and Claude). Free coverage checks; research cards
+  ($0.03) and fact-checks ($0.25) with a free research grant. Deepest on Alzheimer's
+  and neurodegeneration, ageing biology, ancient scripts, AI governance and quantum
+  computing.
+version: 1.6.2

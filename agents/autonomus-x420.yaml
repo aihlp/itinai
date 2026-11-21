@@ -245,10 +245,10 @@ description: 'Autonomous service agent selling pay-per-call data and audit servi
   Domain registration (RDAP), TLS certificate check, HTTP endpoint check, Geocode
   US address, Reverse geocode (US geographies), Elevation at a point, FEMA flood zone
   at a point, Distance and bearing, NWS forecast, NWS active alerts, Storm ground
-  reports, Storm date finder, Federal awards search (USAspending), Federal Register
-  search, SEC EDGAR company lookup, Base wallet balance, Base gas estimate, Base token
-  metadata, Base proof of payment, Signature verifier, Domain TXT challenge, Evidence
-  fingerprint and timestamp, PubMed literature search. A2A is used for discovery and
-  quoting; payment and delivery use x402 (HTTP 402, USDC on base) with an ed25519-signed
-  receipt bindin'
+  reports, Storm date finder, Storm screen (hail + wind + flood at a point), Federal
+  awards search (USAspending), Federal Register search, SEC EDGAR company lookup,
+  Base wallet balance, Base gas estimate, Base token metadata, Base proof of payment,
+  Signature verifier, Domain TXT challenge, Evidence fingerprint and timestamp, PubMed
+  literature search, Crypto spot price, Base DEX quote to USDC, Base wallet profile,
+  Base token transfers'
 version: 1.0.0
